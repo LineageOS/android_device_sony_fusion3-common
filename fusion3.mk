@@ -23,10 +23,6 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
     frameworks/native/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml
 
-# Bootsplash
-PRODUCT_COPY_FILES += \
-    $(COMMON_PATH)/prebuilt/logo_1080x1920.rle:root/logo.rle
-
 # GPS
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/config/gps.conf:system/etc/gps.conf
