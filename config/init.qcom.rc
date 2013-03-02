@@ -475,8 +475,10 @@ on property:ro.data.large_tcp_window_size=true
 service sdcard /system/bin/sdcard /data/media /mnt/shell/emulated 1023 1023
     class late_start
 
-service thermald /system/bin/thermald
+service thermald /system/bin/thermald -c /system/etc/thermald.conf
     class main
+    socket thermald stream 0666 root root
+    user root
 
 service mpdecision /system/bin/mpdecision --no_sleep --avg_comp
     class main
