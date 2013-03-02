@@ -24,9 +24,9 @@
     <bool name="useCameraInterface">false</bool>
 
     <!-- Full path to the sysfs toggle -->
-    <string name="flashDevice">/sys/devices/i2c-10/10-0053/torch_enable</string>
+    <string name="flashDevice">/sys/devices/i2c-0/0-0053/torch_enable</string>
     <!-- Full path to the sysfs luminosity -->
-    <string name="flashDeviceLuminosity">/sys/devices/i2c-10/10-0053/torch_current</string>
+    <string name="flashDeviceLuminosity">/sys/devices/i2c-0/0-0053/torch_current</string>
 
     <!-- Off setting -->
     <integer name="valueOff">0</integer>
