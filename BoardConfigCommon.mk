@@ -12,11 +12,13 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-TARGET_SPECIFIC_HEADER_PATH := device/sony/fusion3-common/include
+# inherit from Sony common
+-include device/sony/common/BoardConfigCommon.mk
 
-TARGET_NO_BOOTLOADER := true
-TARGET_NO_RADIOIMAGE := true
-BOARD_HAS_NO_MISC_PARTITION := true
+# inherit from qcom-common
+-include device/sony/qcom-common/BoardConfigCommon.mk
+
+TARGET_SPECIFIC_HEADER_PATH := device/sony/fusion3-common/include
 
 # Kernel properties
 TARGET_KERNEL_SOURCE := kernel/sony/apq8064
@@ -24,17 +26,10 @@ TARGET_KERNEL_SOURCE := kernel/sony/apq8064
 # Platform
 TARGET_BOOTLOADER_BOARD_NAME := MSM8960
 TARGET_BOARD_PLATFORM := msm8960
-BOARD_VENDOR := sony
 BOARD_VENDOR_PLATFORM := fusion3
 
 # Architecture
-TARGET_ARCH := arm
-TARGET_CPU_ABI := armeabi-v7a
-TARGET_CPU_ABI2 := armeabi
-TARGET_ARCH_VARIANT := armv7-a-neon
 TARGET_ARCH_VARIANT_CPU := cortex-a9
-TARGET_CPU_SMP := true
-ARCH_ARM_HAVE_TLS_REGISTER := true
 
 # Flags
 TARGET_GLOBAL_CFLAGS += -mfpu=neon-vfpv4 -mfloat-abi=softfp
@@ -56,31 +51,19 @@ BOARD_KERNEL_CMDLINE  := console=ttyHSL0,115200,n8 androidboot.hardware=qcom use
 BOARD_MKBOOTIMG_ARGS  := --ramdisk_offset 0x02000000
 
 # Wifi
-BOARD_HAS_QCOM_WLAN := true
-BOARD_WLAN_DEVICE := qcwcn
-WPA_SUPPLICANT_VERSION := VER_0_8_X
-BOARD_WPA_SUPPLICANT_DRIVER := NL80211
+BOARD_HAS_QCOM_WLAN              := true
+BOARD_WLAN_DEVICE                := qcwcn
+WPA_SUPPLICANT_VERSION           := VER_0_8_X
+BOARD_WPA_SUPPLICANT_DRIVER      := NL80211
 BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_$(BOARD_WLAN_DEVICE)
-BOARD_HOSTAPD_DRIVER := NL80211
-BOARD_HOSTAPD_PRIVATE_LIB := lib_driver_cmd_$(BOARD_WLAN_DEVICE)
-WIFI_DRIVER_FW_PATH_STA := "sta"
-WIFI_DRIVER_FW_PATH_AP := "ap"
-WIFI_DRIVER_MODULE_PATH := "/system/lib/modules/wlan.ko"
-WIFI_DRIVER_MODULE_NAME := "wlan"
-
-# Graphics
-TARGET_QCOM_DISPLAY_VARIANT := caf
-USE_OPENGL_RENDERER := true
-TARGET_USES_ION := true
-TARGET_USES_C2D_COMPOSITION := true
-BOARD_EGL_CFG := device/sony/fusion3-common/config/egl.cfg
+BOARD_HOSTAPD_DRIVER             := NL80211
+BOARD_HOSTAPD_PRIVATE_LIB        := lib_driver_cmd_$(BOARD_WLAN_DEVICE)
+WIFI_DRIVER_MODULE_PATH          := "/system/lib/modules/wlan.ko"
+WIFI_DRIVER_MODULE_NAME          := "wlan"
+WIFI_DRIVER_FW_PATH_STA          := "sta"
+WIFI_DRIVER_FW_PATH_AP           := "ap"
 
 TARGET_PROVIDES_LIBLIGHT := true
-TARGET_PROVIDES_POWERHAL := true
-
-# QCOM hardware
-COMMON_GLOBAL_CFLAGS += -DQCOM_HARDWARE
-BOARD_USES_QCOM_HARDWARE := true
 
 # GPS
 TARGET_PROVIDES_GPS_LOC_API := true
@@ -92,10 +75,6 @@ TARGET_NO_RPC := true
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_QCOM := true
 BLUETOOTH_HCI_USE_MCT := true
-
-# Webkit
-ENABLE_WEBGL := true
-TARGET_FORCE_CPU_UPLOAD := true
 
 # Vold
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/msm_hsusb/gadget/lun%d/file
@@ -115,17 +94,15 @@ TARGET_USERIMAGES_USE_EXT4 := true
 # Audio
 BOARD_USES_ALSA_AUDIO := true
 TARGET_USES_QCOM_MM_AUDIO := true
-#BOARD_AUDIO_EXPECTS_MIN_BUFFERSIZE := true
-TARGET_QCOM_AUDIO_VARIANT := caf
 BOARD_USES_FLUENCE_INCALL := true
 BOARD_USES_SEPERATED_AUDIO_INPUT := true
-
-# Kernel time optimization
-KERNEL_HAS_GETTIMEOFDAY_HELPER := true
 
 # FM radio
 BOARD_USES_STE_FMRADIO := true
 COMMON_GLOBAL_CFLAGS += -DSTE_FM
+
+# Kernel time optimization
+KERNEL_HAS_GETTIMEOFDAY_HELPER := true
 
 # Sensors
 SOMC_CFG_SENSORS := true

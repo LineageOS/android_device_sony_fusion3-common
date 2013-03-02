@@ -1,4 +1,21 @@
+# Copyright (C) 2013 The CyanogenMod Project
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
+
+# qcom common
+$(call inherit-product, device/sony/qcom-common/qcom-common.mk)
 
 COMMON_PATH := device/sony/fusion3-common
 
@@ -36,8 +53,6 @@ PRODUCT_COPY_FILES += \
 
 # QCOM Display
 PRODUCT_PACKAGES += \
-    libgenlock \
-    liboverlay \
     hwcomposer.msm8960 \
     gralloc.msm8960 \
     copybit.msm8960
@@ -84,19 +99,7 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/config/audio_policy.conf:system/etc/audio_policy.conf \
-    $(COMMON_PATH)/config/media_codecs.xml:system/etc/media_codecs.xml \
     $(COMMON_PATH)/config/audio_effects.conf:system/etc/audio_effects.conf
-
-# Omx
-PRODUCT_PACKAGES += \
-    mm-vdec-omx-test \
-    mm-venc-omx-test720p \
-    libdivxdrmdecrypt \
-    libOmxVdec \
-    libOmxVenc \
-    libOmxCore \
-    libstagefrighthw \
-    libc2dcolorconvert
 
 # GPS
 PRODUCT_PACKAGES += \
@@ -113,14 +116,6 @@ PRODUCT_PACKAGES += \
 # Sensors
 PRODUCT_PACKAGES += \
     sensors.default
-
-# Power
-PRODUCT_PACKAGES += \
-    power.qcom
-
-# QRNGD
-PRODUCT_PACKAGES += \
-    qrngd
 
 # WIFI MAC update
 PRODUCT_PACKAGES += \
@@ -186,15 +181,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     persist.sys.usb.config=mtp
 
-# QCOM
-PRODUCT_PROPERTY_OVERRIDES += \
-    com.qc.hardware=true \
-    dev.pm.dyn_samplingrate=1
-
-# QC Perf
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.vendor.extension_library=/system/lib/libqc-opt.so
-
 # Radio and Telephony
 PRODUCT_PROPERTY_OVERRIDES += \
     telephony.lteOnCdmaDevice=0 \
@@ -207,15 +193,6 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 # GPS
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.gps.qmienabled=true
-
-# QCOM Display
-PRODUCT_PROPERTY_OVERRIDES += \
-    debug.sf.hw=1 \
-    debug.egl.hw=1 \
-    debug.composition.type=dyn \
-    debug.mdpcomp.maxlayer=3 \
-    debug.enable.wl_log=1 \
-    debug.mdpcomp.logs=0
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.hwui.texture_cache_size=128.0f \
@@ -245,15 +222,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Bluetooth
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.qualcomm.bt.hci_transport=smd
-
-# OpenglES
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.opengles.version=131072
-
-# Wifi
-PRODUCT_PROPERTY_OVERRIDES += \
-    wifi.interface=wlan0 \
-    wifi.supplicant_scan_interval=15
 
 # Do not power down SIM card when modem is sent to Low Power Mode.
 PRODUCT_PROPERTY_OVERRIDES += \
