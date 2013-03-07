@@ -129,7 +129,7 @@ static int set_light_backlight (struct light_device_t *dev, struct light_state_t
 	err |= write_int (LCD_BACKLIGHT_FILE, brightness);
 
 	//dirty fix for black display
-	if (brightness < 180)
+	if (brightness != 0 && brightness < 180)
 		brightness = 180;
 	err |= write_int (LCD_BACKLIGHT2_FILE, brightness);
 
