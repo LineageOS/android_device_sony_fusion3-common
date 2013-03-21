@@ -9,3 +9,7 @@ OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
 # Ion
 TARGET_USES_C2D_COMPOSITION := true
 TARGET_USES_ION := true
+
+# Shader cache config options
+MAX_EGL_CACHE_KEY_SIZE := 12*1024
+MAX_EGL_CACHE_SIZE := 2048*1024
