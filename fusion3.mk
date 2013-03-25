@@ -101,14 +101,6 @@ PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/config/audio_policy.conf:system/etc/audio_policy.conf \
     $(COMMON_PATH)/config/audio_effects.conf:system/etc/audio_effects.conf
 
-# GPS
-PRODUCT_PACKAGES += \
-    libloc_adapter \
-    libloc_eng \
-    libloc_api_v02 \
-    libgps.utils \
-    gps.msm8960
-
 # Light
 PRODUCT_PACKAGES += \
     lights.msm8960
