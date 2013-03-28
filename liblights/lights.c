@@ -49,6 +49,8 @@ enum {
 	LED_BLANK
 };
 
+const int LCD_BRIGHTNESS_MIN = 10;
+
 static int write_int (const char *path, int value) {
 	int fd;
 	static int already_warned = 0;
@@ -110,8 +112,8 @@ static int brightness_apply_gamma (int brightness) {
 	ALOGV("%s: gamma corrected floatbrt = %f", __func__, floatbrt);
 	floatbrt *= 255.0;
 	brightness = (int) floatbrt;
-	if(brightness < 1)
-		brightness = 1;
+	if (brightness < LCD_BRIGHTNESS_MIN)
+		brightness = LCD_BRIGHTNESS_MIN;
 	ALOGV("%s: gamma corrected brightness = %d", __func__, brightness);
 	return brightness;
 }
