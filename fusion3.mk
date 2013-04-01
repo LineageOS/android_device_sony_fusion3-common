@@ -149,6 +149,9 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/recovery/postrecoveryboot.sh:recovery/root/sbin/postrecoveryboot.sh
 
+PRODUCT_COPY_FILES += \
+    $(COMMON_PATH)/recovery/init.recovery.qcom.rc:root/init.recovery.qcom.rc
+
 # Additional sbin stuff
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/prebuilt/charger:root/charger \
