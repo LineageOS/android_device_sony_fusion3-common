@@ -51,6 +51,9 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/config/fstab.sony:root/fstab.sony
 
+PRODUCT_COPY_FILES += \
+    $(COMMON_PATH)/recovery/init.recovery.qcom.rc:recovery/root/init.recovery.qcom.rc
+
 # QCOM Display
 PRODUCT_PACKAGES += \
     hwcomposer.msm8960 \
