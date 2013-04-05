@@ -225,9 +225,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.telephony.call_ring.multiple=0
 
-PRODUCT_PROPERTY_OVERRIDES += \
-    debug.egl.recordable.rgba8888=1
-
 # Include non-opensource parts if available
 $(call inherit-product-if-exists, vendor/sony/qcom-common/common-vendor.mk)
 
