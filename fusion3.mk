@@ -223,7 +223,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Ril sends only one RIL_UNSOL_CALL_RING, so set call_ring.multiple to false
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.telephony.call_ring.multiple=0
+    ro.telephony.call_ring.multiple=0 \
+    telephony.lteOnGsmDevice=1
 
 PRODUCT_PROPERTY_OVERRIDES += \
     debug.egl.recordable.rgba8888=1
