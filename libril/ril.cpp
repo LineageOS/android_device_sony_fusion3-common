@@ -214,7 +214,6 @@ static int responseInts(Parcel &p, void *response, size_t responselen);
 static int responseStrings(Parcel &p, void *response, size_t responselen);
 static int responseStringsDataRegistrationState(Parcel &p, void *response, size_t responselen);
 static int responseStringsNetworks(Parcel &p, void *response, size_t responselen);
-static int responseStrings(Parcel &p, void *response, size_t responselen, bool network_search);
 static int responseString(Parcel &p, void *response, size_t responselen);
 static int responseVoid(Parcel &p, void *response, size_t responselen);
 static int responseCallList(Parcel &p, void *response, size_t responselen);
@@ -1418,17 +1417,53 @@ static int responseStringsWithVersion(int version, Parcel &p, void *response, si
     return responseStrings(p, response, responselen);
 }
 
+static int responseStringsNetworks(Parcel &p, void *response, size_t responselen) {
+    int numStrings;
+    int inQANElements = 5;
+    int outQANElements = 4;
+
+    if (response == NULL && responselen != 0) {
+        ALOGE("invalid response: NULL");
+        return RIL_ERRNO_INVALID_RESPONSE;
+    }
+    if (responselen % sizeof(char *) != 0) {
+        ALOGE("invalid response length %d expected multiple of %d\n",
+            (int)responselen, (int)sizeof(char *));
+        return RIL_ERRNO_INVALID_RESPONSE;
+    }
+
+    if (response == NULL) {
+        p.writeInt32 (0);
+    } else {
+        char **p_cur = (char **) response;
+
+        numStrings = responselen / sizeof(char *);
+
+        /* Sony is sending 5 elements, upper layer expects 4.
+           Report a multiple of 4. */
+        p.writeInt32 ((numStrings / inQANElements) * outQANElements);
+
+        /* each string*/
+        startResponse;
+        int j=0;
+        for (int i = 0 ; i < numStrings ; i++) {
+            /* Drop every 5th element here */
+            if (j == outQANElements) {
+                j=0;
+            } else {
+                appendPrintBuf("%s%s,", printBuf, (char*)p_cur[i]);
+                writeStringToParcel (p, p_cur[i]);
+                j++;
+            }
+        }
+        removeLastChar;
+        closeResponse;
+    }
+    return 0;
+}
+
 /** response is a char **, pointing to an array of char *'s */
 static int responseStrings(Parcel &p, void *response, size_t responselen) {
-    return responseStrings(p, response, responselen, false);
-}
-
-static int responseStringsNetworks(Parcel &p, void *response, size_t responselen) {
-    return responseStrings(p, response, responselen, true);
-}
-
-/** response is a char **, pointing to an array of char *'s */
-static int responseStrings(Parcel &p, void *response, size_t responselen, bool network_search) {
     int numStrings;
 
     if (response == NULL && responselen != 0) {
