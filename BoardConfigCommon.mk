@@ -51,7 +51,8 @@ BOARD_KERNEL_CMDLINE  := console=ttyHSL0,115200,n8 androidboot.hardware=qcom use
 BOARD_MKBOOTIMG_ARGS  := --ramdisk_offset 0x02000000
 
 # RIL
-BOARD_PROVIDES_LIBRIL := true
+BOARD_USES_SONY_RIL := true
+BOARD_USES_NEW_LIBRIL_QCOM := true
 
 # Wifi
 BOARD_HAS_QCOM_WLAN              := true
