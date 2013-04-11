@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAen//8i4\u003d",
+        "filename": "fusion3.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 2195
+      },
+      "writtenOn": "2013-04-11T08:42:08Z",
+      "side": 1,
+      "message": "There isn\u0027t any package named \"Camera\", since it is built into Gallery2.",
+      "revId": "8573b3dc773de7316376470deca74a6e2f0a7ec6",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
