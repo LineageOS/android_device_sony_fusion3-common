@@ -129,7 +129,7 @@
 /dev/msm_rtac             0660   system     audio
 /dev/msm_voicememo        0660   system     audio
 
-msys/devices/virtual/input/input*   bma250_calib_set    0220 system system
+/sys/devices/virtual/input/input*   bma250_calib_set    0220 system system
 /sys/devices/virtual/input/input*   bma250_calib_offset 0440 system system
 /sys/devices/virtual/input/input*   bma250_calib_image  0660 system system
 /sys/devices/virtual/input/input*   bma250_calib_eeprom 0220 system system
