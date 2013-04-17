@@ -12,7 +12,6 @@ busybox rm /init
 source /sbin/bootrec-device
 
 # create directories
-busybox mkdir -m 755 -p /cache
 busybox mkdir -m 755 -p /dev/block
 busybox mkdir -m 755 -p /dev/input
 busybox mkdir -m 555 -p /proc
@@ -20,14 +19,12 @@ busybox mkdir -m 755 -p /sys
 
 # create device nodes
 busybox mknod -m 600 /dev/block/mmcblk0 b 179 0
-busybox mknod -m 600 ${BOOTREC_CACHE_NODE}
 busybox mknod -m 600 ${BOOTREC_EVENT_NODE}
 busybox mknod -m 666 /dev/null c 1 3
 
 # mount filesystems
 busybox mount -t proc proc /proc
 busybox mount -t sysfs sysfs /sys
-busybox mount -t ext4 ${BOOTREC_CACHE} /cache
 
 # trigger amber LED
 busybox echo 255 > ${BOOTREC_LED_RED}
@@ -42,10 +39,8 @@ busybox sleep 3
 load_image=/sbin/ramdisk.cpio
 
 # boot decision
-if [ -s /dev/keycheck -o -e /cache/recovery/boot ]
-then
+if [ -s /dev/keycheck ] || busybox grep -q warmboot=0x77665502 /proc/cmdline ; then
 	busybox echo 'RECOVERY BOOT' >>boot.txt
-	busybox rm -fr /cache/recovery/boot
 	# orange led for recoveryboot
 	busybox echo 255 > ${BOOTREC_LED_RED}
 	busybox echo 100 > ${BOOTREC_LED_GREEN}
@@ -71,7 +66,6 @@ busybox pkill -f "busybox cat ${BOOTREC_EVENT}"
 # unpack the ramdisk image
 busybox cpio -i < ${load_image}
 
-busybox umount /cache
 busybox umount /proc
 busybox umount /sys
 
