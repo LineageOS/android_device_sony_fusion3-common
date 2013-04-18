@@ -62,11 +62,11 @@
         <item>80</item>
         <item>100</item>
         <item>120</item>
-        <item>140</item>
-        <item>180</item>
-        <item>200</item>
-        <item>220</item>
         <item>240</item>
+        <item>480</item>
+        <item>960</item>
+        <item>1240</item>
+        <item>1520</item>
     </integer-array>
 
     <!-- Array of output values for LCD backlight corresponding to the LUX values
