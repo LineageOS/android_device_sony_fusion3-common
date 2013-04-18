@@ -220,8 +220,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Audio LPA
 PRODUCT_PROPERTY_OVERRIDES += \
-    lpa.decode=false \
-    lpa.use-stagefright=true
+    lpa.decode=true
 
 # Bluetooth
 PRODUCT_PROPERTY_OVERRIDES += \
