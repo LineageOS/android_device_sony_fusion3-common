@@ -1,0 +1,41 @@
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <string-array name="powerscale_policy_entries">
+        <item>Conservative</item>
+        <item>MSM</item>
+        <item>Trustzone</item>
+    </string-array>
+
+    <string-array name="powerscale_policy_entries_values" translatable="false">
+        <item>conservative</item>
+        <item>msm</item>
+        <item>trustzone</item>
+    </string-array>
+
+    <string-array name="conservative_polling_entries">
+        <item>10 ms</item>
+        <item>25 ms</item>
+        <item>50 ms</item>
+        <item>75 ms</item>
+        <item>100 ms</item>
+        <item>150 ms</item>
+        <item>250 ms</item>
+        <item>500 ms</item>
+        <item>750 ms</item>
+        <item>1000 ms</item>
+    </string-array>
+
+    <string-array name="conservative_polling_entries_values" translatable="false">
+        <item>10</item>
+        <item>25</item>
+        <item>50</item>
+        <item>75</item>
+        <item>100</item>
+        <item>150</item>
+        <item>250</item>
+        <item>500</item>
+        <item>750</item>
+        <item>1000</item>
+    </string-array>
+
+</resources>

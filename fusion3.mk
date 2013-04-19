@@ -121,7 +121,8 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/com.stericsson.hardware.fm.receiver.xml:system/etc/permissions/com.stericsson.hardware.fm.receiver.xml
 
 PRODUCT_PACKAGES += \
-    FmRadio
+    FmRadio \
+    XperiaSettings
 
 # Misc
 PRODUCT_PACKAGES += \
