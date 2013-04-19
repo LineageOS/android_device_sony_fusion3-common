@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory
+                android:title="@string/powerscale_policy_subcat_title">
+    <!-- Powerscale Policy -->
+    <com.cyanogenmod.settings.device.mPowerscalePolicy
+	        android:key="powerscale_policy"
+	        android:title="@string/powerscale_policy_title"
+	        android:summary="@string/powerscale_policy_text"
+	        android:entries="@array/powerscale_policy_entries"
+  			android:entryValues="@array/powerscale_policy_entries_values"
+  			android:defaultValue="conservative" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+                android:title="@string/conservative_subcat_title">
+    <!-- Powerscale Policy Conservative -->
+    <com.cyanogenmod.settings.device.mPowerscalePolicyConservative
+	        android:key="conservative_polling"
+	        android:title="@string/conservative_polling_title"
+	        android:summary="@string/conservative_polling_text"
+	        android:entries="@array/conservative_polling_entries"
+  			android:entryValues="@array/conservative_polling_entries_values"
+  			android:defaultValue="500" />
+    </PreferenceCategory>
+
+</PreferenceScreen>

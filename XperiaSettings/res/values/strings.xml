@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Advanced settings</string>
+
+    <!-- Powerscale Preference -->
+    <string name="category_powerscale_title">Powerscale tuning</string>
+    
+    <!-- Subcategory Powerscale Policy -->
+    <string name="powerscale_policy_subcat_title">Powerscale policy</string>
+    <string name="powerscale_policy_title">Policy</string>
+    <string name="powerscale_policy_text">Set the powerscale policy</string>
+
+    <!-- Subcategory Powerscale Policy Conservative -->
+    <string name="conservative_subcat_title">Conservative settings</string>
+    <string name="conservative_polling_title">Polling interval</string>
+    <string name="conservative_polling_text">Set the polling interval</string>
+
+</resources>
