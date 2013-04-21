@@ -237,6 +237,9 @@ on post-fs-data
     mkdir /data/audio 0770 media audio
     chmod 2770 /data/audio
 
+    # Vibrator
+    chown system system /sys/class/timed_output/vibrator/level
+
     # Camera
     mkdir /data/camera 0771 root camera
 

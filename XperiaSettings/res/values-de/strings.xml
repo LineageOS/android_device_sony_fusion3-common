@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Xperia Einstellungen</string>
+
+    <!-- Haptic Preference -->
+    <string name="category_haptic_title">Haptik</string>
+    
+    <!-- Subcategory Vibrator -->
+    <string name="vibrator_subcat_title">Vibrator</string>
+    <string name="vibrator_title">Vibrator Intensität</string>
+    <string name="vibrator_text">Intensität</string>
+
+</resources>

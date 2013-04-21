@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Impostazioni Xperia</string>
+
+    <!-- Haptic Preference -->
+    <string name="category_haptic_title">Vibrazione</string>
+
+    <!-- Subcategory Vibrator -->
+    <string name="vibrator_subcat_title">Vibrazione</string>
+    <string name="vibrator_title">Intensità Vibrazione</string>
+    <string name="vibrator_text">Intensità</string>
+
+</resources>
