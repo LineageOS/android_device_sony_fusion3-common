@@ -44,14 +44,14 @@ PRODUCT_COPY_FILES += \
 
 # GPS
 PRODUCT_COPY_FILES += \
-    $(COMMON_PATH)/config/gps.conf:system/etc/gps.conf
+    $(COMMON_PATH)/rootdir/system/etc/gps.conf:system/etc/gps.conf
 
 # WPA supplicant config
 PRODUCT_COPY_FILES += \
-    $(COMMON_PATH)/config/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf
+    $(COMMON_PATH)/rootdir/system/etc/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf
 
 PRODUCT_COPY_FILES += \
-    $(COMMON_PATH)/config/fstab.sony:root/fstab.sony
+    $(COMMON_PATH)/rootdir/fstab.sony:root/fstab.sony
 
 # QCOM Display
 PRODUCT_PACKAGES += \
@@ -72,9 +72,9 @@ PRODUCT_COPY_FILES += \
 
 # NFCEE access control
 ifeq ($(TARGET_BUILD_VARIANT),user)
-    NFCEE_ACCESS_PATH := $(COMMON_PATH)/config/nfcee_access.xml
+    NFCEE_ACCESS_PATH := $(COMMON_PATH)/rootdir/system/etc/nfcee_access.xml
 else
-    NFCEE_ACCESS_PATH := $(COMMON_PATH)/config/nfcee_access_debug.xml
+    NFCEE_ACCESS_PATH := $(COMMON_PATH)/rootdir/system/etc/nfcee_access_debug.xml
 endif
 
 PRODUCT_COPY_FILES += \
@@ -99,9 +99,13 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     hci_qcomm_init
 
+# Audio
 PRODUCT_COPY_FILES += \
-    $(COMMON_PATH)/config/audio_policy.conf:system/etc/audio_policy.conf \
-    $(COMMON_PATH)/config/audio_effects.conf:system/etc/audio_effects.conf
+    $(COMMON_PATH)/rootdir/system/etc/audio_policy.conf:system/etc/audio_policy.conf
+
+# Media
+PRODUCT_COPY_FILES += \
+    $(COMMON_PATH)/rootdir/system/etc/media_profiles.xml:system/etc/media_profiles.xml
 
 # Light
 PRODUCT_PACKAGES += \
@@ -117,11 +121,22 @@ PRODUCT_PACKAGES += \
 
 # FM Radio
 PRODUCT_COPY_FILES += \
-    $(COMMON_PATH)/config/init.qcom.fm.sh:system/etc/init.qcom.fm.sh \
+    $(COMMON_PATH)/rootdir/system/etc/init.qcom.fm.sh:system/etc/init.qcom.fm.sh \
     frameworks/native/data/etc/com.stericsson.hardware.fm.receiver.xml:system/etc/permissions/com.stericsson.hardware.fm.receiver.xml
 
 PRODUCT_PACKAGES += \
     FmRadio
+
+# Key layouts and touchscreen
+PRODUCT_COPY_FILES += \
+    $(COMMON_PATH)/rootdir/system/usr/idc/clearpad.idc:system/usr/idc/clearpad.idc \
+    $(COMMON_PATH)/rootdir/system/usr/keylayout/apq8064-tabla-snd-card_Button_Jack.kl:system/usr/keylayout/apq8064-tabla-snd-card_Button_Jack.kl \
+    $(COMMON_PATH)/rootdir/system/usr/keylayout/clearpad.kl:system/usr/keylayout/clearpad.kl \
+    $(COMMON_PATH)/rootdir/system/usr/keylayout/gpio-keys.kl:system/usr/keylayout/gpio-keys.kl \
+    $(COMMON_PATH)/rootdir/system/usr/keylayout/keypad_8960.kl:system/usr/keylayout/keypad_8960.kl \
+    $(COMMON_PATH)/rootdir/system/usr/keylayout/mhl-rcp.kl:system/usr/keylayout/mhl-rcp.kl \
+    $(COMMON_PATH)/rootdir/system/usr/keylayout/pmic8xxx_pwrkey.kcm:system/usr/keylayout/pmic8xxx_pwrkey.kcm \
+    $(COMMON_PATH)/rootdir/system/usr/keylayout/pmic8xxx_pwrkey.kl:system/usr/keylayout/pmic8xxx_pwrkey.kl
 
 # Misc
 PRODUCT_PACKAGES += \
@@ -143,35 +158,28 @@ PRODUCT_TAGS += dalvik.gc.type-precise
 
 # Custom init / uevent
 PRODUCT_COPY_FILES += \
-    $(COMMON_PATH)/config/init.qcom.bt.sh:system/etc/init.qcom.bt.sh \
-    $(COMMON_PATH)/config/init.qcom.rc:root/init.qcom.rc \
-    $(COMMON_PATH)/config/ueventd.qcom.rc:root/ueventd.qcom.rc
+    $(COMMON_PATH)/rootdir/init.qcom.rc:root/init.qcom.rc \
+    $(COMMON_PATH)/rootdir/ueventd.qcom.rc:root/ueventd.qcom.rc \
+    $(COMMON_PATH)/rootdir/init.recovery.qcom.rc:root/init.recovery.qcom.rc \
+    $(COMMON_PATH)/rootdir/system/etc/init.qcom.bt.sh:system/etc/init.qcom.bt.sh
 
 # Post recovery script
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/recovery/postrecoveryboot.sh:recovery/root/sbin/postrecoveryboot.sh
 
-PRODUCT_COPY_FILES += \
-    $(COMMON_PATH)/recovery/init.recovery.qcom.rc:root/init.recovery.qcom.rc
-
 # Additional sbin stuff
 PRODUCT_COPY_FILES += \
-    $(COMMON_PATH)/prebuilt/charger:root/charger \
-    $(COMMON_PATH)/prebuilt/wait4tad_static:root/sbin/wait4tad_static \
-    $(COMMON_PATH)/prebuilt/tad_static:root/sbin/tad_static
-
-# CNE config
-PRODUCT_COPY_FILES += \
-    $(COMMON_PATH)/config/OperatorPolicy.xml:system/etc/OperatorPolicy.xml \
-    $(COMMON_PATH)/config/UserPolicy.xml:system/etc/UserPolicy.xml
+    $(COMMON_PATH)/rootdir/charger:root/charger \
+    $(COMMON_PATH)/rootdir/sbin/wait4tad_static:root/sbin/wait4tad_static \
+    $(COMMON_PATH)/rootdir/sbin/tad_static:root/sbin/tad_static
 
 # ALSA configuration
 PRODUCT_COPY_FILES += \
-    $(COMMON_PATH)/config/snd_soc_msm_2x_Fusion3:system/etc/snd_soc_msm/snd_soc_msm_2x_Fusion3
+    $(COMMON_PATH)/rootdir/system/etc/snd_soc_msm/snd_soc_msm_2x_Fusion3:system/etc/snd_soc_msm/snd_soc_msm_2x_Fusion3
 
 # Thermal monitor configuration
 PRODUCT_COPY_FILES += \
-    $(COMMON_PATH)/config/thermald-8064.conf:system/etc/thermald.conf
+    $(COMMON_PATH)/rootdir/system/etc/thermald.conf:system/etc/thermald.conf
 
 # Set default USB interface
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
