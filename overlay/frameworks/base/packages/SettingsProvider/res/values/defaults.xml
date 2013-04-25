@@ -17,5 +17,5 @@
  */
 -->
 <resources>
-    <bool name="def_screen_brightness_automatic_mode">true</bool>
+    <integer name="def_screen_brightness">149</integer>
 </resources>
