@@ -28,7 +28,7 @@
     <integer name="config_defaultNotificationLedOn">1000</integer>
 
     <!-- Default LED off time for notification LED in milliseconds. -->
-    <integer name="config_defaultNotificationLedOff">9000</integer>
+    <integer name="config_defaultNotificationLedOff">6000</integer>
 
     <!-- If this is true, the screen will come on when you unplug usb/power/whatever. -->
     <bool name="config_unplugTurnsOnScreen">true</bool>
@@ -137,13 +137,12 @@
     <integer name="config_radioScanningTimeout">9000</integer>
 
     <string-array translatable="false" name="config_tether_usb_regexs">
-       <item>"rndis0"</item>
        <item>"usb\\d"</item>
+       <item>"rndis\\d"</item>
     </string-array>
 
     <string-array translatable="false" name="config_tether_wifi_regexs">
         <item>"wlan0"</item>
-        <item>"softap.*"</item>
     </string-array>
 
     <!-- List of regexpressions describing the interface (if any) that represent tetherable
@@ -185,9 +184,6 @@
         <item>"mobile_supl,3,0,2,60000,true"</item>
         <item>"mobile_dun,4,0,2,60000,true"</item>
         <item>"mobile_hipri,5,0,3,60000,true"</item>
-        <item>"mobile_fota,10,0,2,60000,true"</item>
-        <item>"mobile_ims,11,0,2,60000,true"</item>
-        <item>"mobile_cbs,12,0,2,60000,true"</item>
         <item>"wifi_p2p,13,1,0,-1,true"</item>
         <item>"bluetooth,7,7,2,-1,true"</item>
     </string-array>
@@ -229,5 +225,24 @@
 
     <!-- The default iface on which to monitor data use -->
     <string name="config_datause_iface" translatable="false">rmnet_usb0</string>
+
+    <!-- Base "touch slop" value used by ViewConfiguration as a
+         movement threshold where scrolling should begin. -->
+    <dimen name="config_viewConfigurationTouchSlop">13dp</dimen>
+
+    <!-- The default value if the SyncStorageEngine should sync automatically or not -->
+    <bool name="config_syncstorageengine_masterSyncAutomatically">false</bool>
+
+    <!-- National language single shift tables to enable for SMS encoding.
+         Decoding is always enabled. 3GPP TS 23.038 states that this feature
+         should not be enabled until a formal request is issued by the relevant
+         national regulatory body. Array elements are codes from the table above.
+         Example 1: devices sold in Turkey must include table 1 to conform with
+           By-Law Number 27230. (http://www.btk.gov.tr/eng/pdf/2009/BY-LAW_SMS.pdf)
+         Example 2: devices sold in India should include tables 4 through 13
+           to enable use of the new Release 9 tables for Indic languages. -->
+    <integer-array name="config_sms_enabled_single_shift_tables">
+        <item>1</item>
+    </integer-array>
 
 </resources>
