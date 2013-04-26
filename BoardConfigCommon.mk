@@ -47,7 +47,7 @@ TARGET_KRAIT_BIONIC_PLDSIZE   := 64
 # Kernel information
 BOARD_KERNEL_BASE     := 0x80200000
 BOARD_KERNEL_PAGESIZE := 2048
-BOARD_KERNEL_CMDLINE  := console=ttyHSL0,115200,n8 androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x3F ehci-hcd.park=3
+BOARD_KERNEL_CMDLINE  := console=ttyHSL0,115200,n8 androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x3F ehci-hcd.park=3 maxcpus=2
 BOARD_MKBOOTIMG_ARGS  := --ramdisk_offset 0x02000000
 
 # Wifi
@@ -64,6 +64,12 @@ WIFI_DRIVER_FW_PATH_STA          := "sta"
 WIFI_DRIVER_FW_PATH_AP           := "ap"
 
 TARGET_PROVIDES_LIBLIGHT := true
+
+# Camera
+COMMON_GLOBAL_CFLAGS += -DMR0_CAMERA_BLOB -DQCOM_BSP_CAMERA_ABI_HACK
+
+# ION
+COMMON_GLOBAL_CFLAGS += -DNEW_ION_API
 
 # GPS
 BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := $(TARGET_BOARD_PLATFORM)
@@ -91,7 +97,6 @@ TARGET_USERIMAGES_USE_EXT4 := true
 # Audio
 BOARD_USES_ALSA_AUDIO := true
 TARGET_USES_QCOM_MM_AUDIO := true
-BOARD_AUDIO_CAF_LEGACY_INPUT_BUFFERSIZE := true
 
 # FM radio
 BOARD_USES_STE_FMRADIO := true
