@@ -43,6 +43,13 @@ on init
 
     symlink /dev/socket /tmp
 
+    mkdir /dev/bus 0755 root root
+    mkdir /dev/bus/usb 0755 root root
+
+    write /sys/module/subsystem_restart/parameters/restart_level 3
+    write /sys/module/subsystem_restart/parameters/max_restarts 8
+    write /sys/module/subsystem_restart/parameters/max_history_time 3600
+
 on fs
     mount_all ./fstab.qcom
     setprop ro.crypto.fuse_sdcard true
@@ -56,6 +63,7 @@ on fs
     # Create a mount point on tmpfs to store modem files.
     mkdir /mnt/qcks 0700 root system
     mount tmpfs tmpfs /mnt/qcks mode=0770,uid=1000,gid=1000
+    symlink /mnt/qcks /data/qcks
 
     chmod 0775 /data/etc
     start tad
@@ -97,7 +105,9 @@ on boot
     chown bluetooth bluetooth /sys/devices/platform/msm_serial_hs.0/clock
     chmod 0660 /sys/devices/platform/msm_serial_hs.0/clock
 
-    #Create QMUX deamon socket area
+    write /sys/module/rmnet_usb/parameters/rmnet_data_init 1
+
+    # Create QMUX deamon socket area
     mkdir /dev/socket/qmux_radio 0770 radio radio
     chmod 2770 /dev/socket/qmux_radio
     mkdir /dev/socket/qmux_audio 0770 media audio
@@ -112,14 +122,14 @@ on boot
 
     setprop ro.telephony.call_ring.multiple false
 
-    #Remove SUID bit for iproute2 ip tool
+    # Remove SUID bit for iproute2 ip tool
     chmod 0755 /system/bin/ip
 
-    #port-bridge
+    # port-bridge
     chmod 0660 /dev/smd0
     chown system system /dev/smd0
 
-    #BT DUN port-bridge
+    # BT DUN port-bridge
     chmod 0660 /dev/smd7
     chown bluetooth bluetooth /dev/smd7
 
@@ -129,6 +139,7 @@ on boot
     symlink /dev/graphics/fb1 /dev/graphics/hdmi
 
     # Remove write permissions to video related nodes
+    chown system graphics /sys/class/graphics/fb1/hpd
     chmod 0664 /sys/devices/virtual/graphics/fb1/hpd
     chmod 0664 /sys/devices/virtual/graphics/fb1/video_mode
     chmod 0664 /sys/devices/virtual/graphics/fb1/format_3d
@@ -141,7 +152,7 @@ on boot
     chown system system /sys/class/mhl/sii8334/adopter_id
     chown system system /sys/class/mhl/sii8334/device_id
 
-    #For bridgemgr daemon to inform the USB driver of the correct transport
+    # For bridgemgr daemon to inform the USB driver of the correct transport
     chown radio radio /sys/class/android_usb/f_rmnet_smd_sdio/transport
 
     chmod 660 /dev/rtc0
@@ -206,8 +217,9 @@ on post-fs-data
     mkdir /data/misc/wifi/prima 0775 wifi wifi
     exec /system/bin/mac-update
 
-    write /dev/wcnss_wlan 1
     write /sys/module/wcnss_ssr_8960/parameters/enable_riva_ssr 1
+    write /sys/devices/platform/wcnss_wlan.0/serial_number ${ro.serialno}
+    write /dev/wcnss_wlan 1
 
     # Create directory used by audio subsystem
     mkdir /data/misc/audio 0770 audio audio
@@ -225,14 +237,13 @@ on post-fs-data
 
     chown system system /sys/devices/platform/kgsl-3d0.0/kgsl/kgsl-3d0/pwrscale/policy
 
-    #Create the symlink to qcn wpa_supplicant folder for ar6000 wpa_supplicant
+    # Create the symlink to qcn wpa_supplicant folder for ar6000 wpa_supplicant
     mkdir /data/system 0775 system system
-    #symlink /data/misc/wifi/wpa_supplicant /data/system/wpa_supplicant
 
-    #Create directories for gpsone_daemon services
+    # Create directories for gpsone_daemon services
     mkdir /data/misc/gpsone_d 0770 system gps
 
-    #Provide the access to hostapd.conf only to root and group
+    # Provide the access to hostapd.conf only to root and group
     chmod 0660 /data/hostapd/hostapd.conf
 
     # Enable the setgid bit on the directory
@@ -245,6 +256,8 @@ on post-fs-data
     # Enable Power save functionality for modem
     setprop persist.radio.add_power_save 1
     exec /system/bin/cal_data_manager
+
+    chown system /dev/block/platform/msm_sdcc.1/by-name
 
     setprop vold.post_fs_data_done 1
 
@@ -485,13 +498,6 @@ service thermald /system/bin/thermald -c /system/etc/thermald.conf
 
 service mpdecision /system/bin/mpdecision --no_sleep --avg_comp
     class main
-
-#start camera server as daemon
-service qcamerasvr /system/bin/mm-qcamera-daemon
-    class late_start
-    user system
-    group system camera inet input graphics bluetooth
-    disabled
 
 # bugreport is triggered by holding down volume down, volume up and power
 service bugreport /system/bin/bugmailer.sh -v
