@@ -86,7 +86,6 @@ TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/msm_hsusb/gadget/lun%d/
 # Custom boot
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 BOARD_CUSTOM_BOOTIMG_MK := device/sony/fusion3-common/custombootimg.mk
-TARGET_RELEASETOOLS_EXTENSIONS := device/sony/fusion3-common
 BOARD_CUSTOM_GRAPHICS := ../../../device/sony/fusion3-common/recovery/graphics.c
 BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_23x41.h\"
 
