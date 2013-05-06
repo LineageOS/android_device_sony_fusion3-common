@@ -271,14 +271,6 @@ on post-fs-data
     write /sys/module/pm_8x60/modes/cpu2/standalone_power_collapse/idle_enabled 1
     write /sys/module/pm_8x60/modes/cpu3/standalone_power_collapse/idle_enabled 1
     write /sys/module/pm_8x60/modes/cpu0/power_collapse/idle_enabled 1
-    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor "ondemand"
-    write /sys/devices/system/cpu/cpu1/cpufreq/scaling_governor "ondemand"
-    write /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor "ondemand"
-    write /sys/devices/system/cpu/cpu3/cpufreq/scaling_governor "ondemand"
-    write /sys/devices/system/cpu/cpufreq/ondemand/up_threshold 90
-    write /sys/devices/system/cpu/cpufreq/ondemand/sampling_rate 50000
-    write /sys/devices/system/cpu/cpufreq/ondemand/io_is_busy 1
-    write /sys/devices/system/cpu/cpufreq/ondemand/sampling_down_factor 4
     write /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq 384000
     write /sys/devices/system/cpu/cpu1/cpufreq/scaling_min_freq 384000
     write /sys/devices/system/cpu/cpu2/cpufreq/scaling_min_freq 384000
@@ -291,6 +283,19 @@ on post-fs-data
     chmod 664 /sys/devices/system/cpu/cpu1/online
     chmod 664 /sys/devices/system/cpu/cpu2/online
     chmod 664 /sys/devices/system/cpu/cpu3/online
+
+    # Interactive permissions
+    chown system /sys/devices/system/cpu/cpufreq/interactive/above_hispeed_delay
+    chown system /sys/devices/system/cpu/cpufreq/interactive/boost
+    chown system /sys/devices/system/cpu/cpufreq/interactive/boostpulse
+    chown system /sys/devices/system/cpu/cpufreq/interactive/boostpulse_duration
+    chown system /sys/devices/system/cpu/cpufreq/interactive/go_hispeed_load
+    chown system /sys/devices/system/cpu/cpufreq/interactive/hispeed_freq
+    chown system /sys/devices/system/cpu/cpufreq/interactive/io_is_busy
+    chown system /sys/devices/system/cpu/cpufreq/interactive/min_sample_time
+    chown system /sys/devices/system/cpu/cpufreq/interactive/target_loads
+    chown system /sys/devices/system/cpu/cpufreq/interactive/timer_rate
+    chown system /sys/devices/system/cpu/cpufreq/interactive/timer_slack
 
 on charger
     # Enable Power modes and set the CPU Freq Sampling rates
@@ -316,10 +321,6 @@ on charger
     write /sys/devices/system/cpu/cpu1/cpufreq/scaling_governor "powersave"
     write /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor "powersave"
     write /sys/devices/system/cpu/cpu3/cpufreq/scaling_governor "powersave"
-    write /sys/devices/system/cpu/cpufreq/ondemand/up_threshold 90
-    write /sys/devices/system/cpu/cpufreq/ondemand/sampling_rate 50000
-    write /sys/devices/system/cpu/cpufreq/ondemand/io_is_busy 1
-    write /sys/devices/system/cpu/cpufreq/ondemand/sampling_down_factor 4
     write /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq 384000
     write /sys/devices/system/cpu/cpu1/cpufreq/scaling_min_freq 384000
     write /sys/devices/system/cpu/cpu2/cpufreq/scaling_min_freq 384000
