@@ -498,29 +498,9 @@ service bugreport /system/bin/bugmailer.sh -v
     oneshot
     keycodes 114 115 116
 
-service diag_mdlog /system/bin/logwrapper /system/bin/diag_mdlog -s 100
-    class late_start
-    disabled
-
-# on property:gsm.sim.state=READY
-#    start diag_mdlog
-
 service fm_dl /system/bin/sh /system/etc/init.qcom.fm.sh
     class late_start
     user root
     group system qcom_oncrpc
     disabled
     oneshot
-
-service display_cc /system/bin/display_color_calib
-    class main
-    oneshot
-    disabled
-
-service atfwd /system/bin/ATFWD-daemon
-    class late_start
-    user system
-    group system radio
-    onrestart /system/bin/log -t RIL-ATFWD -p w "ATFWD daemon restarted"
-    disabled
-
