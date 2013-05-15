@@ -51,7 +51,8 @@ PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/rootdir/system/etc/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf
 
 PRODUCT_COPY_FILES += \
-    $(COMMON_PATH)/rootdir/fstab.sony:root/fstab.sony
+    $(COMMON_PATH)/rootdir/fstab.qcom:root/fstab.qcom \
+    $(COMMON_PATH)/rootdir/fstab.qcom:recovery/root/fstab.qcom
 
 # QCOM Display
 PRODUCT_PACKAGES += \
