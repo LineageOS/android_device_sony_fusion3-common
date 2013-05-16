@@ -100,10 +100,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     hci_qcomm_init
 
-# Audio
-PRODUCT_COPY_FILES += \
-    $(COMMON_PATH)/rootdir/system/etc/audio_policy.conf:system/etc/audio_policy.conf
-
 # Media
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/rootdir/system/etc/media_profiles.xml:system/etc/media_profiles.xml
