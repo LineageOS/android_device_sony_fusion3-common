@@ -92,8 +92,6 @@ static int get_framebuffer(GGLSurface *fb)
     vi.bits_per_pixel = PIXEL_SIZE * 8;
 	if (ioctl(fd, FBIOPUT_VSCREENINFO, &vi) < 0) {
         perror("failed to put fb0 info");
-        close(fd);
-        return -1;
     } else fprintf(stderr,"Successfuly set bpp vi to %d\n", vi.bits_per_pixel);
 	
     if (PIXEL_FORMAT == GGL_PIXEL_FORMAT_BGRA_8888) {
