@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "iK8q6So",
+        "filename": "rootdir/system/etc/snd_soc_msm/snd_soc_msm_2x_Fusion3",
+        "patchSetId": 1
+      },
+      "lineNbr": 1937,
+      "author": {
+        "id": 6112
+      },
+      "writtenOn": "2013-05-24T14:47:51Z",
+      "side": 1,
+      "message": "I would like if we don\u0027t reduce the headphone volume.",
+      "revId": "340657c0f58c9391a970e51d0359dbfab696695d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
