@@ -77,7 +77,9 @@ on early-boot
     start display_cc
 
     # Start the offline charging (This blocks booting further in some cases)
+    write /sys/devices/platform/msm_hsic_host/override_wakelock 0
     exec /system/bin/chargemon
+    write /sys/devices/platform/msm_hsic_host/override_wakelock 1
     write /sys/module/pm8921_charger/parameters/enable_lowbatt_detect 1
 
 on boot
@@ -413,6 +415,7 @@ service qseecomd /system/bin/qseecomd
 
 # Start kickstart if mdm is detected
 on property:ro.baseband=mdm
+    write /sys/module/rmnet_usb/parameters/rmnet_data_init 1
     symlink /mnt/qcks /data/qcks
     start kickstart
 
