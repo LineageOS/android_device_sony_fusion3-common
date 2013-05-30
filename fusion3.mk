@@ -189,16 +189,6 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.gps.qmienabled=true
 
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.hwui.texture_cache_size=128.0f \
-    ro.hwui.text_small_cache_width=2048
-
-# External Display
-PRODUCT_PROPERTY_OVERRIDES += \
-    hw.trueMirrorSupported=1 \
-    ro.hwui.external_width=1920 \
-    ro.hwui.external_height=1080
-
 # Audio
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.audio.fluence.mode=endfire \
@@ -225,9 +215,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.telephony.call_ring.multiple=0 \
     telephony.lteOnGsmDevice=1
-
-PRODUCT_PROPERTY_OVERRIDES += \
-    debug.egl.recordable.rgba8888=1
 
 # Include non-opensource parts if available
 $(call inherit-product-if-exists, vendor/sony/fusion3-common/fusion3-common-vendor.mk)
