@@ -194,11 +194,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.audio.fluence.mode=endfire \
     persist.audio.handset.mic=analog \
     persist.audio.lowlatency.rec=false \
-    af.resampler.quality=255
-
-# Audio LPA
-PRODUCT_PROPERTY_OVERRIDES += \
-    lpa.decode=true
+    af.resampler.quality=255 \
+    lpa.decode=false \
+    tunnel.decode=true \
+    tunnel.audiovideo.decode=true
 
 # Bluetooth
 PRODUCT_PROPERTY_OVERRIDES += \
