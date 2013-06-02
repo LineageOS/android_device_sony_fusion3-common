@@ -197,11 +197,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.audio.lowlatency.rec=false \
     persist.audio.hp=true \
     af.resampler.quality=255 \
-    mpq.audio.decode=true
-
-# Audio LPA
-PRODUCT_PROPERTY_OVERRIDES += \
-    lpa.decode=true
+    mpq.audio.decode=true \
+    lpa.decode=false \
+    tunnel.decode=true \
+    tunnel.audiovideo.decode=true
 
 # Bluetooth
 PRODUCT_PROPERTY_OVERRIDES += \
