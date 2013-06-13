@@ -506,3 +506,8 @@ service fm_dl /system/bin/sh /system/etc/init.qcom.fm.sh
     group system qcom_oncrpc
     disabled
     oneshot
+
+service qcom-usb-sh /system/bin/sh /system/etc/init.qcom.usb.sh
+    class core
+    user root
+    oneshot
