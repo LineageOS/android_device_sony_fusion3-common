@@ -213,5 +213,5 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.telephony.call_ring.multiple=0 \
     telephony.lteOnGsmDevice=1
 
-# Include non-opensource parts if available
-$(call inherit-product-if-exists, vendor/sony/fusion3-common/fusion3-common-vendor.mk)
+# Include non-opensource parts
+$(call inherit-product, vendor/sony/fusion3-common/fusion3-common-vendor.mk)
