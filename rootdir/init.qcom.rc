@@ -229,6 +229,12 @@ on post-fs-data
     # Create directory used by audio subsystem
     mkdir /data/misc/audio 0770 audio audio
 
+    # IR Blaster
+    chown system system /dev/ttyHSL2
+    chmod 0660 /dev/ttyHSL2
+    chown system system /sys/devices/platform/ir_remote_control/enable
+    chmod 0220 /sys/devices/platform/ir_remote_control/enable
+
     chmod 0664 /sys/devices/platform/msm_sdcc.1/polling
     chmod 0664 /sys/devices/platform/msm_sdcc.2/polling
     chmod 0664 /sys/devices/platform/msm_sdcc.3/polling
