@@ -65,7 +65,6 @@ on fs
     start tad
     exec /sbin/wait4tad_static
     exec /system/bin/taimport
-    start rmt_storage
 
 on early-boot
     # set RLIMIT_MEMLOCK to 64MB
@@ -443,7 +442,6 @@ on property:init.svc.wpa_supplicant=stopped
 service rmt_storage /system/bin/rmt_storage
     class main
     user root
-    disabled
 
 # Fast Dormancy
 service fast-dormancy /system/bin/fast-dormancy
