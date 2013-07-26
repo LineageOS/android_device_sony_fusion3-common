@@ -50,7 +50,8 @@ PRODUCT_COPY_FILES += \
 
 # WPA supplicant config
 PRODUCT_COPY_FILES += \
-    $(COMMON_PATH)/rootdir/system/etc/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf
+    $(COMMON_PATH)/rootdir/system/etc/wifi/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf \
+    $(COMMON_PATH)/rootdir/system/etc/wifi/p2p_supplicant_overlay.conf:system/etc/wifi/p2p_supplicant_overlay.conf
 
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/rootdir/fstab.qcom:root/fstab.qcom \
