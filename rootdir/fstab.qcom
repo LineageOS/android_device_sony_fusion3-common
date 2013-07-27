@@ -6,3 +6,5 @@
 /dev/block/platform/msm_sdcc.1/by-name/system    /system  ext4  ro,barrier=1                                                 wait
 /dev/block/platform/msm_sdcc.1/by-name/cache     /cache   ext4  noatime,nosuid,nodev,barrier=1,data=ordered                  wait,check
 /dev/block/platform/msm_sdcc.1/by-name/userdata  /data    ext4  noatime,nosuid,nodev,barrier=1,data=ordered,noauto_da_alloc  wait,check,encryptable=footer
+/devices/platform/msm_sdcc.3/mmc_host/mmc1    /storage/sdcard1    auto    default    voldmanaged=sdcard:auto
+/devices/platform/msm_hsusb_host/usb    /storage/usbdisk    auto    default    voldmanaged=sda:auto
