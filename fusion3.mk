@@ -98,7 +98,6 @@ PRODUCT_PACKAGES += \
 
 # Audio
 PRODUCT_PACKAGES += \
-    alsa.msm8960 \
     audio_policy.msm8960 \
     audio.primary.msm8960 \
     audio.a2dp.default \
@@ -202,6 +201,15 @@ PRODUCT_PROPERTY_OVERRIDES += \
     lpa.decode=false \
     tunnel.decode=true \
     tunnel.audiovideo.decode=true
+
+# Voice processing
+PRODUCT_PACKAGES += libqcomvoiceprocessing
+PRODUCT_COPY_FILES += \
+    $(COMMON_PATH)/rootdir/system/vendor/etc/audio_effects.conf:system/vendor/etc/audio_effects.conf
+
+# Mixer
+PRODUCT_COPY_FILES += \
+    $(COMMON_PATH)/rootdir/system/etc/mixer_paths.xml:system/etc/mixer_paths.xml
 
 # Bluetooth
 PRODUCT_PROPERTY_OVERRIDES += \
