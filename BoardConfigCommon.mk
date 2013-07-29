@@ -66,6 +66,8 @@ WIFI_DRIVER_MODULE_NAME          := "wlan"
 WIFI_DRIVER_FW_PATH_STA          := "sta"
 WIFI_DRIVER_FW_PATH_AP           := "ap"
 
+BOARD_USE_SONY_MACUPDATE := true
+
 TARGET_PROVIDES_LIBLIGHT := true
 
 # Camera
