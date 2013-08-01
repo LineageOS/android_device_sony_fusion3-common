@@ -94,6 +94,8 @@ BOARD_CUSTOM_BOOTIMG_MK := device/sony/fusion3-common/custombootimg.mk
 BOARD_CUSTOM_GRAPHICS := ../../../device/sony/fusion3-common/recovery/graphics.c
 BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_23x41.h\"
 
+TARGET_RECOVERY_FSTAB := device/sony/fusion3-common/rootdir/fstab.qcom
+
 BOARD_FLASH_BLOCK_SIZE := 131072
 BOARD_HAS_NO_SELECT_BUTTON := true
 TARGET_USERIMAGES_USE_EXT4 := true
