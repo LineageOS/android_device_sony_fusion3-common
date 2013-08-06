@@ -197,6 +197,8 @@ on boot
     # an ack packet comes out of order
     write /proc/sys/net/netfilter/nf_conntrack_tcp_be_liberal 1
 
+    exec /system/bin/cal_data_manager init
+
 # Assign TCP buffer thresholds to be ceiling value of technology maximums
 # Increased technology maximums should be reflected here.
     write /proc/sys/net/core/rmem_max  1220608
@@ -265,7 +267,6 @@ on post-fs-data
 
     # Enable Power save functionality for modem
     setprop persist.radio.add_power_save 1
-    exec /system/bin/cal_data_manager
 
     chown system /dev/block/platform/msm_sdcc.1/by-name
 
