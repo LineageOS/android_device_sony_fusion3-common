@@ -512,6 +512,7 @@ service kickstart /system/bin/qcks l -r /data/tombstones/mdm/
     user system
     group system radio
     disabled
+    seclabel u:r:kickstart:s0
     oneshot
 
 service qrngd /system/bin/qrngd -f
