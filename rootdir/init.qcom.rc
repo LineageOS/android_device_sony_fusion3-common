@@ -76,11 +76,12 @@ on early-boot
     # Run pre_hw_config.sh before entering charge only mode.
     exec /system/bin/sh /system/etc/pre_hw_config.sh
 
-    # Display color correction is needed in charge only mode as well.
-    start display_cc
-
+    write /sys/devices/platform/msm_hsic_host/override_wakelock 0
+    write /sys/module/pm8921_charger/parameters/eoc_bat_fet_close 1
     # Start the offline charging (This blocks booting further in some cases)
     exec /system/bin/chargemon
+    write /sys/module/pm8921_charger/parameters/eoc_bat_fet_close 0
+    write /sys/devices/platform/msm_hsic_host/override_wakelock 1
     write /sys/module/pm8921_charger/parameters/enable_lowbatt_detect 1
 
 on boot
@@ -197,10 +198,12 @@ on boot
     # an ack packet comes out of order
     write /proc/sys/net/netfilter/nf_conntrack_tcp_be_liberal 1
 
+    exec /system/bin/cal_data_manager init
+
 # Assign TCP buffer thresholds to be ceiling value of technology maximums
 # Increased technology maximums should be reflected here.
-    write /proc/sys/net/core/rmem_max  1220608
-    write /proc/sys/net/core/wmem_max  1220608
+    write /proc/sys/net/core/rmem_max 2097152
+    write /proc/sys/net/core/wmem_max 2097152
 
 # msm specific files that need to be created on /data
 on post-fs-data
@@ -271,9 +274,6 @@ on post-fs-data
 
     # Enable Power save functionality for modem
     setprop persist.radio.add_power_save 1
-    exec /system/bin/cal_data_manager
-
-    chown system /dev/block/platform/msm_sdcc.1/by-name
 
     setprop vold.post_fs_data_done 1
 
