@@ -104,6 +104,9 @@ PRODUCT_PACKAGES += \
     libaudio-resampler \
     tinymix
 
+PRODUCT_COPY_FILES += \
+    $(COMMON_PATH)/rootdir/system/lib/libcsd-client.so:system/lib/libcsd-client.so
+
 # BT
 PRODUCT_PACKAGES += \
     hci_qcomm_init
