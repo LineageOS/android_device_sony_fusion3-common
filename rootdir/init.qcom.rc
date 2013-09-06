@@ -617,6 +617,17 @@ service thermald /system/bin/thermald -c /system/etc/thermald.conf
     class main
     socket thermald stream 0666 root root
     user root
+    disabled
+
+service system_monitor /system/bin/system_monitor
+    socket sysmon stream 0660 root system
+    class core
+    user root
+
+service dis_msm_therm /system/bin/sh /system/etc/disable_msm_thermal.sh
+    class core
+    user root
+    oneshot
 
 service mpdecision /system/bin/mpdecision --no_sleep --avg_comp
     class main
