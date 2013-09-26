@@ -113,3 +113,7 @@
 # LM3533 ALS
 /sys/devices/i2c-0/0-0036 als_enable 0600 system system
 /sys/devices/i2c-0/0-0036 als_result 0400 system system
+
+# IR Remote
+/dev/ttyHSL2                                    0660  system   system
+/sys/devices/platform/ir_remote_control  enable 0220  system   system
