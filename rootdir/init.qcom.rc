@@ -162,9 +162,6 @@ on boot
 
     chown root system /proc/net/ip_conntrack
 
-    # WTF
-    chmod 666 /proc/cmdline
-
     # Enable DEBUG_SUSPEND, DEBUG_EXIT_SUSPEND, and DEBUG_WAKEUP
     write /sys/module/wakelock/parameters/debug_mask 7
 
@@ -517,7 +514,7 @@ service netmgrd /system/bin/netmgrd
 service kickstart /system/bin/qcks l -r /data/tombstones/mdm/
     class core
     user system
-    group system
+    group system radio
     disabled
     oneshot
 
