@@ -197,11 +197,6 @@ on boot
 
     exec /system/bin/cal_data_manager init
 
-# Assign TCP buffer thresholds to be ceiling value of technology maximums
-# Increased technology maximums should be reflected here.
-    write /proc/sys/net/core/rmem_max 2097152
-    write /proc/sys/net/core/wmem_max 2097152
-
 # msm specific files that need to be created on /data
 on post-fs-data
     mkdir /data/media 0770 media_rw media_rw
