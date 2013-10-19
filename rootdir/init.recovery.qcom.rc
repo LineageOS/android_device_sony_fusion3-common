@@ -3,6 +3,12 @@ on init
     write /sys/class/android_usb/android0/idVendor 0fce
     write /sys/class/android_usb/android0/idProduct 6182
 
+    chown root system /sys/devices/platform/kgsl-3d0.0/kgsl/kgsl-3d0/pwrscale/policy
+    chmod 0664 /sys/devices/platform/kgsl-3d0.0/kgsl/kgsl-3d0/pwrscale/policy
+    write /sys/devices/platform/kgsl-3d0.0/kgsl/kgsl-3d0/pwrscale/policy "conservative"
+    chown root system /sys/devices/platform/kgsl-3d0.0/kgsl/kgsl-3d0/pwrscale/policy_config/conservative/polling_interval
+    chmod 0664 /sys/devices/platform/kgsl-3d0.0/kgsl/kgsl-3d0/pwrscale/policy_config/conservative/polling_interval
+
 service remap /sbin/remap.sh
     oneshot
     disabled
