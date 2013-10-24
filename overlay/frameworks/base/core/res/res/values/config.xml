@@ -116,6 +116,9 @@
     <!-- Minimum screen brightness allowed by the power manager. -->
     <integer name="config_screenBrightnessDim">70</integer>
 
+    <!-- We don't have button backlight. -->
+    <integer name="config_buttonBrightnessSettingDefault">0</integer>
+
     <string-array translatable="false" name="config_tether_usb_regexs">
        <item>"usb\\d"</item>
        <item>"rndis\\d"</item>
