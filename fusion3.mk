@@ -116,7 +116,7 @@ PRODUCT_COPY_FILES += \
 
 # Sensors
 PRODUCT_PACKAGES += \
-    sensors.default
+    sensors.msm8960
 
 # WIFI MAC update
 PRODUCT_PACKAGES += \
