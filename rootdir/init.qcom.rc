@@ -440,7 +440,7 @@ service irsc_util /system/bin/logwrapper /system/bin/irsc_util "/etc/sec_config"
     oneshot
 
 service rmt_storage /system/bin/rmt_storage
-    class main
+    class core
     user root
 
 # Fast Dormancy
