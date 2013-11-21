@@ -106,4 +106,6 @@
         <item>1</item>
     </integer-array>
 
+    <!-- Disable lockscreen translucent decor by default -->
+    <bool name="config_enableLockScreenTranslucentDecor">true</bool>
 </resources>
