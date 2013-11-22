@@ -16,6 +16,24 @@
       "revId": "a452cf251f4cd91f4361129803ee94a7fe05e5ff",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a29b11f_5a4bf52b",
+        "filename": "overlay-radio/packages/apps/Phone/res/values/config.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 5574
+      },
+      "writtenOn": "2013-11-22T00:21:23Z",
+      "side": 1,
+      "message": "Damn. I should definitely turn gedit auto-indent feature off.",
+      "parentUuid": "3a29b11f_da3625b4",
+      "revId": "a452cf251f4cd91f4361129803ee94a7fe05e5ff",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
