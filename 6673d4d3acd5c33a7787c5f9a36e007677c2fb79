@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a26ad4f_56ce7284",
+        "filename": "overlay/frameworks/base/core/res/res/values/config.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 2195
+      },
+      "writtenOn": "2013-11-25T00:36:19Z",
+      "side": 1,
+      "message": "I would remove \"by default\"",
+      "revId": "6673d4d3acd5c33a7787c5f9a36e007677c2fb79",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
