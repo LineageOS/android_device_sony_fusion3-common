@@ -1,5 +1,6 @@
 # Radio and Telephony
 PRODUCT_PROPERTY_OVERRIDES += \
+    ro.telephony.default_network=9 \
     telephony.lteOnCdmaDevice=0 \
     telephony.lteOnGsmDevice=1 \
     ro.ril.transmitpower=true \
