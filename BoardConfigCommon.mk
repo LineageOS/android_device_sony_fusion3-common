@@ -149,3 +149,34 @@ TW_BOARD_CUSTOM_GRAPHICS := ../../../device/sony/fusion3-common/recovery/twrpgra
 TW_BRIGHTNESS_PATH := /sys/devices/i2c-0/0-0036/leds/lm3533-lcd-bl/brightness
 TW_MAX_BRIGHTNESS := 255
 TW_NO_USB_STORAGE := true
+
+BOARD_SEPOLICY_DIRS += \
+    device/sony/fusion3-common/sepolicy
+
+BOARD_SEPOLICY_UNION += \
+    file_contexts \
+    property_contexts \
+    te_macros \
+    bluetooth_loader.te \
+    bridge.te \
+    camera.te \
+    device.te \
+    dhcp.te \
+    domain.te \
+    drmserver.te \
+    file.te \
+    kickstart.te \
+    init.te \
+    mac_update.te \
+    mediaserver.te \
+    mpdecision.te \
+    netmgrd.te \
+    qmux.te \
+    rild.te \
+    rmt.te \
+    surfaceflinger.te \
+    system.te \
+    tee.te \
+    thermald.te \
+    ueventd.te \
+    wpa_supplicant.te
