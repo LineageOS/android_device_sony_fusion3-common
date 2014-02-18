@@ -177,6 +177,8 @@ on boot
 
     chown root system /proc/net/ip_conntrack
 
+    chown system system /sys/devices/virtual/input/clearpad/wakeup_gesture
+
     # Enable DEBUG_SUSPEND, DEBUG_EXIT_SUSPEND, and DEBUG_WAKEUP
     write /sys/module/wakelock/parameters/debug_mask 7
 
