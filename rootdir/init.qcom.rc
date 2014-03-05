@@ -253,7 +253,7 @@ on post-fs-data
     mkdir /data/audio 0770 media audio
 
     # kickstart
-    mkdir /data/qcks 0770 system system
+    mkdir /cache/qcks 0770 system system
     chown system /dev/block/platform/msm_sdcc.1/by-name
 
     # Camera
@@ -509,7 +509,7 @@ service netmgrd /system/bin/netmgrd
     class late_start
     disabled
 
-service kickstart /system/bin/qcks l -r /data/tombstones/mdm/
+service kickstart /system/bin/qcks l -r /data/tombstones/mdm/ -e /cache/qcks/
     class core
     user system
     group system radio
