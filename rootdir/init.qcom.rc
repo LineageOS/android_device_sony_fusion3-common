@@ -75,11 +75,11 @@ on fs
     restorecon /data/etc/wlan_macaddr3
     restorecon /data/misc/audio/mbhc.bin
     restorecon /data/misc/audio/wcd9310_anc.bin
-    restorecon /data/qcks/acdb.bin
-    restorecon /data/qcks/efs1.bin
-    restorecon /data/qcks/efs2.bin
-    restorecon /data/qcks/efs3.bin
-    restorecon /data/qcks/ta.bin
+    restorecon /cache/qcks/acdb.bin
+    restorecon /cache/qcks/efs1.bin
+    restorecon /cache/qcks/efs2.bin
+    restorecon /cache/qcks/efs3.bin
+    restorecon /cache/qcks/ta.bin
 
 on early-boot
     # set RLIMIT_MEMLOCK to 64MB
@@ -269,7 +269,7 @@ on post-fs-data
     mkdir /data/audio 0770 media audio
 
     # kickstart
-    mkdir /data/qcks 0770 system system
+    mkdir /cache/qcks 0770 system system
     chown system /dev/block/platform/msm_sdcc.1/by-name
 
     # Camera
@@ -530,7 +530,7 @@ service netmgrd /system/bin/netmgrd
     class late_start
     disabled
 
-service kickstart /system/bin/qcks l -r /data/tombstones/mdm/
+service kickstart /system/bin/qcks l -r /data/tombstones/mdm/ -e /cache/qks/
     class core
     user system
     group system radio
