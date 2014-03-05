@@ -473,7 +473,7 @@ on property:bluetooth.hciattach=false
 
 # QMUX must be in multiple groups to support external process connections
 service qmuxd /system/bin/qmuxd
-    class main
+    class late_start
     user radio
     group radio audio bluetooth gps qcom_diag net_bt_stack
     disabled
@@ -497,7 +497,7 @@ service tad /sbin/tad_static /dev/block/mmcblk0 1,16
 # QMI_SYS_EVENT_MODEM_OUT_OF_SERVICE_IND is not sending if qmuxd is terminated during decryption,
 # so, ta_qmi_client was not notified that connection to the TA Service on MDM is lost.
 service ta_qmi_client /system/bin/ta_qmi_client
-    class main
+    class late_start
     user root
 
 service updatemiscta /system/bin/updatemiscta
@@ -506,7 +506,7 @@ service updatemiscta /system/bin/updatemiscta
     oneshot
 
 service netmgrd /system/bin/netmgrd
-    class main
+    class late_start
     disabled
 
 service kickstart /system/bin/qcks l -r /data/tombstones/mdm/
