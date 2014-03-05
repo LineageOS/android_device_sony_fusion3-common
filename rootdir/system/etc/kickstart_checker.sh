@@ -3,15 +3,15 @@ setprop gsm.radio.kickstart off
 
 if [ $(getprop ro.boot.baseband) == "mdm" ]; then
 
-    if [ ! -d /data/qcks ]; then
-       rm -rf /data/qcks
-       mkdir /data/qcks
-       chmod 0770 /data/qcks
-       chown system:system /data/qcks
+    if [ ! -d /cache/qks ]; then
+       rm -rf /cache/qks
+       mkdir /cache/qks
+       chmod 0770 /cache/qks
+       chown system:system /cache/qks
     fi
 
-    for f in $(ls /data/qcks/); do
-        (ls -l /data/qcks/$f | grep root) && rm /data/qcks/$f;
+    for f in $(ls /cache/qks/); do
+        (ls -l /cache/qks/$f | grep root) && rm /cache/qks/$f;
     done
 
     chown system:system $(realpath /dev/block/platform/msm_sdcc.1/by-name/m9kefs1)

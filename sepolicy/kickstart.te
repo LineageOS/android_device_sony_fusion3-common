@@ -11,8 +11,8 @@ init_daemon_domain(kickstart)
 # Spawn /system/bin/efsks and /system/bin/ks
 allow kickstart kickstart_exec:file { open execute_no_trans getattr };
 
-# Run dd on m9kefs[123] block devices; write to /data/qcks/
-# Run cat on firmware and m9kefs[123] data; write to /data/qcks/
+# Run dd on m9kefs[123] block devices; write to /cache/qks/
+# Run cat on firmware and m9kefs[123] data; write to /cache/qks/
 allow kickstart efs_block_device:blk_file rw_file_perms;
 allow kickstart kickstart_data_file:file create_file_perms;
 allow kickstart kickstart_data_file:dir rw_dir_perms;
@@ -37,7 +37,7 @@ allow kickstart block_device:dir { getattr write search };
 allow kickstart radio_prop:property_service set;
 
 allow kickstart shell_exec:file entrypoint;
-# ls on /data/qcks/
+# ls on /cache/qks/
 allow kickstart self:capability dac_override;
 
 # Access to the modem bridge chardevs
