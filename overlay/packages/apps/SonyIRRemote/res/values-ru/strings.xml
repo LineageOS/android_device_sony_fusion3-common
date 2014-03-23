@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="brand_arrays">
+        <item>sony</item>
+    </string-array>
+
+    <string-array name="item_arrays">
+        <item>tv</item>
+    </string-array>
+
+    <string-array name="button_arrays">
+        <item>tv</item>
+    </string-array>
+
+    <string name="ChanelMn">Канал -</string>
+    <string name="ChanelPl">Канал +</string>
+    <string name="Down">Вниз</string>
+    <string name="Enter">Ввод</string>
+    <string name="Left">Лево</string>
+    <string name="Right">Право</string>
+    <string name="Send_signal">Покинуть режим записи</string>
+    <string name="Up">Вверх</string>
+    <string name="VolMn">Зв. -</string>
+    <string name="VolPl">Зв. +</string>
+    <string name="Write_signal">Перейти в режим записи</string>
+    <string name="action_settings">Настройки</string>
+    <string name="add">Добавить</string>
+    <string name="add_brnd">Добавить новое устройство</string>
+    <string name="app_name">Sony IR Remote</string>
+    <string name="brand">Бренд:</string>
+    <string name="brand_prompt">Выберите бренд устройства</string>
+    <string name="go_back">Назад в главное меню</string>
+    <string name="irpath">/sdcard/ir/</string>
+    <string name="item">Тип:</string>
+    <string name="path">Путь до команд</string>
+    <string name="pwr_btn">Выкл./Вкл.</string>
+    <string name="save">Сохранить</string>
+    <string name="about">О программе</string>
+    <string name="license1">Copyright © 2014 Emil Suleymanov</string>
+    <string name="license2">Распростроняется под GNU GPL v2.</string>
+    <string name="license3">Исходный код доступен на https://github.com/sssemil/SonyIRRemote .</string>
+    <string name="license4">Используется lib_sony_ir от BuzzBumbleBee (https://github.com/BuzzBumbleBee/lib_sony_ir).</string>
+
+    <string name="mute">Зв.0</string>
+    <string name="input">ТВ</string>
+    <string name="home">Дом</string>
+
+    <string name="download_brnd">Скачать или удалить файлы устройства</string>
+    <string name="download">Скачать</string>
+    <string name="refresh">Обновить</string>
+
+    <string name="remove">Удалить</string>
+
+    <string name="exit">Выход</string>
+    <string name="update">Обновить</string>
+    <string name="ser3">Сервер недоступен, повторите попытку позже!
+Попробывать с большим тайм-аутом сейчас?</string>
+    <string name="new_version_available">Есть новая версия!
+
+Хотите обновиться до последней версии?</string>
+    <string name="downloading_new">Обновление скачивается…</string>
+    <string name="already_new">Вы уже установили самую последнюю версию!</string>
+    <string name="cancel">Отменить</string>
+    <string name="down_keys">Загрузка ключей…</string>
+    <string name="failed_lk">Не удалось выучить команду! </string>
+    <string name="failed_sk">Не удалось отправить команду! </string>
+    <string name="fr">Спасибо за установку моего приложения!
+Чтобы начать пользоваться, зайдите в настройки и скачайте файлы вашего телевизора или чего-либо еще. Если вы не можете найти ваше устройство, вы можете записать команды самостоятельно, просто добавив новое устройство в настройках.
+Спасибо!
+    ВАЖНО: Это приложение находится на стадии разрабодки и было проверено на устройстве Sony Xperia ZL(odin) с прошивкой CyanogenMod 11!</string>
+    <string name="welcome">Добро пожаловать!</string>
+    <string name="una">1</string>
+    <string name="dos">2</string>
+    <string name="tres">3</string>
+    <string name="cuatro">4</string>
+    <string name="cinco">5</string>
+    <string name="seis">6</string>
+    <string name="ocho">8</string>
+    <string name="nueve">9</string>
+    <string name="cero">0</string>
+    <string name="siete">7</string>
+</resources>

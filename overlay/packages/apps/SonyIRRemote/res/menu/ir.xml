@@ -1,0 +1,24 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.sssemil.sonyirremote.ir.ir" >
+    
+    <item android:id="@+id/action_settings"
+        android:title="@string/action_settings"
+        android:orderInCategory="97"
+        android:showAsAction="never" />
+
+    <item android:id="@+id/action_update"
+        android:title="@string/update"
+        android:orderInCategory="98"
+        android:showAsAction="never" />
+
+    <item android:id="@+id/action_about"
+        android:title="@string/about"
+        android:orderInCategory="99"
+        android:showAsAction="never" />
+
+    <item android:id="@+id/action_exit"
+        android:title="@string/exit"
+        android:orderInCategory="100"
+        android:showAsAction="never" />
+</menu>
