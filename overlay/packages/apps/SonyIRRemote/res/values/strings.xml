@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="brand_arrays">
+        <item>sony</item>
+    </string-array>
+
+    <string-array name="item_arrays">
+        <item>tv</item>
+    </string-array>
+
+    <string-array name="button_arrays">
+        <item>tv</item>
+    </string-array>
+
+    <string name="ChanelMn">Chanel -</string>
+    <string name="ChanelPl">Chanel +</string>
+    <string name="Down">Down</string>
+    <string name="Enter">Enter</string>
+    <string name="Left">Left</string>
+    <string name="Right">Right</string>
+    <string name="Send_signal">Leave Write mode</string>
+    <string name="Up">Up</string>
+    <string name="VolMn">Vol -</string>
+    <string name="VolPl">Vol +</string>
+    <string name="Write_signal">Switch to Write mode</string>
+    <string name="action_settings">Settings</string>
+    <string name="add">Add</string>
+    <string name="add_brnd">Add new device</string>
+    <string name="app_name">Sony IR Remote</string>
+    <string name="brand">Brand:</string>
+    <string name="brand_prompt">Choose your TV`s brand</string>
+    <string name="go_back">Back to main menu</string>
+    <string name="irpath">/sdcard/ir/</string>
+    <string name="item">Type:</string>
+    <string name="path">Path to keys</string>
+    <string name="pwr_btn">Power ON/OFF</string>
+    <string name="save">Save</string>
+    <string name="about">About</string>
+    <string name="license1">Copyright © 2014 Emil Suleymanov</string>
+    <string name="license2">Distributed under the GNU GPL v2.</string>
+    <string name="license3">Source code is available at https://github.com/sssemil/SonyIRRemote .</string>
+    <string name="license4">Using lib_sony_ir from BuzzBumbleBee (https://github.com/BuzzBumbleBee/lib_sony_ir).</string>
+
+    <string name="mute">Mute</string>
+    <string name="input">TV</string>
+    <string name="home">Home</string>
+
+    <string name="download_brnd">Download or remove device files</string>
+    <string name="download">Download</string>
+    <string name="refresh">Refresh</string>
+
+    <string name="remove">Remove</string>
+
+    <string name="exit">Exit</string>
+    <string name="update">Update</string>
+    <string name="ser3">The Server is unreachable, please try again later!
+Try now?</string>
+    <string name="new_version_available">New version available!
+
+Do you want to update to a newer version?</string>
+    <string name="downloading_new">Downloading new version…</string>
+    <string name="already_new">You already have the latest version installed!</string>
+    <string name="cancel">Cancel</string>
+    <string name="down_keys">Downloading keys…</string>
+    <string name="failed_lk">Failed! - learnKey </string>
+    <string name="failed_sk">Failed! - sendKey </string>
+    <string name="fr">Thanks for installing my app!
+To start using it go to settings and download device files for TV or anything else. If you can`t find your device, you can write commands by yourself by just adding new device from settings.
+Thanks!
+    NOTE: This app is under development and it was tested only on Sony Xperia ZL(odin) running CyanogenMod 11!</string>
+
+    <string name="welcome">Welcome!</string>
+    <string name="una">1</string>
+    <string name="dos">2</string>
+    <string name="tres">3</string>
+    <string name="cuatro">4</string>
+    <string name="cinco">5</string>
+    <string name="seis">6</string>
+    <string name="ocho">8</string>
+    <string name="nueve">9</string>
+    <string name="cero">0</string>
+    <string name="siete">7</string>
+</resources>
