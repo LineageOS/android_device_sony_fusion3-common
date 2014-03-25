@@ -199,12 +199,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.qualcomm.bt.hci_transport=smd
 
 # IR-blaster Support
-ifneq ($(BOARD_HAVE_IRBLASTER),false)
-    DEVICE_PACKAGE_OVERLAYS += $(COMMON_PATH)/overlay-irremote
-    PRODUCT_PACKAGES += \
-        SonyIRRemote \
-        libjni_sonyopenir
-endif
+DEVICE_PACKAGE_OVERLAYS += $(COMMON_PATH)/overlay-irremote
+PRODUCT_PACKAGES += \
+    SonyIRRemote \
+    libjni_sonyopenir
 
 
 # Include non-opensource parts
