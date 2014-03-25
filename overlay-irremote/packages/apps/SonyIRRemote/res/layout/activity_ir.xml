@@ -214,20 +214,18 @@
         android:id="@+id/spinner"
         android:entries="@array/brand_arrays"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_toRightOf="@+id/spinner2" />
+        android:layout_toRightOf="@+id/button6"
+        android:layout_toLeftOf="@+id/button23" />
 
     <Spinner
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/spinner2"
         android:entries="@array/item_arrays"
-        android:layout_toRightOf="@+id/button6"
-        android:layout_alignRight="@+id/button15"
-        android:layout_alignEnd="@+id/button15"
-        android:layout_alignTop="@+id/spinner"
-        android:layout_alignBottom="@+id/spinner" />
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_toRightOf="@+id/button15" />
 
     <Button
         android:layout_width="wrap_content"

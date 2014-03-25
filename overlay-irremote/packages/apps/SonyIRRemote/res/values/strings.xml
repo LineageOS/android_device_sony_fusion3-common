@@ -81,4 +81,10 @@ Thanks!
     <string name="nueve">9</string>
     <string name="cero">0</string>
     <string name="siete">7</string>
+    <string name="done">Done!</string>
+    <string name="downloadT">Download</string>
+    <string name="error">Error</string>
+    <string name="done_removing">Done removing </string>
+    <string name="files"> files!</string>
+    <string name="you_need_to_select">You need to select an option first!</string>
 </resources>

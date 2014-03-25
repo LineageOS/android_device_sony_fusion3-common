@@ -83,7 +83,6 @@ public class ir extends Activity {
         firstRunChecker();
         Thread thread = new Thread() {
             public void run() {
-                Log.i("SonyIRRemote", "new Thread()");
                 File f;
                 while (true) {
                     f = new File(irpath + brand + "/" + item + "/disable.ini");
@@ -104,7 +103,6 @@ public class ir extends Activity {
                                     @Override
                                     public void run() {
                                         int id = getResources().getIdentifier(finalLine, "id", "com.sssemil.sonyirremote.ir");
-                                        //Log.i("SonyIRRemote", "name: " + finalLine + " id: " + id );
                                         Button button = ((Button) findViewById(id));
                                         try {
                                             button.setEnabled(false);
@@ -114,7 +112,6 @@ public class ir extends Activity {
                                 });
                             }
                             reader.close();
-                            //String ret = convertStreamToString(is);
                             is.close();
                         } catch (Exception e) {
                             e.printStackTrace();
@@ -126,7 +123,6 @@ public class ir extends Activity {
                                 @Override
                                 public void run() {
                                     int id = getResources().getIdentifier(btn, "id", "com.sssemil.sonyirremote.ir");
-                                    //Log.i("SonyIRRemote", "name: " + finalLine + " id: " + id );
                                     Button button = ((Button) findViewById(id));
                                     try {
                                         button.setEnabled(true);
@@ -195,7 +191,6 @@ public class ir extends Activity {
             public void run() {
                 restartIR();
                 state = learnKey(filename);
-                Log.i("stateLearn", String.valueOf(state));
                 if (state < 0) {
                     runOnUiThread(new Runnable() {
                         @Override
@@ -214,7 +209,6 @@ public class ir extends Activity {
         new Thread(new Runnable() {
             public void run() {
                 state = sendKey(filename);
-                Log.i("stateSend", String.valueOf(state));
                 if (state < 0) {
                     runOnUiThread(new Runnable() {
                         @Override
@@ -246,8 +240,6 @@ public class ir extends Activity {
         File f = new File(irpath);
         if (!f.isDirectory()) {
             f.mkdirs();
-            //DownloadALL();
-            //UnzipALL();
         }
     }
 
@@ -306,21 +298,19 @@ public class ir extends Activity {
                 localFile2.mkdirs();
             }
             prepItemBrandArray();
-            //Toast.makeText(this, this.irpath + this.brandN.getText().toString() + "/" + this.itemN.getText().toString(), 0).show();
 
-        } catch (Exception ex) {
-            Toast.makeText(this, "FAILED!!!", 0).show();
-        }
-
-        try {
             spinner = ((Spinner) findViewById(R.id.spinner2));
             localArrayList1 = new ArrayList();
             spinner2 = ((Spinner) findViewById(R.id.spinner));
             localArrayList2 = new ArrayList();
 
 
-            localArrayList1.add(brandN);
-            localArrayList2.add(itemN);
+            if(brandN.getText().toString().isEmpty() || itemN.getText().toString().isEmpty())
+            {
+                throw new NullPointerException();
+            }
+            localArrayList1.add(brandN.getText());
+            localArrayList2.add(itemN.getText());
 
             ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, localArrayList1);
             dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -329,7 +319,16 @@ public class ir extends Activity {
             ArrayAdapter<String> dataAdapter2 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, localArrayList2);
             dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
             spinner.setAdapter(dataAdapter2);
-        } catch (Exception ex) {
+        } catch (NullPointerException ex) {
+            AlertDialog.Builder adb = new AlertDialog.Builder(this);
+            adb.setTitle(getString(R.string.error));
+            adb.setMessage(getString(R.string.you_need_to_select));
+            adb.setIcon(android.R.drawable.ic_dialog_alert);
+            adb.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int which) {
+                }
+            });
+            adb.show();
         }
     }
 
@@ -355,8 +354,6 @@ public class ir extends Activity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-
-        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.ir, menu);
         return true;
     }
@@ -383,9 +380,6 @@ public class ir extends Activity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
         if (id == R.id.action_settings) {
             setContentView(R.layout.settings_ir);
@@ -417,7 +411,6 @@ public class ir extends Activity {
             builder.setPositiveButton("OK", null);
             AlertDialog dialog = builder.show();
 
-// Must call show() prior to fetching text view
             TextView messageView = (TextView) dialog.findViewById(android.R.id.message);
             messageView.setGravity(Gravity.CENTER);
             return true;
@@ -450,7 +443,6 @@ public class ir extends Activity {
         }
         setContentView(R.layout.activity_ir);
         prepItemBrandArray();
-        //super.onBackPressed();
     }
 
     public void onWrtClick(View view) {
@@ -479,66 +471,58 @@ public class ir extends Activity {
 
 
     public void onRemoveClick(View view) {
-        Spinner spinner = (Spinner) findViewById(R.id.spinner);
-        brand = spinner.getSelectedItem().toString();
-        Spinner spinner2 = (Spinner) findViewById(R.id.spinner2);
-        item = spinner2.getSelectedItem().toString();
-
-        Toast.makeText(this, brand + "/" + item, Toast.LENGTH_SHORT).show();
-
-        String[] remove = {"rm", "-rf", irpath + brand + "/" + item};
         try {
-            Process p = Runtime.getRuntime().exec(remove);
-            Log.i("rm", "Waiting... " + irpath + brand + "/" + item);
-            p.waitFor();
-            Log.i("rm", "Done! " + irpath + brand + "/" + item);
-        } catch (Exception e) {
-            Log.e("rm", "Failed! " + irpath + brand + "/" + item);
-            e.printStackTrace();
-        }
+            Spinner spinner = (Spinner) findViewById(R.id.spinner);
+            brand = spinner.getSelectedItem().toString();
+            Spinner spinner2 = (Spinner) findViewById(R.id.spinner2);
+            item = spinner2.getSelectedItem().toString();
+            Toast.makeText(this, brand + "/" + item, Toast.LENGTH_SHORT).show();
 
-        File directory = new File(irpath + brand);
-        File[] contents = directory.listFiles();
-        if (contents.length == 0 && contents != null) {
-            String[] remove2 = {"rm", "-rf", irpath + brand};
+            String[] remove = {"rm", "-rf", irpath + brand + "/" + item};
             try {
-                Process p2 = Runtime.getRuntime().exec(remove2);
-                Log.i("rm", "Waiting... " + irpath + brand);
-                p2.waitFor();
-                Log.i("rm", "Done! " + irpath + brand);
+                Process p = Runtime.getRuntime().exec(remove);
+                Log.i("rm", "Waiting... " + irpath + brand + "/" + item);
+                p.waitFor();
+                Log.i("rm", "Done! " + irpath + brand + "/" + item);
             } catch (Exception e) {
-                Log.e("rm", "Failed! " + irpath + brand);
+                Log.e("rm", "Failed! " + irpath + brand + "/" + item);
                 e.printStackTrace();
             }
-        }
 
-
-        /*File dir = new File(irpath + brand + "/" + item);
-        if (dir.isDirectory()) {
-            String[] children = dir.list();
-            for (int i = 0; i < children.length; i++) {
-                new File(dir, children[i]).delete();
+            File directory = new File(irpath + brand);
+            File[] contents = directory.listFiles();
+            if (contents.length == 0 && contents != null) {
+                String[] remove2 = {"rm", "-rf", irpath + brand};
+                try {
+                    Process p2 = Runtime.getRuntime().exec(remove2);
+                    Log.i("rm", "Waiting... " + irpath + brand);
+                    p2.waitFor();
+                    Log.i("rm", "Done! " + irpath + brand);
+                } catch (Exception e) {
+                    Log.e("rm", "Failed! " + irpath + brand);
+                    e.printStackTrace();
+                }
             }
+
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setTitle(getString(R.string.done));
+            builder.setMessage(getString(R.string.done_removing) + brand + "/" + item + getString(R.string.files));
+            builder.setPositiveButton("OK", null);
+            AlertDialog dialog = builder.show();
+
+            TextView messageView = (TextView) dialog.findViewById(android.R.id.message);
+            messageView.setGravity(Gravity.CENTER);
+        } catch (NullPointerException ex) {
+            AlertDialog.Builder adb = new AlertDialog.Builder(this);
+            adb.setTitle(getString(R.string.error));
+            adb.setMessage(getString(R.string.you_need_to_select));
+            adb.setIcon(android.R.drawable.ic_dialog_alert);
+            adb.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int which) {
+                }
+            });
+            adb.show();
         }
-
-        File dir2 = new File(irpath + brand );
-        if (dir2.isDirectory()) {
-            String[] children = dir2.list();
-            if(children.length < 1)
-            {
-                new File(dir2, children[0]).delete();
-            }
-        }*/
-
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Done!");
-        builder.setMessage("Done removing " + brand + "/" + item + " files!");
-        builder.setPositiveButton("OK", null);
-        AlertDialog dialog = builder.show();
-
-// Must call show() prior to fetching text view
-        TextView messageView = (TextView) dialog.findViewById(android.R.id.message);
-        messageView.setGravity(Gravity.CENTER);
     }
 
     public void onPowerClick(View view) {
@@ -1027,29 +1011,6 @@ public class ir extends Activity {
 
     ProgressDialog mProgressDialog;
 
-    public void DownloadALL() {
-        /*final ProgressDialog mProgressDialog = ProgressDialog.show(ir.this, "Please wait ...", "Downloading keys ...", true);
-
-        final DownloadTask downloadTask = new DownloadTask(ir.this);
-        downloadTask.execute("http://sssemil.or.gs/sony-tv.zip");*/
-
-        mProgressDialog = new ProgressDialog(ir.this);
-        mProgressDialog.setMessage("Downloading keys...");
-        mProgressDialog.setIndeterminate(true);
-        mProgressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-        mProgressDialog.setCancelable(true);
-
-        final DownloadTask downloadTask = new DownloadTask(ir.this);
-        downloadTask.execute("http://sssemil.or.gs/sonyirremote/sony-tv.zip");
-
-        mProgressDialog.setOnCancelListener(new DialogInterface.OnCancelListener() {
-            @Override
-            public void onCancel(DialogInterface dialog) {
-                downloadTask.cancel(true);
-            }
-        });
-    }
-
     public ArrayList<String> ar = new ArrayList<String>();
     public String last_ver = "zirt";
     public String cur_ver;
@@ -1059,7 +1020,6 @@ public class ir extends Activity {
         String s2 = normalisedVersion(v2);
         int cmp = s1.compareTo(s2);
         String cmpStr = cmp < 0 ? "<" : cmp > 0 ? ">" : "==";
-        //System.out.printf("'%s' %s '%s'%n", v1, cmpStr, v2);
         return cmpStr;
     }
 
@@ -1134,15 +1094,6 @@ public class ir extends Activity {
                 intent.setDataAndType(Uri.fromFile(new File("/sdcard/upd.apk")), "application/vnd.android.package-archive");
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(intent);
-
-                /*Log.v("pm", "pm install /sdcard/upd.apk");
-                String[] pm = {"pm", "install -r", "/sdcard/upd.apk"};
-                try {
-                    Runtime.getRuntime().exec(pm);
-                    Log.v("pm", "Done! pm install -r /sdcard/upd.apk");
-                } catch (IOException e) {
-                    Log.e("pm", e.getMessage());
-                }*/
             } catch (Exception e) {
                 Log.e("DownloadApp", e.getMessage());
                 return e.toString();
@@ -1191,7 +1142,6 @@ public class ir extends Activity {
         } else {
             String result = compare(cur_ver, last_ver);
             boolean doUpdate = false;
-            Log.i("Compare", result);
             if (result == ">") {
                 doUpdate = false;
             } else if (result == "<") {
@@ -1308,6 +1258,7 @@ public class ir extends Activity {
                 while ((line = r.readLine()) != null) {
                     total.append(line + "\n");
                     ar.add(line);
+                    Log.i("line", line);
                 }
 
                 return total.toString();
@@ -1317,30 +1268,29 @@ public class ir extends Activity {
         }
     }
 
-    /*public void prepItemBrandArray() {
-        spinner = ((Spinner) findViewById(R.id.spinner6));
-        ArrayList localArrayList3 = new ArrayList();
+    String resp = "ko";
+    String lastWord, test;
+    boolean cont = false;
 
-        localArrayList1.add(localFile1.getName());
-        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, localArrayList3);
-        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner2.setAdapter(dataAdapter);
-    }*/
-
-    public void onDownItemsClick(View view) {
+    public void doOnDown() {
         spinner6 = ((Spinner) findViewById(R.id.spinner6));
-        String test = spinner6.getSelectedItem().toString();
-        String lastWord = test.substring(test.lastIndexOf(" ") + 1);
-        /*AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Test");
-        builder.setMessage(lastWord);
-        builder.setPositiveButton("OK", null);
-        AlertDialog dialog = builder.show();
-
-// Must call show() prior to fetching text view
-        TextView messageView = (TextView) dialog.findViewById(android.R.id.message);
-        messageView.setGravity(Gravity.CENTER);*/
-        if (!lastWord.isEmpty()) {
+        try {
+            test = spinner6.getSelectedItem().toString();
+            lastWord = test.substring(test.lastIndexOf(" ") + 1);
+            cont = true;
+        } catch (NullPointerException ex) {
+            cont = false;
+            AlertDialog.Builder adb = new AlertDialog.Builder(this);
+            adb.setTitle(getString(R.string.error));
+            adb.setMessage(getString(R.string.you_need_to_select));
+            adb.setIcon(android.R.drawable.ic_dialog_alert);
+            adb.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int which) {
+                }
+            });
+            adb.show();
+        }
+        if (cont) {
             mProgressDialog = new ProgressDialog(ir.this);
             mProgressDialog.setMessage(getString(R.string.down_keys));
             mProgressDialog.setIndeterminate(true);
@@ -1349,24 +1299,46 @@ public class ir extends Activity {
 
 // execute this when the downloader must be fired
             final DownloadTask downloadTask = new DownloadTask(ir.this);
-            downloadTask.execute(lastWord);
-            /*mProgressDialog = ProgressDialog.show(this, "Please wait..",
-                    "Extracting files...", true);
+            try {
+                downloadTask.execute(lastWord).get();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            } catch (ExecutionException e) {
+                e.printStackTrace();
+            }
 
-            final String fileName = lastWord.substring(lastWord.lastIndexOf("/")+1);
+            if (!resp.equals("ok")) {
+                mProgressDialog.cancel();
+                AlertDialog.Builder adb1 = new AlertDialog.Builder(this);
+                adb1.setTitle(getString(R.string.download));
+                adb1.setMessage(getString(R.string.ser3));
+                adb1.setIcon(android.R.drawable.ic_dialog_alert);
+                adb1.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        doOnDown();
+                    }
+                });
 
-            new Thread(new Runnable() {
-                @Override
-                public void run()
-                {
-                    String zipFile = "/sdcard/"+ fileName;
-                    String unzipLocation = irpath;
+                adb1.setNegativeButton(getString(R.string.cancel), new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        //finish();
+                    }
+                });
+                adb1.show();
+            } else {
+                mProgressDialog.cancel();
+                AlertDialog.Builder adb1 = new AlertDialog.Builder(this);
+                adb1.setTitle(getString(R.string.downloadT));
+                adb1.setMessage(getString(R.string.done));
+                adb1.setIcon(android.R.drawable.ic_dialog_alert);
+                adb1.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                    }
+                });
+                adb1.show();
+            }
 
-                    Decompress d = new Decompress(zipFile, unzipLocation);
-                    d.unzip();
-                    mProgressDialog.cancel();
-                }
-            }).start();*/
+            resp = "ko";
 
             mProgressDialog.setOnCancelListener(new DialogInterface.OnCancelListener() {
                 @Override
@@ -1375,33 +1347,11 @@ public class ir extends Activity {
                 }
             });
         }
+        cont = false;
     }
 
-    public void onGetAwItemsClick(View view) {
-        mProgressDialog = new ProgressDialog(ir.this);
-        mProgressDialog.setMessage("Getting  list...");
-        mProgressDialog.setIndeterminate(true);
-        mProgressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-        mProgressDialog.setCancelable(true);
-
-// execute this when the downloader must be fired
-        final GetAwItems getAwItems1 = new GetAwItems(ir.this);
-        getAwItems1.execute();
-
-        spinner6 = ((Spinner) findViewById(R.id.spinner6));
-
-        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, ar);
-        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner6.setAdapter(dataAdapter);
-
-        Toast.makeText(this, ar.toString(), Toast.LENGTH_SHORT).show();
-
-        mProgressDialog.setOnCancelListener(new DialogInterface.OnCancelListener() {
-            @Override
-            public void onCancel(DialogInterface dialog) {
-                getAwItems1.cancel(true);
-            }
-        });
+    public void onDownItemsClick(View view) {
+        doOnDown();
     }
 
     class DownloadTask extends AsyncTask<String, Integer, String> {
@@ -1465,6 +1415,8 @@ public class ir extends Activity {
                 Decompress d = new Decompress(zipFile, unzipLocation);
                 d.unzip();
                 //----------------------
+                resp = "ok";
+                return "ok";
             } catch (Exception e) {
                 Log.e("DownloadTask", e.getMessage());
                 return e.toString();
@@ -1480,8 +1432,6 @@ public class ir extends Activity {
                 if (connection != null)
                     connection.disconnect();
             }
-            return null;
         }
     }
 }
-
