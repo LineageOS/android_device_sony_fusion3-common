@@ -1,0 +1,786 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bae84128_ab6d5906",
+        "filename": "overlay/external/libjni_sonyopenir/Android.mk",
+        "patchSetId": 4
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 5574
+      },
+      "writtenOn": "2014-03-25T05:12:58Z",
+      "side": 1,
+      "message": "?????? ?????? (whitespace error)",
+      "revId": "06161292462d2105033091599ebc7d36f0cabe88",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_8b7215e4",
+        "filename": "overlay/external/libjni_sonyopenir/Android.mk",
+        "patchSetId": 4
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 5574
+      },
+      "writtenOn": "2014-03-25T05:12:58Z",
+      "side": 1,
+      "message": "Same here",
+      "revId": "06161292462d2105033091599ebc7d36f0cabe88",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_cb741dd1",
+        "filename": "overlay/external/libjni_sonyopenir/Makefile",
+        "patchSetId": 4
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 5574
+      },
+      "writtenOn": "2014-03-25T05:12:58Z",
+      "side": 1,
+      "message": "Whitespace error",
+      "revId": "06161292462d2105033091599ebc7d36f0cabe88",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_2b82e994",
+        "filename": "overlay/external/libjni_sonyopenir/Makefile",
+        "patchSetId": 4
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 5574
+      },
+      "writtenOn": "2014-03-25T05:12:58Z",
+      "side": 1,
+      "message": "Please replace Tab with 4 spaces",
+      "revId": "06161292462d2105033091599ebc7d36f0cabe88",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_0b7f25ab",
+        "filename": "overlay/external/libjni_sonyopenir/Makefile",
+        "patchSetId": 4
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 5574
+      },
+      "writtenOn": "2014-03-25T05:12:58Z",
+      "side": 1,
+      "message": "Whitespace error + Tab",
+      "revId": "06161292462d2105033091599ebc7d36f0cabe88",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_6b4a3185",
+        "filename": "overlay/external/libjni_sonyopenir/Makefile",
+        "patchSetId": 4
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 5574
+      },
+      "writtenOn": "2014-03-25T05:12:58Z",
+      "side": 1,
+      "message": "Tab",
+      "revId": "06161292462d2105033091599ebc7d36f0cabe88",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_4b4f6d92",
+        "filename": "overlay/external/libjni_sonyopenir/README.markdown",
+        "patchSetId": 4
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 5574
+      },
+      "writtenOn": "2014-03-25T05:12:58Z",
+      "side": 1,
+      "message": "Whitespace error",
+      "revId": "06161292462d2105033091599ebc7d36f0cabe88",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_ab443974",
+        "filename": "overlay/external/libjni_sonyopenir/commands.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 5574
+      },
+      "writtenOn": "2014-03-25T05:12:58Z",
+      "side": 1,
+      "message": "Whitespace error",
+      "revId": "06161292462d2105033091599ebc7d36f0cabe88",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_1632a8f1",
+        "filename": "overlay/packages/apps/SonyIRRemote/.gitignore",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 5574
+      },
+      "writtenOn": "2014-03-25T05:12:58Z",
+      "side": 1,
+      "message": "Please remove this file.",
+      "revId": "06161292462d2105033091599ebc7d36f0cabe88",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_0ba8c51e",
+        "filename": "overlay/packages/apps/SonyIRRemote/res/menu/ir.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 5574
+      },
+      "writtenOn": "2014-03-25T05:12:58Z",
+      "side": 1,
+      "message": "Whitespace error",
+      "revId": "06161292462d2105033091599ebc7d36f0cabe88",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_cbad3d33",
+        "filename": "overlay/packages/apps/SonyIRRemote/res/values-ru/strings.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 5574
+      },
+      "writtenOn": "2014-03-25T05:12:58Z",
+      "side": 1,
+      "message": "??? ??? ??????? ?????? ???? ???????? ??? \"?????????????\", ????? ???????? ???? ? ??????????? ?????????. ??? ???????? ???????????? ???????? \"translatable\u003dfalse\" ? values/strings.xml ? ??????????????? ?????????.",
+      "revId": "06161292462d2105033091599ebc7d36f0cabe88",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_0b91e5f0",
+        "filename": "overlay/packages/apps/SonyIRRemote/res/values-ru/strings.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 5574
+      },
+      "writtenOn": "2014-03-25T05:12:58Z",
+      "side": 1,
+      "message": "?????*",
+      "revId": "06161292462d2105033091599ebc7d36f0cabe88",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_6bbcf16c",
+        "filename": "overlay/packages/apps/SonyIRRemote/res/values-ru/strings.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 5574
+      },
+      "writtenOn": "2014-03-25T05:12:58Z",
+      "side": 1,
+      "message": "??????*",
+      "revId": "06161292462d2105033091599ebc7d36f0cabe88",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_2b94a9e0",
+        "filename": "overlay/packages/apps/SonyIRRemote/res/values-ru/strings.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 5574
+      },
+      "writtenOn": "2014-03-25T05:12:58Z",
+      "side": 1,
+      "message": "??? ???? ?? ?????? ???? ????????????.",
+      "revId": "06161292462d2105033091599ebc7d36f0cabe88",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_4bc12de4",
+        "filename": "overlay/packages/apps/SonyIRRemote/res/values-ru/strings.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 5574
+      },
+      "writtenOn": "2014-03-25T05:12:58Z",
+      "side": 1,
+      "message": "????*",
+      "revId": "06161292462d2105033091599ebc7d36f0cabe88",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_eb8921cc",
+        "filename": "overlay/packages/apps/SonyIRRemote/res/values-ru/strings.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 5574
+      },
+      "writtenOn": "2014-03-25T05:12:58Z",
+      "side": 1,
+      "message": "????????????????*",
+      "revId": "06161292462d2105033091599ebc7d36f0cabe88",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_abb6f987",
+        "filename": "overlay/packages/apps/SonyIRRemote/res/values-ru/strings.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 5574
+      },
+      "writtenOn": "2014-03-25T05:12:58Z",
+      "side": 1,
+      "message": "??? ?????, ?? ??????? ???????? ? ????????? ?? ????. (?????, ?????? 4 ???????? ?? ????? ? ???????)\n\n?????? ???? ??-????????, ????? ??? ???????????? ?????? ?????? ??????.",
+      "revId": "06161292462d2105033091599ebc7d36f0cabe88",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_8ba4d557",
+        "filename": "overlay/packages/apps/SonyIRRemote/res/values-ru/strings.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 5574
+      },
+      "writtenOn": "2014-03-25T05:12:58Z",
+      "side": 1,
+      "message": "???????????* (??? ?????, \"?????? ??????????. ????????? ??????? ? ??????? ????-??????\")",
+      "revId": "06161292462d2105033091599ebc7d36f0cabe88",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_2b59495b",
+        "filename": "overlay/packages/apps/SonyIRRemote/res/values-ru/strings.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 5574
+      },
+      "writtenOn": "2014-03-25T05:12:58Z",
+      "side": 1,
+      "message": "??????? ?? ?????. ????? ??????? ?????, ???-???? ??????? ? ???? ???? ???????",
+      "revId": "06161292462d2105033091599ebc7d36f0cabe88",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_8bbb3572",
+        "filename": "overlay/packages/apps/SonyIRRemote/res/values-ru/strings.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 5574
+      },
+      "writtenOn": "2014-03-25T05:12:58Z",
+      "side": 1,
+      "message": "???????? ?????????? ???? ?? ?? (?????? ?????????? ?????????, ????????? ????? \"uno\"), ????? ??????????.\n\n+ ????? ??, ????? ?? ??????? \"??????????????\" -- ??? ????? ?????????? ????? ?? ????????",
+      "revId": "06161292462d2105033091599ebc7d36f0cabe88",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_0b560529",
+        "filename": "overlay/packages/apps/SonyIRRemote/res/values/strings.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 5574
+      },
+      "writtenOn": "2014-03-25T05:12:58Z",
+      "side": 1,
+      "message": "Add translatable\u003d\"false\" to prevent brand codes from being localized.",
+      "revId": "06161292462d2105033091599ebc7d36f0cabe88",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_6b31910b",
+        "filename": "overlay/packages/apps/SonyIRRemote/res/values/strings.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 5574
+      },
+      "writtenOn": "2014-03-25T05:12:58Z",
+      "side": 1,
+      "message": "Same here.",
+      "revId": "06161292462d2105033091599ebc7d36f0cabe88",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_4b364d04",
+        "filename": "overlay/packages/apps/SonyIRRemote/res/values/strings.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 5574
+      },
+      "writtenOn": "2014-03-25T05:12:58Z",
+      "side": 1,
+      "message": "And also here.",
+      "revId": "06161292462d2105033091599ebc7d36f0cabe88",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_ab3b99ea",
+        "filename": "overlay/packages/apps/SonyIRRemote/res/values/strings.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 5574
+      },
+      "writtenOn": "2014-03-25T05:12:58Z",
+      "side": 1,
+      "message": "Ch - *",
+      "revId": "06161292462d2105033091599ebc7d36f0cabe88",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_8b405558",
+        "filename": "overlay/packages/apps/SonyIRRemote/res/values/strings.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 5574
+      },
+      "writtenOn": "2014-03-25T05:12:58Z",
+      "side": 1,
+      "message": "Ch + *",
+      "revId": "06161292462d2105033091599ebc7d36f0cabe88",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_eb25a1c2",
+        "filename": "overlay/packages/apps/SonyIRRemote/res/values/strings.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 5574
+      },
+      "writtenOn": "2014-03-25T05:12:58Z",
+      "side": 1,
+      "message": "translatable\u003d\"false\"",
+      "revId": "06161292462d2105033091599ebc7d36f0cabe88",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_cb225db9",
+        "filename": "overlay/packages/apps/SonyIRRemote/res/values/strings.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 5574
+      },
+      "writtenOn": "2014-03-25T05:12:58Z",
+      "side": 1,
+      "message": "Power *",
+      "revId": "06161292462d2105033091599ebc7d36f0cabe88",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_2b302901",
+        "filename": "overlay/packages/apps/SonyIRRemote/res/values/strings.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 5574
+      },
+      "writtenOn": "2014-03-25T05:12:58Z",
+      "side": 1,
+      "message": "Can\u0027t reach the server at the moment. Try connecting again?",
+      "revId": "06161292462d2105033091599ebc7d36f0cabe88",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_762694bb",
+        "filename": "overlay/packages/apps/SonyIRRemote/res/values/strings.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 5574
+      },
+      "writtenOn": "2014-03-25T05:12:58Z",
+      "side": 1,
+      "message": "Unable to learn the key code! *",
+      "revId": "06161292462d2105033091599ebc7d36f0cabe88",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_562b9082",
+        "filename": "overlay/packages/apps/SonyIRRemote/res/values/strings.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 5574
+      },
+      "writtenOn": "2014-03-25T05:12:58Z",
+      "side": 1,
+      "message": "Unable to send the key code! *",
+      "revId": "06161292462d2105033091599ebc7d36f0cabe88",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_0b2d65a7",
+        "filename": "overlay/packages/apps/SonyIRRemote/src/com/sssemil/sonyirremote/ir/Decompress.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 5574
+      },
+      "writtenOn": "2014-03-25T05:12:58Z",
+      "side": 1,
+      "message": "Whitespace errors. Everywhere :)",
+      "revId": "06161292462d2105033091599ebc7d36f0cabe88",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_962518ad",
+        "filename": "overlay/packages/apps/SonyIRRemote/src/com/sssemil/sonyirremote/ir/ir.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 5574
+      },
+      "writtenOn": "2014-03-25T05:12:58Z",
+      "side": 1,
+      "message": "A lot of duplicated and commented out code.",
+      "revId": "06161292462d2105033091599ebc7d36f0cabe88",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_6b187185",
+        "filename": "overlay/packages/apps/SonyIRRemote/src/com/sssemil/sonyirremote/ir/ir.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 5574
+      },
+      "writtenOn": "2014-03-25T05:12:58Z",
+      "side": 1,
+      "message": "Wrap the line @ 100 chars.",
+      "revId": "06161292462d2105033091599ebc7d36f0cabe88",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_4b1dad72",
+        "filename": "overlay/packages/apps/SonyIRRemote/src/com/sssemil/sonyirremote/ir/ir.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 5574
+      },
+      "writtenOn": "2014-03-25T05:12:58Z",
+      "side": 1,
+      "message": "Same here.",
+      "revId": "06161292462d2105033091599ebc7d36f0cabe88",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_f641043b",
+        "filename": "overlay/packages/apps/SonyIRRemote/src/com/sssemil/sonyirremote/ir/ir.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 211,
+      "author": {
+        "id": 5574
+      },
+      "writtenOn": "2014-03-25T05:12:58Z",
+      "side": 1,
+      "message": "You should consolidate global variables in one place, above \"onCreate\". That will make the code easier to maintain.",
+      "revId": "06161292462d2105033091599ebc7d36f0cabe88",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_ab127960",
+        "filename": "overlay/packages/apps/SonyIRRemote/src/com/sssemil/sonyirremote/ir/ir.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 282,
+      "author": {
+        "id": 5574
+      },
+      "writtenOn": "2014-03-25T05:12:58Z",
+      "side": 1,
+      "message": "Same here.",
+      "revId": "06161292462d2105033091599ebc7d36f0cabe88",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_8b17b550",
+        "filename": "overlay/packages/apps/SonyIRRemote/src/com/sssemil/sonyirremote/ir/ir.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 286,
+      "author": {
+        "id": 5574
+      },
+      "writtenOn": "2014-03-25T05:12:58Z",
+      "side": 1,
+      "message": "Same here.",
+      "revId": "06161292462d2105033091599ebc7d36f0cabe88",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_cb09bd33",
+        "filename": "overlay/packages/apps/SonyIRRemote/src/com/sssemil/sonyirremote/ir/ir.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 304,
+      "author": {
+        "id": 5574
+      },
+      "writtenOn": "2014-03-25T05:12:58Z",
+      "side": 1,
+      "message": "And also here. I\u0027m lazy to mark lines below (with the same error), but you get the point.",
+      "revId": "06161292462d2105033091599ebc7d36f0cabe88",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_56527014",
+        "filename": "overlay/packages/apps/SonyIRRemote/src/com/sssemil/sonyirremote/ir/ir.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 312,
+      "author": {
+        "id": 5574
+      },
+      "writtenOn": "2014-03-25T05:12:58Z",
+      "side": 1,
+      "message": "Not an informative error message at all.",
+      "revId": "06161292462d2105033091599ebc7d36f0cabe88",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_f63aa4cc",
+        "filename": "overlay/packages/apps/SonyIRRemote/src/com/sssemil/sonyirremote/ir/ir.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 338,
+      "author": {
+        "id": 5574
+      },
+      "writtenOn": "2014-03-25T05:12:58Z",
+      "side": 1,
+      "message": "HOW ABOUT NO.\n\n* You should not hardcode paths for IR controller, because they may vary on different devices\n* You should NOT change permissions (and invoke Superuser). It should be handled in ramdisk.",
+      "revId": "06161292462d2105033091599ebc7d36f0cabe88",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_7674d49b",
+        "filename": "overlay/packages/apps/SonyIRRemote/src/com/sssemil/sonyirremote/ir/ir.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 371,
+      "author": {
+        "id": 5574
+      },
+      "writtenOn": "2014-03-25T05:12:58Z",
+      "side": 1,
+      "message": "hrenovoe nazvanie",
+      "revId": "06161292462d2105033091599ebc7d36f0cabe88",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_b66e5cc7",
+        "filename": "overlay/packages/apps/SonyIRRemote/src/com/sssemil/sonyirremote/ir/ir.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 445,
+      "author": {
+        "id": 5574
+      },
+      "writtenOn": "2014-03-25T05:12:58Z",
+      "side": 1,
+      "message": "No. I should be able to leave app when I want to. Don\u0027t make me tap the button multiple times.",
+      "revId": "06161292462d2105033091599ebc7d36f0cabe88",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_56043014",
+        "filename": "overlay/packages/apps/SonyIRRemote/src/com/sssemil/sonyirremote/ir/ir.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 544,
+      "author": {
+        "id": 5574
+      },
+      "writtenOn": "2014-03-25T05:12:58Z",
+      "side": 1,
+      "message": "I suppose you can make a unified function that will handle all buttons depending on a view passed to it. In current implementation, it\u0027s a ton of almost identical code (465 lines, to be exact) for every possible button.",
+      "revId": "06161292462d2105033091599ebc7d36f0cabe88",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_b6093c2f",
+        "filename": "overlay/packages/apps/SonyIRRemote/src/com/sssemil/sonyirremote/ir/ir.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 1018,
+      "author": {
+        "id": 5574
+      },
+      "writtenOn": "2014-03-25T05:12:58Z",
+      "side": 1,
+      "message": "Hardcoded file name.",
+      "revId": "06161292462d2105033091599ebc7d36f0cabe88",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_f613c45a",
+        "filename": "overlay/packages/apps/SonyIRRemote/src/com/sssemil/sonyirremote/ir/ir.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 1043,
+      "author": {
+        "id": 5574
+      },
+      "writtenOn": "2014-03-25T05:12:58Z",
+      "side": 1,
+      "message": "ERR_CONNECTION_TIMED_OUT. Your server is down.",
+      "revId": "06161292462d2105033091599ebc7d36f0cabe88",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_d6104051",
+        "filename": "overlay/packages/apps/SonyIRRemote/src/com/sssemil/sonyirremote/ir/ir.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 1134,
+      "author": {
+        "id": 5574
+      },
+      "writtenOn": "2014-03-25T05:12:58Z",
+      "side": 1,
+      "message": "If you want your app to be updated properly, put it in Google Play. If you can\u0027t or just don\u0027t want to use Google Play, put updates through our Gerrit. But not that way, please. It\u0027s not a proper way to do so.",
+      "revId": "06161292462d2105033091599ebc7d36f0cabe88",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
