@@ -202,5 +202,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.input.noresample=1
 
+# IR-blaster Support
+PRODUCT_PACKAGES += \
+    SonyIRRemote \
+    libjni_sonyopenir
+
 # Include non-opensource parts
 $(call inherit-product, vendor/sony/fusion3-common/fusion3-common-vendor.mk)
