@@ -199,9 +199,13 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.qualcomm.bt.hci_transport=smd
 
 # IR-blaster Support
-PRODUCT_PACKAGES += \
-    SonyIRRemote \
-    libjni_sonyopenir
+ifneq ($(BOARD_HAVE_IRBLASTER),false)
+    DEVICE_PACKAGE_OVERLAYS += $(COMMON_PATH)/overlay-irremote
+    PRODUCT_PACKAGES += \
+        SonyIRRemote \
+        libjni_sonyopenir
+endif
+
 
 # Include non-opensource parts
 $(call inherit-product, vendor/sony/fusion3-common/fusion3-common-vendor.mk)
