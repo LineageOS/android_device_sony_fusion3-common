@@ -206,6 +206,24 @@
     },
     {
       "key": {
+        "uuid": "bae84128_03e6e9b3",
+        "filename": "overlay/packages/apps/SonyIRRemote/res/values-ru/strings.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 5431
+      },
+      "writtenOn": "2014-03-26T08:35:45Z",
+      "side": 1,
+      "message": "????? ????? ??????? ??????????)",
+      "parentUuid": "bae84128_0b91e5f0",
+      "revId": "06161292462d2105033091599ebc7d36f0cabe88",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bae84128_6bbcf16c",
         "filename": "overlay/packages/apps/SonyIRRemote/res/values-ru/strings.xml",
         "patchSetId": 4
