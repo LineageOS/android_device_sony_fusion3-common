@@ -98,9 +98,27 @@
 /dev/msm_rtac             0660   system     audio
 /dev/msm_voicememo        0660   system     audio
 
-/sys/devices/virtual/graphics/fb1   edid_modes          0440 system system
+# MHL
+/sys/devices/i2c-0/0-0039/mhl/sii8334  adopter_id 0440  system  system
+/sys/devices/i2c-0/0-0039/mhl/sii8334  device_id  0440  system  system
+/sys/devices/i2c-0/0-0039/mhl/sii8334  rap        0640  system  system
+/sys/devices/i2c-0/0-0039/mhl/sii8334  scpd       0640  system  system
+/sys/devices/i2c-0/0-0039/mhl/sii8334  mouse_mode 0660  system  system
+/sys/devices/i2c-0/0-0039/mhl/sii8334  mouse_move_distance_dx  0660  system  system
+/sys/devices/i2c-0/0-0039/mhl/sii8334  mouse_move_distance_dy  0660  system  system
+
+# Graphics
+/sys/devices/virtual/graphics/fb1   edid_modes     0440  system system
+/sys/devices/virtual/graphics/fb1   edid_3d_modes  0440  system  system
+/sys/devices/virtual/graphics/fb1   hdmi_mode      0440  system  system
+/sys/devices/virtual/graphics/fb1   hpd            0640  system  system
 /sys/devices/virtual/graphics/fb1   product_description 0640 system system
-/sys/devices/virtual/graphics/fb1   vendor_name         0640 system system
+/sys/devices/virtual/graphics/fb1   vendor_name    0640 system system
+/sys/devices/virtual/graphics/fb1   scan_info      0440  system  system
+/sys/devices/virtual/graphics/fb1   video_mode     0640  system  system
+/sys/devices/virtual/graphics/fb1   video_mode_str 0440  system  system
+
+# Input
 /sys/devices/virtual/input/input*   bma250_calib_eeprom 0220 system system
 /sys/devices/virtual/input/input*   bma250_calib_image  0660 system system
 /sys/devices/virtual/input/input*   bma250_calib_offset 0440 system system
