@@ -659,6 +659,7 @@ service dis_msm_therm /system/bin/sh /system/etc/disable_msm_thermal.sh
 
 service mpdecision /system/bin/mpdecision --no_sleep --avg_comp
     class main
+    user root
 
 # bugreport is triggered by holding down volume down, volume up and power
 service bugreport /system/bin/dumpstate -d -p -B \
