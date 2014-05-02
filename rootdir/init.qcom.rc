@@ -313,6 +313,7 @@ on post-fs-data
     write /sys/devices/system/cpu/cpu2/online 1
     write /sys/devices/system/cpu/cpu3/online 1
     write /dev/cpuctl/apps/cpu.notify_on_migrate 1
+    start mpdecision
 
     # ondemand
     #write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor "ondemand"
@@ -366,6 +367,7 @@ on post-fs-data
     chmod 664 /sys/devices/system/cpu/cpu1/online
     chmod 664 /sys/devices/system/cpu/cpu2/online
     chmod 664 /sys/devices/system/cpu/cpu3/online
+
     # set DCVS parameters for CPU
     write /sys/module/msm_dcvs/cores/cpu0/slack_time_max_us 40000
     write /sys/module/msm_dcvs/cores/cpu0/slack_time_min_us 40000
@@ -450,6 +452,7 @@ on charger
     write /sys/devices/system/cpu/cpu1/online 0
     write /sys/devices/system/cpu/cpu2/online 0
     write /sys/devices/system/cpu/cpu3/online 0
+    start mpdecision
 
 on property:init.svc.wpa_supplicant=stopped
     stop dhcpcd
@@ -659,6 +662,9 @@ service dis_msm_therm /system/bin/sh /system/etc/disable_msm_thermal.sh
 
 service mpdecision /system/bin/mpdecision --no_sleep --avg_comp
     class main
+    user root
+    group root
+    disabled
 
 # bugreport is triggered by holding down volume down, volume up and power
 service bugreport /system/bin/dumpstate -d -p -B \
