@@ -10,6 +10,12 @@ allow mpdecision sysfs_devices_system_cpu:file write;
 
 allow mpdecision self:capability chown;
 
+# Allow access to /dev/cpu_dma_latency
+allow mpdecision power_control_device:chr_file write;
+
+# Allow access to /data/system/default_values
+allow mpdecision system_data_file:file append;
+
 # dac_override to unlink /dev/socket/mpdecision/touchboost
 allow mpdecision self:capability { dac_override fsetid net_admin };
 allow mpdecision self:netlink_kobject_uevent_socket { create read setopt bind read };
@@ -21,5 +27,5 @@ allow mpdecision mpdecision_socket:sock_file { create setattr write };
 # XXX Should we label with own type?
 allow mpdecision sysfs:file { read open write getattr };
 
-allow mpdecision socket_device:dir { add_name write };
+allow mpdecision socket_device:dir { add_name write remove_name };
 allow mpdecision socket_device:sock_file { create setattr };
