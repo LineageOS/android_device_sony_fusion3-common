@@ -29,3 +29,5 @@ allow hci_attach bluetooth_device:chr_file rw_file_perms;
 
 # Allow getprop/setprop for init.qcom.bt.sh
 allow bluetooth_loader system_file:file execute_no_trans;
+
+allow bluetooth_loader bluetooth_data_file:file read;
