@@ -664,7 +664,7 @@ dispatchNetworkManual (Parcel& p, RequestInfo *pRI) {
 
     pStrings[0] = strdupReadString(p);
     appendPrintBuf("%s%s,", printBuf, pStrings[0]);
-    pStrings[1] = strdup("NOCHANGE");
+    pStrings[1] = NULL;
     closeRequest;
     printRequest(pRI->token, pRI->pCI->requestNumber);
 
@@ -681,6 +681,19 @@ dispatchNetworkManual (Parcel& p, RequestInfo *pRI) {
 #ifdef MEMSET_FREED
         memset(pStrings, 0, datalen);
 #endif
+    }
+
+    if (pRI->pCI->requestNumber == RIL_REQUEST_SET_NETWORK_SELECTION_MANUAL) {
+        /**
+         * Qualcomm's RIL doesn't seem to issue any callbacks for opcode 47
+         * This may be a bug on how we call rild or simply some proprietary 'feature'
+         * ..and we don't care: We simply send a SUCCESS message back to the caller to
+         * indicate that we received the command & unblock the UI.
+         * The user will still see if the registration was OK by using the
+         * normal signal meter
+        */
+        RLOGE("pabx: manual network selection: sending fake success event");
+        RIL_onRequestComplete(pRI, RIL_E_SUCCESS, NULL, 0);
     }
 
     return;
