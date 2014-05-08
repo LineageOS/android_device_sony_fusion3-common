@@ -205,7 +205,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # IR-blaster Support
 ifeq ($(BOARD_HAVE_IR_BLASTER),true)
 PRODUCT_PACKAGES += \
-    SonyIRRemote \
+    IRRemote \
     libjni_sonyopenir
 endif
 
