@@ -118,4 +118,7 @@
          for "perf_profile_values" array. Leave it blank if the device do not support
          performance profiles  -->
     <string name="config_perf_profile_default_entry" translatable="false">1</string>
+
+    <!-- SD card is hot-pluggable on this platform -->
+    <bool name="config_batterySdCardAccessibility">true</bool>
 </resources>
