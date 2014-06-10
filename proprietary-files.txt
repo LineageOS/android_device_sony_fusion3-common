@@ -65,12 +65,19 @@ etc/firmware/wcnss.b05
 etc/firmware/wcnss.mdt
 etc/firmware/wlan/prima/WCNSS_cfg.dat
 etc/firmware/wlan/prima/WCNSS_qcom_wlan_nv.bin
+lib/egl/eglsubAndroid.so
+lib/egl/libEGL_adreno200.so
+lib/egl/libGLESv1_CM_adreno200.so
+lib/egl/libGLESv2_adreno200.so
+lib/egl/libq3dtools_adreno200.so
 lib/hw/gps.default.so
 lib/hw/vendor-camera.qcom.so
 lib/hw/vendor-lights.default.so
 lib/libacdbloader.so
 lib/libadsprpc.so
 lib/libals.so
+lib/libc2d2_a3xx.so
+lib/libC2D2.so
 lib/libcald_client.so
 lib/libcald_hal.so
 lib/libcald_imageutil.so
@@ -91,6 +98,7 @@ lib/libfmradio.sony-iris.so
 lib/libgemini.so
 lib/lib_get_secure_mode.so
 lib/libgps.utils.so
+lib/libgsl.so
 lib/libidd.so
 lib/libidl.so
 lib/libimage-jpeg-dec-omx-comp.so
@@ -98,6 +106,7 @@ lib/libimage-jpeg-enc-omx-comp.so
 lib/libimage-omx-common.so
 lib/libkeyctrl.so
 lib/liblights-core.so
+lib/libllvm-a3xx.so
 lib/libloc_adapter.so
 lib/libloc_api_v02.so
 lib/libloc_eng.so
@@ -141,6 +150,7 @@ lib/libqmiservices.so
 lib/libqmi.so
 lib/libQSEEComAPI.so
 lib/libril-qc-qmi-1.so
+lib/libsc-a3xx.so
 lib/libsensors_akm8963.so
 lib/libsysmon_idd.so
 lib/libsysmon_jni.so
@@ -194,3 +204,5 @@ vendor/camera/SOI13BS2.dat
 vendor/camera/SOI13BS2_DW9735.dat
 vendor/camera/SOI13BS2_IMX135.dat
 vendor/camera/SOI13BS9.dat
+vendor/firmware/a300_pfp.fw
+vendor/firmware/a300_pm4.fw
