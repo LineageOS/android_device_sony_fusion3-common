@@ -117,3 +117,5 @@
 # IR Remote
 /dev/ttyHSL2                                    0666  system   system
 /sys/devices/platform/ir_remote_control  enable 0222  system   system
+
+/dev/input/event10                              0666  system   system
