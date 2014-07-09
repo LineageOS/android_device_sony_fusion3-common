@@ -87,7 +87,6 @@ lib/libcamera_clientsemc.so
 lib/libcameralight.so
 lib/libcredential-manager-service.so
 lib/libcsd-client.so
-lib/libdiag.so
 lib/libdrmdiag.so
 lib/libdrmfs.so
 lib/libdsi_netctrl.so
@@ -109,6 +108,8 @@ lib/liblights-core.so
 lib/libllvm-a3xx.so
 lib/libloc_adapter.so
 lib/libloc_api_v02.so
+lib/libloc_core.so
+lib/libloc_ds_api.so
 lib/libloc_eng.so
 lib/libmercury.so
 lib/libMiscTaAccessor.so
@@ -141,11 +142,7 @@ lib/libqcci_legacy.so
 lib/libqc-opt.so
 lib/libqdi.so
 lib/libqdp.so
-lib/libqmi_cci.so
 lib/libqmi_client_qmux.so
-lib/libqmi_common_so.so
-lib/libqmi_csi.so
-lib/libqmi_encdec.so
 lib/libqmiservices.so
 lib/libqmi.so
 lib/libQSEEComAPI.so
@@ -206,3 +203,11 @@ vendor/camera/SOI13BS2_IMX135.dat
 vendor/camera/SOI13BS9.dat
 vendor/firmware/a300_pfp.fw
 vendor/firmware/a300_pm4.fw
+vendor/lib/libdiag.so
+vendor/lib/libgeofence.so
+vendor/lib/libizat_core.so
+vendor/lib/liblbs_core.so
+vendor/lib/libqmi_cci.so
+vendor/lib/libqmi_common_so.so
+vendor/lib/libqmi_csi.so
+vendor/lib/libqmi_encdec.so
