@@ -97,6 +97,7 @@
 /dev/msm_preproc_ctl      0660   system     audio
 /dev/msm_rtac             0660   system     audio
 /dev/msm_voicememo        0660   system     audio
+/dev/iio:device*          0660   system     input
 
 /sys/devices/virtual/graphics/fb1   edid_modes          0440 system system
 /sys/devices/virtual/graphics/fb1   product_description 0640 system system
