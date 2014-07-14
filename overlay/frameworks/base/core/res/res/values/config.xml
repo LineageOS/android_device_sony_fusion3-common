@@ -56,16 +56,6 @@
         <item>"bt-pan"</item>
     </string-array>
 
-    <!-- Array of allowable ConnectivityManager network types for tethering -->
-    <!-- Common options are [1, 4] for TYPE_WIFI and TYPE_MOBILE_DUN or
-                  [0,1,5,7] for TYPE_MOBILE, TYPE_WIFI, TYPE_MOBILE_HIPRI and TYPE_BLUETOOTH -->
-    <integer-array translatable="false" name="config_tether_upstream_types">
-        <item>0</item>
-        <item>1</item>
-        <item>5</item>
-        <item>7</item>
-    </integer-array>
-
     <!-- Boolean indicating whether the wifi chipset has background scan support -->
     <bool translatable="false" name="config_wifi_background_scan_support">true</bool>
 
@@ -93,18 +83,6 @@
     <!-- Base "touch slop" value used by ViewConfiguration as a
          movement threshold where scrolling should begin. -->
     <dimen name="config_viewConfigurationTouchSlop">13dp</dimen>
-
-    <!-- National language single shift tables to enable for SMS encoding.
-         Decoding is always enabled. 3GPP TS 23.038 states that this feature
-         should not be enabled until a formal request is issued by the relevant
-         national regulatory body. Array elements are codes from the table above.
-         Example 1: devices sold in Turkey must include table 1 to conform with
-           By-Law Number 27230. (http://www.btk.gov.tr/eng/pdf/2009/BY-LAW_SMS.pdf)
-         Example 2: devices sold in India should include tables 4 through 13
-           to enable use of the new Release 9 tables for Indic languages. -->
-    <integer-array name="config_sms_enabled_single_shift_tables">
-        <item>1</item>
-    </integer-array>
 
     <!-- Enable lockscreen translucent decor -->
     <bool name="config_enableLockScreenTranslucentDecor">true</bool>
