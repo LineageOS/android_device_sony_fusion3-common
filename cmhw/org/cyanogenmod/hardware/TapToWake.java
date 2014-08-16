@@ -21,7 +21,7 @@ import org.cyanogenmod.hardware.util.FileUtils;
 public class TapToWake {
 
     private static String CONTROL_PATH = "/sys/devices/virtual/input/clearpad/wakeup_gesture";
-    private static boolean mEnabled = true;
+    private static boolean mEnabled = false;
 
     public static boolean isSupported() {
         return true;
