@@ -214,5 +214,9 @@ endif
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.opengles.version=196608
 
+# QC Perf
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.vendor.extension_library=/system/lib/libqc-opt.so
+
 # Include non-opensource parts
 $(call inherit-product, vendor/sony/fusion3-common/fusion3-common-vendor.mk)
