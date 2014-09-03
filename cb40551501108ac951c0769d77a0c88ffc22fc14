@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7a1b2928_e313fc5a",
+        "filename": "rootdir/init.qcom.rc",
+        "patchSetId": 2
+      },
+      "lineNbr": 198,
+      "author": {
+        "id": 5574
+      },
+      "writtenOn": "2014-09-03T23:51:34Z",
+      "side": 1,
+      "message": "Okay, so this is definitely unneeded. Interesting why is it here, does Sony use different system_core?",
+      "parentUuid": "7a1b2928_63ffec01",
+      "revId": "cb40551501108ac951c0769d77a0c88ffc22fc14",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a1b2928_00042e15",
         "filename": "rootdir/init.qcom.rc",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2014-09-03T23:43:20Z",
       "side": 1,
       "message": "why do you need idd?",
+      "revId": "cb40551501108ac951c0769d77a0c88ffc22fc14",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a1b2928_830e8832",
+        "filename": "rootdir/init.qcom.rc",
+        "patchSetId": 2
+      },
+      "lineNbr": 287,
+      "author": {
+        "id": 5574
+      },
+      "writtenOn": "2014-09-03T23:51:34Z",
+      "side": 1,
+      "message": "I suppose Thomas took this from a stock ROM, so this is also something \"stock-related\".",
+      "parentUuid": "7a1b2928_00042e15",
       "revId": "cb40551501108ac951c0769d77a0c88ffc22fc14",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
