@@ -169,7 +169,6 @@ BOARD_SEPOLICY_UNION += \
     netmgrd.te \
     qmux.te \
     rild.te \
-    rmt.te \
     surfaceflinger.te \
     system.te \
     tee.te \
