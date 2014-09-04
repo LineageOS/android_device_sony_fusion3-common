@@ -21,5 +21,8 @@ allow mpdecision mpdecision_socket:sock_file { create setattr write };
 # XXX Should we label with own type?
 allow mpdecision sysfs:file { read open write getattr };
 
-allow mpdecision socket_device:dir { add_name write };
-allow mpdecision socket_device:sock_file { create setattr };
+allow mpdecision socket_device:dir { add_name write remove_name};
+allow mpdecision socket_device:sock_file { create setattr unlink };
+allow mpdecision power_control_device:chr_file { open write };
+allow mpdecision system_data_file:dir { add_name write };
+allow mpdecision system_data_file:file { create open append };
