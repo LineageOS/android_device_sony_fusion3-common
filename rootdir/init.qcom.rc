@@ -463,10 +463,6 @@ service irsc_util /system/bin/logwrapper /system/bin/irsc_util "/etc/sec_config"
     user root
     oneshot
 
-service rmt_storage /system/bin/rmt_storage
-    class core
-    user root
-
 # Fast Dormancy
 service fast-dormancy /system/bin/fast-dormancy
     class late_start
