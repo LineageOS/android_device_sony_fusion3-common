@@ -10,7 +10,6 @@ bin/mpdecision
 bin/netmgrd
 bin/qmuxd
 bin/qseecomd
-bin/rmt_storage
 bin/system_monitor
 bin/ta2bin
 bin/taimport
