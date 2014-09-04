@@ -44,7 +44,7 @@ allow kickstart self:capability dac_override;
 allow kickstart kickstart_device:chr_file rw_file_perms;
 
 # set wake locks
-allow kickstart sysfs:file { append };
+allow kickstart sysfs_wake_lock:file append;
 
 allow kickstart system_data_file:dir { write add_name };
 allow kickstart system_data_file:file { write open };
