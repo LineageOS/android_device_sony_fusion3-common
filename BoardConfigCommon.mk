@@ -15,8 +15,8 @@
 # inherit from Sony common
 include device/sony/common/BoardConfigCommon.mk
 
-# inherit from qcom-common
-include device/sony/qcom-common/BoardConfigCommon.mk
+# inherit from msm8960-common
+include device/sony/msm8960-common/BoardConfigCommon.mk
 
 TARGET_SPECIFIC_HEADER_PATH := device/sony/fusion3-common/include
 
