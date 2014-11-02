@@ -15,8 +15,8 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
 TARGET_PROVIDES_ADRENO_DRIVER := true
-# qcom common
-$(call inherit-product, device/sony/qcom-common/qcom-common.mk)
+# inherit from msm8960-common
+$(call inherit-product, device/sony/msm8960-common/msm8960.mk)
 
 COMMON_PATH := device/sony/fusion3-common
 
