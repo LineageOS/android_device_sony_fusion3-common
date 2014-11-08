@@ -71,14 +71,14 @@
                   rather than the uevent framework. -->
     <bool name="config_useDevInputEventForAudioJack">true</bool>
 
-    <!-- Is the notification LED intrusive? Used to decide if there should be a disable option -->
-    <bool name="config_intrusiveNotificationLed">true</bool>
+    <!-- Is the notification LED intrusive? Used to decide if there should be a disable option
+    <bool name="config_intrusiveNotificationLed">true</bool> -->
 
-    <!-- Is the battery LED intrusive? Used to decide if there should be a disable option -->
-    <bool name="config_intrusiveBatteryLed">true</bool>
+    <!-- Is the battery LED intrusive? Used to decide if there should be a disable option
+    <bool name="config_intrusiveBatteryLed">true</bool> -->
 
-    <!-- Can we change the battery color? -->
-    <bool name="config_multiColorBatteryLed">true</bool>
+    <!-- Can we change the battery color?
+    <bool name="config_multiColorBatteryLed">true</bool> -->
 
     <!-- Base "touch slop" value used by ViewConfiguration as a
          movement threshold where scrolling should begin. -->
@@ -88,12 +88,12 @@
     <bool name="config_enableLockScreenTranslucentDecor">true</bool>
 
     <!-- Defines the system property to set for performance profile xe: sys.cpu.modes. Leave it
-         blank if the device do not support performance profiles -->
-    <string name="config_perf_profile_prop" translatable="false">sys.perf.profile</string>
+         blank if the device do not support performance profiles
+    <string name="config_perf_profile_prop" translatable="false">sys.perf.profile</string> -->
 
     <!-- When config_perf_profile_prop is defined, this value MUST be the index of
          one of the listes values in frameworks/base/core/res/res/values/cm_arrays.xml
          for "perf_profile_values" array. Leave it blank if the device do not support
-         performance profiles  -->
-    <string name="config_perf_profile_default_entry" translatable="false">1</string>
+         performance profiles
+    <string name="config_perf_profile_default_entry" translatable="false">1</string> -->
 </resources>
