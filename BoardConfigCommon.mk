@@ -171,7 +171,7 @@ BOARD_SEPOLICY_UNION += \
     qmux.te \
     rild.te \
     surfaceflinger.te \
-    system.te \
+    system_server.te \
     tee.te \
     thermald.te \
     ueventd.te \
