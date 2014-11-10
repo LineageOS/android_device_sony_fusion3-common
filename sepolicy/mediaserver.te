@@ -11,3 +11,12 @@ allow mediaserver self:socket create;
 # Grant access to audio firmware files to mediaserver
 allow mediaserver audio_firmware_file:dir ra_dir_perms;
 allow mediaserver audio_firmware_file:file create_file_perms;
+
+allow mediaserver diagnostic_device:chr_file { read write ioctl open };
+allow mediaserver qmux:unix_stream_socket connectto;
+allow mediaserver qmuxd_socket:dir { write add_name search };
+allow mediaserver qmuxd_socket:sock_file { write create setattr };
+allow mediaserver self:socket { read ioctl };
+allow mediaserver system_data_file:file { write open };
+allow mediaserver system_server:unix_stream_socket { read write };
+allow mediaserver camera_device:dir search;

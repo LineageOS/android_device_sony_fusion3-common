@@ -49,3 +49,4 @@ allow kickstart sysfs_wake_lock:file { append open };
 allow kickstart system_data_file:dir { write add_name };
 allow kickstart system_data_file:file { write open };
 allow kickstart device:sock_file write;
+allow kickstart socket_device:sock_file write;

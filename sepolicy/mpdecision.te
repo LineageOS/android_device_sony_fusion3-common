@@ -11,7 +11,7 @@ allow mpdecision sysfs_devices_system_cpu:file write;
 allow mpdecision self:capability chown;
 
 # dac_override to unlink /dev/socket/mpdecision/touchboost
-allow mpdecision self:capability { dac_override fsetid net_admin };
+allow mpdecision self:capability { dac_override fsetid net_admin sys_nice };
 allow mpdecision self:netlink_kobject_uevent_socket { create read setopt bind read };
 
 # Create under /dev/socket/mpdecision
