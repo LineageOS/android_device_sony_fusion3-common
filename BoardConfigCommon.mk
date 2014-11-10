@@ -164,6 +164,7 @@ BOARD_SEPOLICY_UNION += \
     file.te \
     kickstart.te \
     init.te \
+    init_shell.te \
     mac_update.te \
     mediaserver.te \
     mpdecision.te \
