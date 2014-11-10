@@ -180,3 +180,6 @@ BOARD_SEPOLICY_UNION += \
 BOARD_HARDWARE_CLASS := device/sony/fusion3-common/cmhw
 
 TARGET_USES_LOGD := false
+
+# Include an expanded selection of fonts
+EXTENDED_FONT_FOOTPRINT := true
