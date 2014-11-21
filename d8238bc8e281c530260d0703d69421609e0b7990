@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dab17558_da1194b1",
+        "filename": "BoardConfigCommon.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 2195
+      },
+      "writtenOn": "2014-11-21T19:21:17Z",
+      "side": 0,
+      "message": "This can go too.",
+      "revId": "d8238bc8e281c530260d0703d69421609e0b7990",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_ba1650a5",
+        "filename": "BoardConfigCommon.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 2195
+      },
+      "writtenOn": "2014-11-21T19:21:17Z",
+      "side": 0,
+      "message": "Same for this.",
+      "revId": "d8238bc8e281c530260d0703d69421609e0b7990",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
