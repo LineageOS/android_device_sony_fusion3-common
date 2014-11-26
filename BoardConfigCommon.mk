@@ -158,6 +158,8 @@ BOARD_HARDWARE_CLASS := device/sony/fusion3-common/cmhw
 
 TARGET_USES_LOGD := false
 
+TARGET_DISPLAY_USE_RETIRE_FENCE := true
+
 # Include an expanded selection of fonts
 EXTENDED_FONT_FOOTPRINT := true
 
