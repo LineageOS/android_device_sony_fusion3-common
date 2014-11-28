@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bab6814e_5c7c7a20",
+        "filename": "custombootimg.mk",
+        "patchSetId": 3
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 431
+      },
+      "writtenOn": "2014-11-28T13:50:13Z",
+      "side": 1,
+      "message": "These changes and the ones below look unrelated to this commit, please consider splitting them to another change.",
+      "revId": "6ce4d7b27685ff8b15603f75c3f07ba38197724b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
