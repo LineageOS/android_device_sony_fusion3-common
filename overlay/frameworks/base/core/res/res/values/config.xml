@@ -40,6 +40,13 @@
                   autodetected from the Configuration. -->
     <bool name="config_showNavigationBar">true</bool>
 
+    <!-- Minimum screen brightness allowed by the power manager. -->
+    <integer name="config_screenBrightnessDim">1</integer>
+
+    <!-- Enable backlight settings down to 1, testing indicates it works on Yuga & Odin -->
+    <!-- Allowing for this option means that reading a book in perfect darkness will work fine -->
+    <integer name="config_screenBrightnessSettingMinimum">1</integer>
+
     <string-array translatable="false" name="config_tether_usb_regexs">
        <item>"usb\\d"</item>
        <item>"rndis\\d"</item>
@@ -71,14 +78,14 @@
                   rather than the uevent framework. -->
     <bool name="config_useDevInputEventForAudioJack">true</bool>
 
-    <!-- Is the notification LED intrusive? Used to decide if there should be a disable option
-    <bool name="config_intrusiveNotificationLed">true</bool> -->
+    <!-- Is the notification LED intrusive? Used to decide if there should be a disable option -->
+    <bool name="config_intrusiveNotificationLed">true</bool>
 
-    <!-- Is the battery LED intrusive? Used to decide if there should be a disable option
-    <bool name="config_intrusiveBatteryLed">true</bool> -->
+    <!-- Is the battery LED intrusive? Used to decide if there should be a disable option -->
+    <bool name="config_intrusiveBatteryLed">true</bool>
 
-    <!-- Can we change the battery color?
-    <bool name="config_multiColorBatteryLed">true</bool> -->
+    <!-- Can we change the battery color? -->
+    <bool name="config_multiColorBatteryLed">true</bool>
 
     <!-- Base "touch slop" value used by ViewConfiguration as a
          movement threshold where scrolling should begin. -->
@@ -86,6 +93,14 @@
 
     <!-- Enable lockscreen translucent decor -->
     <bool name="config_enableLockScreenTranslucentDecor">true</bool>
+
+    <!--  Maximum number of supported users -->
+    <integer name="config_multiuserMaximumUsers">4</integer>
+    <!--  Whether Multiuser UI should be shown -->
+    <bool name="config_enableMultiUserUI">true</bool>
+
+    <!-- The default iface on which to monitor data use -->
+    <string name="config_datause_iface" translatable="false">rmnet_usb0</string>
 
     <!-- Defines the system property to set for performance profile xe: sys.cpu.modes. Leave it
          blank if the device do not support performance profiles
