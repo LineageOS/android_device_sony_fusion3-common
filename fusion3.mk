@@ -120,8 +120,9 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     sensors.msm8960
 
-# WIFI MAC update
+# WIFI
 PRODUCT_PACKAGES += \
+    hostapd_default.conf \
     mac-update
 
 # FM Radio
