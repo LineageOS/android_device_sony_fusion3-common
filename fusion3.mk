@@ -186,7 +186,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.audio.fluence.mode=endfire \
     persist.audio.handset.mic=analog \
     persist.audio.lowlatency.rec=false \
-    af.resampler.quality=255 \
     ro.qc.sdk.audio.fluencetype=none \
     lpa.decode=true
 
