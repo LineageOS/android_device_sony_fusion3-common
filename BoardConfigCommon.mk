@@ -30,6 +30,10 @@ BOARD_LIB_DUMPSTATE := libdumpstate.sony
 # Architecture
 TARGET_CPU_VARIANT := krait
 
+# Bionic
+BOARD_USES_LEGACY_MMAP := true
+TARGET_USE_QCOM_BIONIC_OPTIMIZATION := true
+
 # Kernel information
 BOARD_KERNEL_BASE     := 0x80200000
 BOARD_KERNEL_PAGESIZE := 2048
@@ -63,6 +67,8 @@ TARGET_NO_RPC := true
 
 # Graphics
 TARGET_DISPLAY_USE_RETIRE_FENCE := true
+NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
+OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
 
 # RIL
 BOARD_HAS_RIL_LEGACY_PAP := true
@@ -106,9 +112,6 @@ TARGET_RECOVERY_FSTAB := device/sony/fusion3-common/rootdir/fstab.qcom
 
 # Vold
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/msm_hsusb/gadget/lun%d/file
-
-# Include an expanded selection of fonts
-EXTENDED_FONT_FOOTPRINT := true
 
 # SELinux
 BOARD_SEPOLICY_DIRS += \
