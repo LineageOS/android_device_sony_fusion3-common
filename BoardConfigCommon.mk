@@ -12,68 +12,43 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Inherit common configurations
+# inherit from Sony common
 include device/sony/common/BoardConfigCommon.mk
+
+# inherit from msm8960-common
 include device/sony/msm8960-common/BoardConfigCommon.mk
 
-# Include path
 TARGET_SPECIFIC_HEADER_PATH := device/sony/fusion3-common/include
 
-# Bootloader
-TARGET_BOOTLOADER_BOARD_NAME := MSM8960
+# Kernel properties
+TARGET_KERNEL_SOURCE := kernel/sony/apq8064
 
 # Platform
+TARGET_BOOTLOADER_BOARD_NAME := MSM8960
 TARGET_BOARD_PLATFORM := msm8960
 BOARD_VENDOR_PLATFORM := fusion3
+
 BOARD_LIB_DUMPSTATE := libdumpstate.sony
 
-# Architecture
+# Flags
+TARGET_GLOBAL_CFLAGS += -mfpu=neon-vfpv4 -mfloat-abi=softfp
+TARGET_GLOBAL_CPPFLAGS += -mfpu=neon-vfpv4 -mfloat-abi=softfp
+COMMON_GLOBAL_CFLAGS += -D__ARM_USE_PLD -D__ARM_CACHE_LINE_SIZE=64
 TARGET_CPU_VARIANT := krait
+
+# Krait optimizations
+TARGET_USE_KRAIT_BIONIC_OPTIMIZATION := true
+TARGET_USE_KRAIT_PLD_SET      := true
+TARGET_KRAIT_BIONIC_PLDOFFS   := 10
+TARGET_KRAIT_BIONIC_PLDTHRESH := 10
+TARGET_KRAIT_BIONIC_BBTHRESH  := 64
+TARGET_KRAIT_BIONIC_PLDSIZE   := 64
 
 # Kernel information
 BOARD_KERNEL_BASE     := 0x80200000
 BOARD_KERNEL_PAGESIZE := 2048
-BOARD_KERNEL_CMDLINE  := console=ttyHSL0,115200,n8 androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x3F ehci-hcd.park=3 androidboot.selinux=permissive
+BOARD_KERNEL_CMDLINE  := console=ttyHSL0,115200,n8 androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x3F ehci-hcd.park=3 maxcpus=2
 BOARD_MKBOOTIMG_ARGS  := --ramdisk_offset 0x02000000
-TARGET_KERNEL_SOURCE  := kernel/sony/apq8064
-
-# QCOM hardware
-BOARD_USES_QCOM_HARDWARE := true
-
-# Audio
-BOARD_USES_ALSA_AUDIO := true
-BOARD_USES_LEGACY_ALSA_AUDIO := true
-TARGET_USES_QCOM_COMPRESSED_AUDIO := true
-BOARD_HAVE_NEW_QCOM_CSDCLIENT := true
-
-# Bluetooth
-BOARD_HAVE_BLUETOOTH_QCOM := true
-BLUETOOTH_HCI_USE_MCT := true
-
-# Camera
-USE_DEVICE_SPECIFIC_CAMERA := true
-TARGET_RELEASE_CPPFLAGS += -DNEEDS_VECTORIMPL_SYMBOLS
-
-# CM Hardware
-BOARD_HARDWARE_CLASS := device/sony/fusion3-common/cmhw
-
-# GPS
-BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := $(TARGET_BOARD_PLATFORM)
-TARGET_NO_RPC := true
-
-# Graphics
-TARGET_DISPLAY_USE_RETIRE_FENCE := true
-
-# RIL
-BOARD_HAS_RIL_LEGACY_PAP := true
-
-# Sensors
-SOMC_CFG_SENSORS := true
-SOMC_CFG_SENSORS_LIGHT_LM3533 := yes
-SOMC_CFG_SENSORS_GYRO_MPU3050 := yes
-SOMC_CFG_SENSORS_PROXIMITY_APDS9702 := yes
-SOMC_CFG_SENSORS_ACCEL_BMA250NA_INPUT := yes
-SOMC_CFG_SENSORS_COMPASS_AK8963 := yes
 
 # Wifi
 BOARD_HAS_QCOM_WLAN              := true
@@ -90,27 +65,62 @@ WIFI_DRIVER_FW_PATH_AP           := "ap"
 
 BOARD_USE_SONY_MACUPDATE := true
 
-# Filesystem
-BOARD_FLASH_BLOCK_SIZE := 131072
-TARGET_USERIMAGES_USE_EXT4 := true
+# Camera
+USE_DEVICE_SPECIFIC_CAMERA := true
 
-# Logd
-TARGET_USES_LOGD := false
+# GPS
+BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := $(TARGET_BOARD_PLATFORM)
+TARGET_NO_RPC := true
 
-# Memory management
-MALLOC_IMPL := dlmalloc
+# Bluetooth
+BOARD_HAVE_BLUETOOTH := true
+BOARD_HAVE_BLUETOOTH_QCOM := true
+BLUETOOTH_HCI_USE_MCT := true
 
-# Recovery
-BOARD_CUSTOM_BOOTIMG_MK := device/sony/fusion3-common/custombootimg.mk
-TARGET_RECOVERY_FSTAB := device/sony/fusion3-common/rootdir/fstab.qcom
+# Needed for blobs
+COMMON_GLOBAL_CFLAGS += -DNEEDS_VECTORIMPL_SYMBOLS
 
 # Vold
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/msm_hsusb/gadget/lun%d/file
 
-# Include an expanded selection of fonts
-EXTENDED_FONT_FOOTPRINT := true
+# Custom boot
+TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
+BOARD_CUSTOM_BOOTIMG_MK := device/sony/fusion3-common/custombootimg.mk
+BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_23x41.h\"
 
-# SELinux
+TARGET_RECOVERY_FSTAB := device/sony/fusion3-common/rootdir/fstab.qcom
+RECOVERY_FSTAB_VERSION := 2
+
+BOARD_FLASH_BLOCK_SIZE := 131072
+BOARD_HAS_NO_SELECT_BUTTON := true
+TARGET_USERIMAGES_USE_EXT4 := true
+
+# QCOM/CAF hardware
+COMMON_GLOBAL_CFLAGS += -DQCOM_HARDWARE
+BOARD_USES_QCOM_HARDWARE := true
+TARGET_QCOM_AUDIO_VARIANT := caf
+TARGET_QCOM_DISPLAY_VARIANT := caf
+TARGET_QCOM_MEDIA_VARIANT := caf
+
+# Audio
+BOARD_USES_ALSA_AUDIO := true
+BOARD_USES_LEGACY_ALSA_AUDIO := true
+TARGET_USES_QCOM_COMPRESSED_AUDIO := true
+BOARD_HAVE_NEW_QCOM_CSDCLIENT := true
+
+# QCOM enhanced A/V
+TARGET_ENABLE_QC_AV_ENHANCEMENTS := true
+
+BOARD_CHARGER_ENABLE_SUSPEND := true
+
+# Sensors
+SOMC_CFG_SENSORS := true
+SOMC_CFG_SENSORS_LIGHT_LM3533 := yes
+SOMC_CFG_SENSORS_GYRO_MPU3050 := yes
+SOMC_CFG_SENSORS_PROXIMITY_APDS9702 := yes
+SOMC_CFG_SENSORS_ACCEL_BMA250NA_INPUT := yes
+SOMC_CFG_SENSORS_COMPASS_AK8963 := yes
+
 BOARD_SEPOLICY_DIRS += \
     device/sony/fusion3-common/sepolicy
 
@@ -140,3 +150,14 @@ BOARD_SEPOLICY_UNION += \
     thermald.te \
     ueventd.te \
     wpa_supplicant.te
+
+BOARD_HARDWARE_CLASS := device/sony/fusion3-common/cmhw
+
+TARGET_USES_LOGD := false
+
+TARGET_DISPLAY_USE_RETIRE_FENCE := true
+
+# Include an expanded selection of fonts
+EXTENDED_FONT_FOOTPRINT := true
+
+MALLOC_IMPL := dlmalloc
