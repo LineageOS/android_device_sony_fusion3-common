@@ -16,6 +16,24 @@
       "revId": "048a93a74a08cc30ed50fd17980b07cd11931483",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_506f3e92",
+        "filename": "BoardConfigCommon.mk",
+        "patchSetId": 9
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 5911
+      },
+      "writtenOn": "2014-12-19T12:50:17Z",
+      "side": 1,
+      "message": "no, i\u0027ve b been told that temporary stuff like that is somewhat unwanted :(",
+      "parentUuid": "7aa08908_05ee168b",
+      "revId": "048a93a74a08cc30ed50fd17980b07cd11931483",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
