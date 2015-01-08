@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7aa08908_cc8b6b1d",
+        "filename": "BoardConfigCommon.mk",
+        "patchSetId": 3
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 5911
+      },
+      "writtenOn": "2015-01-08T07:37:21Z",
+      "side": 1,
+      "message": "trailing tabs \u003d evil :)",
+      "revId": "8e3eda75fbc5db7ec9efbda35fd72a7adaccb6d6",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
