@@ -12,5 +12,5 @@
 /dev/block/platform/msm_sdcc.1/by-name/cache          /cache              ext4     rw,nosuid,nodev,noatime,noauto_da_alloc,barrier=1,errors=panic             wait,check,formattable
 /dev/block/platform/msm_sdcc.1/by-name/apps_log       /misc               emmc     defaults                                                                   defaults
 
-/devices/platform/msm_sdcc.3/mmc_host/mmc1*           auto                auto     defaults                                                                   voldmanaged=sdcard1:auto,encryptable=userdata
+/devices/platform/msm_sdcc.3/mmc_host/mmc*            auto                auto     defaults                                                                   voldmanaged=sdcard1:auto,encryptable=userdata
 /devices/platform/msm_hsusb_host/usb*                 auto                auto     defaults                                                                   voldmanaged=usb:auto
