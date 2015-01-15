@@ -498,6 +498,7 @@ service qmuxd /system/bin/qmuxd
 
 service ks_checker /system/bin/sh /system/etc/kickstart_checker.sh
     class core
+    seclabel u:r:kickstart:s0
     oneshot
 
 # SONY: TrimArea Daemon
@@ -533,7 +534,6 @@ service kickstart /system/bin/qcks l -r /data/tombstones/mdm/ -e /cache/qcks/
     user system
     group system radio
     disabled
-    seclabel u:r:kickstart:s0
     oneshot
 
 service qseecomd /system/bin/qseecomd
@@ -636,14 +636,14 @@ service fuse_usbdisk /system/bin/sdcard -u 1023 -g 1023 -d /mnt/media_rw/usbdisk
 
 service thermald /system/bin/thermald -c /system/etc/thermald.conf
     class main
-    socket thermald stream 0666 root root
     user root
+    socket thermald stream 0666 root root
     disabled
 
 service system_monitor /system/bin/system_monitor
-    socket sysmon stream 0660 root system
     class core
     user root
+    socket sysmon stream 0660 root system
 
 service dis_msm_therm /system/bin/sh /system/etc/disable_msm_thermal.sh
     class core
@@ -672,9 +672,9 @@ service fm_dl /system/bin/sh /system/etc/init.qcom.fm.sh
     oneshot
 
 service illumination /system/bin/illumination_service
-    socket illumination stream 0660 root system
     class main
     user root
+    socket illumination stream 0660 root system
 
 # create filesystem if necessary
 service setup_fs /system/bin/setup_fs /dev/block/platform/msm_sdcc.1/by-name/userdata
