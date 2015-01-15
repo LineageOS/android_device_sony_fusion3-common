@@ -1,0 +1,13 @@
+recovery_only(`
+
+allow recovery rootfs:dir { create };
+
+allow recovery sdcard_posix:file { getattr open read };
+allow recovery sdcard_posix:dir { open read search };
+
+allow vold rootfs:dir { write add_name };
+
+# /blkid.tab
+#allow vold rootfs:file { create write };
+
+')
