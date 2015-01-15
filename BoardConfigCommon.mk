@@ -111,32 +111,28 @@ TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/msm_hsusb/gadget/lun%d/
 EXTENDED_FONT_FOOTPRINT := true
 
 # SELinux
+include device/qcom/sepolicy/sepolicy.mk
+
 BOARD_SEPOLICY_DIRS += \
     device/sony/fusion3-common/sepolicy
 
 BOARD_SEPOLICY_UNION += \
     file_contexts \
-    property_contexts \
-    te_macros \
-    bluetooth_loader.te \
-    bridge.te \
-    camera.te \
     device.te \
-    dhcp.te \
-    domain.te \
-    drmserver.te \
     file.te \
-    kickstart.te \
+    illumination.te \
     init.te \
+    kickstart.te \
     mac_update.te \
     mediaserver.te \
     mpdecision.te \
-    netmgrd.te \
-    qmux.te \
-    rild.te \
+    platform_app.te \
+    recovery.te \
+    setup_fs.te \
     surfaceflinger.te \
+    system_app.te \
+    system_monitor.te \
     system_server.te \
-    tee.te \
-    thermald.te \
-    ueventd.te \
-    wpa_supplicant.te
+    tad.te \
+    ta_qmi_client.te \
+    updatemiscta.te
