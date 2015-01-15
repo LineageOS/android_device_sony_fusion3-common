@@ -478,7 +478,7 @@ service mac-update /system/bin/mac-update
 service hciattach /system/bin/sh /system/etc/init.qcom.bt.sh
     class late_start
     user bluetooth
-    group qcom_oncrpc bluetooth net_bt_admin system net_bt_stack
+    group bluetooth net_bt_admin system net_bt_stack
     seclabel u:r:bluetooth_loader:s0
     disabled
     oneshot
@@ -667,7 +667,7 @@ service bugreport /system/bin/dumpstate -d -p -B \
 service fm_dl /system/bin/sh /system/etc/init.qcom.fm.sh
     class late_start
     user root
-    group system qcom_oncrpc
+    group system
     disabled
     oneshot
 
