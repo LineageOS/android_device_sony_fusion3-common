@@ -502,7 +502,7 @@ service ks_checker /system/bin/sh /system/etc/kickstart_checker.sh
 
 # SONY: TrimArea Daemon
 # Last 2 args: start block(blk size 128k), number of blocks(partitionsize(kb)/128(kb))
-service tad /sbin/tad_static /dev/block/mmcblk0 1,16
+service tad /system/bin/tad_static /dev/block/mmcblk0 1,16
     class core
     user root
     group root
