@@ -192,6 +192,11 @@ vendor/camera/SOI13BS2.dat
 vendor/camera/SOI13BS2_DW9735.dat
 vendor/camera/SOI13BS2_IMX135.dat
 vendor/camera/SOI13BS9.dat
+vendor/firmware/keymaster/keymaster.b00
+vendor/firmware/keymaster/keymaster.b01
+vendor/firmware/keymaster/keymaster.b02
+vendor/firmware/keymaster/keymaster.b03
+vendor/firmware/keymaster/keymaster.mdt
 vendor/firmware/a300_pfp.fw
 vendor/firmware/a300_pm4.fw
 vendor/lib/egl/eglsubAndroid.so
