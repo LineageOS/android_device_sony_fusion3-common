@@ -127,6 +127,7 @@ lib/libmmstillomx.so
 lib/libmpl.so
 lib/libMPU3050.so
 lib/libnetmgr.so
+lib/liboemcrypto.so
 lib/libpin-cache.so
 lib/libprotobuf-c.so
 lib/libqcci_legacy.so
@@ -199,12 +200,14 @@ vendor/firmware/keymaster/keymaster.b03
 vendor/firmware/keymaster/keymaster.mdt
 vendor/firmware/a300_pfp.fw
 vendor/firmware/a300_pm4.fw
+vendor/lib/drm/libdrmwvmplugin.s
 vendor/lib/egl/eglsubAndroid.so
 vendor/lib/egl/libEGL_adreno.so
 vendor/lib/egl/libGLESv1_CM_adreno.so
 vendor/lib/egl/libGLESv2_adreno.so
 vendor/lib/egl/libplayback_adreno.so
 vendor/lib/egl/libq3dtools_adreno.so
+vendor/lib/mediadrm/libwvdrmengine.so
 vendor/lib/libadreno_utils.so
 vendor/lib/libbccQTI.so
 vendor/lib/libC2D2.so
@@ -212,6 +215,7 @@ vendor/lib/libc2d30-a3xx.so
 vendor/lib/libc2d30.so
 vendor/lib/libCB.so
 vendor/lib/libdiag.so
+vendor/lib/libdrmdecrypt.so
 vendor/lib/libgeofence.so
 vendor/lib/libgsl.so
 vendor/lib/libizat_core.so
@@ -225,3 +229,7 @@ vendor/lib/librs_adreno_sha1.so
 vendor/lib/librs_adreno.so
 vendor/lib/libRSDriver_adreno.so
 vendor/lib/libsc-a3xx.so
+vendor/lib/libwvdrm_L1.so
+vendor/lib/libwvm.so
+vendor/lib/libWVphoneAPI.so
+vendor/lib/libWVStreamControlAPI_L1.so
