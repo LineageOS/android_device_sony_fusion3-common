@@ -30,6 +30,11 @@ BOARD_LIB_DUMPSTATE := libdumpstate.sony
 # Architecture
 TARGET_CPU_VARIANT := krait
 
+# Bionic
+MALLOC_IMPL := dlmalloc
+BOARD_USES_LEGACY_MMAP := true
+TARGET_USE_QCOM_BIONIC_OPTIMIZATION := true
+
 # Kernel information
 BOARD_KERNEL_BASE     := 0x80200000
 BOARD_KERNEL_PAGESIZE := 2048
@@ -63,6 +68,9 @@ TARGET_NO_RPC := true
 
 # Graphics
 TARGET_DISPLAY_USE_RETIRE_FENCE := true
+NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
+OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
+HAVE_ADRENO_SOURCE := false
 
 # RIL
 BOARD_HAS_RIL_LEGACY_PAP := true
@@ -96,9 +104,6 @@ TARGET_USERIMAGES_USE_EXT4 := true
 
 # Logd
 TARGET_USES_LOGD := false
-
-# Memory management
-MALLOC_IMPL := dlmalloc
 
 # Recovery
 BOARD_CUSTOM_BOOTIMG_MK := device/sony/fusion3-common/custombootimg.mk
