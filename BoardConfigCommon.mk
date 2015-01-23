@@ -30,6 +30,10 @@ BOARD_LIB_DUMPSTATE := libdumpstate.sony
 # Architecture
 TARGET_CPU_VARIANT := krait
 
+# Blob compatibility
+BOARD_USES_LEGACY_MMAP := true
+TARGET_RELEASE_CPPFLAGS += -DNEEDS_VECTORIMPL_SYMBOLS
+
 # Kernel information
 BOARD_KERNEL_BASE     := 0x80200000
 BOARD_KERNEL_PAGESIZE := 2048
@@ -52,7 +56,6 @@ BLUETOOTH_HCI_USE_MCT := true
 
 # Camera
 USE_DEVICE_SPECIFIC_CAMERA := true
-TARGET_RELEASE_CPPFLAGS += -DNEEDS_VECTORIMPL_SYMBOLS
 
 # CM Hardware
 BOARD_HARDWARE_CLASS := device/sony/fusion3-common/cmhw
@@ -63,6 +66,9 @@ TARGET_NO_RPC := true
 
 # Graphics
 TARGET_DISPLAY_USE_RETIRE_FENCE := true
+NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
+OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
+HAVE_ADRENO_SOURCE := false
 
 # RIL
 BOARD_HAS_RIL_LEGACY_PAP := true
@@ -96,9 +102,6 @@ TARGET_USERIMAGES_USE_EXT4 := true
 
 # Logd
 TARGET_USES_LOGD := false
-
-# Memory management
-MALLOC_IMPL := dlmalloc
 
 # Recovery
 BOARD_CUSTOM_BOOTIMG_MK := device/sony/fusion3-common/custombootimg.mk
