@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fad55976_eab8fce7",
+        "filename": "CleanSpec.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 2195
+      },
+      "writtenOn": "2015-01-25T04:29:52Z",
+      "side": 1,
+      "message": "READ THIS!",
+      "revId": "c03dfa490bba11e93bb3fd749ce24291abab20c8",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
