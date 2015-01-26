@@ -49,6 +49,7 @@ TARGET_KERNEL_SOURCE  := kernel/sony/apq8064
 
 # Audio
 BOARD_USES_ALSA_AUDIO := true
+BOARD_HAVE_NEW_QCOM_CSDCLIENT := true
 
 # Bluetooth
 BOARD_HAVE_BLUETOOTH := true
