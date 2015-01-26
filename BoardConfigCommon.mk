@@ -18,6 +18,9 @@ include device/sony/msm8960-common/BoardConfigCommon.mk
 # Include path
 TARGET_SPECIFIC_HEADER_PATH += device/sony/fusion3-common/include
 
+# Audio
+BOARD_HAVE_NEW_QCOM_CSDCLIENT := true
+
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := MSM8960
 
