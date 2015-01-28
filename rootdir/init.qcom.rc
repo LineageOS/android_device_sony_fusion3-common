@@ -455,12 +455,6 @@ on charger
 on property:init.svc.wpa_supplicant=stopped
     stop dhcpcd
 
-# GPS for wifi only pollux_windy
-service irsc_util /system/bin/irsc_util "/etc/sec_config"
-    class main
-    user root
-    oneshot
-
 # Fast Dormancy
 service fast-dormancy /system/bin/fast-dormancy
     class late_start
