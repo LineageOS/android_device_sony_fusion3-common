@@ -1,4 +1,1 @@
-type efs_block_device, dev_type;
-
-# Kickstart device used by QC qcks
-type kickstart_device, dev_type;
+type rfkill_device, dev_type;

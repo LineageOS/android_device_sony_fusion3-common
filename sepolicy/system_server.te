@@ -1,9 +1,7 @@
-# user.language
-allow system_server default_prop:property_service { set };
+allow system_server gpu_device:chr_file rw_file_perms;
 
-allow system_server gpu_device:chr_file { open read write };
+# Connect to illumination service
+unix_socket_connect(system_server, illumination, illumination)
 
-# /dev/socket/illumination
-allow system_server illumination:unix_stream_socket { connectto };
-
-allow system_server time_daemon:unix_stream_socket { connectto };
+# Connect to time daemon
+allow system_server time_daemon:unix_stream_socket connectto;

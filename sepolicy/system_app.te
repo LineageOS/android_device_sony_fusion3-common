@@ -1,2 +1,1 @@
-# RenderThread
-allow system_app shell_data_file:dir { search };
+allow system_app sysfs_touchpanel:file rw_file_perms;
