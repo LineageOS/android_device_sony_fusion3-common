@@ -3,10 +3,15 @@ type ta_qmi_client_exec, exec_type, file_type;
 
 init_daemon_domain(ta_qmi_client)
 
-allow ta_qmi_client smem_log_device:chr_file { read write open ioctl };
-allow ta_qmi_client sysfs_wake_lock:file { append open };
-allow ta_qmi_client self:socket { create ioctl bind read write };
-allow ta_qmi_client self:capability { dac_override };
+allow ta_qmi_client self:capability { dac_override fsetid };
+allow ta_qmi_client self:socket create_socket_perms;
 
-allow ta_qmi_client socket_device:sock_file { write };
-allow ta_qmi_client tad:unix_stream_socket { connectto };
+# Wakelocks
+wakelock_use(ta_qmi_client)
+
+# Connect to tad and qmuxd
+unix_socket_connect(ta_qmi_client, tad, tad)
+qmux_socket(ta_qmi_client)
+
+# Access to smem_log
+allow ta_qmi_client smem_log_device:chr_file rw_file_perms;

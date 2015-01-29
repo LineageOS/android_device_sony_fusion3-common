@@ -80,6 +80,7 @@ on fs
     restorecon /cache/qcks/efs2.bin
     restorecon /cache/qcks/efs3.bin
     restorecon /cache/qcks/ta.bin
+    restorecon /sys/devices/virtual/input/clearpad/wakeup_gesture
 
 on early-boot
     # set RLIMIT_MEMLOCK to 64MB
@@ -473,7 +474,6 @@ service hciattach /system/bin/sh /system/etc/init.qcom.bt.sh
     class late_start
     user bluetooth
     group bluetooth net_bt_admin system net_bt_stack
-    seclabel u:r:bluetooth_loader:s0
     disabled
     oneshot
 
@@ -492,7 +492,6 @@ service qmuxd /system/bin/qmuxd
 
 service ks_checker /system/bin/sh /system/etc/kickstart_checker.sh
     class core
-    seclabel u:r:kickstart:s0
     oneshot
 
 # SONY: TrimArea Daemon
@@ -564,7 +563,7 @@ service wpa_supplicant /system/bin/wpa_supplicant \
     #   user wifi
     #   group wifi inet keystore
     class main
-    socket wpa_wlan0 dgram 660 wifi wifi u:object_r:wpa_socket:s0
+    socket wpa_wlan0 dgram 660 wifi wifi
     disabled
     oneshot
 
@@ -580,7 +579,7 @@ service p2p_supplicant /system/bin/wpa_supplicant \
 #   user wifi
 #   group wifi inet keystore
     class main
-    socket wpa_wlan0 dgram 660 wifi wifi u:object_r:wpa_socket:s0
+    socket wpa_wlan0 dgram 660 wifi wifi
     disabled
     oneshot
 
