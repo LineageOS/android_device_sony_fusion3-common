@@ -125,16 +125,13 @@ BOARD_SEPOLICY_UNION += \
     file.te \
     illumination.te \
     init.te \
-    kickstart.te \
     mac_update.te \
     mediaserver.te \
     mpdecision.te \
-    platform_app.te \
     recovery.te \
-    surfaceflinger.te \
-    system_app.te \
     system_monitor.te \
     system_server.te \
     tad.te \
     ta_qmi_client.te \
-    updatemiscta.te
+    updatemiscta.te \
+    wpa.te

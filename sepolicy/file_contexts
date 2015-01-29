@@ -1,24 +1,27 @@
 # Gpu
-/dev/kgsl-2d0                       u:object_r:gpu_device:s0
-/dev/kgsl-2d1                       u:object_r:gpu_device:s0
+/dev/gss                            u:object_r:gpu_device:s0
 
-# Trim Area daemon
+# Sockets
+/dev/socket/illumination            u:object_r:illumination_socket:s0
+/dev/socket/mpdecision(/.*)?        u:object_r:mpctl_socket:s0
+/dev/socket/mpctl                   u:object_r:mpctl_socket:s0
 /dev/socket/tad                     u:object_r:tad_socket:s0
 
 # Camera
 /dev/gemini.*                       u:object_r:camera_device:s0
-/data/etc/flashled_vf_factory       u:object_r:camera_data_file:s0
+
+# Mpdecision
+/data/system/default_values         u:object_r:mpctl_data_file:s0
 
 # Wifi
 /data/etc/wlan_macaddr[0-3]         u:object_r:wifi_data_file:s0
+/dev/rfkill                         u:object_r:rfkill_device:s0
 
 # Bluetooth
 /data/etc/bluetooth_bdaddr          u:object_r:bluetooth_data_file:s0
 
 # System binaries
-/system/bin/efsks                   u:object_r:kickstart_exec:s0
 /system/bin/illumination_service    u:object_r:illumination_exec:s0
-/system/etc/kickstart_checker.sh    u:object_r:kickstart_exec:s0
 /system/bin/mac-update              u:object_r:mac_update_exec:s0
 /system/bin/system_monitor          u:object_r:system_monitor_exec:s0
 /system/bin/ta_qmi_client           u:object_r:ta_qmi_client_exec:s0

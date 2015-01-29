@@ -1,2 +1,0 @@
-# RenderThread
-allow system_app shell_data_file:dir { search };
