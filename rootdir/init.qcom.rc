@@ -80,7 +80,6 @@ on fs
     restorecon /cache/qcks/efs2.bin
     restorecon /cache/qcks/efs3.bin
     restorecon /cache/qcks/ta.bin
-    restorecon /sys/devices/virtual/input/clearpad/wakeup_gesture
 
 on early-boot
     # set RLIMIT_MEMLOCK to 64MB
