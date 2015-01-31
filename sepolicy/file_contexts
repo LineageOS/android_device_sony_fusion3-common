@@ -21,7 +21,7 @@
 /data/etc/bluetooth_bdaddr          u:object_r:bluetooth_data_file:s0
 
 # Touch panel
-/sys/devices/.*/wakeup_gesture      u:object_r:sysfs_touchpanel:s0
+/sys/devices/virtual/input/clearpad/wakeup_gesture      u:object_r:sysfs_touchpanel:s0
 
 # System binaries
 /system/bin/illumination_service    u:object_r:illumination_exec:s0
