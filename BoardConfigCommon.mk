@@ -125,9 +125,12 @@ BOARD_SEPOLICY_UNION += \
     file.te \
     illumination.te \
     init.te \
+    init_shell.te \
     mac_update.te \
+    mdm_helper.te \
     mediaserver.te \
     mpdecision.te \
+    radio.te \
     recovery.te \
     system_app.te \
     system_monitor.te \

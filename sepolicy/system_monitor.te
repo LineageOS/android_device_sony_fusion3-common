@@ -3,7 +3,8 @@ type system_monitor_exec, exec_type, file_type;
 
 init_daemon_domain(system_monitor)
 
-allow system_monitor self:capability { dac_override net_admin };
+allow system_monitor self:capability { dac_override net_admin fsetid };
+allow system_monitor self:socket create_socket_perms;
 allow system_monitor self:netlink_kobject_uevent_socket create_socket_perms;
 
 # Wakelocks
@@ -18,6 +19,7 @@ allow system_monitor sysfs_thermal:file rw_file_perms;
 
 # Thermal mitigaiton
 allow system_monitor sysfs:file write;
+allow system_monitor sysfs_devices_system_cpu:file write;
 
 # Connect to qmuxd
 qmux_socket(system_monitor)
