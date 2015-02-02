@@ -23,6 +23,9 @@
 # Touch panel
 /sys/devices/virtual/input/input1/wakeup_gesture      u:object_r:sysfs_touchpanel:s0
 
+# Vibrator
+/sys/devices/virtual/timed_output/vibrator/level      u:object_r:sysfs_vibrator:s0
+
 # System binaries
 /system/bin/illumination_service    u:object_r:illumination_exec:s0
 /system/bin/mac-update              u:object_r:mac_update_exec:s0

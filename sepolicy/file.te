@@ -5,5 +5,8 @@ type tad_socket, file_type;
 # Touchpanel
 type sysfs_touchpanel, fs_type, sysfs_type;
 
+# Vibrator
+type sysfs_vibrator, fs_type, sysfs_type;
+
 # Default type for anything under /firmware
 type radio_efs_file, fs_type;

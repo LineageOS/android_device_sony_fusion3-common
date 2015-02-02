@@ -12,3 +12,7 @@ allow mediaserver system_server:unix_stream_socket { read write };
 
 # /dev/input
 allow mediaserver input_device:dir search;
+
+# ALS
+allow mediaserver input_device:chr_file r_file_perms;
+unix_socket_connect(mediaserver, illumination, illumination)
