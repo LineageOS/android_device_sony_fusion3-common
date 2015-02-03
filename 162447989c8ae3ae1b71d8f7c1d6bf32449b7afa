@@ -16,6 +16,24 @@
       "revId": "162447989c8ae3ae1b71d8f7c1d6bf32449b7afa",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_223ec2b8",
+        "filename": "BoardConfigCommon.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 5911
+      },
+      "writtenOn": "2015-02-03T21:31:39Z",
+      "side": 0,
+      "message": "that\u0027s not really a platform thing, is it? it would apply to yuga/odin only, wouldnt it?",
+      "parentUuid": "bacf61ea_774b5a5a",
+      "revId": "162447989c8ae3ae1b71d8f7c1d6bf32449b7afa",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
