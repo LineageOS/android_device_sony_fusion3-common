@@ -183,11 +183,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Audio
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.audio.fluence.mode=endfire \
-    persist.audio.handset.mic=analog \
-    persist.audio.lowlatency.rec=false \
-    ro.qc.sdk.audio.fluencetype=none \
-    lpa.decode=true
+    persist.audio.fluence.voicecall=true
+    persist.audio.fluence.voicerec=false \
+    persist.audio.fluence.speaker=true
 
 # Bluetooth
 PRODUCT_PROPERTY_OVERRIDES += \
