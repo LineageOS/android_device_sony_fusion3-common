@@ -12,8 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Inherit common configurations
-include device/sony/common/BoardConfigCommon.mk
+# Inherit common configuration
 include device/sony/msm8960-common/BoardConfigCommon.mk
 
 # Include path
