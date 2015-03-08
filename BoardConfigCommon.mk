@@ -12,8 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Inherit common configurations
-include device/sony/common/BoardConfigCommon.mk
+# Inherit common configuration
 include device/sony/msm8960-common/BoardConfigCommon.mk
 
 # Include path
@@ -24,11 +23,8 @@ TARGET_BOOTLOADER_BOARD_NAME := MSM8960
 
 # Platform
 TARGET_BOARD_PLATFORM := msm8960
-BOARD_VENDOR_PLATFORM := fusion3
 BOARD_LIB_DUMPSTATE := libdumpstate.sony
 
-# Architecture
-TARGET_CPU_VARIANT := krait
 
 # Blob compatibility
 BOARD_USES_LEGACY_MMAP := true
