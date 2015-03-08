@@ -7,3 +7,7 @@ unix_socket_connect(system_server, illumination, illumination)
 allow system_server time_daemon:unix_stream_socket connectto;
 
 allow system_server mdm_device:chr_file r_file_perms;
+
+# Hardware tunables
+allow system_server sysfs_touchpanel:file rw_file_perms;
+allow system_server sysfs_vibrator:file rw_file_perms;
