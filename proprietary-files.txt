@@ -89,7 +89,6 @@ lib/libfmradio.sony-iris.so
 lib/libgemini.so
 lib/lib_get_secure_mode.so
 lib/libgps.utils.so
-lib/libgsl.so
 lib/libidd.so
 lib/libidl.so
 lib/libimage-jpeg-dec-omx-comp.so
