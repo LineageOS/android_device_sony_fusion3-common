@@ -52,6 +52,9 @@ NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
 OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
 HAVE_ADRENO_SOURCE := false
 
+# PowerHAL
+TARGET_USES_CM_POWERHAL := true
+
 # RIL
 BOARD_PROVIDES_LIBRIL := true
 
@@ -116,9 +119,9 @@ BOARD_SEPOLICY_UNION += \
     mpdecision.te \
     radio.te \
     recovery.te \
-    system_monitor.te \
     system_server.te \
     tad.te \
     ta_qmi_client.te \
+    thermanager.te \
     updatemiscta.te \
     wpa.te
