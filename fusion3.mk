@@ -115,6 +115,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/rootdir/system/etc/media_profiles.xml:system/etc/media_profiles.xml
 
+# Power
+PRODUCT_PACKAGES += \
+    power.msm8960
+
 # Sensors
 PRODUCT_PACKAGES += \
     sensors.msm8960
