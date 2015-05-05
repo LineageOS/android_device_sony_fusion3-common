@@ -100,6 +100,11 @@ on early-boot
     write /sys/module/pm8921_charger/parameters/enable_lowbatt_detect 1
 
 on boot
+    # Bring CPUs online early
+    write /sys/devices/system/cpu/cpu1/online 1
+    write /sys/devices/system/cpu/cpu2/online 1
+    write /sys/devices/system/cpu/cpu3/online 1
+
     exec /system/bin/btnvtool -O
     chown bluetooth bluetooth /sys/module/bluetooth_power/parameters/power
     chown bluetooth bluetooth /sys/class/rfkill/rfkill0/type
@@ -280,6 +285,45 @@ on post-fs-data
     # communicate with mpdecision and thermald
     mkdir /dev/socket/mpdecision 2770 root system
 
+    # Kgsl governors
+    chown root system /sys/devices/platform/kgsl-3d0.0/kgsl/kgsl-3d0/pwrscale/policy
+    chmod 0664 /sys/devices/platform/kgsl-3d0.0/kgsl/kgsl-3d0/pwrscale/policy
+    chown root system /sys/devices/platform/kgsl-3d0.0/kgsl/kgsl-3d0/pwrscale/policy_config/conservative/polling_interval
+    chmod 0664 /sys/devices/platform/kgsl-3d0.0/kgsl/kgsl-3d0/pwrscale/policy_config/conservative/polling_interval
+
+    # Chown cpu online files as needed for the Settings app
+    chown root system /sys/devices/system/cpu/cpu1/online
+    chown root system /sys/devices/system/cpu/cpu2/online
+    chown root system /sys/devices/system/cpu/cpu3/online
+
+on charger
+    # Enable Power modes and set the CPU Freq Sampling rates
+    write /sys/module/rpm_resources/enable_low_power/L2_cache 1
+    write /sys/module/rpm_resources/enable_low_power/pxo 1
+    write /sys/module/rpm_resources/enable_low_power/vdd_dig 1
+    write /sys/module/rpm_resources/enable_low_power/vdd_mem 1
+    write /sys/module/pm_8x60/modes/cpu0/power_collapse/suspend_enabled 1
+    write /sys/module/pm_8x60/modes/cpu1/power_collapse/suspend_enabled 1
+    write /sys/module/pm_8x60/modes/cpu2/power_collapse/suspend_enabled 1
+    write /sys/module/pm_8x60/modes/cpu3/power_collapse/suspend_enabled 1
+    write /sys/module/pm_8x60/modes/cpu0/power_collapse/idle_enabled 1
+    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor "powersave"
+    write /sys/devices/system/cpu/cpu1/cpufreq/scaling_governor "powersave"
+    write /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor "powersave"
+    write /sys/devices/system/cpu/cpu3/cpufreq/scaling_governor "powersave"
+    write /sys/devices/system/cpu/cpufreq/ondemand/up_threshold 90
+    write /sys/devices/system/cpu/cpufreq/ondemand/sampling_rate 50000
+    write /sys/devices/system/cpu/cpufreq/ondemand/io_is_busy 1
+    write /sys/devices/system/cpu/cpufreq/ondemand/sampling_down_factor 4
+    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq 384000
+    write /sys/devices/system/cpu/cpu1/cpufreq/scaling_min_freq 384000
+    write /sys/devices/system/cpu/cpu2/cpufreq/scaling_min_freq 384000
+    write /sys/devices/system/cpu/cpu3/cpufreq/scaling_min_freq 384000
+    write /sys/devices/system/cpu/cpu1/online 0
+    write /sys/devices/system/cpu/cpu2/online 0
+    write /sys/devices/system/cpu/cpu3/online 0
+
+on property:sys.boot_completed=1
     # Enable Power modes and set the CPU Freq Sampling rates
     write /sys/module/rpm_resources/enable_low_power/L2_cache 1
     write /sys/module/rpm_resources/enable_low_power/pxo 1
@@ -320,48 +364,7 @@ on post-fs-data
     write /sys/devices/system/cpu/cpu1/cpufreq/scaling_min_freq 384000
     write /sys/devices/system/cpu/cpu2/cpufreq/scaling_min_freq 384000
     write /sys/devices/system/cpu/cpu3/cpufreq/scaling_min_freq 384000
-    write /sys/devices/system/cpu/cpu1/online 1
-    write /sys/devices/system/cpu/cpu2/online 1
-    write /sys/devices/system/cpu/cpu3/online 1
     write /dev/cpuctl/cpu.notify_on_migrate 1
-
-    # Kgsl governors
-    chown root system /sys/devices/platform/kgsl-3d0.0/kgsl/kgsl-3d0/pwrscale/policy
-    chmod 0664 /sys/devices/platform/kgsl-3d0.0/kgsl/kgsl-3d0/pwrscale/policy
-    chown root system /sys/devices/platform/kgsl-3d0.0/kgsl/kgsl-3d0/pwrscale/policy_config/conservative/polling_interval
-    chmod 0664 /sys/devices/platform/kgsl-3d0.0/kgsl/kgsl-3d0/pwrscale/policy_config/conservative/polling_interval
-
-    # Chown cpu online files as needed for the Settings app
-    chown root system /sys/devices/system/cpu/cpu1/online
-    chown root system /sys/devices/system/cpu/cpu2/online
-    chown root system /sys/devices/system/cpu/cpu3/online
-
-on charger
-    # Enable Power modes and set the CPU Freq Sampling rates
-    write /sys/module/rpm_resources/enable_low_power/L2_cache 1
-    write /sys/module/rpm_resources/enable_low_power/pxo 1
-    write /sys/module/rpm_resources/enable_low_power/vdd_dig 1
-    write /sys/module/rpm_resources/enable_low_power/vdd_mem 1
-    write /sys/module/pm_8x60/modes/cpu0/power_collapse/suspend_enabled 1
-    write /sys/module/pm_8x60/modes/cpu1/power_collapse/suspend_enabled 1
-    write /sys/module/pm_8x60/modes/cpu2/power_collapse/suspend_enabled 1
-    write /sys/module/pm_8x60/modes/cpu3/power_collapse/suspend_enabled 1
-    write /sys/module/pm_8x60/modes/cpu0/power_collapse/idle_enabled 1
-    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor "powersave"
-    write /sys/devices/system/cpu/cpu1/cpufreq/scaling_governor "powersave"
-    write /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor "powersave"
-    write /sys/devices/system/cpu/cpu3/cpufreq/scaling_governor "powersave"
-    write /sys/devices/system/cpu/cpufreq/ondemand/up_threshold 90
-    write /sys/devices/system/cpu/cpufreq/ondemand/sampling_rate 50000
-    write /sys/devices/system/cpu/cpufreq/ondemand/io_is_busy 1
-    write /sys/devices/system/cpu/cpufreq/ondemand/sampling_down_factor 4
-    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq 384000
-    write /sys/devices/system/cpu/cpu1/cpufreq/scaling_min_freq 384000
-    write /sys/devices/system/cpu/cpu2/cpufreq/scaling_min_freq 384000
-    write /sys/devices/system/cpu/cpu3/cpufreq/scaling_min_freq 384000
-    write /sys/devices/system/cpu/cpu1/online 0
-    write /sys/devices/system/cpu/cpu2/online 0
-    write /sys/devices/system/cpu/cpu3/online 0
 
 on property:init.svc.wpa_supplicant=stopped
     stop dhcpcd
@@ -537,21 +540,10 @@ service fuse_usbdisk /system/bin/sdcard -u 1023 -g 1023 -w 1023 -d /mnt/media_rw
     class late_start
     disabled
 
-service thermald /system/bin/thermald -c /system/etc/thermald.conf
-    class main
-    user root
-    socket thermald stream 0666 root root
-    disabled
-
-service system_monitor /system/bin/system_monitor
+service thermanager /system/bin/thermanager /system/etc/thermanager.xml
     class core
     user root
-    socket sysmon stream 0660 root system
-
-service dis_msm_therm /system/bin/sh /system/etc/disable_msm_thermal.sh
-    class core
-    user root
-    oneshot
+    group root
 
 service mpdecision /system/bin/mpdecision --no_sleep --avg_comp
     class main
