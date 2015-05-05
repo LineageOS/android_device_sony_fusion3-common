@@ -8,6 +8,8 @@ allow updatemiscta updatemiscta_prop:property_service set;
 
 unix_socket_connect(updatemiscta, property, init)
 
+unix_socket_connect(updatemiscta, property, init)
+
 #Connect to tad
 type_transition updatemiscta socket_device:sock_file tad_socket;
 unix_socket_connect(updatemiscta, tad, tad)
