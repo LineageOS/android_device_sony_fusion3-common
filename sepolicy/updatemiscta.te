@@ -5,6 +5,8 @@ init_daemon_domain(updatemiscta)
 
 allow updatemiscta self:capability dac_override;
 
+unix_socket_connect(updatemiscta, property, init)
+
 #Connect to tad
 type_transition updatemiscta socket_device:sock_file tad_socket;
 unix_socket_connect(updatemiscta, tad, tad)
