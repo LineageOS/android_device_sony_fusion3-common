@@ -537,21 +537,10 @@ service fuse_usbdisk /system/bin/sdcard -u 1023 -g 1023 -w 1023 -d /mnt/media_rw
     class late_start
     disabled
 
-service thermald /system/bin/thermald -c /system/etc/thermald.conf
+service thermanager /system/bin/thermanager /system/etc/thermanager.xml
     class main
     user root
-    socket thermald stream 0666 root root
-    disabled
-
-service system_monitor /system/bin/system_monitor
-    class core
-    user root
-    socket sysmon stream 0660 root system
-
-service dis_msm_therm /system/bin/sh /system/etc/disable_msm_thermal.sh
-    class core
-    user root
-    oneshot
+    group root
 
 service mpdecision /system/bin/mpdecision --no_sleep --avg_comp
     class main
