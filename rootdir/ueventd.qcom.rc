@@ -114,8 +114,14 @@
 /sys/devices/virtual/input/input*   single      0640  system   system
 
 # LM3533 ALS
-/sys/devices/i2c-0/0-0036 als_enable 0600 system system
-/sys/devices/i2c-0/0-0036 als_result 0400 system system
+/sys/devices/i2c-0/0-0036 als_enable 0660 system system
+/sys/devices/i2c-0/0-0036 als_result 0440 system system
+/sys/devices/i2c-0/0-0036 sync_lvbanks 0660 system system
+/sys/devices/i2c-0/0-0036/leds/lm3533* brightness 0660 system system
+/sys/devices/i2c-0/0-0036/leds/lm3533* pattern 0660 system system
+/sys/devices/i2c-0/0-0036/leds/lm3533* max_brightness 0640 system system
+/sys/devices/i2c-0/0-002c/backlight/lcd-backlight brightness 0660 system system
+/sys/devices/i2c-0/0-002c/backlight/lcd-backlight max_brightness 0640 system system
 
 # IR Remote
 /dev/ttyHSL2                                    0666  system   system
