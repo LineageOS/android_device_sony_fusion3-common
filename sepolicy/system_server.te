@@ -1,8 +1,5 @@
 allow system_server gpu_device:chr_file rw_file_perms;
 
-# Connect to illumination service
-unix_socket_connect(system_server, illumination, illumination)
-
 # Connect to time daemon
 allow system_server time_daemon:unix_stream_socket connectto;
 

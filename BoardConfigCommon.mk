@@ -148,7 +148,6 @@ BOARD_SEPOLICY_UNION += \
     file_contexts \
     device.te \
     file.te \
-    illumination.te \
     init.te \
     init_shell.te \
     mac_update.te \
