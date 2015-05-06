@@ -61,7 +61,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Lights wrapper
 PRODUCT_PACKAGES += \
-    lights.msm8960
+    lights.msm8960 \
+    libals
 
 # Media profile
 PRODUCT_COPY_FILES += \
