@@ -149,5 +149,6 @@ BOARD_SEPOLICY_UNION += \
     tad.te \
     ta_qmi_client.te \
     thermanager.te \
+    untrusted_app.te \
     updatemiscta.te \
     wpa.te
