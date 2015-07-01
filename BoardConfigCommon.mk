@@ -40,10 +40,6 @@ BOARD_LIB_DUMPSTATE := libdumpstate.sony
 # Bionic
 MALLOC_IMPL := dlmalloc
 
-# Blob compatibility
-BOARD_USES_LEGACY_MMAP := true
-TARGET_RELEASE_CPPFLAGS += -DNEEDS_VECTORIMPL_SYMBOLS
-
 # Kernel information
 BOARD_KERNEL_BASE     := 0x80200000
 BOARD_KERNEL_PAGESIZE := 2048
@@ -93,14 +89,6 @@ BOARD_USES_QCOM_HARDWARE := true
 BOARD_PROVIDES_LIBRIL := true
 BOARD_RIL_CLASS := ../../../device/sony/fusion3-common/ril/
 
-# Sensors
-SOMC_CFG_SENSORS := true
-SOMC_CFG_SENSORS_ACCEL_BMA250NA_INPUT := yes
-SOMC_CFG_SENSORS_COMPASS_AK8963 := yes
-SOMC_CFG_SENSORS_GYRO_MPU3050 := yes
-SOMC_CFG_SENSORS_LIGHT_LM3533 := yes
-SOMC_CFG_SENSORS_PROXIMITY_APDS9702 := yes
-
 # Wifi
 BOARD_HAS_QCOM_WLAN              := true
 BOARD_WLAN_DEVICE                := qcwcn
@@ -123,9 +111,6 @@ TARGET_USERIMAGES_USE_F2FS := true
 
 # Font expansion
 EXTENDED_FONT_FOOTPRINT := true
-
-# Logd
-TARGET_USES_LOGD := false
 
 # Recovery
 BOARD_CUSTOM_BOOTIMG_MK := device/sony/fusion3-common/custombootimg.mk
