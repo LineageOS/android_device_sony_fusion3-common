@@ -1,7 +1,5 @@
 bin/btnvtool
-bin/cal_data_manager
 bin/clearpad_fwloader
-bin/ds_fmc_appd
 bin/fmconfig
 bin/fm_qsoc_patches
 bin/hci_qcomm_init
@@ -12,7 +10,6 @@ bin/qmuxd
 bin/qseecomd
 bin/ta2bin
 bin/taimport
-bin/ta_param_loader
 bin/ta_qmi_client
 bin/usbhub
 bin/usbhub_init
@@ -65,6 +62,7 @@ etc/firmware/wlan/prima/WCNSS_qcom_wlan_nv.bin
 lib/hw/camera.vendor.qcom.so
 lib/hw/gps.default.so
 lib/hw/lights.vendor.default.so
+lib/hw/sensors.default.so
 lib/libacdbloader.so
 lib/libadsprpc.so
 lib/libals.so
@@ -92,9 +90,9 @@ lib/libidl.so
 lib/libimage-jpeg-dec-omx-comp.so
 lib/libimage-jpeg-enc-omx-comp.so
 lib/libimage-omx-common.so
+lib/libinvensense_hal.so
 lib/libkeyctrl.so
 lib/liblights-core.so
-lib/libloc_adapter.so
 lib/libloc_api_v02.so
 lib/libloc_core.so
 lib/libloc_ds_api.so
@@ -103,7 +101,6 @@ lib/libmercury.so
 lib/libMiscTaAccessor.so
 lib/libmiscta.so
 lib/libmllite.so
-lib/libmlplatform.so
 lib/libmmcamera_3a_legacy.so
 lib/libmmcamera_faceproc.so
 lib/libmmcamera_frameproc.so
@@ -121,14 +118,12 @@ lib/libmmjpeg_interface.so
 lib/libmmjpeg.so
 lib/libmmmpod.so
 lib/libmmstillomx.so
-lib/libmpl.so
-lib/libMPU3050.so
+lib/libmplmpu.so
 lib/libnetmgr.so
 lib/liboemcrypto.so
 lib/libpin-cache.so
 lib/libprotobuf-c.so
 lib/libqcci_legacy.so
-lib/libqc-opt.so:vendor/lib/libqc-opt.so
 lib/libqdi.so
 lib/libqdp.so
 lib/libqmi_client_qmux.so
@@ -136,10 +131,8 @@ lib/libqmiservices.so
 lib/libqmi.so
 lib/libQSEEComAPI.so
 lib/libril-qc-qmi-1.so
-lib/libsensors_akm8963.so
 lib/libsys-utils.so
 lib/libta.so
-lib/libtime_genoff.so
 vendor/camera/KMO08BN0_IMX111.dat
 vendor/camera/LGI02BN0.dat
 vendor/camera/LGI08BN2_DW9714.dat
@@ -191,10 +184,12 @@ vendor/lib/libqmi_cci.so
 vendor/lib/libqmi_common_so.so
 vendor/lib/libqmi_csi.so
 vendor/lib/libqmi_encdec.so
+vendor/lib/libqti-perfd-client.so
 vendor/lib/librs_adreno_sha1.so
 vendor/lib/librs_adreno.so
 vendor/lib/libRSDriver_adreno.so
 vendor/lib/libsc-a3xx.so
+vendor/lib/libtime_genoff.so
 vendor/lib/libwvdrm_L1.so
 vendor/lib/libwvm.so
 vendor/lib/libWVphoneAPI.so
