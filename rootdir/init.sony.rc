@@ -1,0 +1,135 @@
+on boot
+    # LM356x/cameralight
+    chown system system /sys/bus/i2c/devices/0-0053/torch_enable
+    chown system system /sys/bus/i2c/devices/0-0053/torch_current
+    chown system system /sys/bus/i2c/devices/0-0053/privacy_enable
+    chown system system /sys/bus/i2c/devices/0-0053/privacy_current
+    chown system system /sys/bus/i2c/devices/0-0053/flash_enable
+    chown system system /sys/bus/i2c/devices/0-0053/flash_duration
+    chown system system /sys/bus/i2c/devices/0-0053/flash_synchronization
+    chown system system /sys/bus/i2c/devices/0-0053/flash_current
+    chown system system /sys/bus/i2c/devices/0-0053/status
+
+    # Invensense sensor HAL interfaces
+    chown system input /sys/bus/iio/devices/iio:device0/accl_enable
+    chown system input /sys/bus/iio/devices/iio:device0/accl_matrix
+    chown system input /sys/bus/iio/devices/iio:device0/gyro_enable
+    chown system input /sys/bus/iio/devices/iio:device0/gyro_matrix
+    chown system input /sys/bus/iio/devices/iio:device0/in_accel_scale
+    chown system input /sys/bus/iio/devices/iio:device0/in_accel_x_calibbias
+    chown system input /sys/bus/iio/devices/iio:device0/in_accel_x_offset
+    chown system input /sys/bus/iio/devices/iio:device0/in_accel_x_raw
+    chown system input /sys/bus/iio/devices/iio:device0/in_accel_y_calibbias
+    chown system input /sys/bus/iio/devices/iio:device0/in_accel_y_offset
+    chown system input /sys/bus/iio/devices/iio:device0/in_accel_y_raw
+    chown system input /sys/bus/iio/devices/iio:device0/in_accel_z_calibbias
+    chown system input /sys/bus/iio/devices/iio:device0/in_accel_z_offset
+    chown system input /sys/bus/iio/devices/iio:device0/in_accel_z_raw
+    chown system input /sys/bus/iio/devices/iio:device0/in_anglvel_scale
+    chown system input /sys/bus/iio/devices/iio:device0/in_anglvel_x_calibbias
+    chown system input /sys/bus/iio/devices/iio:device0/in_anglvel_x_raw
+    chown system input /sys/bus/iio/devices/iio:device0/in_anglvel_y_calibbias
+    chown system input /sys/bus/iio/devices/iio:device0/in_anglvel_y_raw
+    chown system input /sys/bus/iio/devices/iio:device0/in_anglvel_z_calibbias
+    chown system input /sys/bus/iio/devices/iio:device0/in_anglvel_z_raw
+    chown system input /sys/bus/iio/devices/iio:device0/reg_dump
+    chown system input /sys/bus/iio/devices/iio:device0/sampling_frequency
+    chown system input /sys/bus/iio/devices/iio:device0/sampling_frequency_available
+    chown system input /sys/bus/iio/devices/iio:device0/scan_elements/in_accel_x_en
+    chown system input /sys/bus/iio/devices/iio:device0/scan_elements/in_accel_y_en
+    chown system input /sys/bus/iio/devices/iio:device0/scan_elements/in_accel_z_en
+    chown system input /sys/bus/iio/devices/iio:device0/scan_elements/in_anglvel_x_en
+    chown system input /sys/bus/iio/devices/iio:device0/scan_elements/in_anglvel_y_en
+    chown system input /sys/bus/iio/devices/iio:device0/scan_elements/in_anglvel_z_en
+    chown system input /sys/bus/iio/devices/iio:device0/scan_elements/in_timestamp_en
+    chown system input /sys/bus/iio/devices/iio:device0/secondary_name
+    chown system input /sys/bus/iio/devices/iio:device0/self_test
+    chown system input /sys/bus/iio/devices/iio:device0/self_test_samples
+    chown system input /sys/bus/iio/devices/iio:device0/self_test_threshold
+    chown system input /sys/bus/iio/devices/iio:device0/temperature
+    chown system input /sys/bus/iio/devices/iio:device0/buffer/enable
+    chown system input /sys/bus/iio/devices/iio:device0/buffer/length
+    chown system input /sys/bus/iio/devices/iio:device0/trigger/current_trigger
+    chown system input /sys/bus/iio/devices/iio:device1/buffer/enable
+    chown system input /sys/bus/iio/devices/iio:device1/buffer/length
+    chown system input /sys/bus/iio/devices/iio:device1/trigger/current_trigger
+    chown system input /sys/bus/iio/devices/iio:device1/compass_matrix
+    chown system input /sys/bus/iio/devices/iio:device1/in_magn_scale
+    chown system input /sys/bus/iio/devices/iio:device1/in_magn_x_raw
+    chown system input /sys/bus/iio/devices/iio:device1/in_magn_y_raw
+    chown system input /sys/bus/iio/devices/iio:device1/in_magn_z_raw
+    chown system input /sys/bus/iio/devices/iio:device1/sampling_frequency
+    chown system input /sys/bus/iio/devices/iio:device1/scale
+    chown system input /sys/bus/iio/devices/iio:device1/scan_elements/in_magn_x_en
+    chown system input /sys/bus/iio/devices/iio:device1/scan_elements/in_magn_y_en
+    chown system input /sys/bus/iio/devices/iio:device1/scan_elements/in_magn_z_en
+    chown system input /sys/bus/iio/devices/iio:device1/scan_elements/in_timestamp_en
+
+on post-fs
+    #led RGB
+    chown system system /sys/class/leds/lm3533-blue/als_enable
+    chown system system /sys/class/leds/lm3533-blue/als_on_suspend_enable
+    chown system system /sys/class/leds/lm3533-blue/brightness
+    chown system system /sys/class/leds/lm3533-blue/enable_scaler
+    chown system system /sys/class/leds/lm3533-blue/fsc
+    chown system system /sys/class/leds/lm3533-blue/max_brightness
+    chown system system /sys/class/leds/lm3533-blue/pattern
+    chown system system /sys/class/leds/lm3533-blue/pwm
+
+    chown system system /sys/class/leds/lm3533-green/als_enable
+    chown system system /sys/class/leds/lm3533-green/als_on_suspend_enable
+    chown system system /sys/class/leds/lm3533-green/brightness
+    chown system system /sys/class/leds/lm3533-green/enable_scaler
+    chown system system /sys/class/leds/lm3533-green/fsc
+    chown system system /sys/class/leds/lm3533-green/max_brightness
+    chown system system /sys/class/leds/lm3533-green/pattern
+    chown system system /sys/class/leds/lm3533-green/pwm
+
+    chown system system /sys/class/leds/lm3533-red/als_enable
+    chown system system /sys/class/leds/lm3533-red/als_on_suspend_enable
+    chown system system /sys/class/leds/lm3533-red/brightness
+    chown system system /sys/class/leds/lm3533-red/enable_scaler
+    chown system system /sys/class/leds/lm3533-red/fsc
+    chown system system /sys/class/leds/lm3533-red/max_brightness
+    chown system system /sys/class/leds/lm3533-red/pattern
+    chown system system /sys/class/leds/lm3533-red/pwm
+
+    chown system system /sys/bus/i2c/devices/0-0036/als1_curve
+    chown system system /sys/bus/i2c/devices/0-0036/als2_curve
+    chown system system /sys/bus/i2c/devices/0-0036/als3_curve
+    chown system system /sys/bus/i2c/devices/0-0036/als_current
+    chown system system /sys/bus/i2c/devices/0-0036/als_enable
+    chown system system /sys/bus/i2c/devices/0-0036/als_result
+    chown system system /sys/bus/i2c/devices/0-0036/als_suspend_current
+    chown system system /sys/bus/i2c/devices/0-0036/als_zones
+    chown system system /sys/bus/i2c/devices/0-0036/reset
+    chown system system /sys/bus/i2c/devices/0-0036/rt_rate_ms
+    chown system system /sys/bus/i2c/devices/0-0036/scalers
+    chown system system /sys/bus/i2c/devices/0-0036/start_shdn_ms
+    chown system system /sys/bus/i2c/devices/0-0036/sync_lvbanks
+
+    # led backlight
+    chown system system /sys/class/leds/lm3533-lcd-bl/als_enable
+    chown system system /sys/class/leds/lm3533-lcd-bl/als_on_suspend_enable
+    chown system system /sys/class/leds/lm3533-lcd-bl/brightness
+    chown system system /sys/class/leds/lm3533-lcd-bl/fsc
+    chown system system /sys/class/leds/lm3533-lcd-bl/max_brightness
+    chown system system /sys/class/leds/lm3533-lcd-bl/pwm
+
+    chown system system /sys/class/backlight/lcd-backlight/actual_brightness
+    chown system system /sys/class/backlight/lcd-backlight/bl_power
+    chown system system /sys/class/backlight/lcd-backlight/brightness
+    chown system system /sys/class/backlight/lcd-backlight/max_brightness
+
+    # create directory for hdcp
+    mkdir /data/hdcp/ 0700 system system
+    mkdir /data/hdcp/dxhdcp2/ 0700 system system
+
+on post-fs-data
+    # Owner for the proximity sensor
+    chown system system /sys/devices/i2c-2/2-0054/threshold
+    chown system system /sys/devices/i2c-2/2-0054/nburst
+
+    # Owner for the light sensor
+    chown system system /sys/devices/i2c-0/0-0036/als_enable
+    chown system system /sys/devices/i2c-0/0-0036/als_result
