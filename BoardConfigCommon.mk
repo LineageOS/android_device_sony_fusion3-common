@@ -113,7 +113,7 @@ TARGET_USERIMAGES_USE_F2FS := true
 EXTENDED_FONT_FOOTPRINT := true
 
 # Recovery
-BOARD_CUSTOM_BOOTIMG_MK := device/sony/fusion3-common/custombootimg.mk
+BOARD_CUSTOM_BOOTIMG_MK := device/sony/fusion3-common/boot/custombootimg.mk
 TARGET_RECOVERY_FSTAB := device/sony/fusion3-common/rootdir/fstab.qcom
 
 # Vold
