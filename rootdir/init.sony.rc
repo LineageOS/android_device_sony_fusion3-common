@@ -54,6 +54,11 @@ on boot
     chown system input /sys/bus/iio/devices/iio:device1/scan_elements/in_magn_z_en
     chown system input /sys/bus/iio/devices/iio:device1/scan_elements/in_timestamp_en
 
+on fs
+    # SONY: Start the TrimArea Daemon. It must be started before fota-ua
+    start tad_static
+    exec /sbin/wait4tad_static
+
 on post-fs
     #led RGB
     chown system system /sys/class/leds/lm3533-blue/als_enable
@@ -105,3 +110,35 @@ on post-fs-data
     # Owner for the light sensor
     chown system system /sys/devices/i2c-0/0-0036/als_enable
     chown system system /sys/devices/i2c-0/0-0036/als_result
+
+    # SONY: Start early TA-users
+    mkdir /data/etc 0755 root shell
+    exec /system/bin/taimport
+
+    restorecon /data/etc/bluetooth_bdaddr
+    restorecon /data/etc/wlan_macaddr0
+    restorecon /data/etc/wlan_macaddr1
+    restorecon /data/etc/wlan_macaddr2
+    restorecon /data/etc/wlan_macaddr3
+
+# SONY: TrimArea Daemon
+# Last 2 args: start block(blk size 128k), number of blocks(partitionsize(kb)/128(kb))
+service tad_static /system/bin/tad_static /dev/block/mmcblk0 1,16
+    user root
+    group root
+    socket tad stream 0660 system system
+
+# SONY: Trim Area QMI client
+# Should have the same class as qmuxd, to be sure that it will be restarted in same way
+# as qmuxd if phone is encrypted. This is a workaround, because sometimes
+# QMI_SYS_EVENT_MODEM_OUT_OF_SERVICE_IND is not sending if qmuxd is terminated during decryption,
+# so, ta_qmi_client was not notified that connection to the TA Service on MDM is lost.
+service ta_qmi_client /system/bin/ta_qmi_client
+    class main
+    user root
+
+# SONY: Update MiscTA
+service updatemiscta /system/bin/updatemiscta
+    class main
+    user root
+    oneshot
