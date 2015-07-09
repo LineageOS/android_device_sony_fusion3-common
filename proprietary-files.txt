@@ -169,6 +169,7 @@ vendor/lib/egl/libq3dtools_adreno.so
 vendor/lib/mediadrm/libwvdrmengine.so
 vendor/lib/libadreno_utils.so
 vendor/lib/libbccQTI.so
+vendor/lib/libbtnv.so
 vendor/lib/libC2D2.so
 vendor/lib/libc2d30-a3xx.so
 vendor/lib/libc2d30.so
