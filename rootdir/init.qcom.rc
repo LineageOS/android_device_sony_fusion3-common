@@ -64,16 +64,6 @@ on fs
     chown system system /lta-label
     chmod 0555 /lta-label
 
-    chmod 0755 /data/etc
-    start tad
-    exec /sbin/wait4tad_static
-    exec /system/bin/taimport
-
-    restorecon /data/etc/bluetooth_bdaddr
-    restorecon /data/etc/wlan_macaddr0
-    restorecon /data/etc/wlan_macaddr1
-    restorecon /data/etc/wlan_macaddr2
-    restorecon /data/etc/wlan_macaddr3
     restorecon /data/misc/audio/mbhc.bin
     restorecon /data/misc/audio/wcd9310_anc.bin
     restorecon /cache/qcks/acdb.bin
@@ -400,29 +390,6 @@ service qmuxd /system/bin/qmuxd
 
 service ks_checker /system/bin/sh /system/etc/kickstart_checker.sh
     class core
-    oneshot
-
-# SONY: TrimArea Daemon
-# Last 2 args: start block(blk size 128k), number of blocks(partitionsize(kb)/128(kb))
-service tad /system/bin/tad_static /dev/block/mmcblk0 1,16
-    class core
-    user root
-    group root
-    socket tad stream 0660 system system
-    disabled
-
-# SONY: Trim Area QMI client
-# Should have the same class as qmuxd, to be sure that it will be restarted in same way
-# as qmuxd if phone is encrypted. This is a workaround, because sometimes
-# QMI_SYS_EVENT_MODEM_OUT_OF_SERVICE_IND is not sending if qmuxd is terminated during decryption,
-# so, ta_qmi_client was not notified that connection to the TA Service on MDM is lost.
-service ta_qmi_client /system/bin/ta_qmi_client
-    class late_start
-    user root
-
-service updatemiscta /system/bin/updatemiscta
-    class main
-    user root
     oneshot
 
 service netmgrd /system/bin/netmgrd
