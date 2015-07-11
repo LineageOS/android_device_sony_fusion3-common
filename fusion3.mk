@@ -196,6 +196,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/rootdir/system/etc/media_profiles.xml:system/etc/media_profiles.xml
 
+# Off mode charger
+PRODUCT_PACKAGES += \
+    charger_res_images
+
 # Thermal management
 PRODUCT_PACKAGES += \
     thermanager
@@ -232,7 +236,6 @@ PRODUCT_COPY_FILES += \
 
 # Additional sbin stuff
 PRODUCT_COPY_FILES += \
-    $(COMMON_PATH)/rootdir/charger:root/charger \
     $(COMMON_PATH)/rootdir/sbin/wait4tad_static:root/sbin/wait4tad_static \
     $(COMMON_PATH)/rootdir/system/bin/tad_static:system/bin/tad_static
 

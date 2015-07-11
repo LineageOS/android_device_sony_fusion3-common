@@ -82,12 +82,6 @@ on early-boot
     # Run pre_hw_config.sh before entering charge only mode.
     exec /system/bin/sh /system/etc/pre_hw_config.sh
 
-    write /sys/devices/platform/msm_hsic_host/override_wakelock 0
-    write /sys/module/pm8921_charger/parameters/eoc_bat_fet_close 1
-    # Start the offline charging (This blocks booting further in some cases)
-    exec /system/bin/chargemon
-    write /sys/module/pm8921_charger/parameters/eoc_bat_fet_close 0
-    write /sys/devices/platform/msm_hsic_host/override_wakelock 1
     write /sys/module/pm8921_charger/parameters/enable_lowbatt_detect 1
 
 on boot
@@ -531,6 +525,10 @@ service setup_fs /system/bin/setup_fs /dev/block/platform/msm_sdcc.1/by-name/use
     user root
     group root
     oneshot
+
+service charger /sbin/healthd -c
+    class charger
+    seclabel u:r:healthd:s0
 
 # Powersave
 on property:sys.perf.profile=0
