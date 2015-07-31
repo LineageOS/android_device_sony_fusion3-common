@@ -192,6 +192,13 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     hci_qcomm_init
 
+# GPS
+PRODUCT_PACKAGES += \
+    libgps.utils \
+    libloc_core \
+    libloc_eng \
+    gps.msm8960
+
 # Media
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/rootdir/system/etc/media_profiles.xml:system/etc/media_profiles.xml
@@ -250,10 +257,6 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 # USB OTG support
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.isUsbOtgEnabled=true
-
-# GPS
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.gps.qmienabled=true
 
 # Audio
 PRODUCT_PROPERTY_OVERRIDES += \

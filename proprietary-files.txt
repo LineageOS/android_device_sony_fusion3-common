@@ -60,7 +60,6 @@ etc/firmware/wcnss.mdt
 etc/firmware/wlan/prima/WCNSS_cfg.dat
 etc/firmware/wlan/prima/WCNSS_qcom_wlan_nv.bin
 lib/hw/camera.vendor.qcom.so
-lib/hw/gps.default.so
 lib/hw/lights.vendor.default.so
 lib/hw/sensors.default.so
 lib/libacdbloader.so
@@ -84,7 +83,6 @@ lib/libfmradio.so
 lib/libfmradio.sony-iris.so
 lib/libgemini.so
 lib/lib_get_secure_mode.so
-lib/libgps.utils.so
 lib/libidd.so
 lib/libidl.so
 lib/libimage-jpeg-dec-omx-comp.so
@@ -94,9 +92,7 @@ lib/libinvensense_hal.so
 lib/libkeyctrl.so
 lib/liblights-core.so
 lib/libloc_api_v02.so
-lib/libloc_core.so
 lib/libloc_ds_api.so
-lib/libloc_eng.so
 lib/libmercury.so
 lib/libMiscTaAccessor.so
 lib/libmiscta.so
