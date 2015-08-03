@@ -4,6 +4,7 @@ type updatemiscta_exec, exec_type, file_type;
 init_daemon_domain(updatemiscta)
 
 allow updatemiscta self:capability dac_override;
+allow updatemiscta updatemiscta_prop:property_service set;
 
 unix_socket_connect(updatemiscta, property, init)
 
