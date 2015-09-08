@@ -270,6 +270,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     drm.service.enabled=true
 
+# I/O scheduler
+PRODUCT_PROPERTY_OVERRIDES += \
+    sys.io.scheduler=row
+
 # Touchscreen
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.input.noresample=1
