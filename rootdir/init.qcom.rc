@@ -526,13 +526,6 @@ service illumination /system/bin/illumination_service
     user root
     socket illumination stream 0660 system camera
 
-# create filesystem if necessary
-service setup_fs /system/bin/setup_fs /dev/block/platform/msm_sdcc.1/by-name/userdata
-    class core
-    user root
-    group root
-    oneshot
-
 service charger /sbin/healthd -c
     class charger
     seclabel u:r:healthd:s0
