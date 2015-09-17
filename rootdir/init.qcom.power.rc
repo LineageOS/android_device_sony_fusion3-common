@@ -1,3 +1,6 @@
+on early-init
+    write /sys/block/mmcblk0/bdi/read_ahead_kb 512
+
 on enable-low-power
     # Enable Power modes and set the CPU Freq Sampling rates
     write /sys/module/rpm_resources/enable_low_power/L2_cache 1
