@@ -268,7 +268,7 @@ on property:bluetooth.hciattach=false
 
 service netmgrd /system/bin/netmgrd
     class late_start
-    group radio
+    group radio system
     disabled
 
 service fm_dl /system/bin/sh /system/etc/init.qcom.fm.sh
