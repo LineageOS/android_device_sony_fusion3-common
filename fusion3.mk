@@ -207,6 +207,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     charger_res_images
 
+# HAL blob compatibility
+PRODUCT_PACKAGES += \
+    libstlport
+
 # Thermal management
 PRODUCT_PACKAGES += \
     thermanager
