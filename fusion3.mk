@@ -206,10 +206,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/rootdir/system/etc/media_profiles.xml:system/etc/media_profiles.xml
 
-# Off mode charger
-PRODUCT_PACKAGES += \
-    charger_res_images
-
 # HAL blob compatibility
 PRODUCT_PACKAGES += \
     libstlport
