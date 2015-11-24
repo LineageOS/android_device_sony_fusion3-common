@@ -249,7 +249,7 @@ on property:vold.decrypt=trigger_restart_framework
 service qmuxd /system/bin/qmuxd
     class core
     user radio
-    group radio audio bluetooth gps
+    group radio audio bluetooth gps wakelock 
     disabled
 
 # QCOM prop
@@ -268,7 +268,7 @@ on property:bluetooth.hciattach=false
 
 service netmgrd /system/bin/netmgrd
     class late_start
-    group radio system
+    group radio system wakelock
     disabled
 
 service fm_dl /system/bin/sh /system/etc/init.qcom.fm.sh
