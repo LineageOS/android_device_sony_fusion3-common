@@ -45,7 +45,8 @@ PRODUCT_COPY_FILES += \
 
 # Camera wrapper
 PRODUCT_PACKAGES += \
-    camera.qcom
+    camera.qcom \
+    libcamera_shim
 
 # Display
 PRODUCT_PACKAGES += \
