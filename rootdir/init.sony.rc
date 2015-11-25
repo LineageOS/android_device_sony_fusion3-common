@@ -1,3 +1,6 @@
+on init
+    export LD_SHIM_LIBS /system/lib/hw/camera.vendor.qcom.so|libshim_camera.so:/system/lib/libcald_pal.so|libshim_cald.so
+
 on boot
     # Invensense sensor HAL interfaces
     chown system input /sys/bus/iio/devices/iio:device0/accl_enable
