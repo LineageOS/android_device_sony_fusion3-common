@@ -37,6 +37,8 @@ TARGET_BOARD_PLATFORM := msm8960
 BOARD_VENDOR_PLATFORM := fusion3
 BOARD_LIB_DUMPSTATE := libdumpstate.sony
 
+TARGET_LDPRELOAD += libshim_utils.so
+
 # Bionic
 MALLOC_IMPL := dlmalloc
 
