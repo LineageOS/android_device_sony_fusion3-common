@@ -4,7 +4,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     telephony.lteOnCdmaDevice=0 \
     telephony.lteOnGsmDevice=1 \
     ro.ril.transmitpower=true \
-    persist.radio.add_power_save=1
+    persist.radio.add_power_save=1 \
+    ro.ril.telephony.mqanelements=5
 
 # Do not power down SIM card when modem is sent to Low Power Mode.
 PRODUCT_PROPERTY_OVERRIDES += \

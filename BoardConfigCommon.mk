@@ -96,7 +96,6 @@ BOARD_USES_QCOM_HARDWARE := true
 
 # RIL
 BOARD_PROVIDES_LIBRIL := true
-BOARD_RIL_CLASS := ../../../device/sony/fusion3-common/ril/
 
 # Wifi
 BOARD_HAS_QCOM_WLAN              := true
