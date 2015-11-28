@@ -104,10 +104,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.extension_library=/vendor/lib/libqti-perfd-client.so
 
-# RIL
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.telephony.ril_class=SonyRIL
-
 # WiFi
 PRODUCT_PROPERTY_OVERRIDES += \
     wlan.driver.ath=0 \
