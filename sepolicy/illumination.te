@@ -11,8 +11,5 @@ wakelock_use(illumination)
 # Access rt_rate_ms
 allow illumination sysfs:file write;
 
-# Access light themes
-allow illumination system_data_file:file rw_file_perms;
-
 # Access uhid
 allow illumination uhid_device:chr_file rw_file_perms;

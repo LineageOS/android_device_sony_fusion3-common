@@ -1,0 +1,2 @@
+allow logd devpts:chr_file rw_file_perms;
+allow logd untrusted_app_devpts:chr_file rw_file_perms;
