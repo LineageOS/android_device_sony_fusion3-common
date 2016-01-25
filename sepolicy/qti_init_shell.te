@@ -1,0 +1,41 @@
+# for chmods in kickstart_checker.sh
+allow qti_init_shell efs_boot_dev:blk_file setattr;
+
+# to set gsm.radio.kickstart
+allow qti_init_shell radio_prop:property_service set;
+
+allow qti_init_shell block_device:dir { getattr search };
+allow qti_init_shell block_device:blk_file { getattr setattr };
+allow qti_init_shell modem_efs_partition_device:blk_file { getattr setattr };
+allow qti_init_shell qmuxd_socket:dir { search write add_name remove_name };
+allow qti_init_shell qmuxd:unix_stream_socket {connectto };
+allow qti_init_shell qmuxd_socket:sock_file { create write setattr };
+allow qti_init_shell bluetooth_data_file:file read;
+
+allow qti_init_shell init:fifo_file { getattr read write ioctl };
+
+allow qti_init_shell init:unix_stream_socket { read write ioctl };
+
+allow qti_init_shell zygote_exec:file { getattr execute read open execute_no_trans };
+
+allow qti_init_shell apk_data_file:dir { read open };
+
+allow qti_init_shell asec_image_file:dir { read open };
+
+allow qti_init_shell sysfs_lowmemorykiller:file { getattr setattr read };
+
+allow qti_init_shell sysfs_devices_system_cpu:file { getattr setattr };
+
+allow qti_init_shell sysfs_touchpanel:file { getattr write open };
+
+allow qti_init_shell proc_dirty_ratio:file { write open };
+
+allow qti_init_shell dalvikcache_data_file:file { write execute create unlink };
+
+allow qti_init_shell dalvikcache_data_file:dir { write add_name remove_name };
+
+allow qti_init_shell servicemanager:binder call;
+
+allow qti_init_shell system_server:binder { call transfer };
+
+allow qti_init_shell app_data_file:dir search;

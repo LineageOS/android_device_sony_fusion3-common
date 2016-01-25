@@ -1,0 +1,1 @@
+allow shell dalvikcache_data_file:file rw_file_perms;

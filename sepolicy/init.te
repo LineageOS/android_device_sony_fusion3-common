@@ -1,3 +1,43 @@
-allow init self:process execmem;
+allow init self:process { setcurrent execmem };
 
 allow init wpa_socket:unix_dgram_socket { bind create };
+
+allow init kernel:file rw_file_perms;
+
+allow init rootfs:file execute_no_trans;
+
+allow init wcnss_device:chr_file rw_file_perms;
+
+allow init tad_socket:sock_file rw_file_perms;
+
+allow init property_socket:sock_file rw_file_perms;
+
+allow init tad:unix_stream_socket connectto;
+
+allow init app_data_file:dir { create setattr rw_dir_perms };
+
+allow init sysfs_lowmemorykiller:file { getattr setattr rw_file_perms };
+
+allow init sysfs_touchpanel:file { getattr setattr rw_file_perms };
+
+allow init proc_dirty_ratio:file { getattr setattr rw_file_perms };
+
+allow init userinit_exec:file { getattr r_file_perms };
+
+allow init sysfs_vibrator:file { getattr setattr rw_file_perms };
+
+allow init untrusted_app_devpts:chr_file { getattr setattr rw_file_perms ioctl };
+
+allow init logd:process signal;
+
+allow init kernel:system syslog_read;
+
+allow init app_data_file:file { getattr setattr create write read open };
+
+allow init self:capability sys_ptrace;
+
+allow init fuse:dir write;
+
+allow init qti_init_shell:process signull;
+
+allow init root_block_device:blk_file { write };
