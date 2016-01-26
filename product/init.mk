@@ -5,7 +5,3 @@ PRODUCT_PACKAGES += \
     init.recovery.qcom.rc \
     init.sony.rc \
     init.sony.usb.rc
-
-# IO Scheduler
-PRODUCT_PROPERTY_OVERRIDES += \
-    sys.io.scheduler=bfq
