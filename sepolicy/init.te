@@ -1,3 +1,7 @@
 allow init self:process execmem;
 
 allow init wpa_socket:unix_dgram_socket { bind create };
+
+allow init wcnss_device:chr_file write;
+
+allow init trim_area_partition_device:blk_file { write };

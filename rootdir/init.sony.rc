@@ -123,7 +123,7 @@ on post-fs-data
 
 # SONY: TrimArea Daemon
 # Last 2 args: start block(blk size 128k), number of blocks(partitionsize(kb)/128(kb))
-service tad_static /system/bin/tad_static /dev/block/mmcblk0 1,16
+service tad_static /system/bin/tad_static /dev/block/platform/msm_sdcc.1/by-name/TA 1,16
     user root
     group root
     socket tad stream 0660 system system

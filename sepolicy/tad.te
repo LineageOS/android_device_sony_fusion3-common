@@ -6,4 +6,4 @@ init_daemon_domain(tad)
 
 # Allow tad to work it's magic
 allow tad block_device:dir search;
-allow tad mmc_block_device:blk_file rw_file_perms;
+allow tad trim_area_partition_device:blk_file rw_file_perms;
