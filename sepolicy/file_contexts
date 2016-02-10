@@ -1,6 +1,3 @@
-# Gpu
-/dev/gss                            u:object_r:gpu_device:s0
-
 # Sockets
 /dev/socket/illumination            u:object_r:illumination_socket:s0
 /dev/socket/mpdecision(/.*)?        u:object_r:mpctl_socket:s0

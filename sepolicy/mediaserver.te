@@ -1,6 +1,4 @@
 # camera.0.name
-allow mediaserver default_prop:property_service set;
-
 allow mediaserver camera_socket:dir w_dir_perms;
 allow mediaserver camera_socket:file create_file_perms;
 
