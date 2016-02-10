@@ -12,6 +12,8 @@ wakelock_use(ta_qmi_client)
 # Connect to tad and qmuxd
 unix_socket_connect(ta_qmi_client, tad, tad)
 qmux_socket(ta_qmi_client)
+allow qti_init_shell qmuxd_socket:dir search;
+
 
 # Access to smem_log
 allow ta_qmi_client smem_log_device:chr_file rw_file_perms;
