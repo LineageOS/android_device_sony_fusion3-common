@@ -1,0 +1,2 @@
+allow sysinit wifi_data_file:file { getattr setattr r_file_perms };
+allow sysinit surfaceflinger_exec:file { getattr r_file_perms };
