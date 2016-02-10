@@ -125,17 +125,12 @@ on post-fs-data
     restorecon /data/etc/wlan_macaddr3
 
 # SONY: TrimArea Daemon
-# Last 2 args: start block(blk size 128k), number of blocks(partitionsize(kb)/128(kb))
-service tad_static /system/bin/tad_static /dev/block/mmcblk0 1,16
+service tad_static /system/bin/tad_static /dev/block/platform/msm_sdcc.1/by-name/TA 0,16
     user root
     group root
     socket tad stream 0660 system system
 
-# SONY: Trim Area QMI client
-# Should have the same class as qmuxd, to be sure that it will be restarted in same way
-# as qmuxd if phone is encrypted. This is a workaround, because sometimes
-# QMI_SYS_EVENT_MODEM_OUT_OF_SERVICE_IND is not sending if qmuxd is terminated during decryption,
-# so, ta_qmi_client was not notified that connection to the TA Service on MDM is lost.
+# SONY: Trim Area QMI Client
 service ta_qmi_client /system/bin/ta_qmi_client
     class main
     user root
