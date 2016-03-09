@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ffb9cba7_3c13e65e",
+        "filename": "rootdir/init.sony.rc",
+        "patchSetId": 9
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 14748
+      },
+      "writtenOn": "2016-03-09T04:18:44Z",
+      "side": 1,
+      "message": "I think that if we are using partition instead of whole disk, we need to have 0,16 here instead of 1,16. At least 0,16 is working for me instead of 1,16 which won\u0027t boot.",
+      "range": {
+        "startLine": 126,
+        "startChar": 84,
+        "endLine": 126,
+        "endChar": 88
+      },
+      "revId": "c43a77c8d05ebb622d93febfb279607b5b13cb32",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
