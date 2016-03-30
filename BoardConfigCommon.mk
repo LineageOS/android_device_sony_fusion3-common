@@ -12,9 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Inherit from Sony common
-include device/sony/common/BoardConfigCommon.mk
-
 # Include path
 TARGET_SPECIFIC_HEADER_PATH += device/sony/fusion3-common/include
 
@@ -33,6 +30,7 @@ TARGET_NO_RADIOIMAGE := true
 TARGET_BOOTLOADER_BOARD_NAME := MSM8960
 
 # Platform
+BOARD_VENDOR := sony
 TARGET_BOARD_PLATFORM := msm8960
 BOARD_VENDOR_PLATFORM := fusion3
 BOARD_LIB_DUMPSTATE := libdumpstate.sony
@@ -116,6 +114,7 @@ TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 
 # Recovery
+BOARD_CUSTOM_BOOTIMG := true
 BOARD_CUSTOM_BOOTIMG_MK := device/sony/fusion3-common/boot/custombootimg.mk
 TARGET_RECOVERY_FSTAB := device/sony/fusion3-common/rootdir/fstab.qcom
 
