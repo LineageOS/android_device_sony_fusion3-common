@@ -240,6 +240,10 @@ PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/rootdir/sbin/wait4tad_static:root/sbin/wait4tad_static \
     $(COMMON_PATH)/rootdir/system/bin/tad_static:system/bin/tad_static
 
+# Bootlogo
+PRODUCT_COPY_FILES += \
+     $(COMMON_PATH)/boot/logos/$(TARGET_SCREEN_WIDTH)x$(TARGET_SCREEN_HEIGHT).rle:root/logo.rle
+
 # Set default USB interface
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     persist.sys.usb.config=mtp
