@@ -4,3 +4,11 @@ allow mpdecision socket_device:dir w_dir_perms;
 # For /data/system/default_values
 allow mpdecision system_data_file:dir rw_dir_perms;
 type_transition mpdecision system_data_file:file mpctl_data_file;
+
+allow mpdecision mpdecision_socket:dir write;
+
+allow mpdecision mpdecision_socket:dir { add_name };
+
+allow mpdecision mpdecision_socket:sock_file create;
+
+allow mpdecision mpdecision_socket:sock_file setattr;

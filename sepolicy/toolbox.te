@@ -1,0 +1,25 @@
+allow toolbox property_socket:sock_file write;
+
+allow toolbox init:unix_stream_socket connectto;
+
+allow toolbox init:fifo_file write;
+
+allow toolbox init:fifo_file getattr;
+
+allow toolbox toolbox:capability { dac_override };
+
+allow toolbox init:fifo_file read;
+
+allow toolbox efs_boot_dev:blk_file getattr;
+
+allow toolbox efs_boot_dev:blk_file setattr;
+
+allow toolbox toolbox:capability chown;
+
+allow toolbox toolbox:capability fowner;
+
+allow toolbox toolbox:capability fsetid;
+
+allow toolbox property_socket:sock_file write;
+
+allow toolbox init:unix_stream_socket connectto;

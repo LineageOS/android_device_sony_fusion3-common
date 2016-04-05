@@ -13,3 +13,6 @@ type radio_efs_file, fs_type;
 
 # IR blaster
 type sysfs_ir_remote_control, sysfs_type, fs_type;
+
+# TAD
+type trim_area_partition_device, dev_type;
