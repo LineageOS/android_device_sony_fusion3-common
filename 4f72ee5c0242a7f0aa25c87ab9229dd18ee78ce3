@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7faddb67_a7f90e81",
+        "filename": "sepolicy/tad.te",
+        "patchSetId": 19
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 5911
+      },
+      "writtenOn": "2016-04-06T09:23:02Z",
+      "side": 1,
+      "message": "we dont want to be executing the whole thing in permissive mode",
+      "range": {
+        "startLine": 2,
+        "startChar": 11,
+        "endLine": 2,
+        "endChar": 14
+      },
+      "revId": "4f72ee5c0242a7f0aa25c87ab9229dd18ee78ce3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
