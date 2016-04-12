@@ -44,6 +44,7 @@ BOARD_KERNEL_PAGESIZE := 2048
 BOARD_KERNEL_CMDLINE  := console=ttyHSL0,115200,n8 androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x3F ehci-hcd.park=3
 BOARD_MKBOOTIMG_ARGS  := --ramdisk_offset 0x02000000
 TARGET_KERNEL_SOURCE  := kernel/sony/apq8064
+TARGET_KERNEL_CROSS_COMPILE_PREFIX := arm-linux-androideabi-
 
 # Audio
 BOARD_USES_ALSA_AUDIO := true
