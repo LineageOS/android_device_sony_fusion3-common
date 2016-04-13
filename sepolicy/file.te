@@ -16,3 +16,6 @@ type sysfs_ir_remote_control, sysfs_type, fs_type;
 
 # TAD
 type trim_area_partition_device, dev_type;
+
+# TAImport
+type ta_data_file, file_type;

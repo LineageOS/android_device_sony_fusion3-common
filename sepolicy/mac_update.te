@@ -8,5 +8,6 @@ allow mac_update self:capability dac_override;
 # Read and write MAC address
 allow mac_update wifi_data_file:dir w_dir_perms;
 allow mac_update wifi_data_file:file create_file_perms;
+allow mac_update ta_data_file:dir search;
 
 allow mac_update tmpfs:chr_file rw_file_perms;
