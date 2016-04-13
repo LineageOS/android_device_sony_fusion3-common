@@ -116,7 +116,7 @@ on post-fs-data
 
     # SONY: Start early TA-users
     mkdir /data/etc 0755 root shell
-    exec /system/bin/taimport
+    start taimport
 
     restorecon /data/etc/bluetooth_bdaddr
     restorecon /data/etc/wlan_macaddr0
@@ -139,4 +139,11 @@ service ta_qmi_client /system/bin/ta_qmi_client
 service updatemiscta /system/bin/updatemiscta
     class main
     user root
+    oneshot
+
+# SONY: TAImport
+service taimport /system/bin/taimport
+    class main
+    user root
+    disabled
     oneshot
