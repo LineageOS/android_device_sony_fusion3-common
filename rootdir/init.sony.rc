@@ -118,11 +118,7 @@ on post-fs-data
     mkdir /data/etc 0755 root shell
     start taimport
 
-    restorecon /data/etc/bluetooth_bdaddr
-    restorecon /data/etc/wlan_macaddr0
-    restorecon /data/etc/wlan_macaddr1
-    restorecon /data/etc/wlan_macaddr2
-    restorecon /data/etc/wlan_macaddr3
+    restorecon -R /data/etc
 
 # SONY: TrimArea Daemon
 service tad_static /system/bin/tad_static /dev/block/platform/msm_sdcc.1/by-name/TA 0,16
