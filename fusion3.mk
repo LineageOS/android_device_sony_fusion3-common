@@ -210,7 +210,7 @@ PRODUCT_PACKAGES += \
 
 # WIFI MAC update
 PRODUCT_PACKAGES += \
-    mac-update
+    macaddrsetup
 
 # FM Radio
 PRODUCT_COPY_FILES += \
