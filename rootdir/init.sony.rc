@@ -57,11 +57,6 @@ on boot
     chown system input /sys/bus/iio/devices/iio:device1/scan_elements/in_magn_z_en
     chown system input /sys/bus/iio/devices/iio:device1/scan_elements/in_timestamp_en
 
-on fs
-    # SONY: Start the TrimArea Daemon. It must be started before fota-ua
-    start tad_static
-    exec /sbin/wait4tad_static
-
 on post-fs
     #led RGB
     chown system system /sys/class/leds/lm3533-blue/als_enable
@@ -126,6 +121,7 @@ on post-fs-data
 
 # SONY: TrimArea Daemon
 service tad_static /system/bin/tad_static /dev/block/platform/msm_sdcc.1/by-name/TA 0,16
+    class core
     user root
     group root
     socket tad stream 0660 system system
