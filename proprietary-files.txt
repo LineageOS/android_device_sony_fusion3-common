@@ -9,7 +9,6 @@ bin/netmgrd
 bin/qmuxd
 bin/qseecomd
 bin/ta2bin
-bin/taimport
 bin/ta_qmi_client
 bin/usbhub
 bin/usbhub_init

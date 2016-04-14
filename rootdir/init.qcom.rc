@@ -188,10 +188,6 @@ on post-fs-data
     # to observe dnsmasq.leases file for dhcp information of soft ap.
     chown dhcp system /data/misc/dhcp
 
-    # Update WIFI MAC address
-    mkdir /data/misc/wifi/prima 0775 wifi wifi
-    exec /system/bin/mac-update
-
     write /sys/module/wcnss_ssr_8960/parameters/enable_riva_ssr 1
     write /sys/devices/platform/wcnss_wlan.0/serial_number ${ro.serialno}
     write /dev/wcnss_wlan 1
@@ -280,7 +276,7 @@ service mac-update /system/bin/mac-update
 service hciattach /system/bin/sh /system/etc/init.qcom.bt.sh
     class late_start
     user bluetooth
-    group bluetooth net_bt_admin system net_bt_stack
+    group qcom_oncrpc bluetooth net_bt_admin system
     disabled
     oneshot
 
