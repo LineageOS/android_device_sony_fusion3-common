@@ -15,7 +15,6 @@
 /data/system/default_values         u:object_r:mpctl_data_file:s0
 
 # Wifi
-/data/etc/wlan_macaddr[0-3]         u:object_r:wifi_data_file:s0
 /dev/rfkill                         u:object_r:rfkill_device:s0
 
 # Bluetooth
@@ -30,7 +29,7 @@
 
 # System binaries
 /system/bin/illumination_service    u:object_r:illumination_exec:s0
-/system/bin/mac-update              u:object_r:mac_update_exec:s0
+/system/bin/macaddrsetup            u:object_r:macaddrsetup_exec:s0
 /system/bin/ta_qmi_client           u:object_r:ta_qmi_client_exec:s0
 /system/bin/tad_static              u:object_r:tad_exec:s0
 /system/bin/thermanager             u:object_r:thermanager_exec:s0
@@ -39,3 +38,7 @@
 # IR blaster
 /sys/devices/platform/ir_remote_control/enable        u:object_r:sysfs_ir_remote_control:s0
 /dev/ttyHSL2                                          u:object_r:ir_remote_serial_device:s0
+
+# WLAN Interface
+/sys/devices/platform/wcnss_wlan.0/wcnss_mac_addr     u:object_r:sysfs_wlanmac:s0
+/sys/devices/platform/wcnss_wlan.0/serial_number      u:object_r:sysfs_wlanserial:s0
