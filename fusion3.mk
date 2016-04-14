@@ -239,9 +239,8 @@ PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/rootdir/init.recovery.qcom.rc:root/init.recovery.qcom.rc \
     $(COMMON_PATH)/rootdir/system/etc/init.qcom.bt.sh:system/etc/init.qcom.bt.sh
 
-# Additional sbin stuff
+# Trim area daemon
 PRODUCT_COPY_FILES += \
-    $(COMMON_PATH)/rootdir/sbin/wait4tad_static:root/sbin/wait4tad_static \
     $(COMMON_PATH)/rootdir/system/bin/tad_static:system/bin/tad_static
 
 # Bootlogo
