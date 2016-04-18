@@ -17,9 +17,6 @@
 # Wifi
 /dev/rfkill                         u:object_r:rfkill_device:s0
 
-# Bluetooth
-/data/etc/bluetooth_bdaddr          u:object_r:bluetooth_data_file:s0
-
 # Touch panel
 /dev/rmi0                           u:object_r:rmi_device:s0
 /sys/devices/virtual/input/input1/wakeup_gesture      u:object_r:sysfs_touchpanel:s0
