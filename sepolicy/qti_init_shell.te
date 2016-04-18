@@ -7,6 +7,12 @@ allow qti_init_shell radio_prop:property_service set;
 # to chmod /dev/rmi0
 allow qti_init_shell rmi_device:chr_file { getattr setattr };
 
+# BT init
+allow qti_init_shell bluetooth_data_file:dir search;
+allow qti_init_shell bluetooth_data_file:file { getattr open read };
+allow qti_init_shell devpts:chr_file { getattr ioctl open read write };
+allow qti_init_shell hci_attach_exec:file { execute execute_no_trans open read };
+
 # Allow qmuxd
 allow qti_init_shell qmuxd_socket:dir { search write add_name remove_name };
 allow qti_init_shell qmuxd:unix_stream_socket connectto;
