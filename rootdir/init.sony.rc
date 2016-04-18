@@ -128,7 +128,7 @@ service updatemiscta /system/bin/updatemiscta
     oneshot
 
 # Wi-Fi and BT MAC addresses
-service macaddrsetup /system/bin/macaddrsetup /data/etc/bluetooth_bdaddr
+service macaddrsetup /system/bin/macaddrsetup /data/misc/bluetooth/bdaddr
      class late_start
      user root
      oneshot
