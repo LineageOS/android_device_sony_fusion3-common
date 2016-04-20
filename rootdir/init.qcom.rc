@@ -267,12 +267,6 @@ service fast-dormancy /system/bin/fast-dormancy
 on property:ro.semc.enable.fast_dormancy=false
     stop fast-dormancy
 
-# Update WIFI MAC address
-service mac-update /system/bin/mac-update
-    class main
-    user wifi
-    oneshot
-
 service hciattach /system/bin/sh /system/etc/init.qcom.bt.sh
     class late_start
     user bluetooth
