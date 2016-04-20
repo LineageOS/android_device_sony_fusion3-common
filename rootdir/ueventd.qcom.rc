@@ -66,7 +66,7 @@
 /dev/v4l-subdev*          0660   system     camera
 /dev/video*               0660   system     camera
 /dev/ttyHSL1              0660   system     system
-/dev/radio0               0644   system     system
+/dev/radio0               0640   system     system
 /dev/gss                  0660   gps        gps
 /dev/rfkill               0660   wifi       wifi
 /sys/devices/virtual/smdpkt/smdcntl*       open_timeout   0664 radio radio
