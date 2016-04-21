@@ -120,6 +120,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/rootdir/system/etc/hostapd/hostapd_default.conf:system/etc/hostapd/hostapd_default.conf
 
+# Audio config
+PRODUCT_COPY_FILES += \
+    $(COMMON_PATH)/rootdir/system/etc/audio_effects.conf:system/etc/audio_effects.conf \
+    $(COMMON_PATH)/rootdir/system/etc/audio_platform_info.xml:system/etc/audio_platform_info.conf
+
 # GPS
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/rootdir/system/etc/gps.conf:system/etc/gps.conf
@@ -179,6 +184,7 @@ PRODUCT_PACKAGES += \
     audio.usb.default \
     audio.r_submix.default \
     libaudio-resampler \
+    libqcomvoiceprocessing \
     tinymix
 
 # BT
@@ -258,8 +264,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Audio
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.audio.fluence.mode=endfire \
-    persist.audio.handset.mic=analog \
-    persist.audio.lowlatency.rec=false \
+    persist.audio.fluence.voicecall=true \
+    persist.audio.fluence.voicerec=false \
+    persist.audio.fluence.speaker=true \
     ro.qc.sdk.audio.fluencetype=none \
     lpa.decode=true
 
