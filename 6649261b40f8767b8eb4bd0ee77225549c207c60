@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5faad753_19242dc6",
+        "filename": "fusion3.mk",
+        "patchSetId": 4
+      },
+      "lineNbr": 266,
+      "author": {
+        "id": 444
+      },
+      "writtenOn": "2016-04-22T17:11:34Z",
+      "side": 1,
+      "message": "Not used in new HAL.",
+      "revId": "6649261b40f8767b8eb4bd0ee77225549c207c60",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5faad753_3921e9b5",
+        "filename": "fusion3.mk",
+        "patchSetId": 4
+      },
+      "lineNbr": 271,
+      "author": {
+        "id": 444
+      },
+      "writtenOn": "2016-04-22T17:11:34Z",
+      "side": 1,
+      "message": "Deprecated.",
+      "revId": "6649261b40f8767b8eb4bd0ee77225549c207c60",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
