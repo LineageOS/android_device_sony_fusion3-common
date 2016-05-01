@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5faad753_e6d15359",
+        "filename": "rootdir/system/etc/audio_platform_info.xml",
+        "patchSetId": 6
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 13589
+      },
+      "writtenOn": "2016-05-01T19:14:55Z",
+      "side": 1,
+      "message": "That part will probably be wrong, same as when I first converted to the \"old\" HAL because the Voice Call PCM of fusion3 isn\u0027t the regular one.\n\nThe default value is \"VOICE_CALL_PCM_DEVICE 2\".\nThe old one used for fusion3 was \"[USECASE_VOICE_CALL] \u003d {12, 12},\"\n\nTherefore unlike Huashan the id should be 12 here.",
+      "revId": "b4d69069bf8aeab3ffb63b81d2092a79923880b5",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
