@@ -65,6 +65,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.hwc.mdpcomp.enable=true
 
+# Gello
+PRODUCT_PACKAGES += \
+    Gello
+
 # Lights wrapper
 PRODUCT_PACKAGES += \
     lights.msm8960
