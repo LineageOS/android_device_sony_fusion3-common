@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5faad753_4b3387ac",
+        "filename": "rootdir/system/etc/audio_platform_info.xml",
+        "patchSetId": 7
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 15143
+      },
+      "writtenOn": "2016-05-04T00:19:56Z",
+      "side": 1,
+      "message": "This is wrong, it should stay 14. With 4, all sound is gone.",
+      "revId": "b36966923aa83575f29fdbf864178be9e8758197",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
