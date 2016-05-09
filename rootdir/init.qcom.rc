@@ -270,7 +270,7 @@ on property:ro.semc.enable.fast_dormancy=false
 service hciattach /system/bin/sh /system/etc/init.qcom.bt.sh
     class late_start
     user bluetooth
-    group qcom_oncrpc bluetooth net_bt_admin system
+    group qcom_oncrpc bluetooth net_bt_admin system net_bt_stack
     disabled
     oneshot
 
