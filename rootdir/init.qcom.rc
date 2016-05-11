@@ -369,7 +369,8 @@ on property:bluetooth.hciattach=false
 
 service netmgrd /system/bin/netmgrd
     class late_start
-    group radio
+    user root
+    group root wifi wakelock radio inet
     disabled
 
 service fm_dl /system/bin/sh /system/etc/init.qcom.fm.sh
