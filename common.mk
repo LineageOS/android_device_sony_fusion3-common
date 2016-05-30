@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2016 The CyanogenMod Project
+# Copyright (C) 2013-2016 The CyanogenMod Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,16 +14,11 @@
 # limitations under the License.
 #
 
-LOCAL_PATH := $(call my-dir)
+# Device specific overlays
+DEVICE_PACKAGE_OVERLAYS += device/sony/fusion3-common/overlay
 
-ifeq ($(BOARD_VENDOR_PLATFORM),fusion3)
+# Device product elements
+include $(LOCAL_PATH)/product/*.mk
 
-include $(call first-makefiles-under,$(LOCAL_PATH))
-
-$(shell mkdir -p $(TARGET_OUT_ETC)/firmware/wcd9310; \
-    ln -sf /data/misc/audio/wcd9310_anc.bin \
-    $(TARGET_OUT_ETC)/firmware/wcd9310/wcd9310_anc.bin; \
-    ln -sf /data/misc/audio/mbhc.bin \
-    $(TARGET_OUT_ETC)/firmware/wcd9310/wcd9310_mbhc.bin)
-
-endif
+# Vendor product configurations
+$(call inherit-product, vendor/sony/fusion3-common/fusion3-common-vendor.mk)
