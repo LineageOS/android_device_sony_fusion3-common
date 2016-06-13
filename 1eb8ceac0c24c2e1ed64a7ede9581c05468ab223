@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5faad753_990c0fa6",
+        "filename": "BoardConfigCommon.mk",
+        "patchSetId": 8
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 13589
+      },
+      "writtenOn": "2016-06-13T08:12:29Z",
+      "side": 1,
+      "message": "No longer required.",
+      "revId": "1eb8ceac0c24c2e1ed64a7ede9581c05468ab223",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
