@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5faad753_bb49b6b7",
+        "filename": "fusion3.mk",
+        "patchSetId": 10
+      },
+      "lineNbr": 273,
+      "author": {
+        "id": 444
+      },
+      "writtenOn": "2016-06-16T17:41:34Z",
+      "side": 1,
+      "message": "Try changing none to fluence. Jf had to do it in order to get working voice calls.",
+      "revId": "d9b4bc1b2fb30c55e373175c9b39165421e18494",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5faad753_9b4cfac8",
+        "filename": "rootdir/system/etc/audio_platform_info.xml",
+        "patchSetId": 10
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 444
+      },
+      "writtenOn": "2016-06-16T17:41:34Z",
+      "side": 1,
+      "message": "You should add a usecase for in as well.\n\n\u003cusecase name\u003d\"USECASE_VOICE_CALL\" type\u003d\"in\" id\u003d\"12\" /\u003e",
+      "revId": "d9b4bc1b2fb30c55e373175c9b39165421e18494",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
