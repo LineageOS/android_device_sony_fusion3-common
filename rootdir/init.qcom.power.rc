@@ -28,8 +28,6 @@ on enable-low-power
     write /sys/module/pm_8x60/modes/cpu2/standalone_power_collapse/idle_enabled 1
     write /sys/module/pm_8x60/modes/cpu3/standalone_power_collapse/idle_enabled 1
 
-    write /sys/module/msm_thermal/core_control/enabled 0
-
     write /sys/devices/system/cpu/cpu1/online 1
     write /sys/devices/system/cpu/cpu2/online 1
     write /sys/devices/system/cpu/cpu3/online 1
@@ -54,6 +52,8 @@ on enable-low-power
     write /sys/devices/system/cpu/cpu3/cpufreq/scaling_min_freq 384000
 
     write /sys/devices/platform/kgsl-3d0.0/kgsl/kgsl-3d0/pwrscale/policy "msm"
+
+    write /dev/cpuctl/cpu.notify_on_migrate 1
 
 on charger
     # Enable Power modes and set the CPU Freq Sampling rates
