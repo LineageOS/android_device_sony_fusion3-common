@@ -174,9 +174,6 @@ endif
 PRODUCT_COPY_FILES += \
     $(NFCEE_ACCESS_PATH):system/etc/nfcee_access.xml
 
-PRODUCT_COPY_FILES += \
-    $(COMMON_PATH)/rootdir/system/etc/kickstart_checker.sh:system/etc/kickstart_checker.sh
-
 # Recovery
 PRODUCT_PACKAGES += \
     keycheck
