@@ -48,11 +48,6 @@ on fs
 
     restorecon /data/misc/audio/mbhc.bin
     restorecon /data/misc/audio/wcd9310_anc.bin
-    restorecon /cache/qcks/acdb.bin
-    restorecon /cache/qcks/efs1.bin
-    restorecon /cache/qcks/efs2.bin
-    restorecon /cache/qcks/efs3.bin
-    restorecon /cache/qcks/ta.bin
 
 on early-boot
     # set RLIMIT_MEMLOCK to 64MB
@@ -231,10 +226,6 @@ on post-fs-data
 
     mkdir /data/audio 0770 media audio
 
-    # kickstart
-    mkdir /cache/qcks 0770 system system
-    chown system /dev/block/platform/msm_sdcc.1/by-name
-
     # Camera
     mkdir /data/camera 0771 root camera
 
@@ -291,32 +282,15 @@ service qmuxd /system/bin/qmuxd
     group radio audio bluetooth gps qcom_diag net_bt_stack
     disabled
 
-service ks_checker /system/bin/sh /system/etc/kickstart_checker.sh
-    class core
-    oneshot
-
 service netmgrd /system/bin/netmgrd
     class late_start
     group radio
     disabled
 
-service kickstart /system/bin/qcks l -r /data/tombstones/mdm/ -e /cache/qcks/
-    class core
-    user system
-    group system radio
-    disabled
-    oneshot
-
 service qseecomd /system/bin/qseecomd
     class core
     user system
     group system
-
-on property:gsm.radio.kickstart=on
-    start kickstart
-
-on property:gsm.radio.kickstart=off
-    stop kickstart
 
 on property:ro.boot.baseband=mdm
     start qmuxd
