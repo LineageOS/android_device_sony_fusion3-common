@@ -61,6 +61,7 @@
     <pcm_ids>
         <usecase name="USECASE_AUDIO_PLAYBACK_LOW_LATENCY" type="out" id="14" />
         <usecase name="USECASE_VOICE_CALL" type="out" id="12" />
+        <usecase name="USECASE_VOICE_CALL" type="in" id="12" />
     </pcm_ids>
 
     <device_names>
