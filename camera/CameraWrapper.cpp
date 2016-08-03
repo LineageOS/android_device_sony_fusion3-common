@@ -159,7 +159,7 @@ static char *camera_fixup_getparams(int id, const char *settings)
                 bufferPos += 4;
             }
         }
-        sprintf(buffer, "%s,auto", buffer);
+        strcat(buffer,",auto");
         params.set(KEY_SUPPORTED_ISO_MODES, buffer);
     }
 
