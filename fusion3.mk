@@ -297,5 +297,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.opengles.version=196608
 
+# Updater properties
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.disable.recovery.updater=1
+
 # Include non-opensource parts
 $(call inherit-product, vendor/sony/fusion3-common/fusion3-common-vendor.mk)
