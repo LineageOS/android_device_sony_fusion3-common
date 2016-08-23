@@ -117,7 +117,6 @@ PRODUCT_PACKAGES += \
     libqsap_sdk \
     libwpa_client \
     hostapd \
-    dhcpcd.conf \
     wpa_supplicant \
     wpa_supplicant.conf
 
