@@ -67,7 +67,7 @@ case $mode in
     case $TRANSPORT in
     "smd")
         logi "inserting the radio transport module"
-        insmod /system/lib/modules/radio-iris-transport.ko
+        echo 1 > /sys/module/radio_iris_transport/parameters/fmsmd_set
      ;;
      *)
         logi "default transport case "
