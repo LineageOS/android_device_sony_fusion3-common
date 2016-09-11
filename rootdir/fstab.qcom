@@ -11,5 +11,6 @@
 /dev/block/platform/msm_sdcc.1/by-name/cache            /cache         ext4      noatime,nosuid,nodev,barrier=1,data=ordered,nomblk_io_submit,errors=panic    wait,check
 /dev/block/platform/msm_sdcc.1/by-name/boot             /boot          emmc      defaults                                                                     defaults
 /dev/block/platform/msm_sdcc.1/by-name/FOTAKernel       /recovery      emmc      defaults                                                                     defaults
+/dev/block/platform/msm_sdcc.1/by-name/apps_log         /misc          emmc      defaults                                                                     defaults
 /devices/platform/msm_sdcc.3/mmc_host/mmc1*             auto           auto      defaults                                                                     voldmanaged=sdcard1:auto,encryptable=userdata
 /devices/platform/msm_hsusb_host/usb*                   auto           auto      defaults                                                                     voldmanaged=usb:auto
