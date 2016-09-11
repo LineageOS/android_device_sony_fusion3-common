@@ -22,7 +22,7 @@
 /dev/block/platform/msm_sdcc.1/by-name/cache            /cache         f2fs      noatime,nosuid,nodev,rw,discard,inline_xattr                                 wait,check
 /dev/block/platform/msm_sdcc.1/by-name/cache            /cache         ext4      noatime,nosuid,nodev,barrier=1,data=ordered,nomblk_io_submit,errors=panic    wait,check
 /dev/block/platform/msm_sdcc.1/by-name/LTALabel         /LTALabel      ext4      noatime,nosuid,nodev,noexec,ro,barrier=0                                     wait
-/dev/block/platform/msm_sdcc.1/by-name/apps_log         /apps_log      emmc      defaults                                                                     defaults
+/dev/block/platform/msm_sdcc.1/by-name/apps_log         /misc          emmc      defaults                                                                     defaults
 /dev/block/platform/msm_sdcc.1/by-name/tz               /tz            emmc      defaults                                                                     defaults
 /dev/block/platform/msm_sdcc.1/by-name/alt_tz           /alt_tz        emmc      defaults                                                                     defaults
 /dev/block/platform/msm_sdcc.1/by-name/m9kefs1          /m9kefs1       emmc      defaults                                                                     defaults
