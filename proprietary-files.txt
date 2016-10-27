@@ -188,3 +188,4 @@ vendor/lib/libsc-a3xx.so
 vendor/lib/libtime_genoff.so
 vendor/lib/libwvm.so
 vendor/lib/libWVphoneAPI.so
+vendor/lib/libuiblur.so
