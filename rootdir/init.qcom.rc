@@ -348,9 +348,9 @@ service thermanager /system/bin/thermanager /system/etc/thermanager.xml
     group root
 
 # Offline charger
-service charger /sbin/healthd -c
+service charger /charger
     class charger
-    seclabel u:r:healthd:s0
+    seclabel u:r:charger:s0
 
 on property:ro.boot.baseband=mdm
     start qmuxd
