@@ -35,9 +35,6 @@ TARGET_BOARD_PLATFORM := msm8960
 BOARD_VENDOR_PLATFORM := fusion3
 BOARD_LIB_DUMPSTATE := libdumpstate.sony
 
-# Bionic
-MALLOC_IMPL := dlmalloc
-
 # Kernel information
 BOARD_KERNEL_BASE     := 0x80200000
 BOARD_KERNEL_PAGESIZE := 2048
