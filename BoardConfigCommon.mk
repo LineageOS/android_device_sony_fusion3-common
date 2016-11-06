@@ -95,6 +95,7 @@ BOARD_USES_QCOM_HARDWARE := true
 
 # RIL
 BOARD_PROVIDES_LIBRIL := true
+TARGET_RIL_VARIANT := caf
 
 # Wifi
 BOARD_HAS_QCOM_WLAN              := true
