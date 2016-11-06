@@ -28,17 +28,18 @@ ifeq ($(SIM_COUNT), 2)
     LOCAL_CFLAGS += -DANDROID_SIM_COUNT_2
 endif
 
-LOCAL_C_INCLUDES += $(TARGET_OUT_HEADERS)/librilutils
 LOCAL_C_INCLUDES += external/nanopb-c
+LOCAL_EXPORT_C_INCLUDE_DIRS := $(LOCAL_PATH)/../include
+LOCAL_C_INCLUDES += $(LOCAL_PATH)/../include
+
 
 ifeq ($(BOARD_HAS_RIL_LEGACY_PAP),true)
     LOCAL_CFLAGS += -DRIL_LEGACY_PAP
 endif
 
 LOCAL_MODULE:= libril
-
-LOCAL_COPY_HEADERS_TO := libril
-LOCAL_COPY_HEADERS := ril_ex.h
+LOCAL_CLANG := true
+LOCAL_SANITIZE := integer
 
 include $(BUILD_SHARED_LIBRARY)
 endif # BOARD_PROVIDES_LIBRIL
