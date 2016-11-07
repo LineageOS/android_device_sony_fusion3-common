@@ -1,9 +1,35 @@
+# block devices
+/dev/block/mmcblk0                                    u:object_r:root_block_device:s0
+/dev/block/platform/msm_sdcc.1/by-name/FOTAKernel     u:object_r:recovery_block_device:s0
+/dev/block/platform/msm_sdcc.1/by-name/LTALabel       u:object_r:ltalabel_block_device:s0
+/dev/block/platform/msm_sdcc.1/by-name/TA             u:object_r:trim_area_partition_device:s0
+/dev/block/platform/msm_sdcc.1/by-name/aboot          u:object_r:boot_block_device:s0
+/dev/block/platform/msm_sdcc.1/by-name/alt_aboot      u:object_r:boot_block_device:s0
+/dev/block/platform/msm_sdcc.1/by-name/alt_rpm        u:object_r:rpmb_device:s0
+/dev/block/platform/msm_sdcc.1/by-name/alt_s1sbl2     u:object_r:bootloader_block_device:s0
+/dev/block/platform/msm_sdcc.1/by-name/alt_sbl1       u:object_r:bootloader_block_device:s0
+/dev/block/platform/msm_sdcc.1/by-name/alt_sbl2       u:object_r:bootloader_block_device:s0
+/dev/block/platform/msm_sdcc.1/by-name/alt_sbl3       u:object_r:bootloader_block_device:s0
+/dev/block/platform/msm_sdcc.1/by-name/alt_tz         u:object_r:modem_efs_partition_device:s0
+/dev/block/platform/msm_sdcc.1/by-name/apps_log       u:object_r:misc_block_device:s0
+/dev/block/platform/msm_sdcc.1/by-name/boot           u:object_r:boot_block_device:s0
+/dev/block/platform/msm_sdcc.1/by-name/cache          u:object_r:cache_block_device:s0
+/dev/block/platform/msm_sdcc.1/by-name/m9kefs1        u:object_r:efs_block_device:s0
+/dev/block/platform/msm_sdcc.1/by-name/m9kefs2        u:object_r:efs_block_device:s0
+/dev/block/platform/msm_sdcc.1/by-name/m9kefs3        u:object_r:efs_block_device:s0
+/dev/block/platform/msm_sdcc.1/by-name/ramdump        u:object_r:ramdump_device:s0
+/dev/block/platform/msm_sdcc.1/by-name/rpm            u:object_r:rpmb_device:s0
+/dev/block/platform/msm_sdcc.1/by-name/s1sbl2         u:object_r:bootloader_block_device:s0
+/dev/block/platform/msm_sdcc.1/by-name/sbl1           u:object_r:bootloader_block_device:s0
+/dev/block/platform/msm_sdcc.1/by-name/sbl2           u:object_r:bootloader_block_device:s0
+/dev/block/platform/msm_sdcc.1/by-name/sbl3           u:object_r:bootloader_block_device:s0
+/dev/block/platform/msm_sdcc.1/by-name/system         u:object_r:system_block_device:s0
+/dev/block/platform/msm_sdcc.1/by-name/tz             u:object_r:modem_efs_partition_device:s0
+/dev/block/platform/msm_sdcc.1/by-name/userdata       u:object_r:userdata_block_device:s0
+
 # Sockets
 /dev/socket/illumination            u:object_r:illumination_socket:s0
-/dev/socket/tad                     u:object_r:tad_socket:s0
-
-# TA
-/dev/block/platform/msm_sdcc.1/by-name/TA             u:object_r:trim_area_partition_device:s0
+/dev/socket/tad                     u:object_r:tad_socket:s0    
 
 # Camera
 /dev/gemini.*                       u:object_r:camera_device:s0
