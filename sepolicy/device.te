@@ -5,3 +5,10 @@ type ir_remote_serial_device, dev_type;
 
 # Synaptics RMI
 type rmi_device, dev_type;
+
+type ltalabel_block_device, dev_type;
+type trim_area_partition_device, dev_type;
+type bootloader_block_device, dev_type;
+type efs_block_device, dev_type;
+type sdroot_block_device, dev_type;
+type sd_block_device, dev_type;
