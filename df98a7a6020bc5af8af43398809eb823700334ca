@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ff2e2bb8_765b7c53",
+        "filename": "sepolicy/device.te",
+        "patchSetId": 6
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 5681
+      },
+      "writtenOn": "2016-11-07T22:28:37Z",
+      "side": 1,
+      "message": "we have this already in https://github.com/CyanogenMod/android_device_sony_fusion3-common/blob/cm-14.1/sepolicy/file.te#L18   now compiler throws duplicate error",
+      "range": {
+        "startLine": 2,
+        "startChar": 0,
+        "endLine": 2,
+        "endChar": 42
+      },
+      "revId": "df98a7a6020bc5af8af43398809eb823700334ca",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
