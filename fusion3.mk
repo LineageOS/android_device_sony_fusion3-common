@@ -298,5 +298,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     media.stagefright.legacyencoder=true \
     media.stagefright.less-secure=true
 
+# For android_filesystem_config.h
+PRODUCT_PACKAGES += \
+   fs_config_files
+
 # Include non-opensource parts
 $(call inherit-product, vendor/sony/fusion3-common/fusion3-common-vendor.mk)

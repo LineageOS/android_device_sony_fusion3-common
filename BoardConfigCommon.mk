@@ -124,6 +124,8 @@ TARGET_RECOVERY_FSTAB := device/sony/fusion3-common/rootdir/fstab.qcom
 TARGET_BOOTANIMATION_TEXTURE_CACHE := true
 TARGET_BOOTANIMATION_USE_RGB565 := true
 
+TARGET_FS_CONFIG_GEN += device/sony/fusion3-common/config.fs
+
 # SELinux
 include device/qcom/sepolicy/sepolicy.mk
 
