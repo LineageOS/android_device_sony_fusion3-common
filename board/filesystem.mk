@@ -11,3 +11,5 @@ TARGET_USERIMAGES_USE_F2FS := true
 
 # Partitions blocks
 BOARD_FLASH_BLOCK_SIZE := 131072
+
+TARGET_FS_CONFIG_GEN += device/sony/fusion3-common/config.fs
