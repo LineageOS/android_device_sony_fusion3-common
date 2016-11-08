@@ -1,5 +1,6 @@
 /dev/block/mmcblk0p8      0660   system     system
 /dev/block/mmcblk0p9      0660   system     system
+/dev/block/mmcblk0p16     0555   system     system
 /dev/gemini0              0660   system     camera
 /dev/genlock              0666   system     system
 /dev/hw_random            0660   system     system
