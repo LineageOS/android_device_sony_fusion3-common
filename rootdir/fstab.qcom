@@ -1,15 +1,35 @@
 # Android fstab file.
-#<src>                                                  <mnt_point>         <type>    <mnt_flags and options>                               <fs_mgr_flags>
+#<src>                                                  <mnt_point>    <type>    <mnt_flags and options>                                                      <fs_mgr_flags>
 # The filesystem that contains the filesystem checker binary (typically /system) cannot
 # specify MF_CHECK, and must come before any filesystems that do specify MF_CHECK
 
-/dev/block/platform/msm_sdcc.1/by-name/boot      /boot    emmc  defaults                                                                   recoveryonly
-/dev/block/platform/msm_sdcc.1/by-name/FOTAKernel      /recovery    emmc  defaults                                                                   recoveryonly
-/dev/block/platform/msm_sdcc.1/by-name/system    /system  ext4  ro,barrier=1                                                               wait
-/dev/block/platform/msm_sdcc.1/by-name/cache     /cache   f2fs  noatime,nosuid,nodev,rw,discard,inline_xattr                               wait,check
-/dev/block/platform/msm_sdcc.1/by-name/cache     /cache   ext4  noatime,nosuid,nodev,barrier=1,data=ordered,nomblk_io_submit,errors=panic  wait,check
-/dev/block/platform/msm_sdcc.1/by-name/userdata  /data    f2fs  noatime,nosuid,nodev,rw,discard,inline_xattr                               wait,check,formattable,encryptable=footer,length=-16384
-/dev/block/platform/msm_sdcc.1/by-name/userdata  /data    ext4  noatime,nosuid,nodev,barrier=1,data=ordered,nomblk_io_submit,errors=panic  wait,check,encryptable=footer,length=-16384
-
-/devices/platform/msm_sdcc.3/mmc_host/mmc1*       auto  auto  defaults  voldmanaged=sdcard1:auto,encryptable=userdata
-/devices/platform/msm_hsusb_host/usb*             auto  auto  defaults  voldmanaged=usb:auto
+/dev/block/platform/msm_sdcc.1/by-name/sbl1             /sbl1          emmc      defaults                                                                     defaults
+/dev/block/platform/msm_sdcc.1/by-name/sbl2             /sbl2          emmc      defaults                                                                     defaults
+/dev/block/platform/msm_sdcc.1/by-name/sbl3             /sbl3          emmc      defaults                                                                     defaults
+/dev/block/platform/msm_sdcc.1/by-name/s1sbl2           /s1sbl2        emmc      defaults                                                                     defaults
+/dev/block/platform/msm_sdcc.1/by-name/alt_sbl1         /alt_sbl1      emmc      defaults                                                                     defaults
+/dev/block/platform/msm_sdcc.1/by-name/alt_sbl2         /alt_sbl2      emmc      defaults                                                                     defaults
+/dev/block/platform/msm_sdcc.1/by-name/alt_sbl3         /alt_sbl3      emmc      defaults                                                                     defaults
+/dev/block/platform/msm_sdcc.1/by-name/alt_s1sbl2       /alt_s1sbl2    emmc      defaults                                                                     defaults
+/dev/block/platform/msm_sdcc.1/by-name/aboot            /aboot         emmc      defaults                                                                     defaults
+/dev/block/platform/msm_sdcc.1/by-name/alt_aboot        /alt_aboot     emmc      defaults                                                                     defaults
+/dev/block/platform/msm_sdcc.1/by-name/boot             /boot          emmc      defaults                                                                     defaults
+/dev/block/platform/msm_sdcc.1/by-name/FOTAKernel       /recovery      emmc      defaults                                                                     defaults
+/dev/block/platform/msm_sdcc.1/by-name/TA               /TA            emmc      defaults                                                                     defaults
+/dev/block/platform/msm_sdcc.1/by-name/system           /system        ext4      ro,barrier=1                                                                 wait
+/dev/block/platform/msm_sdcc.1/by-name/userdata         /data          f2fs      noatime,nosuid,nodev,rw,discard,inline_xattr                                 wait,check,formattable,encryptable=footer,length=-16384
+/dev/block/platform/msm_sdcc.1/by-name/userdata         /data          ext4      noatime,nosuid,nodev,barrier=1,data=ordered,nomblk_io_submit,errors=panic    wait,check,encryptable=footer,length=-16384
+/dev/block/platform/msm_sdcc.1/by-name/cache            /cache         f2fs      noatime,nosuid,nodev,rw,discard,inline_xattr                                 wait,check
+/dev/block/platform/msm_sdcc.1/by-name/cache            /cache         ext4      noatime,nosuid,nodev,barrier=1,data=ordered,nomblk_io_submit,errors=panic    wait,check
+/dev/block/platform/msm_sdcc.1/by-name/LTALabel         /LTALabel      ext4      noatime,nosuid,nodev,noexec,ro,barrier=0                                     wait
+/dev/block/platform/msm_sdcc.1/by-name/apps_log         /apps_log      ext4      noatime,nosuid,nodev,noexec,ro,barrier=0                                     defaults
+/dev/block/platform/msm_sdcc.1/by-name/tz               /tz            emmc      defaults                                                                     defaults
+/dev/block/platform/msm_sdcc.1/by-name/alt_tz           /alt_tz        emmc      defaults                                                                     defaults
+/dev/block/platform/msm_sdcc.1/by-name/m9kefs1          /m9kefs1       emmc      defaults                                                                     defaults
+/dev/block/platform/msm_sdcc.1/by-name/m9kefs2          /m9kefs2       emmc      defaults                                                                     defaults
+/dev/block/platform/msm_sdcc.1/by-name/m9kefs3          /m9kefs3       emmc      defaults                                                                     defaults
+/dev/block/platform/msm_sdcc.1/by-name/ramdump          /ramdump       emmc      defaults                                                                     defaults
+/dev/block/platform/msm_sdcc.1/by-name/rpm              /rpm           emmc      defaults                                                                     defaults
+/dev/block/platform/msm_sdcc.1/by-name/alt_rpm          /alt_rpm       emmc      defaults                                                                     defaults
+/devices/platform/msm_sdcc.3/mmc_host/mmc1*             auto           auto      defaults                                                                     voldmanaged=sdcard1:auto,encryptable=userdata
+/devices/platform/msm_hsusb_host/usb*                   auto           auto      defaults                                                                     voldmanaged=usb:auto
