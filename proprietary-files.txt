@@ -1,5 +1,4 @@
 bin/btnvtool
-bin/clearpad_fwloader
 bin/fmconfig
 bin/fm_qsoc_patches
 bin/hci_qcomm_init
