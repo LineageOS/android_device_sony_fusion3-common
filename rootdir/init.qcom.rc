@@ -49,9 +49,6 @@ on early-boot
     # Permissions for AKM897x sensor
     chown system system /data/misc/akm_set.txt
 
-    # Run pre_hw_config.sh before entering charge only mode.
-    exec /system/bin/sh /system/etc/pre_hw_config.sh
-
     write /sys/module/pm8921_charger/parameters/enable_lowbatt_detect 1
 
     write /dev/wcnss_wlan 1
@@ -270,11 +267,6 @@ on property:ro.boot.baseband=mdm
 on property:ro.boot.baseband=apq
     setprop ro.radio.noril yes
     stop ril-daemon
-
-service hw_config /system/bin/sh /system/etc/hw_config.sh
-    class main
-    user root
-    oneshot
 
 service wpa_supplicant /system/bin/wpa_supplicant \
     -iwlan0 -Dnl80211 -c/data/misc/wifi/wpa_supplicant.conf \
