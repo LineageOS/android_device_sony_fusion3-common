@@ -172,7 +172,8 @@ else
 endif
 
 PRODUCT_COPY_FILES += \
-    $(NFCEE_ACCESS_PATH):system/etc/nfcee_access.xml
+    $(NFCEE_ACCESS_PATH):system/etc/nfcee_access.xml \
+    $(NFCEE_ACCESS_PATH):system/etc/nfcee_access_debug.xml
 
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/rootdir/system/etc/kickstart_checker.sh:system/etc/kickstart_checker.sh
