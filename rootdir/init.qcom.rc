@@ -31,8 +31,13 @@ on init
     mkdir /dev/bus 0755 root root
     mkdir /dev/bus/usb 0755 root root
 
+    # Setup ZRAM options
+    write /sys/block/zram0/comp_algorithm lz4
+    write /sys/block/zram0/max_comp_streams 2
+
 on fs
     mount_all ./fstab.qcom
+    swapon_all ./fstab.qcom
 
     restorecon /data/misc/audio/mbhc.bin
     restorecon /data/misc/audio/wcd9310_anc.bin
@@ -158,6 +163,10 @@ on boot
     # overhead in the kernel. Turn it off.
     write /sys/block/mmcblk0/queue/add_random 0
     write /sys/block/mmcblk1/queue/add_random 0
+
+    # Swappiness and memory pages
+    write /proc/sys/vm/page-cluster 0
+    write /proc/sys/vm/swappiness 40
 
     # Double tap node
     chown system system /sys/devices/virtual/input/clearpad/wakeup_gesture
