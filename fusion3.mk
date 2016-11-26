@@ -71,7 +71,8 @@ PRODUCT_PACKAGES += \
 
 # Lights wrapper
 PRODUCT_PACKAGES += \
-    lights.msm8960
+    lights.msm8960 \
+    libshim_illumination_service
 
 # Media profile
 PRODUCT_COPY_FILES += \
