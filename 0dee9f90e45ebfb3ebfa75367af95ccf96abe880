@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f681702_f82337bd",
+        "filename": "fusion3.mk",
+        "patchSetId": 6
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 15964
+      },
+      "writtenOn": "2016-11-30T09:00:10Z",
+      "side": 1,
+      "message": "Remove this line?",
+      "range": {
+        "startLine": 166,
+        "startChar": 0,
+        "endLine": 166,
+        "endChar": 22
+      },
+      "revId": "0dee9f90e45ebfb3ebfa75367af95ccf96abe880",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
