@@ -854,6 +854,19 @@ invalid:
     return;
 }
 
+/*
+ * The Qualcomm's libril-qc-qmi-1.so version used for fusion3 expects an
+ * additional field containing the subaddress after the the usual RIL_Dial
+ * structure for RIL_REQUEST_DIAL.  Note that the data length passed to the
+ * onRequest function must include this extra field, otherwise the buffer
+ * allocated by the library will be too small, and then attempts to access
+ * the subaddress field will result in broken outgoing calls.
+ */
+typedef struct {
+    RIL_Dial dial;
+    char *subaddress;
+} QCRIL_Dial;
+
 /**
  * Callee expects const RIL_Dial *
  * Payload is:
@@ -862,7 +875,7 @@ invalid:
  */
 static void
 dispatchDial (Parcel &p, RequestInfo *pRI) {
-    RIL_Dial dial;
+    QCRIL_Dial qcDial;
     RIL_UUS_Info uusInfo;
     int32_t sizeOfDial;
     int32_t t;
@@ -870,24 +883,21 @@ dispatchDial (Parcel &p, RequestInfo *pRI) {
     status_t status;
 
     RLOGD("dispatchDial");
-    memset (&dial, 0, sizeof(dial));
-    /* This is needed in order to avoid a crash in qcom's ril library
-       It doesn't make much sense, as dial.uusInfo will be set to NULL
-       My best guess is that they are simply reading beyond *dial.... */
+    memset (&qcDial, 0, sizeof(qcDial));
     memset (&uusInfo, 0, sizeof(RIL_UUS_Info));
 
-    dial.address = strdupReadString(p);
+    qcDial.dial.address = strdupReadString(p);
 
     status = p.readInt32(&t);
-    dial.clir = (int)t;
+    qcDial.dial.clir = (int)t;
 
-    if (status != NO_ERROR || dial.address == NULL) {
+    if (status != NO_ERROR || qcDial.dial.address == NULL) {
         goto invalid;
     }
 
     if (s_callbacks.version < 3) { // Remove when partners upgrade to version 3
         uusPresent = 0;
-        sizeOfDial = sizeof(dial) - sizeof(RIL_UUS_Info *);
+        sizeOfDial = sizeof(qcDial.dial) - sizeof(RIL_UUS_Info *);
     } else {
         status = p.readInt32(&uusPresent);
 
@@ -896,7 +906,7 @@ dispatchDial (Parcel &p, RequestInfo *pRI) {
         }
 
         if (uusPresent == 0) {
-            dial.uusInfo = NULL;
+            qcDial.dial.uusInfo = NULL;
         } else {
             int32_t len;
 
@@ -922,32 +932,33 @@ dispatchDial (Parcel &p, RequestInfo *pRI) {
             }
 
             uusInfo.uusLength = len;
-            dial.uusInfo = &uusInfo;
+            qcDial.dial.uusInfo = &uusInfo;
         }
-        sizeOfDial = sizeof(dial);
+        sizeOfDial = sizeof(qcDial);
     }
 
     startRequest;
-    appendPrintBuf("%snum=%s,clir=%d", printBuf, dial.address, dial.clir);
+    appendPrintBuf("%snum=%s,clir=%d", printBuf, qcDial.dial.address,
+            qcDial.dial.clir);
     if (uusPresent) {
         appendPrintBuf("%s,uusType=%d,uusDcs=%d,uusLen=%d", printBuf,
-                dial.uusInfo->uusType, dial.uusInfo->uusDcs,
-                dial.uusInfo->uusLength);
+                qcDial.dial.uusInfo->uusType, qcDial.dial.uusInfo->uusDcs,
+                qcDial.dial.uusInfo->uusLength);
     }
     closeRequest;
     printRequest(pRI->token, pRI->pCI->requestNumber);
 
-    CALL_ONREQUEST(pRI->pCI->requestNumber, &dial, sizeOfDial, pRI, pRI->socket_id);
+    CALL_ONREQUEST(pRI->pCI->requestNumber, &qcDial, sizeOfDial, pRI, pRI->socket_id);
 
 #ifdef MEMSET_FREED
-    memsetString (dial.address);
+    memsetString (qcDial.dial.address);
 #endif
 
-    free (dial.address);
+    free (qcDial.dial.address);
 
 #ifdef MEMSET_FREED
     memset(&uusInfo, 0, sizeof(RIL_UUS_Info));
-    memset(&dial, 0, sizeof(dial));
+    memset(&qcDial, 0, sizeof(qcDial));
 #endif
 
     return;
