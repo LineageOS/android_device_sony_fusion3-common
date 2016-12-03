@@ -854,6 +854,24 @@ invalid:
     return;
 }
 
+/*
+ * The Qualcomm's libril-qc-qmi-1.so version used for fusion3 expects an
+ * additional field containing the subaddress after the the usual RIL_Dial
+ * structure for RIL_REQUEST_DIAL.  Note that the data length passed to the
+ * onRequest function must include this extra field, otherwise the buffer
+ * allocated by the library will be too small, and then attempts to access
+ * the subaddress field will result in broken outgoing calls.
+ */
+typedef struct {
+    /* Fields from RIL_Dial */
+    char *address;
+    int clir;
+    RIL_UUS_Info *uusInfo;
+
+    /* Extra field used by libril-qc-qmi-1.so */
+    char *subaddress;
+} QCRIL_Dial;
+
 /**
  * Callee expects const RIL_Dial *
  * Payload is:
@@ -862,7 +880,7 @@ invalid:
  */
 static void
 dispatchDial (Parcel &p, RequestInfo *pRI) {
-    RIL_Dial dial;
+    QCRIL_Dial dial;
     RIL_UUS_Info uusInfo;
     int32_t sizeOfDial;
     int32_t t;
@@ -883,7 +901,7 @@ dispatchDial (Parcel &p, RequestInfo *pRI) {
 
     if (s_callbacks.version < 3) { // Remove when partners upgrade to version 3
         uusPresent = 0;
-        sizeOfDial = sizeof(dial) - sizeof(RIL_UUS_Info *);
+        sizeOfDial = sizeof(RIL_Dial) - sizeof(RIL_UUS_Info *);
     } else {
         status = p.readInt32(&uusPresent);
 
