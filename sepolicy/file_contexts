@@ -30,6 +30,9 @@
 /sys/devices/platform/ir_remote_control/enable        u:object_r:sysfs_ir_remote_control:s0
 /dev/ttyHSL2                                          u:object_r:ir_remote_serial_device:s0
 
+# Illumination rt_rate_ms
+/sys/bus/i2c/devices/0-0036/rt_rate_ms                u:object_r:sysfs_rtrate_ms:s0
+
 # WLAN Interface
 /sys/devices/platform/wcnss_wlan.0/wcnss_mac_addr     u:object_r:sysfs_wlanmac:s0
 /sys/devices/platform/wcnss_wlan.0/serial_number      u:object_r:sysfs_wlanserial:s0

@@ -17,6 +17,9 @@ type sysfs_ir_remote_control, sysfs_type, fs_type;
 # TAD
 type trim_area_partition_device, dev_type;
 
+# Illumination rt_rate_ms
+type sysfs_rtrate_ms, fs_type, sysfs_type;
+
 # WLAN Interface
 type sysfs_wlanmac, fs_type, sysfs_type;
 type sysfs_wlanserial, fs_type, sysfs_type;
