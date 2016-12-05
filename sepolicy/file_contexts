@@ -6,7 +6,7 @@
 /dev/block/platform/msm_sdcc.1/by-name/TA             u:object_r:trim_area_partition_device:s0
 
 # Camera
-/dev/gemini.*                       u:object_r:camera_device:s0
+/dev/gemini.*                       u:object_r:video_device:s0
 
 # Wifi
 /dev/rfkill                         u:object_r:rfkill_device:s0
