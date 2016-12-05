@@ -2,7 +2,7 @@
 allow qti_init_shell efs_boot_dev:blk_file setattr;
 
 # to set gsm.radio.kickstart
-allow qti_init_shell radio_prop:property_service set;
+set_prop(qti_init_shell, radio_prop)
 
 # to chmod /dev/rmi0
 allow qti_init_shell rmi_device:chr_file { getattr setattr };
