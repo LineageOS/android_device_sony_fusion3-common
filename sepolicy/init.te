@@ -10,7 +10,7 @@ allow init wcnss_device:chr_file write;
 
 allow init trim_area_partition_device:blk_file write;
 
-allow init rootfs:chr_file { execute execute_no_trans };
+allow init rootfs:chr_file x_file_perms;
 
 allow init tad_socket:sock_file write;
 

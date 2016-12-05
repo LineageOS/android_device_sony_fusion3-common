@@ -18,6 +18,10 @@
 # Vibrator
 /sys/devices/virtual/timed_output/vibrator/level      u:object_r:sysfs_vibrator:s0
 
+# Gpu
+/sys/devices/platform/kgsl-3d0\.0/kgsl/kgsl-3d0/gpuclk          u:object_r:sysfs_thermal:s0
+/sys/devices/platform/kgsl-3d0\.0/kgsl/kgsl-3d0/max_gpuclk      u:object_r:sysfs_thermal:s0
+
 # System binaries
 /system/bin/illumination_service    u:object_r:illumination_exec:s0
 /system/bin/macaddrsetup            u:object_r:macaddrsetup_exec:s0
