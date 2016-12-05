@@ -1,1 +1,1 @@
-allow mpdecision socket_device:sock_file setattr;
+allow mpdecision socket_device:sock_file { setattr write };
