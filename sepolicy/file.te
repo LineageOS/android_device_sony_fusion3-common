@@ -1,22 +1,16 @@
-# Sockets
-type illumination_socket, file_type;
-type tad_socket, file_type;
-
-# Touchpanel
-type sysfs_touchpanel, fs_type, sysfs_type;
-
-# Vibrator
-type sysfs_vibrator, fs_type, sysfs_type;
-
 # Default type for anything under /firmware
 type radio_efs_file, fs_type;
 
-# IR blaster
+# /sys
 type sysfs_ir_remote_control, sysfs_type, fs_type;
-
-# TAD
-type trim_area_partition_device, dev_type;
-
-# WLAN Interface
+type sysfs_touchpanel, fs_type, sysfs_type;
+type sysfs_vibrator, fs_type, sysfs_type;
 type sysfs_wlanmac, fs_type, sysfs_type;
 type sysfs_wlanserial, fs_type, sysfs_type;
+
+# /dev/socket needs to be file_type so init can create
+type illumination_socket, file_type;
+type tad_socket, file_type;
+
+# type for tad
+type trim_area_partition_device, dev_type;
