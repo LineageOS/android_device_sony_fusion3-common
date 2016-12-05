@@ -3,6 +3,7 @@ type ta_qmi_client_exec, exec_type, file_type;
 
 init_daemon_domain(ta_qmi_client)
 
+allow ta_qmi_client diag_device:chr_file { read open write };
 allow ta_qmi_client self:capability { dac_override fsetid };
 allow ta_qmi_client self:socket create_socket_perms;
 
