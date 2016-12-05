@@ -3,13 +3,14 @@ type illumination_exec, exec_type, file_type;
 
 init_daemon_domain(illumination)
 
+allow illumination rootfs:lnk_file getattr;
 allow illumination self:capability dac_override;
 
 # Wakelocks
 wakelock_use(illumination)
 
 # Access rt_rate_ms
-allow illumination sysfs:file write;
+allow illumination sysfs:file  { open read write };
 
 # Access uhid
 allow illumination uhid_device:chr_file rw_file_perms;

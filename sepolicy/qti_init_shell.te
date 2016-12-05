@@ -2,7 +2,7 @@
 allow qti_init_shell efs_boot_dev:blk_file setattr;
 
 # to set gsm.radio.kickstart
-allow qti_init_shell radio_prop:property_service set;
+set_prop(qti_init_shell, radio_prop)
 
 # to chmod /dev/rmi0
 allow qti_init_shell rmi_device:chr_file { getattr setattr };
@@ -10,6 +10,7 @@ allow qti_init_shell rmi_device:chr_file { getattr setattr };
 # BT init
 allow qti_init_shell bluetooth_data_file:dir search;
 allow qti_init_shell bluetooth_data_file:file { getattr open read };
+allow qti_init_shell bluetooth_loader_exec:file { read open };
 allow qti_init_shell devpts:chr_file { getattr ioctl open read write };
 allow qti_init_shell hci_attach_exec:file { execute execute_no_trans open read };
 
