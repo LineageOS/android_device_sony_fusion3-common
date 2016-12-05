@@ -9,7 +9,7 @@ allow illumination self:capability dac_override;
 wakelock_use(illumination)
 
 # Access rt_rate_ms
-allow illumination sysfs:file write;
+allow illumination sysfs:file  { open read write };
 
 # Access uhid
 allow illumination uhid_device:chr_file rw_file_perms;
