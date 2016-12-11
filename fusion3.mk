@@ -65,6 +65,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.hwc.mdpcomp.enable=true
 
+# FM Radio
+PRODUCT_PROPERTY_OVERRIDES += \
+    hw.fm.internal_antenna=true
+
 # Gello
 PRODUCT_PACKAGES += \
     Gello
