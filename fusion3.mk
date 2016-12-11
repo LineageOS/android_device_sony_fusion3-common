@@ -66,6 +66,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.hwc.mdpcomp.enable=true
 
 # FM Radio
+PRODUCT_PACKAGES += \
+    FMRadio \
+    libfmjni
+
 PRODUCT_PROPERTY_OVERRIDES += \
     hw.fm.internal_antenna=true
 
