@@ -60,7 +60,7 @@ on early-boot
 
     write /sys/module/pm8921_charger/parameters/enable_lowbatt_detect 1
 
-    write /dev/wcnss_wlan 1
+    exec /system/bin/sh /system/etc/init_wcnss.sh
 
 on boot
     chown bluetooth bluetooth /sys/module/bluetooth_power/parameters/power
