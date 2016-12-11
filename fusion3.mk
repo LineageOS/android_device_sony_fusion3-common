@@ -107,6 +107,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.extension_library=/vendor/lib/libqti-perfd-client.so
 
+# QC mpdecision shim
+PRODUCT_PACKAGES += \
+    libshim_mpdecision
+
 # WiFi
 PRODUCT_PROPERTY_OVERRIDES += \
     wlan.driver.ath=0 \
