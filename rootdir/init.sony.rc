@@ -113,7 +113,7 @@ on post-fs-data
 service tad_static /system/bin/tad_static /dev/block/platform/msm_sdcc.1/by-name/TA 0,16
     class core
     user root
-    group root
+    group root readproc
     socket tad stream 0660 system system
 
 # SONY: Trim Area QMI Client
