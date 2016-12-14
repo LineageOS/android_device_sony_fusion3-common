@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f681702_31791293",
+        "filename": "sepolicy/illumination.te",
+        "patchSetId": 26
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 15964
+      },
+      "writtenOn": "2016-12-14T08:15:24Z",
+      "side": 1,
+      "message": "We also require allow illumination sysfs:file write { read write open };\nAt least open and write attributes are necessary else autobrightness will never work",
+      "revId": "610d088308098241acf2449623e0ebb4abc23337",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
