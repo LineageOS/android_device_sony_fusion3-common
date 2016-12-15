@@ -17,3 +17,5 @@ allow init tad_socket:sock_file write;
 allow init tad:unix_stream_socket connectto;
 
 allow init property_socket:sock_file write;
+
+allow init fm_radio_device:chr_file write;
