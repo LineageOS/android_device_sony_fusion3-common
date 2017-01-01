@@ -1,0 +1,149 @@
+# ADSP
+lib/libadsprpc.so
+
+# Audio
+lib/libacdbloader.so
+lib/libcsd-client.so
+
+# Bluetooth
+bin/btnvtool
+bin/hci_qcomm_init
+vendor/lib/libbtnv.so
+
+# Bootloader firmware
+etc/firmware/rpm.mbn
+etc/firmware/sbl1.mbn
+etc/firmware/sbl2.mbn
+
+# Camera
+lib/libmmcamera_hdr_lib.so
+lib/libmmcamera_image_stab.so
+lib/libmmcamera_tintless_algo.so
+lib/libmmcamera_tintless_wrapper.so
+lib/libmmcamera_wavelet_lib.so
+
+# Data
+bin/netmgrd
+lib/libdsi_netctrl.so
+lib/libdsutils.so
+lib/libnetmgr.so
+lib/libqdi.so
+lib/libqdp.so
+
+# Diag
+vendor/lib/libdiag.so
+
+# FM
+bin/fmconfig
+bin/fm_qsoc_patches
+
+# GPS
+lib/libloc_api_v02.so
+lib/libloc_ds_api.so
+vendor/lib/libgeofence.so
+vendor/lib/libizat_core.so
+vendor/lib/liblbs_core.so
+
+# Graphics
+vendor/lib/egl/eglsubAndroid.so
+vendor/lib/egl/libEGL_adreno.so
+vendor/lib/egl/libGLESv1_CM_adreno.so
+vendor/lib/egl/libGLESv2_adreno.so
+vendor/lib/egl/libplayback_adreno.so
+vendor/lib/egl/libq3dtools_adreno.so
+vendor/lib/libbccQTI.so
+vendor/lib/libC2D2.so
+vendor/lib/libCB.so
+vendor/lib/libadreno_utils.so
+vendor/lib/libc2d30.so
+vendor/lib/libc2d30-a3xx.so
+vendor/lib/libgsl.so
+vendor/lib/libllvm-qcom.so
+vendor/lib/libsc-a3xx.so
+vendor/lib/librs_adreno_sha1.so
+vendor/lib/librs_adreno.so
+vendor/lib/libRSDriver_adreno.so
+vendor/firmware/a300_pfp.fw
+vendor/firmware/a300_pm4.fw
+
+# MultiMedia
+lib/libgemini.so
+lib/libimage-omx-common.so
+lib/libmmjpeg.so
+lib/libmmmpod.so
+lib/libmercury.so
+lib/libmmstillomx.so
+
+# Perf
+bin/mpdecision
+vendor/lib/libqti-perfd-client.so
+
+# Protocol Buffers
+lib/libprotobuf-c.so
+
+# Radio kickstart
+bin/ks
+
+# QCRIL
+lib/libril-qc-qmi-1.so
+
+# QMI
+bin/qmuxd
+lib/libidl.so
+lib/libqcci_legacy.so
+lib/libqmi.so
+lib/libqmi_client_qmux.so
+lib/libqmiservices.so
+vendor/lib/libqmi_cci.so
+vendor/lib/libqmi_common_so.so
+vendor/lib/libqmi_csi.so
+vendor/lib/libqmi_encdec.so
+
+# Security
+bin/qseecomd
+lib/libQSEEComAPI.so
+lib/libdrmdiag.so
+lib/libdrmfs.so
+lib/libidd.so
+lib/libkeyctrl.so
+lib/libpin-cache.so
+etc/firmware/efs1.mbn
+etc/firmware/efs2.mbn
+etc/firmware/efs3.mbn
+vendor/firmware/keymaster/keymaster.b00
+vendor/firmware/keymaster/keymaster.b01
+vendor/firmware/keymaster/keymaster.b02
+vendor/firmware/keymaster/keymaster.b03
+vendor/firmware/keymaster/keymaster.mdt
+
+# Time services
+vendor/lib/libtime_genoff.so
+
+# USB
+bin/usbhub
+bin/usbhub_init
+
+# VIDC firmware
+etc/firmware/vidc.b00
+etc/firmware/vidc.b01
+etc/firmware/vidc.b02
+etc/firmware/vidc.b03
+etc/firmware/vidc.mdt
+etc/firmware/vidc_1080p.fw
+etc/firmware/vidcfw.elf
+
+# Widevine DRM
+lib/liboemcrypto.so
+vendor/lib/drm/libdrmwvmplugin.so
+vendor/lib/mediadrm/libwvdrmengine.so
+vendor/lib/libdrmdecrypt.so
+vendor/lib/libwvm.so
+vendor/lib/libWVphoneAPI.so
+
+# WiFi Firmware
+etc/firmware/wcnss.b00
+etc/firmware/wcnss.b01
+etc/firmware/wcnss.b02
+etc/firmware/wcnss.b04
+etc/firmware/wcnss.b05
+etc/firmware/wcnss.mdt
