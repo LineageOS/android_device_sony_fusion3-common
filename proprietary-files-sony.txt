@@ -1,0 +1,89 @@
+# Audio
+etc/firmware/acdb.mbn
+etc/firmware/mdm_acdb.img
+
+# Camera
+lib/hw/camera.vendor.qcom.so
+lib/libcald_client.so
+lib/libcald_hal.so
+lib/libcald_imageutil.so
+lib/libcald_pal.so
+lib/libcald_util.so
+lib/libcamera_clientsemc.so
+lib/libcameralight.so
+lib/libface.so
+lib/libmmcamera_3a_legacy.so
+lib/libmmcamera_faceproc.so
+lib/libmmcamera_frameproc.so
+lib/libmmcamera_imx091.so
+lib/libmmcamera_plugin.so
+lib/libmmcamera_statsproc31.so
+lib/libmmjpeg_interface.so
+vendor/camera/KMO08BN0_IMX111.dat
+vendor/camera/LGI02BN0.dat
+vendor/camera/LGI08BN2_DW9714.dat
+vendor/camera/LGI08BN2_IMX111.dat
+vendor/camera/SEM02BN0.dat
+vendor/camera/SEM13BS0.dat
+vendor/camera/SEM13BS0_IMX135.dat
+vendor/camera/SEM13BS0_WV570.dat
+vendor/camera/SEM13BS1.dat
+vendor/camera/SEM13BS1_IMX135.dat
+vendor/camera/SEM13BS1_WV570.dat
+vendor/camera/SOI08BN1_IMX111.dat
+vendor/camera/SOI13BS1.dat
+vendor/camera/SOI13BS1_DW9735.dat
+vendor/camera/SOI13BS1_IMX135.dat
+vendor/camera/SOI13BS2.dat
+vendor/camera/SOI13BS2_DW9735.dat
+vendor/camera/SOI13BS2_IMX135.dat
+vendor/camera/SOI13BS9.dat
+
+# DxHDCP firmware
+etc/firmware/dxhdcp2.b00
+etc/firmware/dxhdcp2.b01
+etc/firmware/dxhdcp2.b02
+etc/firmware/dxhdcp2.b03
+etc/firmware/dxhdcp2.mdt
+
+# MultiMedia
+lib/libimage-jpeg-dec-omx-comp.so
+lib/libimage-jpeg-enc-omx-comp.so
+
+# Q6 Firmware
+etc/firmware/q6.b00
+etc/firmware/q6.b01
+etc/firmware/q6.b03
+etc/firmware/q6.b04
+etc/firmware/q6.b05
+etc/firmware/q6.b06
+etc/firmware/q6.mdt
+
+# Sensors
+lib/libals.so
+lib/libinvensense_hal.so
+lib/liblights-core.so
+lib/libmllite.so
+lib/libmplmpu.so
+lib/libsys-utils.so
+lib/hw/lights.vendor.default.so
+lib/hw/sensors.default.so
+
+# TA
+bin/ta2bin
+bin/ta_qmi_client
+lib/libmiscta.so
+-lib/libta.so
+etc/firmware/ta.mbn
+
+# Trustzone Firmware
+etc/firmware/tzlibasb.b00
+etc/firmware/tzlibasb.b01
+etc/firmware/tzlibasb.b02
+etc/firmware/tzlibasb.b03
+etc/firmware/tzlibasb.mdt
+etc/firmware/tzsuntory.b00
+etc/firmware/tzsuntory.b01
+etc/firmware/tzsuntory.b02
+etc/firmware/tzsuntory.b03
+etc/firmware/tzsuntory.mdt
