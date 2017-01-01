@@ -18,7 +18,11 @@ PRODUCT_PACKAGES += \
     libmm-omxcore \
     libstagefrighthw
 
-# DRM
+# DRM HIDL interfaces
+PRODUCT_PACKAGES += \
+    android.hardware.drm@1.0-impl
+
+# DRM properties
 PRODUCT_PROPERTY_OVERRIDES += \
     drm.service.enabled=true
 
