@@ -119,6 +119,9 @@ vendor/firmware/keymaster/keymaster.mdt
 # Time services
 vendor/lib/libtime_genoff.so
 
+# UI
+vendor/lib/libuiblur.so
+
 # USB
 bin/usbhub
 bin/usbhub_init
