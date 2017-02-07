@@ -134,6 +134,11 @@ TARGET_RECOVERY_FSTAB := device/sony/fusion3-common/rootdir/fstab.qcom
 TARGET_BOOTANIMATION_TEXTURE_CACHE := true
 TARGET_BOOTANIMATION_USE_RGB565 := true
 
+# TWRP Support - Optional
+ifeq ($(WITH_TWRP),true)
+-include device/sony/fusion3-common/twrp.mk
+endif
+
 # SELinux
 include device/qcom/sepolicy/sepolicy.mk
 
