@@ -147,6 +147,10 @@ on boot
     write /sys/module/lowmemorykiller/parameters/enable_adaptive_lmk 1
     write /sys/module/lowmemorykiller/parameters/vmpressure_file_min 53059
 
+    # Stop generating random entropy from flash storage
+    write /sys/block/mmcblk0/queue/add_random 0
+    write /sys/block/mmcblk1/queue/add_random 0
+
     # Double tap node
     chown system system /sys/devices/virtual/input/clearpad/wakeup_gesture
 
