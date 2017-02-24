@@ -28,6 +28,7 @@ endif
 
 LOCAL_SRC_FILES := lights.c
 LOCAL_MODULE_RELATIVE_PATH := hw
+LOCAL_PROPRIETARY_MODULE := true
 LOCAL_SHARED_LIBRARIES := libcutils liblog
 LOCAL_CLANG  := true
 LOCAL_MODULE := lights.msm8960
