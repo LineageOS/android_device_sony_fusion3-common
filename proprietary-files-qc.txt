@@ -100,10 +100,6 @@ vendor/lib/libqmi_csi.so
 vendor/lib/libqmi_encdec.so
 
 # Security
-bin/qseecomd
-lib/libQSEEComAPI.so
-lib/libdrmdiag.so
-lib/libdrmfs.so
 lib/libidd.so
 lib/libkeyctrl.so
 lib/libpin-cache.so
@@ -136,12 +132,7 @@ etc/firmware/vidc_1080p.fw
 etc/firmware/vidcfw.elf
 
 # Widevine DRM
-lib/liboemcrypto.so
-vendor/lib/drm/libdrmwvmplugin.so
 vendor/lib/mediadrm/libwvdrmengine.so
-vendor/lib/libdrmdecrypt.so
-vendor/lib/libwvm.so
-vendor/lib/libWVphoneAPI.so
 
 # WiFi Firmware
 etc/firmware/wcnss.b00

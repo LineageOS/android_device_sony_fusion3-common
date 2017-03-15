@@ -22,7 +22,6 @@
 /dev/msm_vidc_enc_sec     0660   system     audio
 /dev/msm_vpe_standalone   0660   system     camera
 /dev/pn544                0600   nfc        nfc
-/dev/qseecom              0660   system     drmrpc
 /dev/rfcomm0              0660   bluetooth  bluetooth
 /dev/rmnet_mux_ctrl       0640   radio      radio
 /dev/rtc0                 0600   system     system
