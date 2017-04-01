@@ -1,6 +1,5 @@
 #
-# Copyright (C) 2013 The CyanogenMod Project
-#           (C) 2017 The LineageOS Project
+# Copyright (C) 2017 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -15,16 +14,20 @@
 # limitations under the License.
 #
 
-LOCAL_PATH := $(call my-dir)
+# Common path
+COMMON_PATH := device/sony/fusion3-common
 
-ifeq ($(BOARD_VENDOR_PLATFORM),fusion3)
+# Common specific overlays
+DEVICE_PACKAGE_OVERLAYS += $(COMMON_PATH)/overlay
 
-include $(call first-makefiles-under,$(LOCAL_PATH))
-
-$(shell mkdir -p $(TARGET_OUT_ETC)/firmware/wcd9310; \
-    ln -sf /data/misc/audio/wcd9310_anc.bin \
-    $(TARGET_OUT_ETC)/firmware/wcd9310/wcd9310_anc.bin; \
-    ln -sf /data/misc/audio/mbhc.bin \
-    $(TARGET_OUT_ETC)/firmware/wcd9310/wcd9310_mbhc.bin)
-
+# Common radio specific elements
+ifneq ($(BOARD_HAVE_RADIO),false)
+DEVICE_PACKAGE_OVERLAYS += $(COMMON_PATH)/radio/overlay
+$(call inherit-product, $(COMMON_PATH)/radio/radio.mk)
 endif
+
+# Common product elements
+include $(COMMON_PATH)/product/*.mk
+
+# Vendor common configurations
+$(call inherit-product, vendor/sony/fusion3-common/fusion3-common-vendor.mk)
