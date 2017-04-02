@@ -30,8 +30,22 @@ public:
     // Board: introduction for keycheck
     virtual void introduce_keycheck()
     {
+        // Short vibration
+        vibrate(75);
+
         // LED boot selection colors
         led_color(255, 0, 255);
+    }
+
+    // Board: finalization of keycheck
+    virtual void finish_keycheck(bool recoveryBoot)
+    {
+        // Short vibration
+        if (recoveryBoot)
+        {
+            vibrate(75);
+            msleep(75);
+        }
     }
 
     // Board: introduction for Android
@@ -48,12 +62,26 @@ public:
         led_color(255, 100, 0);
     }
 
+    // Board: finish init execution
+    virtual void finish_init()
+    {
+        // Power off LED and vibrator
+        led_color(0, 0, 0);
+        vibrate(0);
+    }
+
     // Board: set led colors
     void led_color(uint8_t r, uint8_t g, uint8_t b)
     {
         write_int("/sys/class/leds/lm3533-red/brightness", r);
         write_int("/sys/class/leds/lm3533-green/brightness", g);
         write_int("/sys/class/leds/lm3533-blue/brightness", b);
+    }
+
+    // Board: set hardware vibrator
+    void vibrate(uint8_t strength)
+    {
+        write_int("/sys/class/timed_output/vibrator/enable", strength);
     }
 };
 
