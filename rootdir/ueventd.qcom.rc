@@ -131,6 +131,7 @@
 /sys/devices/virtual/input/input*   single      0640  system   system
 
 # System ALS
+/dev/input/event7        0660   system     camera
 /dev/input/event8        0660   system     camera
 
 # LM3533 ALS
