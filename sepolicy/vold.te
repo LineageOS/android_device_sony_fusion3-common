@@ -1,2 +1,0 @@
-allow vold cache_file:dir { create };
-allow vold storage_stub_file:dir { add_name open read search write };

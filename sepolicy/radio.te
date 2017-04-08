@@ -1,2 +1,0 @@
-# For phone app access to touch to wake
-allow radio sysfs_touchpanel:file rw_file_perms;

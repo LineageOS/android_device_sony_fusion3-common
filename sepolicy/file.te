@@ -1,21 +1,8 @@
-# Sockets
-type tad_socket, file_type;
-
-# Touchpanel
+# /sys
+type sysfs_ir_remote_control, fs_type, sysfs_type;
 type sysfs_touchpanel, fs_type, sysfs_type;
-
-# Vibrator
-type sysfs_vibrator, fs_type, sysfs_type;
-
-# Default type for anything under /firmware
-type radio_efs_file, fs_type;
-
-# IR blaster
-type sysfs_ir_remote_control, sysfs_type, fs_type;
-
-# TAD
-type trim_area_partition_device, dev_type;
-
-# WLAN Interface
 type sysfs_wlanmac, fs_type, sysfs_type;
 type sysfs_wlanserial, fs_type, sysfs_type;
+
+# /dev/socket
+type tad_socket, file_type;

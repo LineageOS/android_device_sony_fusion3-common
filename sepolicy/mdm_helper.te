@@ -1,8 +1,0 @@
-# Allow access to /cache/qcks
-allow mdm_helper cache_file:dir rw_dir_perms;
-allow mdm_helper cache_file:file create_file_perms;
-
-allow mdm_helper toolbox_exec:file rx_file_perms;
-
-# Connect to tad
-unix_socket_connect(mdm_helper, tad, tad)

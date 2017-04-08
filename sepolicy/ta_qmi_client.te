@@ -2,17 +2,3 @@ type ta_qmi_client, domain;
 type ta_qmi_client_exec, exec_type, file_type;
 
 init_daemon_domain(ta_qmi_client)
-
-allow ta_qmi_client diag_device:chr_file { read open write };
-allow ta_qmi_client self:capability { dac_override fsetid };
-allow ta_qmi_client self:socket create_socket_perms;
-
-# Wakelocks
-wakelock_use(ta_qmi_client)
-
-# Connect to tad and qmuxd
-unix_socket_connect(ta_qmi_client, tad, tad)
-qmux_socket(ta_qmi_client)
-
-# Access to smem_log
-allow ta_qmi_client smem_log_device:chr_file rw_file_perms;
