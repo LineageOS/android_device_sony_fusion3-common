@@ -1,3 +1,0 @@
-allow mpdecision socket_device:sock_file { unlink write };
-allow mpdecision system_data_file:dir { add_name remove_name write };
-allow mpdecision system_data_file:sock_file { create unlink write };
