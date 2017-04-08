@@ -19,7 +19,7 @@ LOCAL_SRC_FILES := \
     gui/SensorManager.cpp \
     parcel.cpp
 
-LOCAL_SHARED_LIBRARIES := libcutils libgui libbinder libutils
+LOCAL_SHARED_LIBRARIES := libcutils libgui libbinder libutils liblog
 LOCAL_MODULE := libshim_cald
 LOCAL_MODULE_TAGS := optional
 
