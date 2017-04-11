@@ -1,9 +1,11 @@
-# Init configurations
-PRODUCT_COPY_FILES += \
-    $(COMMON_PATH)/rootdir/init.qcom.rc:root/init.qcom.rc \
-    $(COMMON_PATH)/rootdir/init.qcom.power.rc:root/init.qcom.power.rc \
-    $(COMMON_PATH)/rootdir/init.recovery.qcom.rc:root/init.recovery.qcom.rc \
-    $(COMMON_PATH)/rootdir/init.sony.rc:root/init.sony.rc
+# Ramdisk packages
+PRODUCT_PACKAGES += \
+    fstab.qcom \
+    init.qcom.power.rc \
+    init.qcom.rc \
+    init.recovery.qcom.rc \
+    init.sony.rc \
+    ueventd.qcom.rc
 
 # IO Scheduler
 PRODUCT_PROPERTY_OVERRIDES += \
