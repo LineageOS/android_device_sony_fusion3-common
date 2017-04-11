@@ -1,8 +1,7 @@
-# Platform configuration
-PRODUCT_COPY_FILES += \
-    $(COMMON_PATH)/rootdir/fstab.qcom:root/fstab.qcom \
-    $(COMMON_PATH)/rootdir/fstab.qcom:recovery/root/fstab.qcom \
-    $(COMMON_PATH)/rootdir/ueventd.qcom.rc:root/ueventd.qcom.rc
+# Ramdisk packages
+PRODUCT_PACKAGES += \
+    fstab.qcom \
+    ueventd.qcom.rc
 
 # Sony TrimArea package
 PRODUCT_COPY_FILES += \
