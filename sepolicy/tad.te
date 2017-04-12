@@ -8,6 +8,7 @@ init_daemon_domain(tad)
 allow tad proc:file r_file_perms;
 
 # Allow tad to work its magic
+allow tad proc:file read;
 allow tad block_device:dir search;
 allow tad block_device:blk_file ioctl;
 allow tad trim_area_partition_device:blk_file rw_file_perms;
