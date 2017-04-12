@@ -1,0 +1,1 @@
+allow vold cache_file:dir { create setattr };
