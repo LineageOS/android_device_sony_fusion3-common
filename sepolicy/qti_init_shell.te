@@ -8,7 +8,7 @@ set_prop(qti_init_shell, radio_prop)
 allow qti_init_shell rmi_device:chr_file { getattr setattr };
 
 # BT init
-allow qti_init_shell bluetooth_data_file:dir search;
+allow qti_init_shell bluetooth_data_file:dir { read open search };
 allow qti_init_shell bluetooth_data_file:file r_file_perms;
 allow qti_init_shell bluetooth_loader_exec:file { read open };
 allow qti_init_shell devpts:chr_file rw_file_perms;
@@ -18,6 +18,10 @@ allow qti_init_shell hci_attach_exec:file rx_file_perms;
 allow qti_init_shell qmuxd_socket:dir w_dir_perms;
 allow qti_init_shell qmuxd:unix_stream_socket connectto;
 allow qti_init_shell qmuxd_socket:sock_file { create write setattr };
+
+allow qti_init_shell devpts:chr_file { read write open ioctl };
+allow qti_init_shell init:unix_stream_socket connectto;
+allow qti_init_shell property_socket:sock_file write;
 
 # FM init
 allow qti_init_shell apk_data_file:dir { write add_name create };
