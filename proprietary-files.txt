@@ -55,8 +55,6 @@ etc/firmware/wcnss.b02
 etc/firmware/wcnss.b04
 etc/firmware/wcnss.b05
 etc/firmware/wcnss.mdt
-etc/firmware/wlan/prima/WCNSS_cfg.dat
-etc/firmware/wlan/prima/WCNSS_qcom_wlan_nv.bin
 lib/hw/camera.vendor.qcom.so
 lib/hw/lights.vendor.default.so
 lib/hw/sensors.default.so
