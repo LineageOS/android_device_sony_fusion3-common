@@ -14,8 +14,8 @@
      limitations under the License.
 -->
 
-<!-- Telecomm resources that may need to be customized
-     for different hardware or product builds. -->
+<!-- Telecomm resources that may need to be customized for different hardware or product
+    builds. -->
 <resources>
     <!-- Flag indicating if the tty is enabled -->
     <bool name="tty_enabled">true</bool>
