@@ -7,7 +7,7 @@ include $(CLEAR_VARS)
 
 LOCAL_SRC_FILES:= \
     ril.cpp \
-    ril_event.cpp \
+    ril_event.cpp\
     RilSocket.cpp \
     RilSapSocket.cpp \
 
@@ -29,9 +29,8 @@ ifeq ($(SIM_COUNT), 2)
 endif
 
 LOCAL_C_INCLUDES += external/nanopb-c
-LOCAL_EXPORT_C_INCLUDE_DIRS := $(LOCAL_PATH)/../include
 LOCAL_C_INCLUDES += $(LOCAL_PATH)/../include
-
+LOCAL_EXPORT_C_INCLUDE_DIRS := $(LOCAL_PATH)/../include
 
 ifeq ($(BOARD_HAS_RIL_LEGACY_PAP),true)
     LOCAL_CFLAGS += -DRIL_LEGACY_PAP
@@ -42,4 +41,5 @@ LOCAL_CLANG := true
 LOCAL_SANITIZE := integer
 
 include $(BUILD_SHARED_LIBRARY)
+
 endif # BOARD_PROVIDES_LIBRIL
