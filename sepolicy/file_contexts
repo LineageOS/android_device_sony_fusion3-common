@@ -1,5 +1,4 @@
 # Sockets
-/dev/socket/illumination            u:object_r:illumination_socket:s0
 /dev/socket/tad                     u:object_r:tad_socket:s0
 
 # TA
@@ -24,7 +23,6 @@
 /sys/devices/virtual/timed_output/vibrator/level      u:object_r:sysfs_vibrator:s0
 
 # System binaries
-/system/bin/illumination_service    u:object_r:illumination_exec:s0
 /system/bin/macaddrsetup            u:object_r:macaddrsetup_exec:s0
 /system/bin/ta_qmi_client           u:object_r:ta_qmi_client_exec:s0
 /system/bin/tad_static              u:object_r:tad_exec:s0

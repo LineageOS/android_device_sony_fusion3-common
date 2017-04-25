@@ -1,8 +1,5 @@
 allow system_server gpu_device:chr_file rw_file_perms;
 
-# Connect to illumination service
-unix_socket_connect(system_server, illumination, illumination)
-
 allow system_server mdm_device:chr_file r_file_perms;
 
 # Hardware tunables

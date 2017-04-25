@@ -1,5 +1,4 @@
 # Sockets
-type illumination_socket, file_type;
 type tad_socket, file_type;
 
 # Touchpanel

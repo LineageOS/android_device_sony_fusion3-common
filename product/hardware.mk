@@ -4,5 +4,4 @@ PRODUCT_COPY_FILES += \
 
 # Lights package
 PRODUCT_PACKAGES += \
-    libshim_illumination_service \
     lights.msm8960
