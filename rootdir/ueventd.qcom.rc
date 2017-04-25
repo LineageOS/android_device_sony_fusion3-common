@@ -145,6 +145,11 @@
 /dev/i2c-5                0660   media      media
 
 #permissions for sensors
+/sys/devices/virtual/input/input*  bma250_calib_eeprom  0220  system  system
+/sys/devices/virtual/input/input*  bma250_calib_image   0660  system  system
+/sys/devices/virtual/input/input*  bma250_calib_offset  0440  system  system
+/sys/devices/virtual/input/input*  bma250_calib_set     0220  system  system
+/sys/devices/virtual/input/input*  bma250_rate          0640  system  system
 /sys/devices/virtual/input/input*  interval             0640  system  system
 /sys/devices/virtual/input/input*  registers            0640  system  system
 /sys/devices/virtual/input/input*  single               0640  system  system
@@ -166,9 +171,6 @@
 /sys/devices/i2c-12/12-*  pollrate_ms 0664 system system
 /sys/devices/i2c-12/12-*  enable  0664 system system
 /sys/devices/i2c-12/12-*  poll_delay 0664 system system
-
-# IIO sensors
-/dev/iio:device*          0660   system     input
 
 # Light Sensor LM3533
 /sys/devices/i2c-0/0-0036                 als_enable            0660 system system

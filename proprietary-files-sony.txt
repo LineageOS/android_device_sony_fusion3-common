@@ -61,12 +61,12 @@ etc/firmware/q6.mdt
 
 # Sensors
 lib/libals.so
-lib/libinvensense_hal.so
-lib/liblights-core.so
 lib/libmllite.so
-lib/libmplmpu.so
+lib/libmlplatform.so
+lib/libmpl.so
+-lib/libMPU3050.so
+-lib/libsensors_akm8963.so
 lib/libsys-utils.so
-lib/hw/sensors.default.so
 
 # TA
 bin/ta2bin
