@@ -96,5 +96,9 @@ on property:init.svc.recovery=running
     trigger enable-low-power
 
 on property:dev.bootcomplete=1
+    # Set I/O Scheduler to BFQ
+    setprop sys.io.scheduler "bfq"
+
+    # MPDecision
     rm /data/system/perfd/default_values
     start mpdecision
