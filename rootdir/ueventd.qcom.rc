@@ -1,36 +1,51 @@
-/dev/block/mmcblk0p8      0660   system     system
-/dev/block/mmcblk0p9      0660   system     system
-/dev/gemini0              0660   system     camera
+# Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
+# Copyright (c) 2012 Sony Mobile Communications Inc.
+#
+# Redistribution and use in source and binary forms, with or without
+# modification, are permitted provided that the following conditions are met:
+#     * Redistributions of source code must retain the above copyright
+#       notice, this list of conditions and the following disclaimer.
+#     * Redistributions in binary form must reproduce the above copyright
+#       notice, this list of conditions and the following disclaimer in the
+#       documentation and/or other materials provided with the distribution.
+#     * Neither the name of The Linux Foundation nor
+#       the names of its contributors may be used to endorse or promote
+#       products derived from this software without specific prior written
+#       permission.
+#
+# THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+# AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+# IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+# NON-INFRINGEMENT ARE DISCLAIMED.  IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+# CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+# EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+# PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
+# OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+# WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+# OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
+# ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+#
+# NOTE: This file has been modified by Sony Mobile Communications Inc.
+# Modifications are licensed under the License.
+
+# the DIAG device node is not world writable/readable.
+/dev/diag                 0660   system     qcom_diag
 /dev/genlock              0666   system     system
-/dev/hw_random            0660   system     system
-/dev/ion                  0664   system     system
 /dev/kgsl                 0666   system     system
 /dev/kgsl-3d0             0666   system     system
 /dev/kgsl-2d0             0666   root       root
 /dev/kgsl-2d1             0666   root       root
-/dev/mdm                  0660   system     radio
-/dev/media*               0660   system     camera
-/dev/mercury0             0660   system     camera
-/dev/mpu                  0600   system     system
-/dev/mpuirq               0600   system     system
-/dev/msm_camera/*         0660   system     camera
-/dev/msm_rotator          0660   system     system
-/dev/msm_vidc_reg         0660   system     audio
-/dev/msm_vidc_dec         0660   system     audio
-/dev/msm_vidc_dec_sec     0660   system     audio
-/dev/msm_vidc_enc         0660   system     audio
-/dev/msm_vidc_enc_sec     0660   system     audio
-/dev/msm_vpe_standalone   0660   system     camera
-/dev/pn544                0600   nfc        nfc
-/dev/rfcomm0              0660   bluetooth  bluetooth
-/dev/rmnet_mux_ctrl       0640   radio      radio
+/dev/ion                  0664   system     system
 /dev/rtc0                 0600   system     system
 /dev/smd0                 0660   system     system
-/dev/smd2                 0660   bluetooth  net_bt_stack
-/dev/smd3                 0660   bluetooth  net_bt_stack
 /dev/smd4                 0660   system     system
-/dev/smd7                 0660   bluetooth  bluetooth
+/dev/smd5                 0660   system     system
+/dev/smd6                 0660   system     system
 /dev/smd_cxm_qmi          0640   radio      radio
+/dev/smd7                 0660   bluetooth  bluetooth
+/dev/radio0               0640   system     system
+/dev/rfcomm0              0660   bluetooth  bluetooth
+/dev/gss                  0660   gps        gps
 /dev/smdcntl0             0640   radio      radio
 /dev/smdcntl1             0640   radio      radio
 /dev/smdcntl2             0640   radio      radio
@@ -58,21 +73,46 @@
 /dev/sdioctl6             0640   radio      radio
 /dev/sdioctl7             0640   radio      radio
 /dev/sdioctl8             0640   radio      radio
+/dev/rmnet_mux_ctrl       0640   radio      radio
 /dev/hsicctl0             0640   radio      radio
 /dev/hsicctl1             0640   radio      radio
 /dev/hsicctl2             0640   radio      radio
 /dev/hsicctl3             0640   radio      radio
-/dev/v4l-subdev*          0660   system     camera
+/dev/hsicctl4             0640   radio      radio
+/dev/hsicctl5             0640   radio      radio
+/dev/hsicctl6             0640   radio      radio
+/dev/hsicctl7             0640   radio      radio
+/dev/hsicctl8             0640   radio      radio
+/dev/hsicctl9             0640   radio      radio
+/dev/hsicctl10            0640   radio      radio
+/dev/hsicctl11            0640   radio      radio
+/dev/hsicctl12            0640   radio      radio
+/dev/hsicctl13            0640   radio      radio
+/dev/hsicctl14            0640   radio      radio
+/dev/hsicctl15            0640   radio      radio
+/dev/hsicctl16            0640   radio      radio
+/dev/hsusbctl0            0640   radio      radio
+/dev/hsusbctl1            0640   radio      radio
+/dev/hsusbctl2            0640   radio      radio
+/dev/hsusbctl3            0640   radio      radio
 /dev/video*               0660   system     camera
-/dev/ttyHSL1              0660   system     system
-/dev/radio0               0640   system     system
-/dev/gss                  0660   gps        gps
-/dev/rfkill               0660   wifi       wifi
-/sys/devices/virtual/smdpkt/smdcntl*       open_timeout   0664 radio radio
-/dev/ks_hsic_bridge       0660   system     system
-/dev/efs_hsic_bridge      0660   system     system
+/dev/media*               0660   system     camera
+/dev/v4l-subdev*          0660   system     camera
+/dev/gemini0              0660   system     camera
+/dev/jpeg0                0660   system     camera
+/dev/jpeg1                0660   system     camera
+/dev/jpeg2                0660   system     camera
+/dev/msm_camera/*         0660   system     camera
+/dev/gemini/              0660   system     camera
+/dev/mercury0             0660   system     camera
+/dev/msm_vidc_reg         0660   system     audio
+/dev/msm_vidc_dec         0660   system     audio
+/dev/msm_vidc_dec_sec     0660   system     audio
+/dev/msm_vidc_enc         0660   system     audio
+/dev/msm_rotator          0660   system     graphics
+/dev/hw_random            0660    root       root
 
-# permissions for audio
+#permissions for audio
 /dev/msm_qcelp            0660   system     audio
 /dev/msm_evrc             0660   system     audio
 /dev/msm_wma              0660   system     audio
@@ -96,48 +136,87 @@
 /dev/msm_preproc_ctl      0660   system     audio
 /dev/msm_rtac             0660   system     audio
 /dev/msm_voicememo        0660   system     audio
+/dev/smd3                 0660   bluetooth  net_bt_stack
+/dev/smd2                 0660   bluetooth  net_bt_stack
+/dev/ttyHSL1              0660   system     system
+/dev/mdm                  0660   system     radio
+/sys/devices/virtual/smdpkt/smdcntl*       open_timeout   0664 radio radio
+/dev/sdio_tty_ciq_00      0660   system     system
+/dev/tty_sdio_00          0660   system     system
+/dev/ttyGS0               0660   system     system
+/dev/i2c-5                0660   media      media
+
+#permissions for sensors
+/sys/devices/virtual/input/input*  interval             0640  system  system
+/sys/devices/virtual/input/input*  registers            0640  system  system
+/sys/devices/virtual/input/input*  single               0640  system  system
+
+# Gyroscope permission
+/dev/mpu                  0600   system      system
+/dev/mpuirq               0600   system      system
+
+# Kickstart permissions
+/dev/ks_hsic_bridge       0660   system      system
+/dev/efs_hsic_bridge      0660   system      system
+
+# DVB devices
+/dev/dvb/adapter0/demux*  0444   media       media
+/dev/dvb/adapter0/dvr*    0664   media       media
+/dev/dvb/adapter0/video*  0664   media       media
 
 # native sensors
 /sys/devices/i2c-12/12-*  pollrate_ms 0664 system system
-/sys/devices/i2c-12/12-*  enable      0664 system system
-/sys/devices/i2c-12/12-*  poll_delay  0664 system system
+/sys/devices/i2c-12/12-*  enable  0664 system system
+/sys/devices/i2c-12/12-*  poll_delay 0664 system system
 
-# Sensors
+# IIO sensors
 /dev/iio:device*          0660   system     input
 
-# MHL
-/sys/devices/i2c-0/0-0039/mhl/sii8334  adopter_id              0440 system system
-/sys/devices/i2c-0/0-0039/mhl/sii8334  device_id               0440 system system
-/sys/devices/i2c-0/0-0039/mhl/sii8334  rap                     0640 system system
-/sys/devices/i2c-0/0-0039/mhl/sii8334  scpd                    0640 system system
-/sys/devices/i2c-0/0-0039/mhl/sii8334  mouse_mode              0660 system system
-/sys/devices/i2c-0/0-0039/mhl/sii8334  mouse_move_distance_dx  0660 system system
-/sys/devices/i2c-0/0-0039/mhl/sii8334  mouse_move_distance_dy  0660 system system
-/sys/devices/i2c-0/0-0039/mhl/sii8334  screen_status           0660 system system
-
-# HDMI
-/sys/devices/virtual/graphics/fb1   edid_modes          0440 system system
-/sys/devices/virtual/graphics/fb1   edid_3d_modes       0440 system system
-/sys/devices/virtual/graphics/fb1   hdmi_mode           0440 system system
-/sys/devices/virtual/graphics/fb1   hpd                 0640 system system
-/sys/devices/virtual/graphics/fb1   product_description 0640 system system
-/sys/devices/virtual/graphics/fb1   scan_info           0440 system system
-/sys/devices/virtual/graphics/fb1   vendor_name         0640 system system
-/sys/devices/virtual/graphics/fb1   video_mode          0640 system system
-/sys/devices/virtual/graphics/fb1   video_mode_str      0440 system system
-
-/sys/devices/virtual/input/input*   interval    0640  system   system
-/sys/devices/virtual/input/input*   registers   0640  system   system
-/sys/devices/virtual/input/input*   single      0640  system   system
-
-# System ALS
-/dev/input/event7        0660   system     camera
-/dev/input/event8        0660   system     camera
-
-# LM3533 ALS
+# Light Sensor LM3533
 /sys/devices/i2c-0/0-0036 als_enable 0600 system system
 /sys/devices/i2c-0/0-0036 als_result 0400 system system
+
+# BT
+/dev/hidraw*                                     0666  system  system
+
+# Wlan
+/dev/wcnss_wlan           0660   system     system
+/dev/wcnss_ctrl           0660   system     system
+
+# UIO devices
+/dev/uio0                 0660   system     system
+/dev/uio1                 0660   system     system
+/dev/uio2                 0660   system     system
+
+# Sony Mobile MHL
+/sys/devices/i2c-0/0-0039/mhl/sii8334  adopter_id 0440  system  system
+/sys/devices/i2c-0/0-0039/mhl/sii8334  device_id  0440  system  system
+/sys/devices/i2c-0/0-0039/mhl/sii8334  rap        0640  system  system
+/sys/devices/i2c-0/0-0039/mhl/sii8334  scpd       0640  system  system
+/sys/devices/i2c-0/0-0039/mhl/sii8334  mouse_mode 0660  system  system
+/sys/devices/i2c-0/0-0039/mhl/sii8334  mouse_move_distance_dx  0660  system  system
+/sys/devices/i2c-0/0-0039/mhl/sii8334  mouse_move_distance_dy  0660  system  system
+/sys/devices/i2c-0/0-0039/mhl/sii8334  screen_status 0660 system system
+
+# HDMI
+/sys/devices/virtual/graphics/fb1  edid_modes     0440  system  system
+/sys/devices/virtual/graphics/fb1  edid_3d_modes  0440  system  system
+/sys/devices/virtual/graphics/fb1  hdmi_mode      0440  system  system
+/sys/devices/virtual/graphics/fb1  hpd            0640  system  system
+/sys/devices/virtual/graphics/fb1  product_description 0640 system system
+/sys/devices/virtual/graphics/fb1  scan_info      0440  system  system
+/sys/devices/virtual/graphics/fb1  vendor_name    0640  system  system
+/sys/devices/virtual/graphics/fb1  video_mode     0640  system  system
+/sys/devices/virtual/graphics/fb1  video_mode_str 0440  system  system
+
+# Camera
+/dev/input/event7         0660   system     camera
+/dev/input/event8         0660   system     camera
+/dev/msm_vpe_standalone   0660   system     camera
 
 # IR Remote
 /dev/ttyHSL2                                    0666  system   system
 /sys/devices/platform/ir_remote_control  enable 0222  system   system
+
+# NFC
+/dev/pn544                0600   nfc        nfc
