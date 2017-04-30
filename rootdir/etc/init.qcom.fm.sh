@@ -29,7 +29,7 @@
 setprop hw.fm.init 0
 
 mode=`getprop hw.fm.mode`
-version=197744
+version=199217
 
 LOG_TAG="qcom-fm"
 LOG_NAME="${0}:"
