@@ -64,6 +64,10 @@ on enable-low-power
     chmod 664 /sys/devices/system/cpu/cpu3/online
 
     write /sys/module/msm_thermal/core_control/enabled 1
+    
+    # Set cpu_boost parameters
+    write /sys/module/cpu_boost/parameters/input_boost_freq 1026000
+    write /sys/module/cpu_boost/parameters/input_boost_ms 40
 
     # Kgsl governors
     chown root system /sys/devices/platform/kgsl-3d0.0/kgsl/kgsl-3d0/pwrscale/policy
