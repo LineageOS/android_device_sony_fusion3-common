@@ -253,15 +253,16 @@ service qmuxd /system/bin/qmuxd
     disabled
 
 # QCOM prop
-service hciattach /system/bin/sh /system/etc/init.qcom.bt.sh
+service hci_attach /system/bin/sh /system/etc/init.qcom.bt.sh
     class late_start
     user bluetooth
     group qcom_oncrpc bluetooth system
     disabled
     oneshot
+    seclabel u:r:hci_attach:s0
 
 on property:bluetooth.hciattach=true
-    start hciattach
+    start hci_attach
 
 on property:bluetooth.hciattach=false
     setprop bluetooth.status off
@@ -325,10 +326,12 @@ service tad_static /system/bin/tad_static /dev/block/platform/msm_sdcc.1/by-name
     user root
     group root readproc
     socket tad stream 0660 system system
+    seclabel u:r:tad:s0
 
 service ta_qmi_client /system/bin/ta_qmi_client
     class main
     user root
+    seclabel u:r:ta_qmi_client:s0
 
 service updatemiscta /system/bin/updatemiscta
     class main
@@ -337,9 +340,10 @@ service updatemiscta /system/bin/updatemiscta
 
 # OSS WLAN and BT MAC setup
 service macaddrsetup /system/bin/macaddrsetup /data/misc/bluetooth/bdaddr
-     class late_start
-     user root
-     oneshot
+    class late_start
+    user root
+    oneshot
+    seclabel u:r:macaddrsetup:s0
 
 # OSS thermal management
 service thermanager /system/bin/thermanager /system/etc/thermanager.xml
