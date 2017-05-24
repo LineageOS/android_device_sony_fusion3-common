@@ -25,3 +25,7 @@ PRODUCT_PACKAGES += \
 # OpenGL properties
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.opengles.version=196608
+
+# RenderScript HAL
+PRODUCT_PACKAGES += \
+    android.hardware.renderscript@1.0-impl
