@@ -285,7 +285,7 @@ static int open_lights(const hw_module_t* module, const char* name,
             return -EINVAL;
 
         light_device->base.common.tag     = HARDWARE_DEVICE_TAG;
-        light_device->base.common.version = 0;
+        light_device->base.common.version = LIGHTS_DEVICE_API_VERSION_1_0;
         light_device->base.common.module  = (hw_module_t *)(module);
         light_device->base.common.close   = lights_device_close;
         light_device->base.set_light      = set_light;
