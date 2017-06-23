@@ -36,7 +36,6 @@ on init
 
 on fs
     mount_all ./fstab.qcom
-    swapon_all ./fstab.qcom
 
     restorecon /data/misc/audio/mbhc.bin
     restorecon /data/misc/audio/wcd9310_anc.bin
@@ -229,6 +228,10 @@ on boot
 
     # Tap to wake node
     chown system system /sys/devices/virtual/input/clearpad/wakeup_gesture
+
+on property:sys.boot_completed=1
+    # Enable ZRAM on boot_complete
+    swapon_all ./fstab.qcom
 
 on property:ro.data.large_tcp_window_size=true
     # Adjust socket buffer to enlarge TCP receive window for high bandwidth (e.g. DO-RevB)
