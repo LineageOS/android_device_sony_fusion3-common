@@ -11,4 +11,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.audio.fluence.voicerec=false \
     persist.audio.fluence.speaker=true \
     qcom.hw.aac.encoder=true \
+    ro.config.media_vol_steps=25 \
     ro.qc.sdk.audio.fluencetype=fluence
+
