@@ -108,6 +108,8 @@ on post-fs-data
     # Owner for the light sensor
     chown system system /sys/devices/i2c-0/0-0036/als_enable
     chown system system /sys/devices/i2c-0/0-0036/als_result
+    write /sys/module/leds_lm3533_ng/parameters/lm3533_bl_reduction 8
+    write /sys/module/leds_lm3533_ng/parameters/lm3533_bl_brightness_min 30
 
 # SONY: TrimArea Daemon
 service tad_static /system/bin/tad_static /dev/block/platform/msm_sdcc.1/by-name/TA 0,16
