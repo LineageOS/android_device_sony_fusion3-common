@@ -2,3 +2,5 @@ type ta_qmi_client, domain;
 type ta_qmi_client_exec, exec_type, file_type;
 
 init_daemon_domain(ta_qmi_client)
+
+wakelock_use(ta_qmi_client)
