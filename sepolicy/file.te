@@ -1,4 +1,5 @@
 # /sys
+type sysfs_camera_torch, fs_type, sysfs_type;
 type sysfs_ir_remote_control, fs_type, sysfs_type;
 type sysfs_touchpanel, fs_type, sysfs_type;
 type sysfs_fm_dl, fs_type, sysfs_type;
