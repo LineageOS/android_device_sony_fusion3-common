@@ -2,6 +2,7 @@
 type sysfs_ir_remote_control, fs_type, sysfs_type;
 type sysfs_touchpanel, fs_type, sysfs_type;
 type sysfs_mac_serial, fs_type, sysfs_type;
+type sysfs_surfaceflinger, sysfs_type, fs_type;
 
 # /dev/socket
 type tad_socket, file_type;
