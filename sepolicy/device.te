@@ -7,3 +7,5 @@ type trim_area_partition_device, dev_type;
 type ir_remote_serial_device, dev_type;
 type rfkill_device, dev_type;
 type rmi_device, dev_type;
+type shared_log_device, dev_type;
+type smd_device, dev_type;
