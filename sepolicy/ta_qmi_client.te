@@ -14,3 +14,4 @@ allow ta_qmi_client diag_device:chr_file { open read write };
 allow ta_qmi_client self:capability { dac_override fsetid };
 allow ta_qmi_client self:socket create_socket_perms;
 allow ta_qmi_client shared_log_device:chr_file { ioctl open read write };
+allowxperm ta_qmi_client self:socket ioctl msm_sock_ipc_ioctls;
