@@ -41,8 +41,8 @@ if [ ! -f "$HELPER" ]; then
 fi
 . "$HELPER"
 
-# default to not sanitizing the vendor folder before extraction
-clean_vendor=false
+# Default to sanitizing the vendor folder before extraction
+CLEAN_VENDOR=true
 
 while [ "$1" != "" ]; do
     case $1 in
@@ -51,9 +51,9 @@ while [ "$1" != "" ]; do
                                 ;;
         -s | --section )        shift
                                 SECTION=$1
-                                clean_vendor=false
+                                CLEAN_VENDOR=false
                                 ;;
-        -c | --clean-vendor )   clean_vendor=true
+        -n | --no-cleanup )     CLEAN_VENDOR=false
                                 ;;
     esac
     shift
@@ -64,7 +64,7 @@ if [ -z "$SRC" ]; then
 fi
 
 # Initialize the helper for common device
-setup_vendor "$DEVICE_COMMON" "$VENDOR" "$ROM_ROOT" true "$clean_vendor"
+setup_vendor "$DEVICE_COMMON" "$VENDOR" "$ROM_ROOT" true "$CLEAN_VENDOR"
 
 # Sony/Board specific blobs
 extract "$MY_DIR"/proprietary-files-sony.txt "$SRC" "$SECTION"
@@ -80,7 +80,7 @@ fi
 if [ ! -z "$DEVICE_SUB_COMMON" ]; then
     # Reinitialize the helper for sub-common device
     DEVICE_COMMON=$DEVICE_SUB_COMMON
-    setup_vendor "$DEVICE_COMMON" "$VENDOR" "$ROM_ROOT" true "$clean_vendor"
+    setup_vendor "$DEVICE_COMMON" "$VENDOR" "$ROM_ROOT" true "$CLEAN_VENDOR"
 
     # Sony/Device specific blobs
     extract "$MY_DIR"/../$DEVICE_SUB_COMMON/proprietary-files-sony.txt "$SRC" "$SECTION"
@@ -95,7 +95,7 @@ if [ ! -z "$DEVICE_SUB_COMMON" ]; then
 fi
 
 # Reinitialize the helper for device
-setup_vendor "$DEVICE" "$VENDOR" "$ROM_ROOT" false "$clean_vendor"
+setup_vendor "$DEVICE" "$VENDOR" "$ROM_ROOT" false "$CLEAN_VENDOR"
 
 # Sony/Device specific blobs
 extract "$MY_DIR"/../$DEVICE/proprietary-files-sony.txt "$SRC" "$SECTION"
