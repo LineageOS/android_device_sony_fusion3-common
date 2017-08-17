@@ -337,14 +337,6 @@ on property:ro.data.large_tcp_window_size=true
     # Adjust socket buffer to enlarge TCP receive window for high bandwidth (e.g. DO-RevB)
     write /proc/sys/net/ipv4/tcp_adv_win_scale  2
 
-# SONY fast dormancy
-service fast-dormancy /system/bin/fast-dormancy
-    class late_start
-    disabled
-
-on property:ro.semc.enable.fast_dormancy=false
-    stop fast-dormancy
-
 service config_bt_addr /system/bin/btnvtool -O
     class core
     user bluetooth
