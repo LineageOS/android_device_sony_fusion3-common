@@ -60,8 +60,13 @@
 /(vendor|system/vendor)/bin/thermanager                                           u:object_r:thermanager_exec:s0
 
 # /sys
+/sys/class/power_supply/battery(/.*)?                                             u:object_r:sysfs_batteryinfo:s0
+/sys/class/thermal(/.*)?                                                          u:object_r:sysfs_thermal:s0
+/sys/devices/i2c-0/0-002c/backlight/lcd-backlight(/.*)?                           u:object_r:sysfs_leds:s0
+/sys/devices/i2c-0/0-0036/leds/lm3533-lcd-bl(.*/.*)?                              u:object_r:sysfs_leds:s0
 /sys/devices/i2c-0/0-0053(/.*)?                                                   u:object_r:sysfs_camera_torch:s0
 /sys/devices/platform/ir_remote_control/enable                                    u:object_r:sysfs_ir_remote_control:s0
+/sys/devices/platform/msm_ssbi\.0/pm8921-core/pm8xxx-adc(/.*)?                    u:object_r:sysfs_batteryinfo:s0
 /sys/devices/platform/kgsl-3d0\.0/kgsl/kgsl-3d0/gpuclk                            u:object_r:sysfs_thermal:s0
 /sys/devices/platform/kgsl-3d0\.0/kgsl/kgsl-3d0/max_gpuclk                        u:object_r:sysfs_thermal:s0
 /sys/devices/platform/kgsl-3d0\.0/kgsl/kgsl-3d0/reset_count                       u:object_r:sysfs_thermal:s0
@@ -69,14 +74,17 @@
 /sys/devices/platform/msm_hsusb_host(/.*)?                                        u:object_r:sysfs_usb:s0
 /sys/devices/platform/wcnss_wlan.0/serial_number                                  u:object_r:sysfs_mac_serial:s0
 /sys/devices/platform/wcnss_wlan.0/wcnss_mac_addr                                 u:object_r:sysfs_mac_address:s0
+/sys/devices/platform/wcnss_wlan.0/thermal_mitigation                             u:object_r:sysfs_thermal:s0
 /sys/devices/virtual/graphics/fb([0-2])+/hpd                                      u:object_r:sysfs_surfaceflinger:s0
 /sys/devices/virtual/graphics/fb([0-2])+/vendor_name                              u:object_r:sysfs_surfaceflinger:s0
 /sys/devices/virtual/graphics/fb([0-2])+/product_description                      u:object_r:sysfs_surfaceflinger:s0
 /sys/devices/virtual/input/input1/wakeup_gesture                                  u:object_r:sysfs_touchpanel:s0
 /sys/devices/virtual/smdpkt/smdcntl([0-9])+/open_timeout                          u:object_r:sysfs_smdcntl_open_timeout:s0
+/sys/devices/virtual/thermal(/.*)?                                                u:object_r:sysfs_thermal:s0
 /sys/devices/virtual/timed_output/vibrator/level                                  u:object_r:sysfs_vibrator:s0
 /sys/module/radio_iris_transport/parameters/fmsmd_set                             u:object_r:sysfs_fm_dl:s0
 /sys/module/rmnet_usb/parameters/rmnet_data_init                                  u:object_r:sysfs_rmnet:s0
+/sys/module/pm8921_charger/parameters(/.*)?                                       u:object_r:sysfs_batteryinfo:s0
 
 # debugfs
 /sys/kernel/debug/asoc(/.*)?                                                      u:object_r:debugfs_asoc:s0
