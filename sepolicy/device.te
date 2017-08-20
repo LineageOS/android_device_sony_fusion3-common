@@ -4,6 +4,7 @@ type ltalabel_block_device, dev_type;
 type trim_area_partition_device, dev_type;
 
 # /dev devices
+type fm_device, dev_type;
 type ir_remote_serial_device, dev_type;
 type mpu_device, dev_type;
 type qmuxd_socket, dev_type;
