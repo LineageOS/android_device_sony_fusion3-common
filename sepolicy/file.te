@@ -1,6 +1,7 @@
 # /sys
 type sysfs_ir_remote_control, fs_type, sysfs_type;
 type sysfs_touchpanel, fs_type, sysfs_type;
+type sysfs_fm_dl, fs_type, sysfs_type;
 type sysfs_mac_serial, fs_type, sysfs_type;
 type sysfs_smdcntl_open_timeout, sysfs_type, fs_type;
 type sysfs_surfaceflinger, sysfs_type, fs_type;
@@ -10,3 +11,6 @@ type debugfs_asoc, debugfs_type, fs_type;
 
 # /dev/socket
 type tad_socket, file_type;
+
+# /data
+type fm_data_file, file_type, data_file_type;
