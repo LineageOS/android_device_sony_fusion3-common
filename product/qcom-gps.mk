@@ -8,3 +8,7 @@ PRODUCT_PACKAGES += \
     libgps.utils \
     libloc_core \
     libloc_eng
+
+# GPS HIDL interfaces
+PRODUCT_PACKAGES += \
+    android.hardware.gnss@1.0-impl
