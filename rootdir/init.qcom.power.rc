@@ -64,7 +64,7 @@ on enable-low-power
     write /sys/module/cpu_boost/parameters/input_boost_ms 40
 
     # Kgsl governors
-    chown root system /sys/devices/platform/kgsl-3d0.0/kgsl/kgsl-3d0/pwrscale/policy
+    chown system system /sys/devices/platform/kgsl-3d0.0/kgsl/kgsl-3d0/pwrscale/policy
     chmod 0664 /sys/devices/platform/kgsl-3d0.0/kgsl/kgsl-3d0/pwrscale/policy
     write /sys/devices/platform/kgsl-3d0.0/kgsl/kgsl-3d0/pwrscale/policy "msm"
 
