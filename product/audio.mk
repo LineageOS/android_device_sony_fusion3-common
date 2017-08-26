@@ -5,6 +5,7 @@ PRODUCT_COPY_FILES += \
 
 # Audio properties
 PRODUCT_PROPERTY_OVERRIDES += \
+    audio.offload.disable=1 \
     persist.audio.fluence.voicecall=true \
     persist.audio.fluence.voicerec=false \
     persist.audio.fluence.speaker=true \
