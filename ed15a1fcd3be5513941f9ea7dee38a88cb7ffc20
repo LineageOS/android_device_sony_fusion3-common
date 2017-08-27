@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6f7479ed_f45b924e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 12
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 5681
+      },
+      "writtenOn": "2017-08-27T13:28:26Z",
+      "side": 1,
+      "message": "hmm init says \"write /proc/sys/vm/swappiness 40\" not 60",
+      "range": {
+        "startLine": 15,
+        "startChar": 73,
+        "endLine": 15,
+        "endChar": 75
+      },
+      "revId": "ed15a1fcd3be5513941f9ea7dee38a88cb7ffc20",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
