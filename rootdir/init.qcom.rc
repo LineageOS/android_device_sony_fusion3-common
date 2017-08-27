@@ -26,12 +26,12 @@ on init
     # Shim for libraries
     export LD_SHIM_LIBS /system/lib/hw/camera.vendor.qcom.so|libshim_camera.so:/system/lib/libcald_pal.so|libshim_cald.so:/system/bin/illumination_service|libshim_illumination_service.so:/system/bin/mpdecision|libshim_mpdecision.so
 
-    symlink /sdcard /storage/sdcard0
-
     symlink /dev/socket /tmp
 
     mkdir /dev/bus 0755 root root
     mkdir /dev/bus/usb 0755 root root
+
+    symlink /sdcard /storage/sdcard0
 
     # Setup ZRAM options
     write /sys/block/zram0/comp_algorithm lz4
@@ -49,16 +49,130 @@ on fs
     restorecon /cache/qcks/efs3.bin
     restorecon /cache/qcks/ta.bin
 
+on post-fs
+    # LM3533 owner
+    chown system system /sys/class/leds/lm3533-blue/als_enable
+    chown system system /sys/class/leds/lm3533-blue/als_on_suspend_enable
+    chown system system /sys/class/leds/lm3533-blue/brightness
+    chown system system /sys/class/leds/lm3533-blue/enable_scaler
+    chown system system /sys/class/leds/lm3533-blue/fsc
+    chown system system /sys/class/leds/lm3533-blue/max_brightness
+    chown system system /sys/class/leds/lm3533-blue/pattern
+    chown system system /sys/class/leds/lm3533-blue/pwm
+
+    chown system system /sys/class/leds/lm3533-green/als_enable
+    chown system system /sys/class/leds/lm3533-green/als_on_suspend_enable
+    chown system system /sys/class/leds/lm3533-green/brightness
+    chown system system /sys/class/leds/lm3533-green/enable_scaler
+    chown system system /sys/class/leds/lm3533-green/fsc
+    chown system system /sys/class/leds/lm3533-green/max_brightness
+    chown system system /sys/class/leds/lm3533-green/pattern
+    chown system system /sys/class/leds/lm3533-green/pwm
+
+    chown system system /sys/class/leds/lm3533-red/als_enable
+    chown system system /sys/class/leds/lm3533-red/als_on_suspend_enable
+    chown system system /sys/class/leds/lm3533-red/brightness
+    chown system system /sys/class/leds/lm3533-red/enable_scaler
+    chown system system /sys/class/leds/lm3533-red/fsc
+    chown system system /sys/class/leds/lm3533-red/max_brightness
+    chown system system /sys/class/leds/lm3533-red/pattern
+    chown system system /sys/class/leds/lm3533-red/pwm
+
+    chown system system /sys/bus/i2c/devices/0-0036/als1_curve
+    chown system system /sys/bus/i2c/devices/0-0036/als2_curve
+    chown system system /sys/bus/i2c/devices/0-0036/als3_curve
+    chown system system /sys/bus/i2c/devices/0-0036/als_current
+    chown system system /sys/bus/i2c/devices/0-0036/als_enable
+    chown system system /sys/bus/i2c/devices/0-0036/als_result
+    chown system system /sys/bus/i2c/devices/0-0036/als_suspend_current
+    chown system system /sys/bus/i2c/devices/0-0036/als_zones
+    chown system system /sys/bus/i2c/devices/0-0036/reset
+    chown system system /sys/bus/i2c/devices/0-0036/rt_rate_ms
+    chown system system /sys/bus/i2c/devices/0-0036/scalers
+    chown system system /sys/bus/i2c/devices/0-0036/start_shdn_ms
+    chown system system /sys/bus/i2c/devices/0-0036/sync_lvbanks
+
+    # Create directory for hdcp
+    mkdir /data/hdcp/ 0700 system system
+    mkdir /data/hdcp/dxhdcp2/ 0700 system system
+
+on post-fs-data
+    # Light sensor owner
+    chown system system /sys/devices/i2c-0/0-0036/als_enable
+    chown system system /sys/devices/i2c-0/0-0036/als_result
+
+    write /dev/wcnss_wlan ""
+    write /sys/module/wcnss_ssr_8960/parameters/enable_riva_ssr 1
+
+    mkdir /data/tombstones 0771 system system
+    mkdir /tombstones/modem 0771 system system
+    mkdir /tombstones/lpass 0771 system system
+    mkdir /tombstones/wcnss 0771 system system
+    mkdir /tombstones/dsps 0771 system system
+    mkdir /tombstones/mdm 0771 system system
+
+    # To observe dnsmasq.leases file for dhcp information of soft ap.
+    chown dhcp system /data/misc/dhcp
+
+    # Create directory used by audio subsystem
+    mkdir /data/misc/audio 0770 audio audio
+
+    # Mounting of persist is moved to 'on emmc-fs' and 'on fs' sections
+    # We chown/chmod /persist again so because mount is run as root + defaults
+    chown system system /persist
+    chmod 0664 /sys/devices/platform/msm_sdcc.1/polling
+    chmod 0664 /sys/devices/platform/msm_sdcc.2/polling
+    chmod 0664 /sys/devices/platform/msm_sdcc.3/polling
+    chmod 0664 /sys/devices/platform/msm_sdcc.4/polling
+
+    # Chown polling nodes as needed from UI running on system server
+    chown system system /sys/devices/platform/msm_sdcc.1/polling
+    chown system system /sys/devices/platform/msm_sdcc.2/polling
+    chown system system /sys/devices/platform/msm_sdcc.3/polling
+    chown system system /sys/devices/platform/msm_sdcc.4/polling
+
+    # Create the symlink to qcn wpa_supplicant folder for ar6000 wpa_supplicant
+    mkdir /data/system 0775 system system
+
+    # Create directories for Location services
+    mkdir /data/misc/location 0770 gps gps
+    mkdir /data/misc/location/gpsone_d 0770 system gps
+
+    # Create FM dir for patchdownloader
+    mkdir /data/misc/fm 0770 system system
+    chmod 0770 /data/misc/fm
+
+    # Create PERFD deamon related dirs
+    mkdir /data/misc/perfd 0755 root system
+    chmod 2755 /data/misc/perfd
+    mkdir /data/system/perfd 0770 root system
+    chmod 2770 /data/system/perfd
+
+    # Provide the access to hostapd.conf only to root and group
+    chmod 0660 /data/hostapd/hostapd.conf
+
+    # Enable the setgid bit on the directory
+    mkdir /data/audio 0770 media audio
+
+    # Camera
+    mkdir /data/camera 0771 root camera
+
+    # Kickstart
+    mkdir /cache/qcks 0770 system system
+    chown system /dev/block/platform/msm_sdcc.1/by-name
+
+    rm /data/local/tmp/adreno_config.txt
+
+    setprop vold.post_fs_data_done 1
+
 on early-boot
-    # set RLIMIT_MEMLOCK to 64MB
+    # Set RLIMIT_MEMLOCK to 64MB
     setrlimit 8 67108864 67108864
 
     # Permissions for AKM897x sensor
     chown system system /data/misc/akm_set.txt
 
     write /sys/module/pm8921_charger/parameters/enable_lowbatt_detect 1
-
-    write /dev/wcnss_wlan ""
 
 on boot
     # Invensense sensor HAL interfaces
@@ -116,6 +230,7 @@ on boot
     chown system input /sys/bus/iio/devices/iio:device1/scan_elements/in_magn_z_en
     chown system input /sys/bus/iio/devices/iio:device1/scan_elements/in_timestamp_en
 
+    # Bluetooth
     chown bluetooth bluetooth /sys/module/bluetooth_power/parameters/power
     chown bluetooth bluetooth /sys/class/rfkill/rfkill0/type
     chown bluetooth bluetooth /sys/class/rfkill/rfkill0/state
@@ -143,14 +258,41 @@ on boot
     mkdir /dev/socket/qmux_gps 0770 gps gps
     chmod 2770 /dev/socket/qmux_gps
 
-    # Create PERFD deamon related dirs
-    mkdir /data/misc/perfd 0755 root system
-    chmod 2755 /data/misc/perfd
-    mkdir /data/system/perfd 0770 root system
-    chmod 2770 /data/system/perfd
-
     # Allow QMUX daemon to assign port open wait time
     chown radio radio /sys/devices/virtual/hsicctl/hsicctl0/modem_wait
+
+    chmod 0444 /sys/devices/platform/msm_hsusb/gadget/usb_state
+
+    # Create symlink for fb1 as HDMI
+    symlink /dev/graphics/fb1 /dev/graphics/hdmi
+
+    # Graphics Permissions
+    chown system graphics /sys/class/graphics/fb1/hpd
+    chown system graphics /sys/class/graphics/fb1/vendor_name
+    chown system graphics /sys/class/graphics/fb1/product_description
+    chmod 0664 /sys/class/graphics/fb1/hpd
+    chmod 0664 /sys/class/graphics/fb1/vendor_name
+    chmod 0664 /sys/class/graphics/fb1/product_description
+    chmod 0664 /sys/class/graphics/fb1/video_mode
+    chmod 0664 /sys/class/graphics/fb1/format_3d
+
+    # For bridgemgr daemon to inform the USB driver of the correct transport
+    chown radio radio /sys/class/android_usb/f_rmnet_smd_sdio/transport
+
+    chmod 660 /dev/rtc0
+    chown system system /dev/rtc0
+
+    # Change permissions for fps_level nodes
+    chown system graphics /sys/class/graphics/fb0/msm_fb_fps_level
+    chown system graphics /sys/class/graphics/fb1/msm_fb_fps_level
+    chown system graphics /sys/class/graphics/fb2/msm_fb_fps_level
+    chmod 644 /sys/class/graphics/fb0/msm_fb_fps_level
+    chmod 400 /sys/class/graphics/fb1/msm_fb_fps_level
+    chmod 400 /sys/class/graphics/fb2/msm_fb_fps_level
+
+    # Change owner and group to get adopter/device ids from MHL driver
+    chown system system /sys/class/mhl/sii8334/adopter_id
+    chown system system /sys/class/mhl/sii8334/device_id
 
     # port-bridge
     chmod 0660 /dev/smd0
@@ -163,39 +305,6 @@ on boot
     # FM
     chmod 0644 /dev/radio0
     chown fm_radio fm_radio /dev/radio0
-
-    chmod 0444 /sys/devices/platform/msm_hsusb/gadget/usb_state
-
-    # Remove write permissions to video related nodes
-    chown system graphics /sys/class/graphics/fb1/hpd
-    chown system graphics /sys/class/graphics/fb1/vendor_name
-    chown system graphics /sys/class/graphics/fb1/product_description
-    chmod 0664 /sys/class/graphics/fb1/hpd
-    chmod 0664 /sys/class/graphics/fb1/vendor_name
-    chmod 0664 /sys/class/graphics/fb1/product_description
-    chmod 0664 /sys/class/graphics/fb1/video_mode
-    chmod 0664 /sys/class/graphics/fb1/format_3d
-
-    # create symlink for fb1 as HDMI
-    symlink /dev/graphics/fb1 /dev/graphics/hdmi
-
-    # Change owner and group to get adopter/device ids from MHL driver
-    chown system system /sys/class/mhl/sii8334/adopter_id
-    chown system system /sys/class/mhl/sii8334/device_id
-
-    # Change permissions for fps_level nodes
-    chown system graphics /sys/class/graphics/fb0/msm_fb_fps_level
-    chown system graphics /sys/class/graphics/fb1/msm_fb_fps_level
-    chown system graphics /sys/class/graphics/fb2/msm_fb_fps_level
-    chmod 644 /sys/class/graphics/fb0/msm_fb_fps_level
-    chmod 400 /sys/class/graphics/fb1/msm_fb_fps_level
-    chmod 400 /sys/class/graphics/fb2/msm_fb_fps_level
-
-    # For bridgemgr daemon to inform the USB driver of the correct transport
-    chown radio radio /sys/class/android_usb/f_rmnet_smd_sdio/transport
-
-    chmod 660 /dev/rtc0
-    chown system system /dev/rtc0
 
     # To prevent out of order acknowledgements from making
     # connection tracking to treat them as not belonging to
@@ -221,115 +330,14 @@ on boot
     write /proc/sys/vm/page-cluster 0
     write /proc/sys/vm/swappiness 40
 
-    # Double tap node
+    # Tap to wake node
     chown system system /sys/devices/virtual/input/clearpad/wakeup_gesture
 
-on post-fs
-    #led RGB
-    chown system system /sys/class/leds/lm3533-blue/als_enable
-    chown system system /sys/class/leds/lm3533-blue/als_on_suspend_enable
-    chown system system /sys/class/leds/lm3533-blue/brightness
-    chown system system /sys/class/leds/lm3533-blue/enable_scaler
-    chown system system /sys/class/leds/lm3533-blue/fsc
-    chown system system /sys/class/leds/lm3533-blue/max_brightness
-    chown system system /sys/class/leds/lm3533-blue/pattern
-    chown system system /sys/class/leds/lm3533-blue/pwm
+on property:ro.data.large_tcp_window_size=true
+    # Adjust socket buffer to enlarge TCP receive window for high bandwidth (e.g. DO-RevB)
+    write /proc/sys/net/ipv4/tcp_adv_win_scale  2
 
-    chown system system /sys/class/leds/lm3533-green/als_enable
-    chown system system /sys/class/leds/lm3533-green/als_on_suspend_enable
-    chown system system /sys/class/leds/lm3533-green/brightness
-    chown system system /sys/class/leds/lm3533-green/enable_scaler
-    chown system system /sys/class/leds/lm3533-green/fsc
-    chown system system /sys/class/leds/lm3533-green/max_brightness
-    chown system system /sys/class/leds/lm3533-green/pattern
-    chown system system /sys/class/leds/lm3533-green/pwm
-
-    chown system system /sys/class/leds/lm3533-red/als_enable
-    chown system system /sys/class/leds/lm3533-red/als_on_suspend_enable
-    chown system system /sys/class/leds/lm3533-red/brightness
-    chown system system /sys/class/leds/lm3533-red/enable_scaler
-    chown system system /sys/class/leds/lm3533-red/fsc
-    chown system system /sys/class/leds/lm3533-red/max_brightness
-    chown system system /sys/class/leds/lm3533-red/pattern
-    chown system system /sys/class/leds/lm3533-red/pwm
-
-    chown system system /sys/bus/i2c/devices/0-0036/als1_curve
-    chown system system /sys/bus/i2c/devices/0-0036/als2_curve
-    chown system system /sys/bus/i2c/devices/0-0036/als3_curve
-    chown system system /sys/bus/i2c/devices/0-0036/als_current
-    chown system system /sys/bus/i2c/devices/0-0036/als_enable
-    chown system system /sys/bus/i2c/devices/0-0036/als_result
-    chown system system /sys/bus/i2c/devices/0-0036/als_suspend_current
-    chown system system /sys/bus/i2c/devices/0-0036/als_zones
-    chown system system /sys/bus/i2c/devices/0-0036/reset
-    chown system system /sys/bus/i2c/devices/0-0036/rt_rate_ms
-    chown system system /sys/bus/i2c/devices/0-0036/scalers
-    chown system system /sys/bus/i2c/devices/0-0036/start_shdn_ms
-    chown system system /sys/bus/i2c/devices/0-0036/sync_lvbanks
-
-    # create directory for hdcp
-    mkdir /data/hdcp/ 0700 system system
-    mkdir /data/hdcp/dxhdcp2/ 0700 system system
-
-on post-fs-data
-    # Owner for the light sensor
-    chown system system /sys/devices/i2c-0/0-0036/als_enable
-    chown system system /sys/devices/i2c-0/0-0036/als_result
-
-    # to observe dnsmasq.leases file for dhcp information of soft ap.
-    chown dhcp system /data/misc/dhcp
-
-    write /sys/module/wcnss_ssr_8960/parameters/enable_riva_ssr 1
-
-    mkdir /data/tombstones 0771 system system
-    mkdir /tombstones/modem 0771 system system
-    mkdir /tombstones/lpass 0771 system system
-    mkdir /tombstones/wcnss 0771 system system
-    mkdir /tombstones/dsps 0771 system system
-    mkdir /tombstones/mdm 0771 system system
-
-    # Create FM dir for patchdownloader
-    mkdir /data/misc/fm 0770 system system
-    chmod 0770 /data/misc/fm
-
-    # Create directory used by audio subsystem
-    mkdir /data/misc/audio 0770 audio audio
-
-    chmod 0664 /sys/devices/platform/msm_sdcc.1/polling
-    chmod 0664 /sys/devices/platform/msm_sdcc.2/polling
-    chmod 0664 /sys/devices/platform/msm_sdcc.3/polling
-    chmod 0664 /sys/devices/platform/msm_sdcc.4/polling
-
-    # Chown polling nodes as needed from UI running on system server
-    chown system system /sys/devices/platform/msm_sdcc.1/polling
-    chown system system /sys/devices/platform/msm_sdcc.2/polling
-    chown system system /sys/devices/platform/msm_sdcc.3/polling
-    chown system system /sys/devices/platform/msm_sdcc.4/polling
-
-    # Create the symlink to qcn wpa_supplicant folder for ar6000 wpa_supplicant
-    mkdir /data/system 0775 system system
-
-    # Create directories for gpsone_daemon services
-    mkdir /data/misc/location 0770 gps gps
-    mkdir /data/misc/location/gpsone_d 0770 system gps
-
-    # Provide the access to hostapd.conf only to root and group
-    chmod 0660 /data/hostapd/hostapd.conf
-
-    mkdir /data/audio 0770 media audio
-
-    # kickstart
-    mkdir /cache/qcks 0770 system system
-    chown system /dev/block/platform/msm_sdcc.1/by-name
-
-    # Camera
-    mkdir /data/camera 0771 root camera
-
-    setprop vold.post_fs_data_done 1
-
-    rm /data/local/tmp/adreno_config.txt
-
-# Fast Dormancy
+# SONY fast dormancy
 service fast-dormancy /system/bin/fast-dormancy
     class late_start
     disabled
@@ -337,15 +345,23 @@ service fast-dormancy /system/bin/fast-dormancy
 on property:ro.semc.enable.fast_dormancy=false
     stop fast-dormancy
 
-on property:vold.decrypt=trigger_restart_framework
-    start config_bt_addr
-
 service config_bt_addr /system/bin/btnvtool -O
     class core
     user bluetooth
     group bluetooth radio
     oneshot
 
+on property:vold.decrypt=trigger_restart_framework
+    start config_bt_addr
+
+# QMUX must be in multiple groups to support external process connections
+service qmuxd /system/bin/qmuxd
+    class core
+    user radio
+    group radio audio bluetooth gps qcom_diag net_bt_stack
+    disabled
+
+# QCOM prop
 service hciattach /system/bin/sh /system/etc/init.qcom.bt.sh
     class late_start
     user bluetooth
@@ -359,42 +375,23 @@ on property:bluetooth.hciattach=true
 on property:bluetooth.hciattach=false
     setprop bluetooth.status off
 
-# QMUX must be in multiple groups to support external process connections
-service qmuxd /system/bin/qmuxd
-    class core
-    user radio
-    group radio audio bluetooth gps qcom_diag net_bt_stack
-    disabled
-
-service ks_checker /system/bin/sh /system/etc/kickstart_checker.sh
-    class core
-    oneshot
-
 service netmgrd /system/bin/netmgrd
     class late_start
     group radio
     disabled
 
-service kickstart /system/bin/qcks l -r /data/tombstones/mdm/ -e /cache/qcks/
-    class core
+service fm_dl /system/bin/sh /system/etc/init.qcom.fm.sh
+    class late_start
     user system
-    group system radio
+    group system
     disabled
     oneshot
 
-on property:gsm.radio.kickstart=on
-    start kickstart
-
-on property:gsm.radio.kickstart=off
-    stop kickstart
-
-on property:ro.boot.baseband=mdm
-    start qmuxd
-    start netmgrd
-
-on property:ro.boot.baseband=apq
-    setprop ro.radio.noril yes
-    stop ril-daemon
+service mpdecision /system/bin/mpdecision --avg_comp
+    class main
+    user root
+    group root readproc
+    disabled
 
 service wpa_supplicant /system/bin/wpa_supplicant \
     -iwlan0 -Dnl80211 -c/data/misc/wifi/wpa_supplicant.conf \
@@ -426,57 +423,67 @@ service p2p_supplicant /system/bin/wpa_supplicant \
     disabled
     oneshot
 
-on property:ro.data.large_tcp_window_size=true
-    # Adjust socket buffer to enlarge TCP receive window for high bandwidth (e.g. DO-RevB)
-    write /proc/sys/net/ipv4/tcp_adv_win_scale  2
+# Kickstart checker
+service ks_checker /system/bin/sh /system/etc/kickstart_checker.sh
+    class core
+    oneshot
 
-service thermanager /system/bin/thermanager /system/etc/thermanager.xml
-    class main
-    user root
-    group root
-
-service mpdecision /system/bin/mpdecision --avg_comp
-    class main
-    user root
-    group root readproc
-    disabled
-
-service fm_dl /system/bin/sh /system/etc/init.qcom.fm.sh
-    class late_start
+service kickstart /system/bin/qcks l -r /data/tombstones/mdm/ -e /cache/qcks/
+    class core
     user system
-    group system
+    group system radio
     disabled
     oneshot
 
+on property:gsm.radio.kickstart=on
+    start kickstart
+
+on property:gsm.radio.kickstart=off
+    stop kickstart
+
+# SONY illumination service
 service illumination /system/bin/illumination_service
     class main
     user root
     socket illumination stream 0660 system camera
 
-service charger /sbin/healthd -c
-    class charger
-    seclabel u:r:healthd:s0
-
-# SONY: TrimArea Daemon
+# SONY misc
 service tad_static /system/bin/tad_static /dev/block/platform/msm_sdcc.1/by-name/TA 0,16
     class core
     user root
     group root readproc
     socket tad stream 0660 system system
 
-# SONY: Trim Area QMI Client
 service ta_qmi_client /system/bin/ta_qmi_client
     class main
     user root
 
-# SONY: Update MiscTA
 service updatemiscta /system/bin/updatemiscta
     class main
     user root
     oneshot
 
-# Wi-Fi and BT MAC addresses
+# OSS WLAN and BT MAC setup
 service macaddrsetup /system/bin/macaddrsetup /data/misc/bluetooth/bdaddr
      class late_start
      user root
      oneshot
+
+# OSS thermal management
+service thermanager /system/bin/thermanager /system/etc/thermanager.xml
+    class main
+    user root
+    group root
+
+# Offline charger
+service charger /sbin/healthd -c
+    class charger
+    seclabel u:r:healthd:s0
+
+on property:ro.boot.baseband=mdm
+    start qmuxd
+    start netmgrd
+
+on property:ro.boot.baseband=apq
+    setprop ro.radio.noril yes
+    stop ril-daemon
