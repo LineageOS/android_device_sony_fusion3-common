@@ -15,6 +15,8 @@
 /dev/rmi0                                                                         u:object_r:rmi_device:s0
 /dev/kgsl-3d0                                                                     u:object_r:gpu_device:s0
 /dev/media([0-9])+                                                                u:object_r:video_device:s0
+/dev/mpu                                                                          u:object_r:mpu_device:s0
+/dev/mpuirq                                                                       u:object_r:mpu_device:s0
 /dev/msm_acdb                                                                     u:object_r:audio_device:s0
 /dev/msm_camera(/.*)?                                                             u:object_r:video_device:s0
 /dev/msm_rotator                                                                  u:object_r:video_device:s0
