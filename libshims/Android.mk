@@ -38,9 +38,11 @@ LOCAL_C_INCLUDES := \
     system/core/libutils
 
 LOCAL_SHARED_LIBRARIES := \
+    libbase \
     libui \
     libutils \
-    liblog
+    liblog \
+    libnativewindow
 
 LOCAL_MODULE := libshim_camera
 LOCAL_MODULE_TAGS := optional
