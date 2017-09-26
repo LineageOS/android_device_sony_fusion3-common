@@ -324,7 +324,7 @@ on property:gsm.radio.kickstart=off
 service tad_static /system/bin/tad_static /dev/block/platform/msm_sdcc.1/by-name/TA 0,16
     class core
     user root
-    group root readproc
+    group root readproc system
     socket tad stream 0660 system system
     seclabel u:r:tad:s0
 
@@ -343,6 +343,7 @@ service updatemiscta /system/bin/updatemiscta
 service macaddrsetup /system/bin/macaddrsetup
     class late_start
     user root
+    group root bluetooth system
     oneshot
     seclabel u:r:macaddrsetup:s0
 
