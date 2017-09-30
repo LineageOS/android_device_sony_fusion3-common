@@ -340,7 +340,7 @@ service updatemiscta /system/bin/updatemiscta
     oneshot
 
 # OSS WLAN and BT MAC setup
-service macaddrsetup /system/bin/macaddrsetup /data/misc/bluetooth/bdaddr
+service macaddrsetup /system/bin/macaddrsetup
     class late_start
     user root
     oneshot

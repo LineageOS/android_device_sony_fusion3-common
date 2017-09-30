@@ -28,5 +28,6 @@
 /* === Bluetooth Interface Constants === */
 #define BT_MAC_TAID 1
 #define BT_MAC_PNTR 447
+#define BT_MAC_FILE "/data/misc/bluetooth/bdaddr"
 
 #endif /* __TA_MISC_DATA_H__ */

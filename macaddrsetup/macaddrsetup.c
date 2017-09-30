@@ -142,11 +142,11 @@ int main(int argc, char **argv)
     err |= read_mac(WLAN_MAC_TAID, WLAN_MAC_PNTR, WLAN_MAC_FILE, TYPE_MAC);
 
     /* Bluetooth MAC import */
-    err |= read_mac(BT_MAC_TAID, BT_MAC_PNTR, argv[1], TYPE_MAC);
+    err |= read_mac(BT_MAC_TAID, BT_MAC_PNTR, BT_MAC_FILE, TYPE_MAC);
 
     /* Set correct permissions for Bluetooth */
-    chown(argv[1], AID_BLUETOOTH, AID_BLUETOOTH);
-    chmod(argv[1], S_IRUSR | S_IWUSR | S_IRGRP); /* 640 */
+    chown(BT_MAC_FILE, AID_BLUETOOTH, AID_BLUETOOTH);
+    chmod(BT_MAC_FILE, S_IRUSR | S_IWUSR | S_IRGRP); /* 640 */
 
     /* Close the TA Partition */
     if (ta_opened != 0) {
