@@ -40,7 +40,6 @@
 
 # /system
 /system/bin/hci_qcomm_init                                                        u:object_r:hci_attach_exec:s0
-/system/bin/macaddrsetup                                                          u:object_r:macaddrsetup_exec:s0
 /system/bin/netmgrd                                                               u:object_r:netmgrd_exec:s0
 /system/bin/qmuxd                                                                 u:object_r:qmuxd_exec:s0
 /system/bin/ta_qmi_client                                                         u:object_r:ta_qmi_client_exec:s0
@@ -48,6 +47,7 @@
 /system/bin/updatemiscta                                                          u:object_r:updatemiscta_exec:s0
 
 # /vendor
+/(vendor|system/vendor)/bin/macaddrsetup                                          u:object_r:macaddrsetup_exec:s0
 /(vendor|system/vendor)/bin/thermanager                                           u:object_r:thermanager_exec:s0
 
 # /sys
