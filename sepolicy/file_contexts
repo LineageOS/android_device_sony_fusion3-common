@@ -45,8 +45,10 @@
 /system/bin/qmuxd                                                                 u:object_r:qmuxd_exec:s0
 /system/bin/ta_qmi_client                                                         u:object_r:ta_qmi_client_exec:s0
 /system/bin/tad_static                                                            u:object_r:tad_exec:s0
-/system/bin/thermanager                                                           u:object_r:thermanager_exec:s0
 /system/bin/updatemiscta                                                          u:object_r:updatemiscta_exec:s0
+
+# /vendor
+/(vendor|system/vendor)/bin/thermanager                                           u:object_r:thermanager_exec:s0
 
 # /sys
 /sys/devices/platform/ir_remote_control/enable                                    u:object_r:sysfs_ir_remote_control:s0
