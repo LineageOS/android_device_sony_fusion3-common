@@ -339,14 +339,6 @@ service updatemiscta /system/bin/updatemiscta
     group root system
     oneshot
 
-# OSS WLAN and BT MAC setup
-service macaddrsetup /system/bin/macaddrsetup
-    class late_start
-    user root
-    group root bluetooth system
-    oneshot
-    seclabel u:r:macaddrsetup:s0
-
 # OSS thermal management
 service thermanager /vendor/bin/thermanager /system/etc/thermanager.xml
     class main
