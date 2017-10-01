@@ -21,6 +21,8 @@ LOCAL_SHARED_LIBRARIES := \
     liblog
 
 LOCAL_MODULE := libshim_cald
+
+LOCAL_PROPRIETARY_MODULE := true
 LOCAL_MODULE_TAGS := optional
 
 include $(BUILD_SHARED_LIBRARY)
@@ -45,6 +47,8 @@ LOCAL_SHARED_LIBRARIES := \
     libnativewindow
 
 LOCAL_MODULE := libshim_camera
+
+LOCAL_PROPRIETARY_MODULE := true
 LOCAL_MODULE_TAGS := optional
 
 include $(BUILD_SHARED_LIBRARY)
@@ -64,6 +68,8 @@ LOCAL_SHARED_LIBRARIES := \
     libutils
 
 LOCAL_MODULE := libshim_MPU3050
+
+LOCAL_PROPRIETARY_MODULE := true
 LOCAL_MODULE_TAGS := optional
 
 include $(BUILD_SHARED_LIBRARY)
