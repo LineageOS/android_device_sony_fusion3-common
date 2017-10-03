@@ -56,13 +56,13 @@
 /system/bin/qcks                                                                  u:object_r:kickstart_exec:s0
 /system/bin/qmuxd                                                                 u:object_r:qmuxd_exec:s0
 /system/bin/ta_qmi_client                                                         u:object_r:ta_qmi_client_exec:s0
-/system/bin/tad_static                                                            u:object_r:tad_exec:s0
 /system/bin/updatemiscta                                                          u:object_r:updatemiscta_exec:s0
 
 # /vendor
 /(vendor|system/vendor)/bin/hw/android\.hardware\.vibrator@1\.0-service\.fusion3  u:object_r:hal_vibrator_default_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.power@1\.0-service-qti          u:object_r:hal_power_default_exec:s0
 /(vendor|system/vendor)/bin/macaddrsetup                                          u:object_r:macaddrsetup_exec:s0
+/(vendor|system/vendor)/bin/tad_static                                            u:object_r:tad_exec:s0
 /(vendor|system/vendor)/bin/thermanager                                           u:object_r:thermanager_exec:s0
 
 # /sys
