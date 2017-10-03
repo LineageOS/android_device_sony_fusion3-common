@@ -321,7 +321,7 @@ on property:gsm.radio.kickstart=off
     stop kickstart
 
 # SONY misc
-service tad_static /system/bin/tad_static /dev/block/platform/msm_sdcc.1/by-name/TA 0,16
+service tad_static /vendor/bin/tad_static /dev/block/platform/msm_sdcc.1/by-name/TA 0,16
     class core
     user root
     group root readproc system
