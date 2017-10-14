@@ -351,6 +351,8 @@ service thermanager /vendor/bin/thermanager /system/etc/thermanager.xml
 # Offline charger
 service charger /charger
     class charger
+    user root
+    group root radio system
     seclabel u:r:charger:s0
 
 on property:ro.boot.baseband=mdm
