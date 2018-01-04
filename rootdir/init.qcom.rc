@@ -169,7 +169,7 @@ on early-boot
     # Permissions for AKM897x sensor
     chown system system /data/misc/akm_set.txt
 
-    write /sys/module/pm8921_charger/parameters/enable_lowbatt_detect 1
+    write /sys/module/pm8921_bms/parameters/enable_lowbatt_detect 1
 
 on boot
     # Invensense sensor HAL interfaces
