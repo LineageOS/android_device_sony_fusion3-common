@@ -214,11 +214,6 @@ on boot
     write /sys/module/process_reclaim/parameters/pressure_max 70
     write /sys/module/process_reclaim/parameters/swap_opt_eff 30
 
-    # Flash storage isn't a good entropy source, and only causes locking
-    # overhead in the kernel. Turn it off.
-    write /sys/block/mmcblk0/queue/add_random 0
-    write /sys/block/mmcblk1/queue/add_random 0
-
     # Swappiness and memory pages
     write /proc/sys/vm/page-cluster 0
     write /proc/sys/vm/swappiness 40
