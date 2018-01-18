@@ -28,7 +28,7 @@ on init
     symlink /sdcard /storage/sdcard0
 
 on fs
-    mount_all ./fstab.qcom
+    mount_all ./fstab.qcom --early
 
     restorecon /data/misc/audio/mbhc.bin
     restorecon /data/misc/audio/wcd9310_anc.bin
@@ -37,6 +37,18 @@ on fs
     restorecon /cache/qcks/efs2.bin
     restorecon /cache/qcks/efs3.bin
     restorecon /cache/qcks/ta.bin
+
+    # Start HW service manager early
+    start hwservicemanager
+
+on late-fs
+    # Start services for bootanim
+    start surfaceflinger
+    start bootanim
+    start configstore-hal-1-0
+    start gralloc-2-0
+
+    mount_all ./fstab.qcom --late
 
 on post-fs
     # Create directory for hdcp
