@@ -66,6 +66,10 @@ on post-fs-data
     mkdir /tombstones/dsps 0771 system system
     mkdir /tombstones/mdm 0771 system system
 
+    # Create control sockets on vendor
+    mkdir /data/vendor/wifi/wpa 0770 wifi wifi
+    mkdir /data/vendor/wifi/wpa/sockets 0770 wifi wifi
+
     # To observe dnsmasq.leases file for dhcp information of soft ap.
     chown dhcp system /data/misc/dhcp
 
