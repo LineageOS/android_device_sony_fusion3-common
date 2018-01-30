@@ -17,9 +17,9 @@ type tad_socket, file_type;
 
 # /data
 type fm_data_file, file_type, data_file_type, core_data_file_type;
-type kickstart_data_file, file_type, data_file_type;
-type mpctl_data_file, file_type, data_file_type;
-type mpctl_socket, file_type, data_file_type, mlstrustedobject;
+type kickstart_data_file, file_type, data_file_type, core_data_file_type;
+type mpctl_data_file, file_type, data_file_type, core_data_file_type;
+type mpctl_socket, file_type, data_file_type, core_data_file_type, mlstrustedobject;
 
 # /proc
 type proc_cpu_erp, fs_type;
