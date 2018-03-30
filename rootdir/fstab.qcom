@@ -11,7 +11,6 @@
 /dev/block/platform/msm_sdcc.1/by-name/cache          /cache              f2fs     rw,nosuid,nodev,noatime,inline_xattr,flush_merge,nobarrier                 wait,check,formattable
 /dev/block/platform/msm_sdcc.1/by-name/cache          /cache              ext4     rw,nosuid,nodev,noatime,noauto_da_alloc,barrier=1,errors=panic             wait,check,formattable
 /dev/block/platform/msm_sdcc.1/by-name/apps_log       /misc               emmc     defaults                                                                   defaults
-/dev/block/zram0                                      none                swap     defaults                                                                   zramsize=419430400
 
 /devices/platform/msm_sdcc.3/mmc_host/mmc*            auto                auto     defaults                                                                   voldmanaged=sdcard1:auto,encryptable=userdata
 /devices/platform/msm_hsusb_host/usb*                 auto                auto     defaults                                                                   voldmanaged=usb:auto
