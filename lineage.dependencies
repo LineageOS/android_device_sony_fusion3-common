@@ -4,10 +4,6 @@
     "target_path": "device/sony/common"
   },
   {
-    "repository": "android_device_qcom_common",
-    "target_path": "device/qcom/common"
-  },
-  {
     "repository": "android_kernel_sony_apq8064",
     "target_path": "kernel/sony/apq8064"
   },
