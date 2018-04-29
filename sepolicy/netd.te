@@ -1,1 +1,3 @@
+#============= netd ==============
+dontaudit netd kernel:system module_request;
 dontaudit netd self:capability sys_module;
