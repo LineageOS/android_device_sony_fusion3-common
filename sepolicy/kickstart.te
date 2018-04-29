@@ -1,0 +1,24 @@
+type kickstart, domain;
+type kickstart_exec, exec_type, file_type;
+
+init_daemon_domain(kickstart)
+
+unix_socket_connect(kickstart, tad, tad)
+
+set_prop(kickstart, radio_prop)
+
+#============= kickstart ==============
+allow kickstart block_device:dir { getattr search };
+allow kickstart cache_file:dir rw_dir_perms;
+allow kickstart cache_file:file create_file_perms;
+allow kickstart efs_block_device:blk_file { rw_file_perms setattr };
+allow kickstart efs_block_device:dir getattr;
+allow kickstart kickstart_device:chr_file rw_file_perms;
+allow kickstart kickstart_exec:file execute_no_trans;
+allow kickstart mdm_device:chr_file { getattr ioctl open read };
+allow kickstart proc:file { getattr open read };
+allow kickstart self:capability { chown fowner fsetid };
+allow kickstart shell_exec:file { entrypoint rx_file_perms };
+allow kickstart sysfs_rmnet:file { open write };
+allow kickstart system_file:file execute_no_trans;
+allow kickstart toolbox_exec:file rx_file_perms;

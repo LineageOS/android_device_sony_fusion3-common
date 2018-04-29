@@ -299,7 +299,9 @@ service wpa_supplicant /vendor/bin/hw/wpa_supplicant \
 # Kickstart checker
 service ks_checker /system/bin/sh /system/etc/kickstart_checker.sh
     class core
+    group system
     oneshot
+    seclabel u:r:kickstart:s0
 
 service kickstart /system/bin/qcks l -r /data/tombstones/mdm/ -e /cache/qcks/
     class core
