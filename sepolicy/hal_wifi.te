@@ -1,0 +1,2 @@
+#============= hal_wifi ==============
+dontaudit hal_wifi kernel:system module_request;
