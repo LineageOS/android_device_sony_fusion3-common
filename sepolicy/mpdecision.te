@@ -1,0 +1,18 @@
+type mpdecision, domain, mlstrustedsubject;
+type mpdecision_exec, exec_type, file_type;
+
+init_daemon_domain(mpdecision)
+
+#============= mpdecision ==============
+allow mpdecision device_latency:chr_file w_file_perms;
+allow mpdecision kernel:process setsched;
+allow mpdecision mpctl_data_file:dir rw_dir_perms;
+allow mpdecision mpctl_data_file:file create_file_perms;
+allow mpdecision mpctl_socket:dir rw_dir_perms;
+allow mpdecision mpctl_socket:sock_file create_file_perms;
+allow mpdecision proc_cpu_erp:file { open read };
+allow mpdecision self:capability { fsetid sys_nice };
+allow mpdecision self:netlink_kobject_uevent_socket { bind create read setopt };
+allow mpdecision sysfs:file { open read write };
+allow mpdecision sysfs_devices_system_cpu:file write;
+r_dir_file(mpdecision, system_server)
