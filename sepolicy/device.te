@@ -5,6 +5,7 @@ type ltalabel_block_device, dev_type;
 type trim_area_partition_device, dev_type;
 
 # /dev devices
+type device_latency, dev_type;
 type diag_device, dev_type;
 type fm_device, dev_type;
 type hsic_device, dev_type;
