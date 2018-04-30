@@ -6,6 +6,7 @@ set_prop(mediaserver, camera_prop)
 allow mediaserver camera_data_file:dir create_dir_perms;
 allow mediaserver camera_data_file:file create_file_perms;
 allow mediaserver hal_configstore_ISurfaceFlingerConfigs:hwservice_manager find;
+allow mediaserver mpctl_socket:dir search;
 allow mediaserver sensorservice_service:service_manager find;
 allow mediaserver sysfs_camera_torch:dir search;
 allow mediaserver sysfs_camera_torch:file { open read write };
