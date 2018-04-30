@@ -32,6 +32,7 @@
 /dev/smd2                                                                         u:object_r:hci_attach_dev:s0
 /dev/smd3                                                                         u:object_r:hci_attach_dev:s0
 /dev/smd([0-9])+                                                                  u:object_r:smd_device:s0
+/dev/smd_cxm_qmi                                                                  u:object_r:smd_cxm_qmi_device:s0
 /dev/smdcntl[0-7]                                                                 u:object_r:radio_device:s0
 /dev/smem_log                                                                     u:object_r:shared_log_device:s0
 /dev/socket/qmux_audio(/.*)?                                                      u:object_r:qmuxd_socket:s0
