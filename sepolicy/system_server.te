@@ -4,7 +4,9 @@ qmux_socket(system_server)
 allow system_server diag_device:chr_file rw_file_perms;
 allow system_server graphics_device:chr_file { ioctl open read write };
 allow system_server graphics_device:dir search;
+allow system_server mdm_device:chr_file { getattr ioctl open read };
 allow system_server mpu_device:chr_file { ioctl open read write };
 allow system_server self:socket ioctl;
+allow system_server sysfs_touchpanel:file write;
 allow system_server system_file:file execmod;
 allowxperm system_server self:socket ioctl msm_sock_ipc_ioctls;
