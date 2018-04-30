@@ -16,5 +16,6 @@ type qmuxd_socket, dev_type;
 type rfkill_device, dev_type;
 type rmi_device, dev_type;
 type shared_log_device, dev_type;
+type smd_cxm_qmi_device, dev_type;
 type smd_device, dev_type;
 type wlan_device, dev_type;

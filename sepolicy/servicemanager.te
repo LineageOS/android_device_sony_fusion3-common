@@ -1,0 +1,2 @@
+#============= servicemanager ==============
+allow servicemanager rild:dir search;
