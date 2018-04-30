@@ -7,6 +7,7 @@ wakelock_use(qmuxd)
 
 #============= qmuxd ==============
 allow qmuxd diag_device:chr_file rw_file_perms;
+allow qmuxd hsic_device:chr_file rw_file_perms;
 allow qmuxd qmuxd_socket:dir w_dir_perms;
 allow qmuxd qmuxd_socket:sock_file create_file_perms;
 allow qmuxd radio_device:chr_file rw_file_perms;
