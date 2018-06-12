@@ -22,3 +22,4 @@ allow kickstart shell_exec:file { entrypoint rx_file_perms };
 allow kickstart sysfs_rmnet:file { open write };
 allow kickstart system_file:file execute_no_trans;
 allow kickstart toolbox_exec:file rx_file_perms;
+allow kickstart unlabeled:dir { getattr search };
