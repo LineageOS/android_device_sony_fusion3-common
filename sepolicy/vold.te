@@ -1,0 +1,3 @@
+#============= vold ==============
+allow vold system_data_file:file { open r_file_perms };
+
