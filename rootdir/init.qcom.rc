@@ -280,7 +280,7 @@ service fm_dl /system/bin/sh /system/etc/init.qcom.fm.sh
 service mpdecision /system/bin/mpdecision --avg_comp
     class main
     user root
-    group root readproc
+    group root readproc system
     socket mpdecision stream 0660 root system
     disabled
 
