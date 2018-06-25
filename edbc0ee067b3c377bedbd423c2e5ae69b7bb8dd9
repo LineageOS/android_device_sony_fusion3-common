@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "60a072b3_2ccfa67e",
+        "filename": "liblights/Android.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 18602
+      },
+      "writtenOn": "2018-06-25T21:23:25Z",
+      "side": 1,
+      "message": "use LOCAL_VENDOR_MODULE instead.",
+      "range": {
+        "startLine": 31,
+        "startChar": 0,
+        "endLine": 31,
+        "endChar": 24
+      },
+      "revId": "edbc0ee067b3c377bedbd423c2e5ae69b7bb8dd9",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
