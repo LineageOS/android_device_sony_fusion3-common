@@ -18,7 +18,7 @@
 
 #define LOG_TAG "lights.fusion3"
 
-#include <cutils/log.h>
+#include <log/log.h>
 
 #include <stdint.h>
 #include <stdlib.h>
