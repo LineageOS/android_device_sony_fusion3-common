@@ -45,7 +45,6 @@ static inline const char* getBTDefaultName()
 #endif // OS_GENERIC
 
 #define BTA_DISABLE_DELAY 1000
-#define BLE_VND_INCLUDED TRUE
 #define SC_MODE_INCLUDED FALSE
 
 #endif
