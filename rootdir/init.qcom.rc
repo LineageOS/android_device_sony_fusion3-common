@@ -51,6 +51,9 @@ on late-fs
     mount_all ./fstab.qcom --late
 
 on post-fs
+    # Allow writing to the kernel trace log.
+    chmod 0222 /sys/kernel/debug/tracing/trace_marker
+
     # Create directory for hdcp
     mkdir /data/hdcp/ 0700 system system
     mkdir /data/hdcp/dxhdcp2/ 0700 system system
