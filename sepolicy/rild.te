@@ -1,5 +1,5 @@
-binder_call(rild, servicemanager)
 binder_call(rild, audioserver)
+binder_call(rild, servicemanager)
 binder_use(rild)
 
 qmux_socket(rild)
@@ -10,4 +10,3 @@ allow rild diag_device:chr_file rw_file_perms;
 allow rild self:socket ioctl;
 allow rild smd_cxm_qmi_device:chr_file { open write };
 allowxperm rild self:socket ioctl msm_sock_ipc_ioctls;
-

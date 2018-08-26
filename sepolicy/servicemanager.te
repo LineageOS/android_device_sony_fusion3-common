@@ -1,5 +1,4 @@
 #============= servicemanager ==============
-allow servicemanager rild:dir { search rw_dir_perms };
-allow servicemanager rild:file { rw_file_perms };
+allow servicemanager rild:dir rw_dir_perms;
+allow servicemanager rild:file rw_file_perms;
 allow servicemanager rild:process getattr;
-

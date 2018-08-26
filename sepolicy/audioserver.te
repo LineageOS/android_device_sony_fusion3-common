@@ -1,8 +1,8 @@
-qmux_socket(audioserver)
 binder_call(audioserver, rild)
+
+qmux_socket(audioserver)
 
 #============= audioserver ==============
 allow audioserver debugfs_asoc:dir { open read search };
 allow audioserver self:socket create_socket_perms;
 allowxperm audioserver self:socket ioctl msm_sock_ipc_ioctls;
-
