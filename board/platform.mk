@@ -7,6 +7,8 @@ BOARD_VENDOR_PLATFORM := fusion3
 
 # Legacy blobs
 TARGET_NEEDS_PLATFORM_TEXT_RELOCATIONS := true
+TARGET_PROCESS_SDK_VERSION_OVERRIDE := \
+    /system/bin/mediaserver=22
 
 # Dumpstate
 BOARD_LIB_DUMPSTATE := libdumpstate.sony
