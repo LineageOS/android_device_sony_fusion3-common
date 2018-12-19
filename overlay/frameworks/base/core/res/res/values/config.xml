@@ -148,4 +148,16 @@
         <item>XTRA_SERVER_2=https://xtrapath2.izatcloud.net/xtra3grc.bin</item>
         <item>XTRA_SERVER_3=https://xtrapath3.izatcloud.net/xtra3grc.bin</item>
     </string-array>
+
+    <!-- Default files to pin via Pinner Service -->
+    <string-array translatable="false" name="config_defaultPinnerServiceFiles">
+        <item>"/system/framework/arm/boot-framework.oat"</item>
+        <item>"/system/framework/boot-framework.vdex"</item>
+        <item>"/system/framework/oat/arm/services.odex"</item>
+        <item>"/system/framework/oat/arm/services.vdex"</item>
+        <item>"/system/framework/arm/boot.oat"</item>
+        <item>"/system/framework/boot.vdex"</item>
+        <item>"/system/framework/arm/boot-core-libart.oat"</item>
+        <item>"/system/framework/boot-core-libart.vdex"</item>
+    </string-array>
 </resources>
