@@ -74,9 +74,6 @@ on post-fs-data
     mkdir /data/vendor/wifi/wpa 0770 wifi wifi
     mkdir /data/vendor/wifi/wpa/sockets 0770 wifi wifi
 
-    # To observe dnsmasq.leases file for dhcp information of soft ap.
-    chown dhcp system /data/misc/dhcp
-
     # Create directory used by audio subsystem
     mkdir /data/misc/audio 0770 audio audio
 
