@@ -7,6 +7,7 @@ qmux_socket(rild)
 #============= rild ==============
 allow rild audioserver_service:service_manager find;
 allow rild diag_device:chr_file rw_file_perms;
+allow rild proc_cmdline:file { getattr open read };
 allow rild self:socket ioctl;
 allow rild smd_cxm_qmi_device:chr_file { open write };
 allowxperm rild self:socket ioctl msm_sock_ipc_ioctls;
