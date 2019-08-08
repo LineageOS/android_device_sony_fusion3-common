@@ -1366,7 +1366,7 @@ Return<void> RadioImpl::setNetworkSelectionModeAutomatic(int32_t serial) {
 #if VDBG
     RLOGD("setNetworkSelectionModeAutomatic: serial %d", serial);
 #endif
-    dispatchStrings(serial, mSlotId, RIL_REQUEST_SET_NETWORK_SELECTION_AUTOMATIC, 0);
+    dispatchStrings(serial, mSlotId, RIL_REQUEST_SET_NETWORK_SELECTION_AUTOMATIC, true, 0);
     return Void();
 }
 
