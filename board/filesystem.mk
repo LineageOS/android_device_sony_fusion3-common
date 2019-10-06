@@ -14,3 +14,6 @@ BOARD_FLASH_BLOCK_SIZE := 131072
 
 # Extended filesystem support
 TARGET_EXFAT_DRIVER := sdfat
+
+# Root extra symlinks
+BOARD_ROOT_EXTRA_SYMLINKS := /data/tombstones:/tombstones

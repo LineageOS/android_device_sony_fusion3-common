@@ -20,7 +20,6 @@ import init.sony.usb.rc
 
 on early-init
     mount debugfs /sys/kernel/debug /sys/kernel/debug
-    symlink /data/tombstones /tombstones
 
 on init
     symlink /dev/socket /tmp

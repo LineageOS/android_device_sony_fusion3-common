@@ -105,3 +105,6 @@
 
 # /proc
 /proc/cpu/msm_erp_log                                                             u:object_r:proc_cpu_erp:s0
+
+# /
+/tombstones                                                                       u:object_r:rootfs:s0
