@@ -326,7 +326,7 @@ service tad_static /system/bin/tad_static /dev/block/platform/msm_sdcc.1/by-name
 service ta_qmi_client /system/bin/ta_qmi_client
     class main
     user root
-    group system wakelock
+    group radio system wakelock
     seclabel u:r:ta_qmi_client:s0
 
 service updatemiscta /system/bin/updatemiscta
