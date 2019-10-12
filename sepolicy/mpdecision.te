@@ -15,5 +15,7 @@ allow mpdecision self:capability { fsetid sys_nice };
 allow mpdecision self:netlink_kobject_uevent_socket { bind create read setopt };
 allow mpdecision sysfs:file { open read write };
 allow mpdecision sysfs_devices_system_cpu:file write;
+allow mpdecision sysfs_power_control:file r_file_perms;
+allow mpdecision sysfs_thermal_control:file { open read };
 r_dir_file(mpdecision, hal_power_default)
 r_dir_file(mpdecision, system_server)
