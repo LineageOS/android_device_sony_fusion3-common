@@ -3,3 +3,4 @@ unix_socket_connect(hal_power_default, mpctl, mpdecision)
 #============= hal_power_default ==============
 allow hal_power_default mpctl_socket:dir search;
 allow hal_power_default sysfs_touchpanel:file rw_file_perms;
+allow hal_power_default sysfs_input_devices:dir search;
