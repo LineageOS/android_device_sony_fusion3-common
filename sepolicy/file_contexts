@@ -48,6 +48,7 @@
 /dev/wcnss_wlan                                                                   u:object_r:wlan_device:s0
 
 # /system
+/system/bin/btnvtool                                                              u:object_r:btnvtool_exec:s0
 /system/bin/efsks                                                                 u:object_r:kickstart_exec:s0
 /system/bin/hci_qcomm_init                                                        u:object_r:hci_attach_exec:s0
 /system/bin/ks                                                                    u:object_r:kickstart_exec:s0
