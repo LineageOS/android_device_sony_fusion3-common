@@ -61,6 +61,7 @@
 /system/bin/updatemiscta                                                          u:object_r:updatemiscta_exec:s0
 
 # /vendor
+/(vendor|system/vendor)/bin/hw/android\.hardware\.light@2\.0-service\.fusion3     u:object_r:hal_light_default_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.vibrator@1\.0-service\.fusion3  u:object_r:hal_vibrator_default_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.power@1\.1-service-qti          u:object_r:hal_power_default_exec:s0
 /(vendor|system/vendor)/bin/macaddrsetup                                          u:object_r:macaddrsetup_exec:s0
@@ -72,7 +73,8 @@
 /sys/devices/i2c-0/0-002c/backlight/lcd-backlight(/.*)?                           u:object_r:sysfs_leds:s0
 /sys/devices/i2c-0/0-0036/als_enable                                              u:object_r:sysfs_als:s0
 /sys/devices/i2c-0/0-0036/als_result                                              u:object_r:sysfs_als:s0
-/sys/devices/i2c-0/0-0036/leds/lm3533-lcd-bl(.*/.*)?                              u:object_r:sysfs_leds:s0
+/sys/devices/i2c-0/0-0036/sync_lvbanks                                            u:object_r:sysfs_leds:s0
+/sys/devices/i2c-0/0-0036/leds/lm3533(.*/.*)?                                     u:object_r:sysfs_leds:s0
 /sys/devices/i2c-0/0-0039/mhl/sii8334(/.*)?                                       u:object_r:sysfs_mhl:s0
 /sys/devices/i2c-0/0-0053(/.*)?                                                   u:object_r:sysfs_camera_torch:s0
 /sys/devices/i2c-2/2-0054(/.*)?                                                   u:object_r:sysfs_proximity_sensor:s0

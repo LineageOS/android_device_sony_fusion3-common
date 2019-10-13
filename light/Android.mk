@@ -1,5 +1,5 @@
-# Copyright (C) 2008 The Android Open Source Project
-# Copyright (C) 2017 The LineageOS Project
+#
+# Copyright (C) 2018-2019 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -13,8 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-ifeq ($(TARGET_PROVIDES_LIBLIGHT),true)
-
 LOCAL_PATH := $(call my-dir)
 
 include $(CLEAR_VARS)
@@ -26,14 +24,20 @@ ifneq ($(TARGET_USES_SECONDARY_BACKLIGHT),)
     LOCAL_CFLAGS += -DSECONDARY_BACKLIGHT
 endif
 
-LOCAL_SRC_FILES := lights.c
+LOCAL_MODULE := android.hardware.light@2.0-service.fusion3
 LOCAL_MODULE_RELATIVE_PATH := hw
-LOCAL_PROPRIETARY_MODULE := true
-LOCAL_SHARED_LIBRARIES := libcutils liblog
-LOCAL_CLANG  := true
-LOCAL_MODULE := lights.msm8960
 LOCAL_MODULE_TAGS := optional
+LOCAL_INIT_RC := android.hardware.light@2.0-service.fusion3.rc
+LOCAL_SRC_FILES := service.cpp Light.cpp
+LOCAL_SHARED_LIBRARIES := \
+    libbase \
+    libcutils \
+    libhardware \
+    libhidlbase \
+    libhidltransport \
+    libhwbinder \
+    libutils \
+    android.hardware.light@2.0
+LOCAL_PROPRIETARY_MODULE := true
 
-include $(BUILD_SHARED_LIBRARY)
-
-endif
+include $(BUILD_EXECUTABLE)
