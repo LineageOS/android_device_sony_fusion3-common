@@ -1,4 +1,4 @@
 type btnvtool, bluetoothdomain;
 type btnvtool_exec, exec_type, file_type;
 
-set_prop(bluetooth, bluetooth_prop)
+set_prop(bluetooth, vendor_bluetooth_prop)
