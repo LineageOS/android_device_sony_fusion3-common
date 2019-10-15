@@ -1,5 +1,24 @@
 #============= init ==============
+allow init btnvtool_exec:file { execute getattr open read };
 allow init camera_data_file:file getattr;
 allow init fm_device:chr_file write;
+allow init proc:file { open write };
+allow init sysfs_batteryinfo:file { open write };
+allow init sysfs_camera_torch:file setattr;
+allow init sysfs_cpu_boost:file { open setattr write };
+allow init sysfs_devices_system_cpu:file { open write };
+allow init sysfs_disk_polling:file { setattr write };
+allow init sysfs_fm_dl:file setattr;
+allow init sysfs_leds:file setattr;
+allow init sysfs_mhl:file setattr;
+allow init sysfs_power_control:file { open write };
+allow init sysfs_proximity_sensor:file { open setattr write };
+allow init sysfs_surfaceflinger:file setattr;
+allow init sysfs_touchpanel:file setattr;
+allow init sysfs_thermal:file { open setattr write };
+allow init sysfs_thermal_control:file { open write };
+allow init sysfs_usb:file setattr;
+allow init sysfs_wcnss_ssr:file { open setattr write };
+allow init sysfs_wlan_fwpath:file setattr;
 allow init tmpfs:lnk_file create;
 allow init wlan_device:chr_file write;
