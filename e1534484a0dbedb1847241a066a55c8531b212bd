@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0c790fd7_5329a68b",
+        "filename": "sepolicy/hci_attach.te",
+        "patchSetId": 3
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 14734
+      },
+      "writtenOn": "2020-04-15T12:06:00Z",
+      "side": 1,
+      "message": "Please delete this line. The \"set_prop\" macro handles this as well.",
+      "revId": "e1534484a0dbedb1847241a066a55c8531b212bd",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
