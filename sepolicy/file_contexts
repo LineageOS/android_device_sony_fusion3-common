@@ -113,6 +113,7 @@
 /sys/devices/virtual/input/input([3-4])+/bma250_rate                              u:object_r:sysfs_sensors:s0
 /sys/devices/virtual/input/input([1-9])+/name                                     u:object_r:sysfs_input_name:s0
 /sys/devices/virtual/input/input([2-3])+/registers                                u:object_r:sysfs_sensors:s0
+/sys/devices/virtual/input/input([2-3])+/interval                                 u:object_r:sysfs_sensors:s0
 /sys/devices/virtual/smdpkt/smdcntl([0-9])+/open_timeout                          u:object_r:sysfs_smdcntl_open_timeout:s0
 /sys/devices/virtual/thermal(/.*)?                                                u:object_r:sysfs_thermal:s0
 /sys/devices/virtual/timed_output/vibrator/level                                  u:object_r:sysfs_vibrator:s0
