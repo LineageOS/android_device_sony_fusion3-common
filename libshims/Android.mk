@@ -42,6 +42,7 @@ LOCAL_C_INCLUDES := \
 LOCAL_SHARED_LIBRARIES := \
     libbase \
     libui \
+    libgui \
     libutils \
     liblog \
     libnativewindow

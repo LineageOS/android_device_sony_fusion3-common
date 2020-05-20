@@ -17,6 +17,7 @@
 #include <system/window.h>
 #include <ui/Rect.h>
 #include <gui/SurfaceControl.h>
+#include <ui/GraphicBufferMapper.h>
 
 namespace android {
 
@@ -25,14 +26,22 @@ namespace android {
 extern "C" {
 
     /* status_t GraphicBufferMapper::lock */
-    status_t _ZN7android19GraphicBufferMapper4lockEPK13native_handlejRKNS_4RectEPPv(
-            buffer_handle_t handle, uint32_t usage, const Rect& bounds, void** vaddr);
+    status_t _ZN7android19GraphicBufferMapper4lockEPK13native_handlejRKNS_4RectEPPvPiS9_(
+            buffer_handle_t handle, uint32_t usage, const Rect& bounds, void** vaddr,
+            int32_t* outBytesPerPixel, int32_t* outBytesPerStride);
 
     status_t _ZN7android19GraphicBufferMapper4lockEPK13native_handleiRKNS_4RectEPPv(
             buffer_handle_t handle, int usage, const android::Rect& bounds, void** vaddr)
     {
-        return _ZN7android19GraphicBufferMapper4lockEPK13native_handlejRKNS_4RectEPPv(
-                handle, (uint32_t)usage, bounds, vaddr);
+        return _ZN7android19GraphicBufferMapper4lockEPK13native_handlejRKNS_4RectEPPvPiS9_(
+                handle, (uint32_t)usage, bounds, vaddr, (int32_t *)-1, (int32_t *)-1);
+    }
+
+    //<sp<IBinder> SurfaceComposerClient::getPhysicalDisplayToken(unsigned long long)
+    status_t _ZN7android21SurfaceComposerClient23getPhysicalDisplayTokenEy(unsigned long long);
+    status_t _ZN7android21SurfaceComposerClient17getBuiltInDisplayEi(int32_t id)
+    {
+        return _ZN7android21SurfaceComposerClient23getPhysicalDisplayTokenEy(static_cast<uint64_t>(id));
     }
 }
 
