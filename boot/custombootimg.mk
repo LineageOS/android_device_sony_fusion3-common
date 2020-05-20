@@ -26,8 +26,8 @@ $(recovery_uncompressed_device_ramdisk): $(MKBOOTFS) $(ADBD) \
 	$(hide) rm -f $(recovery_uncompressed_ramdisk)
 	$(hide) cp $(recovery_uncompressed_device_ramdisk) $(recovery_uncompressed_ramdisk)
 
-recovery_ramdisk := $(PRODUCT_OUT)/ramdisk-recovery.img
-$(recovery_ramdisk): $(MINIGZIP) \
+customrecovery_ramdisk := $(PRODUCT_OUT)/ramdisk-recovery.img
+$(customrecovery_ramdisk): $(MINIGZIP) \
 		$(recovery_uncompressed_device_ramdisk)
 	@echo "----- Making compressed recovery ramdisk ------"
 	$(hide) $(MINIGZIP) < $(recovery_uncompressed_ramdisk) > $@
@@ -70,7 +70,7 @@ $(INSTALLED_BOOTIMAGE_TARGET): $(PRODUCT_OUT)/kernel \
 
 INSTALLED_RECOVERYIMAGE_TARGET := $(PRODUCT_OUT)/recovery.img
 $(INSTALLED_RECOVERYIMAGE_TARGET): $(MKBOOTIMG) \
-		$(recovery_ramdisk) \
+		$(customrecovery_ramdisk) \
 		$(recovery_kernel)
 	@echo "----- Making recovery image ------"
 	$(hide) $(MKBOOTIMG) --kernel $(PRODUCT_OUT)/kernel --ramdisk $(PRODUCT_OUT)/ramdisk-recovery.img --cmdline "$(BOARD_KERNEL_CMDLINE)" --base $(BOARD_KERNEL_BASE) --pagesize $(BOARD_KERNEL_PAGESIZE) $(BOARD_MKBOOTIMG_ARGS) -o $(INSTALLED_RECOVERYIMAGE_TARGET)
