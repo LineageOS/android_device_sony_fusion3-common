@@ -1,10 +1,12 @@
 LOCAL_PATH := $(call my-dir)
 
 INITSONY := $(PRODUCT_OUT)/utilities/init_sony
+INIT_REAL := $(PRODUCT_OUT)/$(TARGET_COPY_OUT_RAMDISK)/init
+TOYBOX_TOOL := $(SOONG_HOST_OUT_EXECUTABLES)/toybox
 
 uncompressed_ramdisk := $(PRODUCT_OUT)/ramdisk.cpio
 $(uncompressed_ramdisk): $(INSTALLED_RAMDISK_TARGET)
-	zcat $< > $@
+	$(TOYBOX_TOOL) zcat $< > $@
 
 recovery_uncompressed_ramdisk := $(PRODUCT_OUT)/ramdisk-recovery.cpio
 recovery_uncompressed_device_ramdisk := $(PRODUCT_OUT)/ramdisk-recovery-device.cpio
@@ -35,9 +37,10 @@ $(INSTALLED_BOOTIMAGE_TARGET): $(PRODUCT_OUT)/kernel \
 		$(uncompressed_ramdisk) \
 		$(recovery_uncompressed_device_ramdisk) \
 		$(INTERNAL_ROOT_FILES) \
+		$(INIT_REAL) \
 		$(INSTALLED_RAMDISK_TARGET) \
 		$(INITSONY) \
-		$(TARGET_RECOVERY_ROOT_OUT)/sbin/toybox_static \
+		$(TARGET_RECOVERY_ROOT_OUT)/system/bin/toybox_static \
 		$(PRODUCT_OUT)/utilities/keycheck \
 		$(MKBOOTIMG) $(MINIGZIP) \
 		$(INTERNAL_BOOTIMAGE_FILES)
@@ -49,10 +52,12 @@ $(INSTALLED_BOOTIMAGE_TARGET): $(PRODUCT_OUT)/kernel \
 	$(hide) mv $(PRODUCT_OUT)/root/logo.rle $(PRODUCT_OUT)/combinedroot/logo.rle
 	$(hide) cp $(recovery_uncompressed_ramdisk) $(PRODUCT_OUT)/combinedroot/sbin/
 	$(hide) cp $(PRODUCT_OUT)/utilities/keycheck $(PRODUCT_OUT)/combinedroot/sbin/
-	$(hide) cp $(TARGET_RECOVERY_ROOT_OUT)/sbin/toybox_static $(PRODUCT_OUT)/combinedroot/sbin/toybox_init
+	$(hide) cp $(TARGET_RECOVERY_ROOT_OUT)/system/bin/toybox_static $(PRODUCT_OUT)/combinedroot/sbin/toybox_init
 
 	$(hide) cp $(INITSONY) $(PRODUCT_OUT)/combinedroot/sbin/init_sony
 	$(hide) chmod 755 $(PRODUCT_OUT)/combinedroot/sbin/init_sony
+	$(hide) rm $(PRODUCT_OUT)/combinedroot/init
+	$(hide) cp $(INIT_REAL) $(PRODUCT_OUT)/combinedroot/init
 	$(hide) mv $(PRODUCT_OUT)/combinedroot/init $(PRODUCT_OUT)/combinedroot/init.real
 	$(hide) ln -s sbin/init_sony $(PRODUCT_OUT)/combinedroot/init
 
