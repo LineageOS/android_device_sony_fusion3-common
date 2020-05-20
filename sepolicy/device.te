@@ -13,7 +13,6 @@ type ir_remote_serial_device, dev_type;
 type kickstart_device, dev_type;
 type mdm_device, dev_type;
 type mpu_device, dev_type;
-type qmuxd_socket, dev_type;
 type rfkill_device, dev_type;
 type rmi_device, dev_type;
 type shared_log_device, dev_type;

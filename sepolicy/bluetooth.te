@@ -1,4 +1,4 @@
-type btnvtool, bluetoothdomain;
-type btnvtool_exec, exec_type, file_type;
+type config_bt_addr, coredomain;
+type config_bt_addr_exec, exec_type, system_file_type, file_type;
 
-set_prop(bluetooth, vendor_bluetooth_prop)
+init_daemon_domain(config_bt_addr)

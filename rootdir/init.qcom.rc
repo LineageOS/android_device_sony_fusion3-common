@@ -70,8 +70,10 @@ on post-fs-data
 
     # Create the directories used by the Wireless subsystem
     mkdir /data/vendor/wifi 0771 wifi wifi
+    mkdir /data/vendor/mac_addr 0770 system wifi
     mkdir /data/vendor/wifi/wpa 0770 wifi wifi
     mkdir /data/vendor/wifi/wpa/sockets 0770 wifi wifi
+    mkdir /dev/socket/wifihal 0770 wifi wifi
 
     # Create directory used by audio subsystem
     mkdir /data/misc/audio 0770 audio audio
@@ -220,59 +222,12 @@ on boot
     # Tap to wake node
     chown system system /sys/devices/virtual/input/clearpad/wakeup_gesture
 
+    # start tad here
+    start tad_static
+
 on property:ro.data.large_tcp_window_size=true
     # Adjust socket buffer to enlarge TCP receive window for high bandwidth (e.g. DO-RevB)
     write /proc/sys/net/ipv4/tcp_adv_win_scale  2
-
-service config_bt_addr /system/bin/btnvtool -O
-    class core
-    user bluetooth
-    group bluetooth radio
-    oneshot
-
-on property:vold.decrypt=trigger_restart_framework
-    start config_bt_addr
-
-# QMUX must be in multiple groups to support external process connections
-service qmuxd /system/bin/qmuxd
-    class core
-    user radio
-    group radio audio bluetooth gps wakelock
-    disabled
-
-# QCOM prop
-service hci_attach /system/bin/sh /system/etc/init.qcom.bt.sh
-    class late_start
-    user bluetooth
-    group bluetooth system
-    disabled
-    oneshot
-    seclabel u:r:hci_attach:s0
-
-on property:bluetooth.hciattach=true
-    start hci_attach
-
-on property:bluetooth.hciattach=false
-    setprop bluetooth.status off
-
-on property:vendor.bluetooth.hciattach=true
-    start hci_attach
-
-on property:vendor.bluetooth.hciattach=false
-    setprop vendor.bluetooth.status off
-
-service netmgrd /system/bin/netmgrd
-    class late_start
-    group radio system wakelock
-    disabled
-
-service fm_dl /system/bin/sh /system/etc/init.qcom.fm.sh
-    class late_start
-    user system
-    group system
-    disabled
-    oneshot
-    seclabel u:r:fm_dl:s0
 
 service mpdecision /system/bin/mpdecision --avg_comp
     class main
@@ -295,13 +250,6 @@ service wpa_supplicant /vendor/bin/hw/wpa_supplicant \
     disabled
     oneshot
 
-# Kickstart checker
-service ks_checker /system/bin/sh /system/etc/kickstart_checker.sh
-    class core
-    group system
-    oneshot
-    seclabel u:r:kickstart:s0
-
 service kickstart /system/bin/qcks l -r /data/tombstones/mdm/ -e /cache/qcks/
     class core
     user system
@@ -314,20 +262,6 @@ on property:gsm.radio.kickstart=on
 
 on property:gsm.radio.kickstart=off
     stop kickstart
-
-# SONY misc
-service tad_static /system/bin/tad_static /dev/block/platform/msm_sdcc.1/by-name/TA 0,16
-    class core
-    user root
-    group root readproc system
-    socket tad stream 0660 system system
-    seclabel u:r:tad:s0
-
-service ta_qmi_client /system/bin/ta_qmi_client
-    class main
-    user root
-    group radio system wakelock
-    seclabel u:r:ta_qmi_client:s0
 
 service updatemiscta /system/bin/updatemiscta
     class main

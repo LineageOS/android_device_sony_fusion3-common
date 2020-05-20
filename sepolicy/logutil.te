@@ -1,0 +1,4 @@
+type logutil, coredomain;
+type logutil_exec, exec_type, system_file_type, file_type;
+
+init_daemon_domain(logutil)

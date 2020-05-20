@@ -9,6 +9,7 @@ PRODUCT_PACKAGES += \
     audio.primary.msm8960 \
     audio.r_submix.default \
     audio.usb.default \
+    libcsd-client \
     libaudio-resampler \
     libqcomvoiceprocessing
 
@@ -18,5 +19,6 @@ PRODUCT_PACKAGES += \
 
 # Audio HIDL interfaces
 PRODUCT_PACKAGES += \
-    android.hardware.audio@2.0-impl \
-    android.hardware.audio.effect@2.0-impl
+    android.hardware.audio@2.0-service \
+    android.hardware.audio@5.0-impl \
+    android.hardware.audio.effect@5.0-impl

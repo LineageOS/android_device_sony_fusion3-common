@@ -1,5 +1,4 @@
 #============= init ==============
-allow init btnvtool_exec:file { execute getattr open read };
 allow init camera_data_file:file getattr;
 allow init fm_device:chr_file write;
 allow init proc:file { open write };

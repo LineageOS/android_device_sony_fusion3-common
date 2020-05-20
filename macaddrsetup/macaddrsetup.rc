@@ -3,4 +3,3 @@ service macaddrsetup /vendor/bin/macaddrsetup
     user root
     group root bluetooth system
     oneshot
-    seclabel u:r:macaddrsetup:s0

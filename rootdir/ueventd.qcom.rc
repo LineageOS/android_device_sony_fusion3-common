@@ -187,6 +187,9 @@
 /sys/devices/i2c-0/0-002c/backlight/lcd-* brightness            0660 system system
 /sys/devices/i2c-0/0-002c/backlight/lcd-* max_brightness        0660 system system
 
+# QMUX daemon
+/sys/devices/virtual/hsicctl/hsicctl0     modem_wait            0660 radio  radio
+
 # BT
 /dev/hidraw*                                     0666  system  system
 

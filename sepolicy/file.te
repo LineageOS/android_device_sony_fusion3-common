@@ -26,7 +26,8 @@ type debugfs_asoc, debugfs_type, fs_type;
 
 # /dev/socket
 type mpdecision_socket, file_type;
-type tad_socket, file_type;
+type tad_socket, file_type, coredomain_socket;
+type qmuxd_socket, file_type;
 
 # /data
 type fm_data_file, file_type, data_file_type, core_data_file_type;

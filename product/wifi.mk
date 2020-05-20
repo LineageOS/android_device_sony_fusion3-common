@@ -18,3 +18,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.disableWifiApFirmwareReload=true \
     wifi.interface=wlan0 \
     wlan.driver.ath=0
+
+# Add Network Stack
+PRODUCT_PACKAGES += \
+    InProcessNetworkStack \
+    PlatformCaptivePortalLogin \
+    PlatformNetworkPermissionConfig

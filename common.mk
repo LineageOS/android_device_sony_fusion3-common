@@ -31,3 +31,5 @@ include $(COMMON_PATH)/product/*.mk
 
 # Vendor common configurations
 $(call inherit-product, vendor/sony/fusion3-common/fusion3-common-vendor.mk)
+$(call inherit-product, device/sony/fusion3-common/logutils/logutil.mk)
+$(call inherit-product, device/sony/fusion3-common/prebuilts/prebuilt_scripts.mk)

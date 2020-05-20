@@ -18,6 +18,9 @@
 # Board common path
 COMMON_PATH := device/sony/fusion3-common
 
+# Board config fs
+TARGET_FS_CONFIG_GEN := $(COMMON_PATH)/config.fs
+
 # Board common headers
 TARGET_SPECIFIC_HEADER_PATH += $(COMMON_PATH)/include
 

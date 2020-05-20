@@ -1,0 +1,5 @@
+service np-logutil-sh /system/bin/logutil.sh
+    class core
+    user root
+    oneshot
+    group root shell

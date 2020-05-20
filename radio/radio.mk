@@ -1,6 +1,6 @@
 # RIL properties
 PRODUCT_PROPERTY_OVERRIDES += \
-    rild.libpath=/system/lib/libril-qc-qmi-1.so \
+    rild.libpath=/vendor/lib/libril-qc-qmi-1.so \
     ro.ril.telephony.mqanelements=5 \
     ro.ril.transmitpower=true \
     ro.telephony.default_network=9
