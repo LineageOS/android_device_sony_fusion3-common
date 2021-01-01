@@ -17,7 +17,7 @@
 
 LOCAL_PATH := $(call my-dir)
 
-ifeq ($(BOARD_VENDOR_PLATFORM),fusion3)
+ifeq ($fusion3)
 
 include $(call first-makefiles-under,$(LOCAL_PATH))
 
